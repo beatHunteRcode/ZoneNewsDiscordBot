@@ -3682,827 +3682,1049 @@
 
 		<!-- surge builder by faction -->
 		<component name="surge builder by faction">
-			<string id="st_dyn_news_surge_builder_start_army_1">
-				<text>Взводный передал, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_army_2">
-				<text>Датчики зашкаливают:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_army_3">
-				<text>Командир предупредил:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_army_4">
-				<text>Командир сообщил, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_army_5">
-				<text>Последняя сводка из штаба:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_army_6">
-				<text>Приборы неладное дают:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_army_7">
-				<text>Прослушал переговоры учёных:</text>
-			</string>
+			<component name="Army">
+				<component name="start">
+					<string id="st_dyn_news_surge_builder_start_army_1">
+						<text>Взводный передал, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_army_2">
+						<text>Датчики зашкаливают:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_army_3">
+						<text>Командир предупредил:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_army_4">
+						<text>Командир сообщил, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_army_5">
+						<text>Последняя сводка из штаба:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_army_6">
+						<text>Приборы неладное дают:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_army_7">
+						<text>Прослушал переговоры учёных:</text>
+					</string>
+				</component>
+				<component name="mid">
+					<string id="st_dyn_news_surge_builder_mid_1">
+						<text>$what ожидается $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_2">
+						<text>$what начнётся $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_3">
+						<text>$what будет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_4">
+						<text>$what грянет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_5">
+						<text>$what прогремит $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_6">
+						<text>$what $when</text>
+					</string>
+				</component>
+				<component name="end">
+					<string id="st_dyn_news_surge_builder_end_army_1">
+						<text>Укрыть личный состав</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_army_2">
+						<text>Взводный передал</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_army_3">
+						<text>Из штаба пришла инфа</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_army_4">
+						<text>Командир сообщил</text>
+					</string>
+				</component>
+			</component>
 
-			<string id="st_dyn_news_surge_builder_start_bandit_1">
-				<text>Братва с севера передала:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_bandit_2">
-				<text>Инфа со Свалки пришла:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_bandit_3">
-				<text>Кореш инфу подогнал:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_bandit_4">
-				<text>Народ, слышал трёп в баре, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_bandit_5">
-				<text>Ребята с Юпитера шепнули, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_bandit_6">
-				<text>Слушок в баре прошел, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_bandit_7">
-				<text>Султан накумекал, что</text>
-			</string>
+			<component name="Bandit">
+				<component name="start">
+					<string id="st_dyn_news_surge_builder_start_bandit_1">
+						<text>Братва с севера передала:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_bandit_2">
+						<text>Инфа со Свалки пришла:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_bandit_3">
+						<text>Кореш инфу подогнал:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_bandit_4">
+						<text>Народ, слышал трёп в баре, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_bandit_5">
+						<text>Ребята с Юпитера шепнули, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_bandit_6">
+						<text>Слушок в баре прошел, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_bandit_7">
+						<text>Султан накумекал, что</text>
+					</string>
+				</component>
+				<component name="mid">
+					<string id="st_dyn_news_surge_builder_mid_1">
+						<text>$what ожидается $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_2">
+						<text>$what начнётся $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_3">
+						<text>$what будет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_4">
+						<text>$what грянет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_5">
+						<text>$what прогремит $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_6">
+						<text>$what $when</text>
+					</string>
+				</component>
+				<component name="end">
+					<string id="st_dyn_news_surge_builder_end_bandit_1">
+						<text>Вместо ста грамм</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_bandit_2">
+						<text>Хрен теперь, а не тихий час</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_bandit_3">
+						<text>Век воли не видать</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_bandit_4">
+						<text>Зуб даю</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_bandit_5">
+						<text>На дно лягайте</text>
+					</string>
+				</component>
+			</component>
 
-			<string id="st_dyn_news_surge_builder_start_csky_1">
-				<text>Внимание! Приборы взбесились:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_csky_2">
-				<text>Датчики дают точные показания, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_csky_3">
-				<text>Показания на приборах зашкаливают:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_csky_4">
-				<text>Приборы озверели:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_csky_5">
-				<text>Пришла информация с Базы:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_csky_6">
-				<text>Пришла информация с Болот, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_csky_7">
-				<text>Сталкеры! Внимание:</text>
-			</string>
+			<component name="Clear Sky">
+				<component name="start">
+					<string id="st_dyn_news_surge_builder_start_csky_1">
+						<text>Внимание! Приборы взбесились:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_csky_2">
+						<text>Датчики дают точные показания, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_csky_3">
+						<text>Показания на приборах зашкаливают:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_csky_4">
+						<text>Приборы озверели:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_csky_5">
+						<text>Пришла информация с Базы:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_csky_6">
+						<text>Пришла информация с Болот, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_csky_7">
+						<text>Сталкеры! Внимание:</text>
+					</string>
+				</component>
+				<component name="mid">
+					<string id="st_dyn_news_surge_builder_mid_1">
+						<text>$what ожидается $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_2">
+						<text>$what начнётся $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_3">
+						<text>$what будет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_4">
+						<text>$what грянет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_5">
+						<text>$what прогремит $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_6">
+						<text>$what $when</text>
+					</string>
+				</component>
+				<component name="end">
+					<string id="st_dyn_news_surge_builder_end_csky_1">
+						<text>Пришла информация с Базы</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_csky_2">
+						<text>Пришла информация с Болот</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_csky_3">
+						<text>Приборы взбесились</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_csky_4">
+						<text>Приборы озверели</text>
+					</string>
+				</component>
+			</component>
 
-			<string id="st_dyn_news_surge_builder_start_dolg_1">
-				<text>Из штаба пришла инфа, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_dolg_2">
-				<text>Инфа от сквада на ЧАЭС пришла:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_dolg_3">
-				<text>Cквад с ЧАЭС пришёл:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_dolg_4">
-				<text>От Петренко пришла информация, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_dolg_5">
-				<text>Перехватили переговоры учёных:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_dolg_6">
-				<text>Приборы взбесились:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_dolg_7">
-				<text>С Кордона пришла информация от Сидоровича:</text>
-			</string>
+			<component name="Duty">
+				<component name="start">
+					<string id="st_dyn_news_surge_builder_start_dolg_1">
+						<text>Из штаба пришла инфа, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_dolg_2">
+						<text>Инфа от сквада на ЧАЭС пришла:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_dolg_3">
+						<text>Cквад с ЧАЭС пришёл:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_dolg_4">
+						<text>От Петренко пришла информация, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_dolg_5">
+						<text>Перехватили переговоры учёных:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_dolg_6">
+						<text>Приборы взбесились:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_dolg_7">
+						<text>С Кордона пришла информация от Сидоровича:</text>
+					</string>
+				</component>
+				<component name="mid">
+					<string id="st_dyn_news_surge_builder_mid_1">
+						<text>$what ожидается $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_2">
+						<text>$what начнётся $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_3">
+						<text>$what будет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_4">
+						<text>$what грянет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_5">
+						<text>$what прогремит $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_6">
+						<text>$what $when</text>
+					</string>
+				</component>
+				<component name="end">
+					<string id="st_dyn_news_surge_builder_end_dolg_1">
+						<text>Укрыть личный состав</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_dolg_2">
+						<text>Взводный передал</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_dolg_3">
+						<text>Из штаба пришла инфа</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_dolg_4">
+						<text>От Петренко пришла информация</text>
+					</string>
+				</component>
+			</component>
 
-			<string id="st_dyn_news_surge_builder_start_ecolog_1">
-				<text>Внимание! Приборы взбесились:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_ecolog_2">
-				<text>Датчики дают точные показания, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_ecolog_3">
-				<text>Показания на приборах зашкаливают:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_ecolog_4">
-				<text>Приборы озверели:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_ecolog_5">
-				<text>Пришла информация от Сахарова, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_ecolog_6">
-				<text>Пришла информация с Янтаря, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_ecolog_7">
-				<text>Сталкеры! Внимание:</text>
-			</string>
+			<component name="Scientist">
+				<component name="start">
+					<string id="st_dyn_news_surge_builder_start_ecolog_1">
+						<text>Внимание! Приборы взбесились:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_ecolog_2">
+						<text>Датчики дают точные показания, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_ecolog_3">
+						<text>Показания на приборах зашкаливают:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_ecolog_4">
+						<text>Приборы озверели:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_ecolog_5">
+						<text>Пришла информация от Сахарова, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_ecolog_6">
+						<text>Пришла информация с Янтаря, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_ecolog_7">
+						<text>Сталкеры! Внимание:</text>
+					</string>
+				</component>
+				<component name="mid">
+					<string id="st_dyn_news_surge_builder_mid_1">
+						<text>$what ожидается $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_2">
+						<text>$what начнётся $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_3">
+						<text>$what будет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_4">
+						<text>$what грянет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_5">
+						<text>$what прогремит $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_6">
+						<text>$what $when</text>
+					</string>
+				</component>
+				<component name="end">
+					<string id="st_dyn_news_surge_builder_end_ecolog_1">
+						<text>Показания на приборах зашкаливают</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_ecolog_2">
+						<text>Датчики дают точные показания</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_ecolog_3">
+						<text>Приборы взбесились</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_ecolog_4">
+						<text>Приборы озверели</text>
+					</string>
+				</component>
+			</component>
 
-			<string id="st_dyn_news_surge_builder_start_freedom_1">
-				<text>Болотный Доктор сказал, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_freedom_2">
-				<text>Болотный Доктор заходил - сказал, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_freedom_3">
-				<text>Долговцы в баре трепались, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_freedom_4">
-				<text>Из достоверных источников стало известно, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_freedom_5">
-				<text>Миклуха передал послание:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_freedom_6">
-				<text>Ребята, весточку принесли, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_freedom_7">
-				<text>Сигнал с Армейских Складов пришел, что</text>
-			</string>
+			<component name="Freedom">
+				<component name="start">
+					<string id="st_dyn_news_surge_builder_start_freedom_1">
+						<text>Болотный Доктор сказал, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_freedom_2">
+						<text>Болотный Доктор заходил - сказал, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_freedom_3">
+						<text>Долговцы в баре трепались, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_freedom_4">
+						<text>Из достоверных источников стало известно, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_freedom_5">
+						<text>Миклуха передал послание:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_freedom_6">
+						<text>Ребята, весточку принесли, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_freedom_7">
+						<text>Сигнал с Армейских Складов пришел, что</text>
+					</string>
+				</component>
+				<component name="mid">
+					<string id="st_dyn_news_surge_builder_mid_1">
+						<text>$what ожидается $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_2">
+						<text>$what начнётся $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_3">
+						<text>$what будет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_4">
+						<text>$what грянет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_5">
+						<text>$what прогремит $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_6">
+						<text>$what $when</text>
+					</string>
+				</component>
+				<component name="end">
+					<string id="st_dyn_news_surge_builder_end_freedom_1">
+						<text>Сигнал с Армейских Складов пришёл</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_freedom_2">
+						<text>Лукаш передал</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_freedom_3">
+						<text>Ребята весточку принесли</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_freedom_4">
+						<text>Слышал от ходоков</text>
+					</string>
+				</component>
+			</component>
 
-			<string id="st_dyn_news_surge_builder_start_killer_1">
-				<text>Барыга слил инфу:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_killer_2">
-				<text>Из надёжных источников стало известно, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_killer_3">
-				<text>Из-за бугра инфа пришла:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_killer_4">
-				<text>Инфа прошла:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_killer_5">
-				<text>Один ходок передал:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_killer_6">
-				<text>Перехватили переговоры учёных:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_killer_7">
-				<text>Слышал, что</text>
-			</string>
+			<component name="Mercenary">
+				<component name="start">
+					<string id="st_dyn_news_surge_builder_start_killer_1">
+						<text>Барыга слил инфу:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_killer_2">
+						<text>Из надёжных источников стало известно, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_killer_3">
+						<text>Из-за бугра инфа пришла:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_killer_4">
+						<text>Инфа прошла:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_killer_5">
+						<text>Один ходок передал:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_killer_6">
+						<text>Перехватили переговоры учёных:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_killer_7">
+						<text>Слышал, что</text>
+					</string>
+				</component>
+				<component name="mid">
+					<string id="st_dyn_news_surge_builder_mid_1">
+						<text>$what ожидается $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_2">
+						<text>$what начнётся $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_3">
+						<text>$what будет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_4">
+						<text>$what грянет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_5">
+						<text>$what прогремит $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_6">
+						<text>$what $when</text>
+					</string>
+				</component>
+				<component name="end">
+					<string id="st_dyn_news_surge_builder_end_killer_1">
+						<text>Перехватили переговоры учёных</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_killer_2">
+						<text>Из-за бугра инфа пришла</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_killer_3">
+						<text>Из надёжных источников стало известно</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_killer_4">
+						<text>Инфа прошла</text>
+					</string>
+				</component>
+			</component>
 
-			<string id="st_dyn_news_surge_builder_start_monolith_1">
-				<text>Верхи передали:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_monolith_2">
-				<text>Кое-кто сообщил, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_monolith_3">
-				<text>Наставник сообщил:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_monolith_4">
-				<text>По всей видимости, что</text>
-			</string>
+			<component name="Monolith">
+				<component name="start">
+					<string id="st_dyn_news_surge_builder_start_monolith_1">
+						<text>Верхи передали:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_monolith_2">
+						<text>Кое-кто сообщил, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_monolith_3">
+						<text>Наставник сообщил:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_monolith_4">
+						<text>По всей видимости, что</text>
+					</string>
+				</component>
+				<component name="mid">
+					<string id="st_dyn_news_surge_builder_mid_1">
+						<text>$what ожидается $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_2">
+						<text>$what начнётся $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_3">
+						<text>$what будет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_4">
+						<text>$what грянет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_5">
+						<text>$what прогремит $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_6">
+						<text>$what $when</text>
+					</string>
+				</component>
+				<component name="end">
+					<string id="st_dyn_news_surge_builder_end_monolith_1">
+						<text>Монолит сказал</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_monolith_2">
+						<text>О-Сознание дали сигнал</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_monolith_3">
+						<text>Учёные из О-Сознания передали</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_monolith_4">
+						<text>С Севера передали</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_monolith_5">
+						<text>Монолит явит свой гнев</text>
+					</string>
+				</component>
+			</component>
 
-			<string id="st_dyn_news_surge_builder_start_stalker_1">
-				<text>Болотный Доктор заходил:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_stalker_2">
-				<text>От Лесника пришла инфа:</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_stalker_3">
-				<text>Сахаров передал инфу, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_stalker_4">
-				<text>Сидорович передал, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_stalker_5">
-				<text>Слышал в Баре, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_stalker_6">
-				<text>Слышал от ходоков, что</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_start_stalker_7">
-				<text>Узнал у учёных, на Юпитере, что</text>
-			</string>
-
-			<string id="st_dyn_news_surge_builder_mid_1">
-				<text>$what ожидается $when</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_mid_2">
-				<text>$what начнётся $when</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_mid_3">
-				<text>$what будет $when</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_mid_4">
-				<text>$what грянет $when</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_mid_5">
-				<text>$what прогремит $when</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_mid_6">
-				<text>$what $when</text>
-			</string>
-
-			<string id="st_dyn_news_surge_builder_end_bandit_1">
-				<text>Вместо ста грамм</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_bandit_2">
-				<text>Хрен теперь, а не тихий час</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_bandit_3">
-				<text>Век воли не видать</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_bandit_4">
-				<text>Зуб даю</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_bandit_5">
-				<text>На дно лягайте</text>
-			</string>
-
-			<string id="st_dyn_news_surge_builder_end_army_1">
-				<text>Укрыть личный состав</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_army_2">
-				<text>Взводный передал</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_army_3">
-				<text>Из штаба пришла инфа</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_army_4">
-				<text>Командир сообщил</text>
-			</string>
-
-			<string id="st_dyn_news_surge_builder_end_dolg_1">
-				<text>Укрыть личный состав</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_dolg_2">
-				<text>Взводный передал</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_dolg_3">
-				<text>Из штаба пришла инфа</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_dolg_4">
-				<text>От Петренко пришла информация</text>
-			</string>
-
-			<string id="st_dyn_news_surge_builder_end_csky_1">
-				<text>Пришла информация с Базы</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_csky_2">
-				<text>Пришла информация с Болот</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_csky_3">
-				<text>Приборы взбесились</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_csky_4">
-				<text>Приборы озверели</text>
-			</string>
-
-			<string id="st_dyn_news_surge_builder_end_ecolog_1">
-				<text>Показания на приборах зашкаливают</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_ecolog_2">
-				<text>Датчики дают точные показания</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_ecolog_3">
-				<text>Приборы взбесились</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_ecolog_4">
-				<text>Приборы озверели</text>
-			</string>
-
-			<string id="st_dyn_news_surge_builder_end_killer_1">
-				<text>Перехватили переговоры учёных</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_killer_2">
-				<text>Из-за бугра инфа пришла</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_killer_3">
-				<text>Из надёжных источников стало известно</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_killer_4">
-				<text>Инфа прошла</text>
-			</string>
-
-			<string id="st_dyn_news_surge_builder_end_freedom_1">
-				<text>Сигнал с Армейских Складов пришёл</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_freedom_2">
-				<text>Лукаш передал</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_freedom_3">
-				<text>Ребята весточку принесли</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_freedom_4">
-				<text>Слышал от ходоков</text>
-			</string>
-
-			<string id="st_dyn_news_surge_builder_end_stalker_1">
-				<text>Долговцы в баре трепались</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_stalker_2">
-				<text>Узнал у учёных</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_stalker_3">
-				<text>Болотный Доктор сказал</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_stalker_4">
-				<text>Сидорович передал</text>
-			</string>
-
-			<string id="st_dyn_news_surge_builder_end_monolith_1">
-				<text>Монолит сказал</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_monolith_2">
-				<text>О-Сознание дали сигнал</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_monolith_3">
-				<text>Учёные из О-Сознания передали</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_monolith_4">
-				<text>С Севера передали</text>
-			</string>
-			<string id="st_dyn_news_surge_builder_end_monolith_5">
-				<text>Монолит явит свой гнев</text>
-			</string>
+			<component name="Loner">
+				<component name="start">
+					<string id="st_dyn_news_surge_builder_start_stalker_1">
+						<text>Болотный Доктор заходил:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_stalker_2">
+						<text>От Лесника пришла инфа:</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_stalker_3">
+						<text>Сахаров передал инфу, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_stalker_4">
+						<text>Сидорович передал, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_stalker_5">
+						<text>Слышал в Баре, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_stalker_6">
+						<text>Слышал от ходоков, что</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_start_stalker_7">
+						<text>Узнал у учёных, на Юпитере, что</text>
+					</string>
+				</component>
+				<component name="mid">
+					<string id="st_dyn_news_surge_builder_mid_1">
+						<text>$what ожидается $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_2">
+						<text>$what начнётся $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_3">
+						<text>$what будет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_4">
+						<text>$what грянет $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_5">
+						<text>$what прогремит $when</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_mid_6">
+						<text>$what $when</text>
+					</string>
+				</component>
+				<component name="end">
+					<string id="st_dyn_news_surge_builder_end_stalker_1">
+						<text>Долговцы в баре трепались</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_stalker_2">
+						<text>Узнал у учёных</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_stalker_3">
+						<text>Болотный Доктор сказал</text>
+					</string>
+					<string id="st_dyn_news_surge_builder_end_stalker_4">
+						<text>Сидорович передал</text>
+					</string>
+				</component>
+			</component>
 		</component>
 
 		<!-- Faction news-->
 		<component name="Faction news">
-			<string id="st_dyn_news_spam_faction_bandit_1">
-				<text>Мать твою, Толстый, ты снова ключи от оружейки посеял?</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_2">
-				<text>Так, пахана ближайшие пару часов не беспокоить.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_3">
-				<text>Э, черти, я чёт не понял. Где мой ствол?</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_4">
-				<text>Долбаное государство. Ну хрена же от него не получаешь, везде сам вертишься, так они ещё и не за хрен собачий жизни людям ломают.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_5">
-				<text>Ахах чё видел короче - один долгарь у другого на кожаной флейте играл</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_6">
-				<text>Кажись крыса у нас тут завелась. Шо не рейд, то полная задница, сталкеры наперёд хреначат.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_7">
-				<text>Мля, в Крестах и то веселее было, чем здесь на базе.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_8">
-				<text>Братва артифакты кажись сталкерня через северную тропу несёт.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_9">
-				<text>У меня тут кореш скоро откинется, надо бы встретить и провести. Братва у периметра, вы как?</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_10">
-				<text>Бакланы сука кто мою колбасу схамячил? найду крысу урою.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_11">
-				<text>Эх, а матери я давно не видел. Как загребли в нулевых, так и всё.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_12">
-				<text>Чет грустно как-то. Пивка бы что ли.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_13">
-				<text>Тормазнули пару лошков идём на базу.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_14">
-				<text>Братва на Юпитере, есть инфа шо кореш ваш чертёнок из СБ. Ну тот с волыной хорошей.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_15">
-				<text>Вечер в чатик, кисель в сладость! Гы-гы.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_16">
-				<text>Ну чё, мусора грёбаные. Вот он я, а теперь попробуйте меня достать здесь, лошьё.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_bandit_17">
-				<text>Мы тут мля нарвались недавно на чёрную хренотень такую летающую, эт чё?</text>
-			</string>
+			<component name="Bandit">
+				<string id="st_dyn_news_spam_faction_bandit_1">
+					<text>Мать твою, Толстый, ты снова ключи от оружейки посеял?</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_2">
+					<text>Так, пахана ближайшие пару часов не беспокоить.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_3">
+					<text>Э, черти, я чёт не понял. Где мой ствол?</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_4">
+					<text>Долбаное государство. Ну хрена же от него не получаешь, везде сам вертишься, так они ещё и не за хрен собачий жизни людям ломают.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_5">
+					<text>Ахах чё видел короче - один долгарь у другого на кожаной флейте играл</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_6">
+					<text>Кажись крыса у нас тут завелась. Шо не рейд, то полная задница, сталкеры наперёд хреначат.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_7">
+					<text>Мля, в Крестах и то веселее было, чем здесь на базе.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_8">
+					<text>Братва артифакты кажись сталкерня через северную тропу несёт.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_9">
+					<text>У меня тут кореш скоро откинется, надо бы встретить и провести. Братва у периметра, вы как?</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_10">
+					<text>Бакланы сука кто мою колбасу схамячил? найду крысу урою.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_11">
+					<text>Эх, а матери я давно не видел. Как загребли в нулевых, так и всё.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_12">
+					<text>Чет грустно как-то. Пивка бы что ли.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_13">
+					<text>Тормазнули пару лошков идём на базу.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_14">
+					<text>Братва на Юпитере, есть инфа шо кореш ваш чертёнок из СБ. Ну тот с волыной хорошей.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_15">
+					<text>Вечер в чатик, кисель в сладость! Гы-гы.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_16">
+					<text>Ну чё, мусора грёбаные. Вот он я, а теперь попробуйте меня достать здесь, лошьё.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_bandit_17">
+					<text>Мы тут мля нарвались недавно на чёрную хренотень такую летающую, эт чё?</text>
+				</string>
+			</component>
 
-			<string id="st_dyn_news_spam_faction_csky_1">
-				<text>В Деревне, на северо-востоке, короче, есть такая херь, 'Разлом', мож кто знает? Там, говорят, какой-то артефакт есть, типа Монолита, короче, который желания выполняет. Вот бы добраться до него.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_csky_2">
-				<text>У Рыболовецкого хутора иногда появляются какие-то странные перцы. Хрен их разберешь, кто такие, но скока мы их не хотели пощупать, ничего не вышло. Словно чуют, суки, что мы к ним идем.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_csky_3">
-				<text>Опять наш скопытился в 'Жарке'. Все эти поля и леса вокруг деревни обложены аномалиями, блин, что твоя елка шарами.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_csky_4">
-				<text>Недавно спецоперацию наблюдал. Блин, все же если вояк доконать, они тут всем жизнь в алмазах устроят…</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_csky_5">
-				<text>Погода прыгает как черт какой. То солнце, то ливень. Недавно ночью вообще снег пошел, правда, к утру уже растаял. Играется Зона с погодой, играется, как ей вздумается.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_csky_6">
-				<text>Свобода с Долгом совсем ошалели. Все шпионов ищут, вольному сталкеру проходу без проверки не дают. Охренели, дебилы, блин.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_csky_7">
-				<text>На днях на Кордон приезжал генерал какой-то важный, усатый, толстый. Разгон проводил, все ему не нравилось. Теперь, вон, патрули ходят по старой раздолбанной дороге. Будьте осторожны.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_csky_8">
-				<text>На Кордоне, говорят, проход старый заделали. Помните, на железнодорожной насыпи, справа, у тепловоза старого, дырень такая в заборе была? Все, отжила свое! Вояки заделали все да патрули усилили. Придется теперь Кузнецову отваливать, либо другие тропы искать.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_csky_9">
-				<text>На Болотах страшно стало ходить. Одни аномалии да твари в трясинах. Я на последней ходке обоих мальков, новичков, потерял. Глядите в оба.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_csky_10">
-				<text>На Армейских Складах чертовски опасно. Из района Деревни Кровососов и упавшего вертолета включительно не возвращается каждый третий. Только группами и можно пройти, да и то не всегда. Химеры постоянно как из-под земли лезут, плюс наемники подозрительно шебуршатся.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_csky_11">
-				<text>Вот только что буквально гон монстров был на тропе между Баром и Складами. Пацана какого-то хапнуло.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_csky_12">
-				<text>На Янтаре пси-излучение совсем свихнулось. Гасит волнами так, что чуть ли не до лагеря яйцеголовых достает. Не к добру это, ох не к добру…</text>
-			</string>
+			<component name="Clear Sky">
+				<string id="st_dyn_news_spam_faction_csky_1">
+					<text>В Деревне, на северо-востоке, короче, есть такая херь, 'Разлом', мож кто знает? Там, говорят, какой-то артефакт есть, типа Монолита, короче, который желания выполняет. Вот бы добраться до него.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_csky_2">
+					<text>У Рыболовецкого хутора иногда появляются какие-то странные перцы. Хрен их разберешь, кто такие, но скока мы их не хотели пощупать, ничего не вышло. Словно чуют, суки, что мы к ним идем.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_csky_3">
+					<text>Опять наш скопытился в 'Жарке'. Все эти поля и леса вокруг деревни обложены аномалиями, блин, что твоя елка шарами.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_csky_4">
+					<text>Недавно спецоперацию наблюдал. Блин, все же если вояк доконать, они тут всем жизнь в алмазах устроят…</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_csky_5">
+					<text>Погода прыгает как черт какой. То солнце, то ливень. Недавно ночью вообще снег пошел, правда, к утру уже растаял. Играется Зона с погодой, играется, как ей вздумается.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_csky_6">
+					<text>Свобода с Долгом совсем ошалели. Все шпионов ищут, вольному сталкеру проходу без проверки не дают. Охренели, дебилы, блин.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_csky_7">
+					<text>На днях на Кордон приезжал генерал какой-то важный, усатый, толстый. Разгон проводил, все ему не нравилось. Теперь, вон, патрули ходят по старой раздолбанной дороге. Будьте осторожны.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_csky_8">
+					<text>На Кордоне, говорят, проход старый заделали. Помните, на железнодорожной насыпи, справа, у тепловоза старого, дырень такая в заборе была? Все, отжила свое! Вояки заделали все да патрули усилили. Придется теперь Кузнецову отваливать, либо другие тропы искать.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_csky_9">
+					<text>На Болотах страшно стало ходить. Одни аномалии да твари в трясинах. Я на последней ходке обоих мальков, новичков, потерял. Глядите в оба.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_csky_10">
+					<text>На Армейских Складах чертовски опасно. Из района Деревни Кровососов и упавшего вертолета включительно не возвращается каждый третий. Только группами и можно пройти, да и то не всегда. Химеры постоянно как из-под земли лезут, плюс наемники подозрительно шебуршатся.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_csky_11">
+					<text>Вот только что буквально гон монстров был на тропе между Баром и Складами. Пацана какого-то хапнуло.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_csky_12">
+					<text>На Янтаре пси-излучение совсем свихнулось. Гасит волнами так, что чуть ли не до лагеря яйцеголовых достает. Не к добру это, ох не к добру…</text>
+				</string>
+			</component>
 
-			<string id="st_dyn_news_spam_faction_dolg_1">
-				<text>Внимание бойцам всех отрядов: по прибытию на базу немедленно явиться в командный пункт для получения инструкций по эксплуатации новых моделей оборудования.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_2">
-				<text>Внимание всем отрядам, находящимся в квадрате e15 или поблизости! Немедленно подтвердить присутствие особо опасных мутантов в данном регионе! Информация поступила из непроверенного источника.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_3">
-				<text>Внимание всем отрядам, находящимся в квадрате h23 или поблизости! Немедленно подтвердить присутствие особо опасных мутантов в данном регионе! Информация поступила из непроверенного источника.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_4">
-				<text>Всем свободным отрядам! На Свалке снова активизировались бандиты, зачистите сектор.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_5">
-				<text>Всем сталкерам, которые могут оказать посильную помощь в зачистке территории на подходах к Бару от мутантов, будем очень благодарны.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_6">
-				<text>Говорит сержант Сайкин, пятый отряд. Я обращаюсь к тем лицам, которые вчера совершали хулиганские действия на территории группировки «Долг», на Ростке. Если снова будете бросать пустые бутылки в комнату к Петренко - расстреляем на месте.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_7">
-				<text>Группировка «Долг» нуждается в опытных и смелых бойцах для пополнения своих рядов и уничтожения мутантов. Ко всем вступившим в наши ряды, в Баре будет проводиться специальная ценовая политика. Бывшим бандитам - не обращаться!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_8">
-				<text>Группировка «Долг» сообщает о прохождении набора в свои ряды. Всем желающим приходить на базу «Долга» на Ростке. При себе иметь оружие, снаряжение и запас провизии на три дня. Наличие документов необязательно, хорошая физ. подготовка желательна.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_9">
-				<text>Еще раз предупреждаем вас, Анархия. Если вы не перестанете присылать на личный ПДА генерала Воронина гнусные оскорбления, мы к вам на базу точно наведаемся. Думаете не знаем, чьих это рук дело??</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_10">
-				<text>Заходим в приватный канал, скачиваем обновление защиты. Будет утечка информации из-за того, что вам было лень пропатчить - придушу.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_11">
-				<text>Информацию по рейдам на мутантов и другим операциям - в приватный канал. Не хватало ещё, чтобы утечка была.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_12">
-				<text>На склад поступили новенькие СВД, желающих много, торопитесь.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_13">
-				<text>Наблюдаем на Ростке какой-то чёрный летающий дым, ждём инструкций. Разведотряд.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_14">
-				<text>Нужны опытные сталкеры для рейда на мутантов. Оплата соответствующая.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_15">
-				<text>Нужны опытные сталкеры для рейда на мутантское отродье. Оплата соответствующая.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_16">
-				<text>Нужны опытные сталкеры для рейда на снорков. Оплата соответствующая.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_17">
-				<text>Петренко говорит. Живодеров, тебе Арни просил передать что как возьмешь сосыча за рога, - сразу к нему не тащи, у него клеток свободных пока нет. Укомплектуй его как следует и подержи денек у себя, Арни с тобой рассчитается.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_18">
-				<text>Петренко, а ну отвечай, мать твою! Что у вас с приватным каналом?! Опять упал?</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_19">
-				<text>Петренко, приём! Проверка связи. У меня радиостанция сломалась, я в общий канал пишу. Вышли бойца с ремкомплектом на то место, где позавчера мы кабанов били.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_20">
-				<text>Петренко, это капитан Сорокин со свалки, где наши боеприпасы?</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_21">
-				<text>Сталкеры, вступайте в «Долг»! Вылечим нашу Землю от смертельной болезни под названием Зона!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_22">
-				<text>Сталкеры, вступайте в «Долг». Защитим планету от заразы Зоны!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_23">
-				<text>Сталкеры, помните: анархия - это хаос, разруха и смерть. Вступайте в «Долг»! Поддержите порядок и чистоту в Зоне!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_24">
-				<text>Сталкеры, присоединяйтесь! Наш долг - защитить и избавить мир от нашествия мутантов и аномальной заразы.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_25">
-				<text>Так, ребятня. Поступила информация, что группа наёмников засела на подступах к центральному МБУ, внимательнее.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_26">
-				<text>У нас проблемы с оборудованием, в течение пары суток может барахлить связь с базой и отрядами.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_27">
-				<text>Это капитан Симонов. Докладываю об обнаружении странного вида мутантов. Я со своим отрядом час назад в квадрате b15 наблюдал необычную чёрную химеру. На наших глазах мутант атаковал контролёра и уничтожил его несколькими мощными ударами. Наше присутствие зверем обнаружено не было. Жду указаний к последующим действиям.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_28">
-				<text>Это Петренко. Семёнов, подтверди информацию о том, что 10-й отряд вчера не явился после рейда. Мне кажется, я нашёл то, что от них осталось...</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_dolg_29">
-				<text>Эфир не забиваем, ваши подвиги по убийству левых мужиков никого не интересуют.</text>
-			</string>
+			<component name="Duty">
+				<string id="st_dyn_news_spam_faction_dolg_1">
+					<text>Внимание бойцам всех отрядов: по прибытию на базу немедленно явиться в командный пункт для получения инструкций по эксплуатации новых моделей оборудования.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_2">
+					<text>Внимание всем отрядам, находящимся в квадрате e15 или поблизости! Немедленно подтвердить присутствие особо опасных мутантов в данном регионе! Информация поступила из непроверенного источника.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_3">
+					<text>Внимание всем отрядам, находящимся в квадрате h23 или поблизости! Немедленно подтвердить присутствие особо опасных мутантов в данном регионе! Информация поступила из непроверенного источника.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_4">
+					<text>Всем свободным отрядам! На Свалке снова активизировались бандиты, зачистите сектор.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_5">
+					<text>Всем сталкерам, которые могут оказать посильную помощь в зачистке территории на подходах к Бару от мутантов, будем очень благодарны.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_6">
+					<text>Говорит сержант Сайкин, пятый отряд. Я обращаюсь к тем лицам, которые вчера совершали хулиганские действия на территории группировки «Долг», на Ростке. Если снова будете бросать пустые бутылки в комнату к Петренко - расстреляем на месте.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_7">
+					<text>Группировка «Долг» нуждается в опытных и смелых бойцах для пополнения своих рядов и уничтожения мутантов. Ко всем вступившим в наши ряды, в Баре будет проводиться специальная ценовая политика. Бывшим бандитам - не обращаться!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_8">
+					<text>Группировка «Долг» сообщает о прохождении набора в свои ряды. Всем желающим приходить на базу «Долга» на Ростке. При себе иметь оружие, снаряжение и запас провизии на три дня. Наличие документов необязательно, хорошая физ. подготовка желательна.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_9">
+					<text>Еще раз предупреждаем вас, Анархия. Если вы не перестанете присылать на личный ПДА генерала Воронина гнусные оскорбления, мы к вам на базу точно наведаемся. Думаете не знаем, чьих это рук дело??</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_10">
+					<text>Заходим в приватный канал, скачиваем обновление защиты. Будет утечка информации из-за того, что вам было лень пропатчить - придушу.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_11">
+					<text>Информацию по рейдам на мутантов и другим операциям - в приватный канал. Не хватало ещё, чтобы утечка была.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_12">
+					<text>На склад поступили новенькие СВД, желающих много, торопитесь.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_13">
+					<text>Наблюдаем на Ростке какой-то чёрный летающий дым, ждём инструкций. Разведотряд.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_14">
+					<text>Нужны опытные сталкеры для рейда на мутантов. Оплата соответствующая.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_15">
+					<text>Нужны опытные сталкеры для рейда на мутантское отродье. Оплата соответствующая.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_16">
+					<text>Нужны опытные сталкеры для рейда на снорков. Оплата соответствующая.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_17">
+					<text>Петренко говорит. Живодеров, тебе Арни просил передать что как возьмешь сосыча за рога, - сразу к нему не тащи, у него клеток свободных пока нет. Укомплектуй его как следует и подержи денек у себя, Арни с тобой рассчитается.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_18">
+					<text>Петренко, а ну отвечай, мать твою! Что у вас с приватным каналом?! Опять упал?</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_19">
+					<text>Петренко, приём! Проверка связи. У меня радиостанция сломалась, я в общий канал пишу. Вышли бойца с ремкомплектом на то место, где позавчера мы кабанов били.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_20">
+					<text>Петренко, это капитан Сорокин со свалки, где наши боеприпасы?</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_21">
+					<text>Сталкеры, вступайте в «Долг»! Вылечим нашу Землю от смертельной болезни под названием Зона!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_22">
+					<text>Сталкеры, вступайте в «Долг». Защитим планету от заразы Зоны!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_23">
+					<text>Сталкеры, помните: анархия - это хаос, разруха и смерть. Вступайте в «Долг»! Поддержите порядок и чистоту в Зоне!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_24">
+					<text>Сталкеры, присоединяйтесь! Наш долг - защитить и избавить мир от нашествия мутантов и аномальной заразы.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_25">
+					<text>Так, ребятня. Поступила информация, что группа наёмников засела на подступах к центральному МБУ, внимательнее.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_26">
+					<text>У нас проблемы с оборудованием, в течение пары суток может барахлить связь с базой и отрядами.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_27">
+					<text>Это капитан Симонов. Докладываю об обнаружении странного вида мутантов. Я со своим отрядом час назад в квадрате b15 наблюдал необычную чёрную химеру. На наших глазах мутант атаковал контролёра и уничтожил его несколькими мощными ударами. Наше присутствие зверем обнаружено не было. Жду указаний к последующим действиям.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_28">
+					<text>Это Петренко. Семёнов, подтверди информацию о том, что 10-й отряд вчера не явился после рейда. Мне кажется, я нашёл то, что от них осталось...</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_dolg_29">
+					<text>Эфир не забиваем, ваши подвиги по убийству левых мужиков никого не интересуют.</text>
+				</string>
+			</component>
 
-			<string id="st_dyn_news_spam_faction_ecolog_1">
-				<text>Внимание, только что была обнаружена утечка газа unknown в квадрате b41, примите соответствующие меры.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_ecolog_2">
-				<text>Если на вас навалилась тяжесть, мир начал терять в красках, а в глазах проступает желтушная пелена - постарайтесь покинуть эту зону как можно скорее. Скорее всего вы попали под прямое воздействие переменного поля Пси-излучения!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_ecolog_3">
-				<text>Запрашиваем вертолёт в центральный МБУ, квадрат y6_4.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_ecolog_4">
-				<text>Зафиксирован всплеск переменного пси-излучения в квадрате y2_4, будьте предельно осторожны.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_ecolog_5">
-				<text>Милитаризованные научно-исследовательские группы напоминают военным сталкерам, что комбинезон класса «СЕВА» не обеспечит вам должной защиты от аномального воздействия. Используйте комбинезоны класса «ССП».</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_ecolog_6">
-				<text>Милитаризованные научно-исследовательские группы напоминают всем неучтённым лицам на территории Аномальной Зоны, что вы можете в любой момент сдаться в один из Мобильных Бункеров Учёных. Огонь вести по вам не будут, обеспечат необходимой медицинской помощью и отправкой в СБУ при первой же возможности.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_ecolog_7">
-				<text>Новоприбывшим на Янтарь военным обращаться ко мне, профессору Сахарову.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_ecolog_8">
-				<text>Профессор Озёрский, срочно выйдите на связь. Дело касается ваших недавних разработок.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_ecolog_9">
-				<text>Северный МБУ, сколько нам ждать от вас аномальные образцы для исследований? Прекратите заниматься самодеятельностью, живо!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_ecolog_10">
-				<text>Уважаемые солдаты и неучтённые лица! Милитаризованные научно-исследовательские группы и Научно-Исследовательский Институт Чернобыльской Аномальной Зоны хотят вам напомнить, что водка никак не способствует выведению радионуклидов. Используйте антирадиационные препараты.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_ecolog_11">
-				<text>Это профессор Герман. Вот уже двое суток ждём результатов от по исследованию переменного пси-излучения от профессора Сахарова, но он отказывается выйти с нами на связь. Как это понимать?</text>
-			</string>
+			<component name="Scientist">
+				<string id="st_dyn_news_spam_faction_ecolog_1">
+					<text>Внимание, только что была обнаружена утечка газа unknown в квадрате b41, примите соответствующие меры.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_ecolog_2">
+					<text>Если на вас навалилась тяжесть, мир начал терять в красках, а в глазах проступает желтушная пелена - постарайтесь покинуть эту зону как можно скорее. Скорее всего вы попали под прямое воздействие переменного поля Пси-излучения!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_ecolog_3">
+					<text>Запрашиваем вертолёт в центральный МБУ, квадрат y6_4.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_ecolog_4">
+					<text>Зафиксирован всплеск переменного пси-излучения в квадрате y2_4, будьте предельно осторожны.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_ecolog_5">
+					<text>Милитаризованные научно-исследовательские группы напоминают военным сталкерам, что комбинезон класса «СЕВА» не обеспечит вам должной защиты от аномального воздействия. Используйте комбинезоны класса «ССП».</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_ecolog_6">
+					<text>Милитаризованные научно-исследовательские группы напоминают всем неучтённым лицам на территории Аномальной Зоны, что вы можете в любой момент сдаться в один из Мобильных Бункеров Учёных. Огонь вести по вам не будут, обеспечат необходимой медицинской помощью и отправкой в СБУ при первой же возможности.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_ecolog_7">
+					<text>Новоприбывшим на Янтарь военным обращаться ко мне, профессору Сахарову.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_ecolog_8">
+					<text>Профессор Озёрский, срочно выйдите на связь. Дело касается ваших недавних разработок.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_ecolog_9">
+					<text>Северный МБУ, сколько нам ждать от вас аномальные образцы для исследований? Прекратите заниматься самодеятельностью, живо!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_ecolog_10">
+					<text>Уважаемые солдаты и неучтённые лица! Милитаризованные научно-исследовательские группы и Научно-Исследовательский Институт Чернобыльской Аномальной Зоны хотят вам напомнить, что водка никак не способствует выведению радионуклидов. Используйте антирадиационные препараты.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_ecolog_11">
+					<text>Это профессор Герман. Вот уже двое суток ждём результатов от по исследованию переменного пси-излучения от профессора Сахарова, но он отказывается выйти с нами на связь. Как это понимать?</text>
+				</string>
+			</component>
 
-			<string id="st_dyn_news_spam_faction_freedom_1">
-				<text>Внимание, совсем недавно на наших бойцов напали долговцы, переодетые в наёмников. Будьте осторожны, попахивает провокацией.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_2">
-				<text>Всем добровольцам, вступившим в «Свободу», будут бесплатно выданы новейшие комплекты для выживания в Зоне, новейшее современное западное оружие плюс 2500 рублей подъемных!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_3">
-				<text>Всем нашим - срочно зайти в приватный канал, обновляем защиту. Потом не жалуйтесь, что о вашем рейде «Долг» узнал.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_4">
-				<text>Вступайте в «Свободу»! Остановим захват Зоны!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_5">
-				<text>Да здравствует «Свобода»! Сделаем мир при помощи Зоны лучше!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_6">
-				<text>Данные по передвижению наёмников сразу скидываем мне в приват, это действительно важно.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_7">
-				<text>Если находитесь на задании, всю информацию - в приватный канал. Этот не только наши читают, не палитесь.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_8">
-				<text>Качаем бесплатно новую прошивку, чтобы вылетов поменьше было.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_9">
-				<text>Леший, ты где шаришься? Разговор есть, зайди в здание.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_10">
-				<text>Локи, выйди со мной на одну частоту, разговор важный есть. Миклуха.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_11">
-				<text>Макс, это Скряга. Припасы прибудут через неделю, вы пока с ребятами держись там, всего хорошего, настроения, здоровья.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_12">
-				<text>Миклуха, чё уже третий день молчишь? Что будем с «Монолитом» делать?</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_13">
-				<text>Мишка, привет. Я тебе вчера ещё сказать хотел, да все забываю. Короче, возле западной части базы, на хуторке заброшенном, видел я в бинокль группу каких-то подозрительных хмырей. Так что передай Миклухе, да не забудь, а то вечно накуришься как паровоз и забьешь на все.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_14">
-				<text>Мэн, хотел бы ты дружной компании, душевных разговоров и руку помощи в походах? Вступай к нам, стань свободным!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_15">
-				<text>На склад поступили новенькие G36. Желающих много, торопитесь...</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_16">
-				<text>Ну что, на обед пойдём или как?</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_17">
-				<text>Нужны опытные сталкеры для рейда за артефактами. С нас причитается.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_18">
-				<text>Одиночки! Говорит «Свобода»! Если хотите жить в нормальных условиях в Зоне и без армейской обязаловки, как у «Долга» - двигайте к нам! Всегда рады новым лицам.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_19">
-				<text>Одиночки! Говорит «Свобода»! Зачем вам сознательно ограничивать себя живя в казарме, выполняя непосильные приказы и маршируя под команды штабных крыс? Присоединяйтесь к нам и вы сможете проникнуть вместе с нашими отрядами в самые заветные места Зоны, ощутив на себе настоящее дыхание «Свободы»!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_20">
-				<text>Приветствую тебя, сталкер! Это я - твоя «Свобода»! Приходи ко мне в любое время. Мой адрес - Армейские склады, по дороге прямо, на развилке - вправо.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_21">
-				<text>Сегодня Росток, завтра Верховная Рада, а послезавтра весь мир!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_22">
-				<text>Сегодня, уничтожили крупную группу зомбированных на Янтаре, в цехах, возможно, там ещё есть.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_23">
-				<text>Скряга, ты куда дел новые подствольники, почему я их на складе не наблюдаю?</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_24">
-				<text>Сталкер, неужели ты не любишь Зону? Ты забыл, что она дала тебе заработок и цель в жизни? Ты хочешь работать офисным клерком за копейки после того, как всё это кончится? Вступи в «Свободу», не дай им отобрать у тебя то последнее, чем ты дорожишь, не дай им забрать твою жизнь.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_25">
-				<text>Так, в стаканы не харкать, я вам рыла поразбиваю, если ещё раз что-нибудь подобное услышу.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_26">
-				<text>Хей-хей-хей, раста! Самые сочные и классные косячки только у нас! Вступай в свободу и класть на порядки!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_27">
-				<text>Химеру чёрную видел сегодня какую-то ночью, совсем стрёмно становится. Это от чего вообще, кто пояснит?</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_28">
-				<text>Хорошо вчера прощупали бандосов, будут знать, как лезть поперек батьки.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_29">
-				<text>Что-то мертвые военсталкеры на Янтарном озере стали попадаться часто.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_30">
-				<text>Что-то у меня настроение сегодня творческое! Ай-да со мной экспрессию посредством развешивания долгарей на ветках выражать!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_31">
-				<text>Чуваки! Прикинь, трава, шо возле Трамплина - торкает нехило! Ха-ха-ха!!!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_freedom_32">
-				<text>Это Скряга. Мне привезли небольшую партию американских эротических журналов...\n \n%c[255,160,160,160]Анонимно\n%c[default]Да кому они нужны здесь, даун? Все уже давно с большой земли свои пронпаки завозят на харде.</text>
-			</string>
+			<component name="Freedom">
+				<string id="st_dyn_news_spam_faction_freedom_1">
+					<text>Внимание, совсем недавно на наших бойцов напали долговцы, переодетые в наёмников. Будьте осторожны, попахивает провокацией.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_2">
+					<text>Всем добровольцам, вступившим в «Свободу», будут бесплатно выданы новейшие комплекты для выживания в Зоне, новейшее современное западное оружие плюс 2500 рублей подъемных!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_3">
+					<text>Всем нашим - срочно зайти в приватный канал, обновляем защиту. Потом не жалуйтесь, что о вашем рейде «Долг» узнал.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_4">
+					<text>Вступайте в «Свободу»! Остановим захват Зоны!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_5">
+					<text>Да здравствует «Свобода»! Сделаем мир при помощи Зоны лучше!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_6">
+					<text>Данные по передвижению наёмников сразу скидываем мне в приват, это действительно важно.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_7">
+					<text>Если находитесь на задании, всю информацию - в приватный канал. Этот не только наши читают, не палитесь.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_8">
+					<text>Качаем бесплатно новую прошивку, чтобы вылетов поменьше было.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_9">
+					<text>Леший, ты где шаришься? Разговор есть, зайди в здание.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_10">
+					<text>Локи, выйди со мной на одну частоту, разговор важный есть. Миклуха.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_11">
+					<text>Макс, это Скряга. Припасы прибудут через неделю, вы пока с ребятами держись там, всего хорошего, настроения, здоровья.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_12">
+					<text>Миклуха, чё уже третий день молчишь? Что будем с «Монолитом» делать?</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_13">
+					<text>Мишка, привет. Я тебе вчера ещё сказать хотел, да все забываю. Короче, возле западной части базы, на хуторке заброшенном, видел я в бинокль группу каких-то подозрительных хмырей. Так что передай Миклухе, да не забудь, а то вечно накуришься как паровоз и забьешь на все.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_14">
+					<text>Мэн, хотел бы ты дружной компании, душевных разговоров и руку помощи в походах? Вступай к нам, стань свободным!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_15">
+					<text>На склад поступили новенькие G36. Желающих много, торопитесь...</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_16">
+					<text>Ну что, на обед пойдём или как?</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_17">
+					<text>Нужны опытные сталкеры для рейда за артефактами. С нас причитается.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_18">
+					<text>Одиночки! Говорит «Свобода»! Если хотите жить в нормальных условиях в Зоне и без армейской обязаловки, как у «Долга» - двигайте к нам! Всегда рады новым лицам.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_19">
+					<text>Одиночки! Говорит «Свобода»! Зачем вам сознательно ограничивать себя живя в казарме, выполняя непосильные приказы и маршируя под команды штабных крыс? Присоединяйтесь к нам и вы сможете проникнуть вместе с нашими отрядами в самые заветные места Зоны, ощутив на себе настоящее дыхание «Свободы»!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_20">
+					<text>Приветствую тебя, сталкер! Это я - твоя «Свобода»! Приходи ко мне в любое время. Мой адрес - Армейские склады, по дороге прямо, на развилке - вправо.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_21">
+					<text>Сегодня Росток, завтра Верховная Рада, а послезавтра весь мир!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_22">
+					<text>Сегодня, уничтожили крупную группу зомбированных на Янтаре, в цехах, возможно, там ещё есть.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_23">
+					<text>Скряга, ты куда дел новые подствольники, почему я их на складе не наблюдаю?</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_24">
+					<text>Сталкер, неужели ты не любишь Зону? Ты забыл, что она дала тебе заработок и цель в жизни? Ты хочешь работать офисным клерком за копейки после того, как всё это кончится? Вступи в «Свободу», не дай им отобрать у тебя то последнее, чем ты дорожишь, не дай им забрать твою жизнь.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_25">
+					<text>Так, в стаканы не харкать, я вам рыла поразбиваю, если ещё раз что-нибудь подобное услышу.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_26">
+					<text>Хей-хей-хей, раста! Самые сочные и классные косячки только у нас! Вступай в свободу и класть на порядки!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_27">
+					<text>Химеру чёрную видел сегодня какую-то ночью, совсем стрёмно становится. Это от чего вообще, кто пояснит?</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_28">
+					<text>Хорошо вчера прощупали бандосов, будут знать, как лезть поперек батьки.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_29">
+					<text>Что-то мертвые военсталкеры на Янтарном озере стали попадаться часто.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_30">
+					<text>Что-то у меня настроение сегодня творческое! Ай-да со мной экспрессию посредством развешивания долгарей на ветках выражать!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_31">
+					<text>Чуваки! Прикинь, трава, шо возле Трамплина - торкает нехило! Ха-ха-ха!!!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_freedom_32">
+					<text>Это Скряга. Мне привезли небольшую партию американских эротических журналов...\n \n%c[255,160,160,160]Анонимно\n%c[default]Да кому они нужны здесь, даун? Все уже давно с большой земли свои пронпаки завозят на харде.</text>
+				</string>
+			</component>
 
-			<string id="st_dyn_news_spam_faction_killer_1">
-				<text>Эфир не забиваем, ваши подвиги по убийству левых мужиков никого не интересуют. Вот если б вы про наши узнали, вот тогда да...</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_2">
-				<text>Синдикат набирает бойцов. Чтобы вступить к нам, найдите посредника - это ваше первое задание...</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_3">
-				<text>Информацию по рейдам на мутантов и другим операциям можно купить у посредника, искать возле кинотеатра Прометей.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_4">
-				<text>Нужны опытные сталкеры для рейда на одну группировку.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_5">
-				<text>Долг, вы что вообще ошалели? Ещё один подобный заказ, и все материалы попадут *Свободе*.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_6">
-				<text>Нужны опытные сталкеры для рейда в Припять. Потенциальный противник группировка Монолит.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_7">
-				<text>Требуется опытный механик, желательно со знанием устройства ПНВ, работка не пыльная, оплата достойная.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_8">
-				<text>Народ, наш разводящий прочухал, кто Волкодава завалил и Круглова с Ростка вывел. Этот кент сейчас где то в Припяти. Кличка Стрелок или же Меченый- но это не имеет значения. С ценой за его голову договоримся.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_9">
-				<text>Не, на такое мы не подпишемся. Хватило нам той байды со свободовцами в Темной долине, до сих пор каждый человек на счету. Может, бандосы или грешники и согласятся, да флаг им в одно место....</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_10">
-				<text>Вступайте в *Наёмники*, вас ждут отличная экипировка и достойная оплата за сделанную работу!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_11">
-				<text>%c[255,160,160,160]Ясон:\n%c[default]Мольфар, какая-то тварь кладет наших людей у завода, надо зачистить местность</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_12">
-				<text>Срочно нужен отличный снайпер, оплата 15 процентов от стоимости контракта...</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_13">
-				<text>%c[255,160,160,160]Отряд -Аргонавт-1-:\n%c[default]Спалили *Свободу*, идут по станции *Янов*, видимо на базу *Долга*.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_14">
-				<text>%c[255,160,160,160]Хог:\n%c[default]Кажись не врал тот студент с ботаником. Группировка Грех на самом деле сейчас активизировалась, постоянно ищет контакты. Со своих старых баз в Рыжем лесу они снялись. Сейчас проверим, как там в Лиманске дела обстоят...</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_15">
-				<text>Внимание, в настоящий момент в синдикате раскол, группа во главе с Кириллом Ятаганом, больше не относится к нам, поэтому все претензии лично ему...</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_16">
-				<text>На Андрея Лунева, по кличке Старый, объявлена охота.\nЛюбая информация о его местоположении - оплачивается.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_17">
-				<text>%c[255,160,160,160]Макс Крюгер:\n%c[default]За информацию о Старом плачу большие деньги, или даю другую нужную Вам информацию.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_killer_18">
-				<text>Требуется опытный сталкер, желательно ветеран-следопыт, подходите на точку сбора, координаты - в КПК...</text>
-			</string>
+			<component name="Mercenary">
+				<string id="st_dyn_news_spam_faction_killer_1">
+					<text>Эфир не забиваем, ваши подвиги по убийству левых мужиков никого не интересуют. Вот если б вы про наши узнали, вот тогда да...</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_2">
+					<text>Синдикат набирает бойцов. Чтобы вступить к нам, найдите посредника - это ваше первое задание...</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_3">
+					<text>Информацию по рейдам на мутантов и другим операциям можно купить у посредника, искать возле кинотеатра Прометей.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_4">
+					<text>Нужны опытные сталкеры для рейда на одну группировку.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_5">
+					<text>Долг, вы что вообще ошалели? Ещё один подобный заказ, и все материалы попадут *Свободе*.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_6">
+					<text>Нужны опытные сталкеры для рейда в Припять. Потенциальный противник группировка Монолит.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_7">
+					<text>Требуется опытный механик, желательно со знанием устройства ПНВ, работка не пыльная, оплата достойная.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_8">
+					<text>Народ, наш разводящий прочухал, кто Волкодава завалил и Круглова с Ростка вывел. Этот кент сейчас где то в Припяти. Кличка Стрелок или же Меченый- но это не имеет значения. С ценой за его голову договоримся.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_9">
+					<text>Не, на такое мы не подпишемся. Хватило нам той байды со свободовцами в Темной долине, до сих пор каждый человек на счету. Может, бандосы или грешники и согласятся, да флаг им в одно место....</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_10">
+					<text>Вступайте в *Наёмники*, вас ждут отличная экипировка и достойная оплата за сделанную работу!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_11">
+					<text>%c[255,160,160,160]Ясон:\n%c[default]Мольфар, какая-то тварь кладет наших людей у завода, надо зачистить местность</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_12">
+					<text>Срочно нужен отличный снайпер, оплата 15 процентов от стоимости контракта...</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_13">
+					<text>%c[255,160,160,160]Отряд -Аргонавт-1-:\n%c[default]Спалили *Свободу*, идут по станции *Янов*, видимо на базу *Долга*.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_14">
+					<text>%c[255,160,160,160]Хог:\n%c[default]Кажись не врал тот студент с ботаником. Группировка Грех на самом деле сейчас активизировалась, постоянно ищет контакты. Со своих старых баз в Рыжем лесу они снялись. Сейчас проверим, как там в Лиманске дела обстоят...</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_15">
+					<text>Внимание, в настоящий момент в синдикате раскол, группа во главе с Кириллом Ятаганом, больше не относится к нам, поэтому все претензии лично ему...</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_16">
+					<text>На Андрея Лунева, по кличке Старый, объявлена охота.\nЛюбая информация о его местоположении - оплачивается.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_17">
+					<text>%c[255,160,160,160]Макс Крюгер:\n%c[default]За информацию о Старом плачу большие деньги, или даю другую нужную Вам информацию.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_killer_18">
+					<text>Требуется опытный сталкер, желательно ветеран-следопыт, подходите на точку сбора, координаты - в КПК...</text>
+				</string>
+			</component>
 
-			<string id="st_dyn_news_spam_faction_army_1">
-				<text>База, это отряд Дельта, мы заняли вход в лабораторию в Тёмной долине, какие будут приказания?\n \n%c[255,160,160,160]Анонимно\n%c[default]Вашу же мать! Переходите на закрытый канал!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_2">
-				<text>База, это расчет Сова, с шифровкой проблемы, поэтому мы скидываем сюда сообщение, высадиться в Лиманске, в районе стройплощадки считаю невозможным, большие скопления сил врага, 8 РПГ, 5 снайперов и 4 с неизвестным оружием, наши координаты сообщить не можем, враги тоже общий канал читают, какие будут указания?\n \n%c[255,160,160,160]Анонимно\n%c[default]Сова вас понял, теперь слушайте меня, немедленно возвращайся в Рыжий Лес, перегруппируйтесь с Коршуном а там решим.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_3">
-				<text>Внимание! При попытке пересечения периметра охраняющие его солдаты имеют право открывать по вам огонь без предупреждения. Не испытывайте судьбу и не нарушайте закон.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_4">
-				<text>Всем военным сталкерам, действующим в районе Тёмной лощины и Кордона, приготовиться и перейти на зашифрованный канал! Это приказ!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_5">
-				<text>Всем военным сталкерам срочно выйти на связь! Общий сбор на канале.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_6">
-				<text>Глушатся радиочастоты в квадрате a4_4, просьба рапортовать из других мест, поблизости аномальная зона.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_7">
-				<text>Граждане, Зона смертельно опасна! Мы защищаем не Зону от вас, а вас от Зоны! Не подвергайте опасности свои жизни, не пытайтесь проникнуть на охраняемую территорию.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_8">
-				<text>Запрашиваю вертолёт в квадрат a1_6</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_9">
-				<text>Запрашиваю миномётный обстрел квадрата e2_12.\n \n%c[255,160,160,160]Анонимно\n%c[default]А ну отставить!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_10">
-				<text>Контрактники и военные сталкеры - если кто-нибудь в одном из рейдов обнаружит обломки упавшего вертолёта, просьба захватить бортовой самописец и отправить его майору Кузнецову.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_11">
-				<text>Кузнецов, к вам завтра придёт проверка в составе двух наблюдателей СБУ. Подготовьте им приём.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_12">
-				<text>Кузнецов, срочно выйти на связь. Вас ждут в кабинете №3.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_13">
-				<text>Пустельга, я Пион - можете ответить? Радиосигнал отсутствует.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_14">
-				<text>Ребята, в лощину не суёмся, там у нас вчера коробочку сожгли - какие-то оголтелые бандиты обосновались.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_15">
-				<text>Сапёрам внимание, необходимо заложить ещё несколько мин в квадрате e3_16</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_16">
-				<text>Служба Безопасности Украины призывает к сотрудничеству всех добропорядочных и сознательных граждан. Докладывайте нам о всех известных вам случаях сталкерства. Только с вашей помощью мы сможем победить это уродливое явление!</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_army_17">
-				<text>Требую укрепить северный проход, согласно приказу #231. Когда броню пришлют?</text>
-			</string>
+			<component name="Army">
+				<string id="st_dyn_news_spam_faction_army_1">
+					<text>База, это отряд Дельта, мы заняли вход в лабораторию в Тёмной долине, какие будут приказания?\n \n%c[255,160,160,160]Анонимно\n%c[default]Вашу же мать! Переходите на закрытый канал!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_2">
+					<text>База, это расчет Сова, с шифровкой проблемы, поэтому мы скидываем сюда сообщение, высадиться в Лиманске, в районе стройплощадки считаю невозможным, большие скопления сил врага, 8 РПГ, 5 снайперов и 4 с неизвестным оружием, наши координаты сообщить не можем, враги тоже общий канал читают, какие будут указания?\n \n%c[255,160,160,160]Анонимно\n%c[default]Сова вас понял, теперь слушайте меня, немедленно возвращайся в Рыжий Лес, перегруппируйтесь с Коршуном а там решим.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_3">
+					<text>Внимание! При попытке пересечения периметра охраняющие его солдаты имеют право открывать по вам огонь без предупреждения. Не испытывайте судьбу и не нарушайте закон.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_4">
+					<text>Всем военным сталкерам, действующим в районе Тёмной лощины и Кордона, приготовиться и перейти на зашифрованный канал! Это приказ!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_5">
+					<text>Всем военным сталкерам срочно выйти на связь! Общий сбор на канале.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_6">
+					<text>Глушатся радиочастоты в квадрате a4_4, просьба рапортовать из других мест, поблизости аномальная зона.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_7">
+					<text>Граждане, Зона смертельно опасна! Мы защищаем не Зону от вас, а вас от Зоны! Не подвергайте опасности свои жизни, не пытайтесь проникнуть на охраняемую территорию.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_8">
+					<text>Запрашиваю вертолёт в квадрат a1_6</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_9">
+					<text>Запрашиваю миномётный обстрел квадрата e2_12.\n \n%c[255,160,160,160]Анонимно\n%c[default]А ну отставить!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_10">
+					<text>Контрактники и военные сталкеры - если кто-нибудь в одном из рейдов обнаружит обломки упавшего вертолёта, просьба захватить бортовой самописец и отправить его майору Кузнецову.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_11">
+					<text>Кузнецов, к вам завтра придёт проверка в составе двух наблюдателей СБУ. Подготовьте им приём.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_12">
+					<text>Кузнецов, срочно выйти на связь. Вас ждут в кабинете №3.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_13">
+					<text>Пустельга, я Пион - можете ответить? Радиосигнал отсутствует.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_14">
+					<text>Ребята, в лощину не суёмся, там у нас вчера коробочку сожгли - какие-то оголтелые бандиты обосновались.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_15">
+					<text>Сапёрам внимание, необходимо заложить ещё несколько мин в квадрате e3_16</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_16">
+					<text>Служба Безопасности Украины призывает к сотрудничеству всех добропорядочных и сознательных граждан. Докладывайте нам о всех известных вам случаях сталкерства. Только с вашей помощью мы сможем победить это уродливое явление!</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_army_17">
+					<text>Требую укрепить северный проход, согласно приказу #231. Когда броню пришлют?</text>
+				</string>
+			</component>
 
-			<string id="st_dyn_news_spam_faction_monolith_1">
-				<text>Бойцы, не лезьте в зоны с переменным пси-излучением, вам же просто мозги выжгет нахрен. Ну что вы как маленькие?</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_2">
-				<text>Был потерян отряд в районе кладбища затонувших кораблей, связи с ними нет. Если кто-нибудь видел тех ребят, торопитесь их образумить, пока они в неприятности не вляпались.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_3">
-				<text>Видел под Припятью какой-то отряд в нашей форме, ведут себя враждебно и близко не подпускают. Странность в том, что это не обычные дезертиры. Они направляются в центр.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_4">
-				<text>Внимание находящимся на Генераторах крыльям. Установка дестабилизирована, проследуйте в бункер за инструкциями и немедленно приступайте к устранению проблемы.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_5">
-				<text>Засекли огромную чёрную химеру на периферии станции, бойцы в квадрате ast_1 - будьте начеку.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_6">
-				<text>Заслон-1 беспокоит, квадрат aes2_m1 - кажется, замечены гуманоиды, вряд ли зомбированные, сохраняют темп хода.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_7">
-				<text>Из Саркофага исходил какой-то сигнал. Проверить?\n \nНи в коем случае, там фон огромный и тварей много, ну я же говорил вам.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_8">
-				<text>Крылья, ответьте. Вы уже на месте?</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_9">
-				<text>Нет никакого Исполнителя желаний, но есть группа людей, опередивших своё время и в силах этих людей очень многое. Не губи мечту. С твоей поддержкой мы построим новый мир, новую реальность.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_10">
-				<text>Новобранцам срочно прибыть к Наставнику.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_11">
-				<text>Ожидаем партию зомбированных на подступах Припяти, примите меры.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_12">
-				<text>Потеряли группу агентов на Агропроме, достаньте их живыми или мёртвыми.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_13">
-				<text>Сколько там инквизиторов, говорите? И пара десятков не наберётся? Вот дерьмо. Наставник, скорее обучай своих рекрутов.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_14">
-				<text>Слышно что насчёт Радара? Всё по прежнему глухо?</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_15">
-				<text>Снова командир заслона беспокоит. На станции жрать нечего, где достать провиант? У меня бойцы скоро на человечину перейдут.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_16">
-				<text>Сталкер, посмотри что научная деятельность сотворила с этим миром. Она бросила вызов его устоям и именно ТЫ нужен нам, чтобы сделать этот мир лучше. Исходя из данной тебе действительности ТЫ должен понимать, что с помощью братства всё становится возможным. Рай на земле? Да как два пальца, только помоги нам сохранить это чудо. К сведению будущих соратников: приходите с оружием за спиной к любому месту дислокации наших бойцов.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_17">
-				<text>Так вашу мать, куда группа инквизиторов делась? Нам тут квадрат p_5 нечем прикрыть.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_18">
-				<text>Товарищи учёные, бросайте свою неблагодарную работу. Все плоды вашей деятельности рано или поздно осядут у олигархического меньшинства, а вы сами будете подвергнуты забвению. Братство нуждается в высококвалифицированных специалистах и пусть нам нечем вам отплатить за ваши труды, но зато вы сами выберете будущее для себя и ваших близких.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_19">
-				<text>Часовой прострелил себе башку в комнате управления, уберите труп.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_20">
-				<text>Это группа на станции, у нас кончается снаряжение. Требуем помощи.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_21">
-				<text>Это инквизиторы. Зачищаем подступы к Припяти. Будьте аккуратнее, работаем с ПК.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_22">
-				<text>Это командир заслона беспокоит. У нас уже пятеро дезертировало, если встретите их в районе Припяти - отстреляйте.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_23">
-				<text>Снарягу припрут не скоро, но ребята обещали с Агропрома кое-что от военных притащить.</text>
-			</string>
-			<string id="st_dyn_news_spam_faction_monolith_24">
-				<text>Это снабженец с КБО беспокоит. Припасы ожидать в ближайшем будущем? Даже 5.45 не хватает.</text>
-			</string>
+			<component name="Monolith">
+				<string id="st_dyn_news_spam_faction_monolith_1">
+					<text>Бойцы, не лезьте в зоны с переменным пси-излучением, вам же просто мозги выжгет нахрен. Ну что вы как маленькие?</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_2">
+					<text>Был потерян отряд в районе кладбища затонувших кораблей, связи с ними нет. Если кто-нибудь видел тех ребят, торопитесь их образумить, пока они в неприятности не вляпались.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_3">
+					<text>Видел под Припятью какой-то отряд в нашей форме, ведут себя враждебно и близко не подпускают. Странность в том, что это не обычные дезертиры. Они направляются в центр.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_4">
+					<text>Внимание находящимся на Генераторах крыльям. Установка дестабилизирована, проследуйте в бункер за инструкциями и немедленно приступайте к устранению проблемы.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_5">
+					<text>Засекли огромную чёрную химеру на периферии станции, бойцы в квадрате ast_1 - будьте начеку.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_6">
+					<text>Заслон-1 беспокоит, квадрат aes2_m1 - кажется, замечены гуманоиды, вряд ли зомбированные, сохраняют темп хода.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_7">
+					<text>Из Саркофага исходил какой-то сигнал. Проверить?\n \nНи в коем случае, там фон огромный и тварей много, ну я же говорил вам.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_8">
+					<text>Крылья, ответьте. Вы уже на месте?</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_9">
+					<text>Нет никакого Исполнителя желаний, но есть группа людей, опередивших своё время и в силах этих людей очень многое. Не губи мечту. С твоей поддержкой мы построим новый мир, новую реальность.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_10">
+					<text>Новобранцам срочно прибыть к Наставнику.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_11">
+					<text>Ожидаем партию зомбированных на подступах Припяти, примите меры.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_12">
+					<text>Потеряли группу агентов на Агропроме, достаньте их живыми или мёртвыми.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_13">
+					<text>Сколько там инквизиторов, говорите? И пара десятков не наберётся? Вот дерьмо. Наставник, скорее обучай своих рекрутов.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_14">
+					<text>Слышно что насчёт Радара? Всё по прежнему глухо?</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_15">
+					<text>Снова командир заслона беспокоит. На станции жрать нечего, где достать провиант? У меня бойцы скоро на человечину перейдут.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_16">
+					<text>Сталкер, посмотри что научная деятельность сотворила с этим миром. Она бросила вызов его устоям и именно ТЫ нужен нам, чтобы сделать этот мир лучше. Исходя из данной тебе действительности ТЫ должен понимать, что с помощью братства всё становится возможным. Рай на земле? Да как два пальца, только помоги нам сохранить это чудо. К сведению будущих соратников: приходите с оружием за спиной к любому месту дислокации наших бойцов.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_17">
+					<text>Так вашу мать, куда группа инквизиторов делась? Нам тут квадрат p_5 нечем прикрыть.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_18">
+					<text>Товарищи учёные, бросайте свою неблагодарную работу. Все плоды вашей деятельности рано или поздно осядут у олигархического меньшинства, а вы сами будете подвергнуты забвению. Братство нуждается в высококвалифицированных специалистах и пусть нам нечем вам отплатить за ваши труды, но зато вы сами выберете будущее для себя и ваших близких.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_19">
+					<text>Часовой прострелил себе башку в комнате управления, уберите труп.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_20">
+					<text>Это группа на станции, у нас кончается снаряжение. Требуем помощи.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_21">
+					<text>Это инквизиторы. Зачищаем подступы к Припяти. Будьте аккуратнее, работаем с ПК.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_22">
+					<text>Это командир заслона беспокоит. У нас уже пятеро дезертировало, если встретите их в районе Припяти - отстреляйте.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_23">
+					<text>Снарягу припрут не скоро, но ребята обещали с Агропрома кое-что от военных притащить.</text>
+				</string>
+				<string id="st_dyn_news_spam_faction_monolith_24">
+					<text>Это снабженец с КБО беспокоит. Припасы ожидать в ближайшем будущем? Даже 5.45 не хватает.</text>
+				</string>
+			</component>
 		</component>
 
 		<!-- Zone Activity -->
