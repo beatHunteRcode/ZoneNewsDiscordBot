@@ -10,7 +10,7 @@ public class Main extends ListenerAdapter {
     private char prefix = '-';
 
     public static void main(String[] args) throws LoginException {
-//        String botToken = "NjM2OTg4NzAyMjI0MDIzNTg0.XbHotw.K9T2OeWAGeuyU749xtkxRruqPGY";
+//        String botToken = "NjM2OTg4NzAyMjI0MDIzNTg0.XbHn9Q.WA6RI3unJIJaqQb7cJlm7EQrAO0";
 //        JDABuilder builder = new JDABuilder(AccountType.BOT);
 //        builder.setToken(botToken);
 //        builder.addEventListeners(new Main());
@@ -18,7 +18,7 @@ public class Main extends ListenerAdapter {
 
 
         NewsGenerator newsGenerator = new NewsGenerator();
-        newsGenerator.testMethod();
+        newsGenerator.generateNewsJSON();
 
     }
 
@@ -29,7 +29,7 @@ public class Main extends ListenerAdapter {
         if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "новость")) { //новость
             int rndNumb = getRandomIntegerBetweenRange(1, 5);
             NewsGenerator newsGenerator = new NewsGenerator(rndNumb);
-            String news = newsGenerator.generateNews();
+            String news = newsGenerator.generateNewsJSON();
             event.getChannel().sendMessage(news).queue();
         }
         if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "помощь")) { //новость
