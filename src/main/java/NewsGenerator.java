@@ -105,8 +105,6 @@ public class NewsGenerator {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode node = mapper.readValue(new File("./input/dynamic_news.json"), JsonNode.class);
 
-
-
             newsBuilder.append(node.findValue("mutants").findValues("text").get(getRndIntInRange(0, 307)).asText()).
                         append(" ").
                         append(node.findValue("direction").findValues("text").get(getRndIntInRange(0, 9)).asText()).
@@ -114,7 +112,7 @@ public class NewsGenerator {
                         append(node.findValue("daleko").findValues("text").get(getRndIntInRange(0, 153)).asText()).
                         append(" ");
 
-            System.out.println(newsBuilder);
+//            System.out.println(newsBuilder);
 
         } catch (IOException e) {
             e.printStackTrace();

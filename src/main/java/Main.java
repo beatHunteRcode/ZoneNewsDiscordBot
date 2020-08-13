@@ -10,15 +10,15 @@ public class Main extends ListenerAdapter {
     private char prefix = '-';
 
     public static void main(String[] args) throws LoginException {
-//        String botToken = "NjM2OTg4NzAyMjI0MDIzNTg0.XbHn9Q.WA6RI3unJIJaqQb7cJlm7EQrAO0";
-//        JDABuilder builder = new JDABuilder(AccountType.BOT);
-//        builder.setToken(botToken);
-//        builder.addEventListeners(new Main());
-//        builder.build();
+        String botToken = "NjM2OTg4NzAyMjI0MDIzNTg0.XbHn9Q.WA6RI3unJIJaqQb7cJlm7EQrAO0";
+        JDABuilder builder = new JDABuilder(AccountType.BOT);
+        builder.setToken(botToken);
+        builder.addEventListeners(new Main());
+        builder.build();
 
 
-        NewsGenerator newsGenerator = new NewsGenerator();
-        newsGenerator.generateNewsJSON();
+//        NewsGenerator newsGenerator = new NewsGenerator();
+//        newsGenerator.generateNewsJSON();
 
     }
 
