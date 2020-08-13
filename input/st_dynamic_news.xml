@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
-	<!--- Utilities -->
+				Utilities
 	<component name="- Utilities">
 		<!-- Mutants -->
 		<component name="Mutants">
@@ -2521,7 +2521,7 @@
 </component>
 
 
-	<!--- Reports and Responses -->
+			Reports and Responses
 	<component name="- Reports and Responses">
 		<!-- Response - death by stalker -->
 		<component name="Response - death by stalker">
@@ -3571,7 +3571,7 @@
 	</component>
 
 
-	<!--- Task news -->
+				Task news
 	<component name="- Task news">
 		<!-- Bounty gossip -->
 		<component name="Bounty gossip">
@@ -3607,7 +3607,7 @@
 	</component>
 
 
-	<!--- Random news -->
+				Random news
 	<component name="- Random news">
 		<!-- Post-surge -->
 		<component name="Post-surge">
@@ -5667,7 +5667,7 @@
 	</component>
 
 
-	<!--- Special news -->
+				Special news
 	<component name="- Special news">
 		<!-- Time news -->
 		<component name="Time news">
@@ -6284,7 +6284,7 @@
 	</component>
 
 
-	<!--- Companions news -->
+				Companions news
 	<component name="- Companions news">
 		<!-- Companions - Life -->
 		<component name="Companions - Life">
@@ -7423,7 +7423,7 @@
 	</component>
 
 
-	<!--- Dead Air -->
+				Dead Air
 	<component name="- Dead Air">
 		<!-- Medicine gossip -->
 		<component name="Medicine gossip">
@@ -7486,7 +7486,7 @@
 	</component>
 
 
-	<!--- Extra -->
+				Extra
 	<component name="- Extra">
 		<!-- Special -->
 		<component name="Special">
