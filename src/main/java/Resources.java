@@ -93,6 +93,14 @@ public class Resources {
             "Одиночки", "Зомбированные"
     );
 
+    private static List<String> artefactsList = Arrays.asList(
+            "Медуза", "Каменный цветок", "Ночная звезда", "Кровь камня", "Ломоть мяса", "Душа", "Выверт", "Грави",
+            "Золотая рыбка", "Огненный шар", "Кристалл", "Мамины бусы", "Бенгальский огонь", "Вспышка", "Лунный свет",
+            "Колобок", "Батарейка", "Пустышка", "Глаз", "Пламя", "Снежинка", "Светляк", "Пузырь", "Компас", "Пленка",
+            "Капли", "Слизь", "Слизняк", "Слюда", "Колючка", "Кристальная колючка", "Морской еж", "Пружина",
+            "Сердце Оазиса", "Измененный штурвал", "Измененный изолятор"
+    );
+
     public static List<String> getScientistNamesList() { return scientistNamesList; }
 
     public static List<String> getStalkerSurnamesList() { return stalkerSurnamesList; }
@@ -100,6 +108,8 @@ public class Resources {
     public static List<String> getStalkerNamesList() { return stalkerNamesList; }
 
     public static List<String> getGroupsList() { return groupsList; }
+
+    public static List<String> getArtefactsList() { return artefactsList; }
 
     public static List<String> getMilitarySurnames() {
         return militarySurnames;
