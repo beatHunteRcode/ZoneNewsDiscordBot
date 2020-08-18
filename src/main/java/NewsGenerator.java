@@ -43,42 +43,36 @@ public class NewsGenerator {
             //  1 - о помощи,
             //  2 - специальная новость,
             //  3 - о выбросе
-            int newsNumb = getRndIntInRange(1, 4);
+            //  4 - новости фракций
+            //  5 - новости о нахождении артефактов
+            int newsNumb = getRndIntInRange(1, 5);
 
             if (group.equals("Зомбированные")) newsNumb = 2;
 
             switch (newsNumb) {
                 case 1:
-                    System.out.println("HELP");
+//                    System.out.println("HELP_NEWS");
                     newsBuilder.append(genHelpNews(node));
                     break;
                 case 2:
-                    System.out.println("SPECIAL");
+//                    System.out.println("SPECIAL_NEWS");
                     newsBuilder.append(genSpecialNews(node));
                     break;
                 case 3:
-                    System.out.println("SURGE");
+//                    System.out.println("SURGE_NEWS");
                     newsBuilder.append(genSurgeNews(node));
                     break;
                 case 4:
-                    System.out.println("FACTION_NEWS");
+//                    System.out.println("FACTION_NEWS");
                     newsBuilder.append(genFactionNews(node));
+                    break;
+                case 5:
+//                    System.out.println("ARTEFACT_NEWS");
+                    newsBuilder.append(genArtefactNews(node));
                     break;
             }
 
-
-
-            strNews = newsBuilder.toString();
-            if (newsBuilder.toString().contains("$who")) {
-                String replacement = node.findValue("who_mutant").findValues("text").get(getRndIntInRange(0, 43)).asText();
-                strNews = newsBuilder.toString().replaceAll("\\$who", replacement);
-            }
-            if (newsBuilder.toString().contains("$surge") && newsBuilder.toString().contains("$when")) {
-                String replacement = node.findValue("surge_type").findValues("text").get(getRndIntInRange(0, 2)).asText();
-                strNews = newsBuilder.toString().replaceAll("\\$surge", replacement);
-                replacement = node.findValue("utilities").findValue("time_phase").findValues("text").get(getRndIntInRange(0, 2)).asText();
-                strNews = strNews.replaceAll("\\$when", replacement);
-            }
+            strNews = replaceTemplates(newsBuilder, node);
 
 //            System.out.println(newsNumb + " " + newsBuilder);
 
@@ -136,7 +130,7 @@ public class NewsGenerator {
                     break;
             }
         }
-        newsBuilder.append(node.findValue("mutants").findValues("text").get(getRndIntInRange(0, 106)).asText()).
+        newsBuilder.append(node.findValue("mutants").findValues("text").get(getRndIntInRange(0, 105)).asText()).
                 append(" ").
                 append(node.findValue("direction").findValues("text").get(getRndIntInRange(0, 9)).asText()).
                 append(" ");
@@ -161,7 +155,7 @@ public class NewsGenerator {
                     append(" ");
         }
         else {
-            newsBuilder.append(node.findValue("special_news").findValues("text").get(getRndIntInRange(0, 176)).asText()).
+            newsBuilder.append(node.findValue("special_news").findValues("text").get(getRndIntInRange(0, 175)).asText()).
                     append(" ");
         }
         return newsBuilder;
@@ -339,6 +333,15 @@ public class NewsGenerator {
         return newsBuilder;
     }
 
+    private StringBuilder genArtefactNews(JsonNode node) {
+        StringBuilder newsBuilder = new StringBuilder();
+
+        newsBuilder.append(node.findValue("found_artefacts").findValues("text")
+                .get(getRndIntInRange(0, 3)).asText()).append(" ");
+
+        return newsBuilder;
+    }
+
     private StringBuilder createName() {
         StringBuilder nameBuilder = new StringBuilder();
 
@@ -364,6 +367,34 @@ public class NewsGenerator {
         nameBuilder.append(":").append("\n");
 
         return nameBuilder;
+    }
+
+    private String replaceTemplates(StringBuilder newsBuilder, JsonNode node) {
+        String strNews = newsBuilder.toString();
+
+        if (newsBuilder.toString().contains("$who")) {
+            String replacement = node.findValue("who_mutant").findValues("text").get(getRndIntInRange(0, 43)).asText();
+            strNews = newsBuilder.toString().replaceAll("\\$who", replacement);
+        }
+
+        if (newsBuilder.toString().contains("$surge") && newsBuilder.toString().contains("$when")) {
+            String replacement = node.findValue("surge_type").findValues("text").get(getRndIntInRange(0, 2)).asText();
+            strNews = newsBuilder.toString().replaceAll("\\$surge", replacement);
+            replacement = node.findValue("utilities").findValue("time_phase").findValues("text").get(getRndIntInRange(0, 2)).asText();
+            strNews = strNews.replaceAll("\\$when", replacement);
+        }
+        else if (newsBuilder.toString().contains("$when")) {
+            String replacement = node.findValue("utilities").findValue("time_phase").findValues("text").get(getRndIntInRange(0, 2)).asText();
+            strNews = newsBuilder.toString().replaceAll("\\$when", replacement);
+        }
+
+        if (newsBuilder.toString().contains("$artefact")) {
+            List<String> artefactsList = Resources.getArtefactsList();
+            String replacement = artefactsList.get(getRndIntInRange(0, artefactsList.size() - 1));
+            strNews = newsBuilder.toString().replaceAll("\\$artefact", replacement);
+        }
+
+        return strNews;
     }
 
     public String generateResponse(int responseType) {
