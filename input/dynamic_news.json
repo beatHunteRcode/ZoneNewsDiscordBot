@@ -3271,7 +3271,7 @@
 					{
 						"reports": [
 							{
-								"Found artefacts": [
+								"found_artefacts": [
 									{
 										"text": "Удачный день! Нашёл артефакт $artefact.",
 										"_id": "st_dyn_news_gossip_arte_1"
