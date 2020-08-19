@@ -219,7 +219,7 @@
 					{
 						"who_mutant": [
 							{
-								"text": "химеру",
+								"text": "химера",
 								"_id": "st_dyn_news_lurker_1"
 							},
 							{
@@ -227,7 +227,7 @@
 								"_id": "st_dyn_news_lurker_6"
 							},
 							{
-								"text": "кровососа",
+								"text": "кровосос",
 								"_id": "st_dyn_news_psysucker_1"
 							},
 							{
@@ -235,7 +235,7 @@
 								"_id": "st_dyn_news_psysucker_6"
 							},
 							{
-								"text": "кабана",
+								"text": "кабан",
 								"_id": "st_dyn_news_boar_1"
 							},
 							{
@@ -243,7 +243,7 @@
 								"_id": "st_dyn_news_boar_6"
 							},
 							{
-								"text": "пса",
+								"text": "пёс",
 								"_id": "st_dyn_news_dog_1"
 							},
 							{
@@ -259,7 +259,7 @@
 								"_id": "st_dyn_news_flesh_6"
 							},
 							{
-								"text": "псевдособаку",
+								"text": "псевдособака",
 								"_id": "st_dyn_news_pseudodog_1"
 							},
 							{
@@ -267,7 +267,7 @@
 								"_id": "st_dyn_news_pseudodog_6"
 							},
 							{
-								"text": "снорка",
+								"text": "снорк",
 								"_id": "st_dyn_news_snork_1"
 							},
 							{
@@ -275,7 +275,7 @@
 								"_id": "st_dyn_news_snork_6"
 							},
 							{
-								"text": "кровососа",
+								"text": "кровосос",
 								"_id": "st_dyn_news_bloodsucker_1"
 							},
 							{
@@ -283,7 +283,7 @@
 								"_id": "st_dyn_news_bloodsucker_6"
 							},
 							{
-								"text": "бюрера",
+								"text": "бюрер",
 								"_id": "st_dyn_news_burer_1"
 							},
 							{
@@ -291,7 +291,7 @@
 								"_id": "st_dyn_news_burer_6"
 							},
 							{
-								"text": "химеру",
+								"text": "химера",
 								"_id": "st_dyn_news_chimera_1"
 							},
 							{
@@ -299,7 +299,7 @@
 								"_id": "st_dyn_news_chimera_6"
 							},
 							{
-								"text": "контролёра",
+								"text": "контролёр",
 								"_id": "st_dyn_news_controller_1"
 							},
 							{
@@ -307,7 +307,7 @@
 								"_id": "st_dyn_news_controller_6"
 							},
 							{
-								"text": "полтергейста",
+								"text": "полтергейст",
 								"_id": "st_dyn_news_poltergeist_1"
 							},
 							{
@@ -315,7 +315,7 @@
 								"_id": "st_dyn_news_poltergeist_6"
 							},
 							{
-								"text": "псевдогиганта",
+								"text": "псевдогигант",
 								"_id": "st_dyn_news_gigant_1"
 							},
 							{
@@ -323,7 +323,7 @@
 								"_id": "st_dyn_news_gigant_6"
 							},
 							{
-								"text": "карлика",
+								"text": "карлик",
 								"_id": "st_dyn_news_karlik_1"
 							},
 							{
@@ -331,7 +331,7 @@
 								"_id": "st_dyn_news_karlik_6"
 							},
 							{
-								"text": "тушкана",
+								"text": "тушкан",
 								"_id": "st_dyn_news_tushkano_1"
 							},
 							{
@@ -339,7 +339,7 @@
 								"_id": "st_dyn_news_tushkano_6"
 							},
 							{
-								"text": "пси-собаку",
+								"text": "пси-собака",
 								"_id": "st_dyn_news_psy_dog_1"
 							},
 							{
@@ -347,11 +347,11 @@
 								"_id": "st_dyn_news_psy_dog_6"
 							},
 							{
-								"text": "фантома",
+								"text": "фантом",
 								"_id": "st_dyn_news_psy_dog_phantom_1"
 							},
 							{
-								"text": "зомбированного",
+								"text": "зомбированный",
 								"_id": "st_dyn_news_zombied_1"
 							},
 							{
@@ -359,7 +359,7 @@
 								"_id": "st_dyn_news_zombied_6"
 							},
 							{
-								"text": "кота",
+								"text": "кот",
 								"_id": "st_dyn_news_cat_1"
 							},
 							{
@@ -367,7 +367,7 @@
 								"_id": "st_dyn_news_cat_6"
 							},
 							{
-								"text": "излома",
+								"text": "излом",
 								"_id": "st_dyn_news_fracture_1"
 							},
 							{
@@ -383,7 +383,7 @@
 								"_id": "st_dyn_news_zombie_6"
 							},
 							{
-								"text": "крысу",
+								"text": "крыса",
 								"_id": "st_dyn_news_rat_1"
 							},
 							{
@@ -396,256 +396,344 @@
 					{
 						"who_human" : [
 							{
-								"text": "сталкер",
-								"_id": "st_dyn_news_comm_actor_1"
+								"who" : [
+									{
+										"single" : [
+											{
+												"text": "сталкер",
+												"_id": "st_dyn_news_comm_actor_1"
+											},
+											{
+												"text": "одиночка",
+												"_id": "st_dyn_news_comm_actor_2"
+											},
+											{
+												"text": "монолитовец",
+												"_id": "st_dyn_news_comm_monolith_1"
+											},
+											{
+												"text": "фанатик",
+												"_id": "st_dyn_news_comm_monolith_2"
+											},
+											{
+												"text": "боец монолита",
+												"_id": "st_dyn_news_comm_monolith_5"
+											},
+											{
+												"text": "бандит",
+												"_id": "st_dyn_news_comm_bandit_1"
+											},
+											{
+												"text": "долговец",
+												"_id": "st_dyn_news_comm_dolg_1"
+											},
+											{
+												"text": "долгарь",
+												"_id": "st_dyn_news_comm_dolg_2"
+											},
+											{
+												"text": "учёный",
+												"_id": "st_dyn_news_comm_ecolog_1"
+											},
+											{
+												"text": "научник",
+												"_id": "st_dyn_news_comm_ecolog_2"
+											},
+											{
+												"text": "эколог",
+												"_id": "st_dyn_news_comm_ecolog_8"
+											},
+											{
+												"text": "чистонебовец",
+												"_id": "st_dyn_news_comm_csky_1"
+											},
+											{
+												"text": "военный",
+												"_id": "st_dyn_news_comm_army_1"
+											},
+											{
+												"text": "солдат",
+												"_id": "st_dyn_news_comm_army_2"
+											},
+											{
+												"text": "армеец",
+												"_id": "st_dyn_news_comm_army_8"
+											},
+											{
+												"text": "наёмник",
+												"_id": "st_dyn_news_comm_killer_1"
+											},
+											{
+												"text": "мерк",
+												"_id": "st_dyn_news_comm_killer_2"
+											},
+											{
+												"text": "зомбированный",
+												"_id": "st_dyn_news_comm_zombied_1"
+											},
+											{
+												"text": "зомби",
+												"_id": "st_dyn_news_comm_zombied_2"
+											},
+											{
+												"text": "свободовец",
+												"_id": "st_dyn_news_comm_freedom_1"
+											}
+										],
+										"_name" : "single"
+									},
+									{
+										"multi" : [
+											{
+												"text": "сталкеры",
+												"_id": "st_dyn_news_comm_actor_9"
+											},
+											{
+												"text": "одиночки",
+												"_id": "st_dyn_news_comm_actor_10"
+											},
+											{
+												"text": "монолитовцы",
+												"_id": "st_dyn_news_comm_monolith_9"
+											},
+											{
+												"text": "фанатики",
+												"_id": "st_dyn_news_comm_monolith_10"
+											},
+											{
+												"text": "бандиты",
+												"_id": "st_dyn_news_comm_bandit_9"
+											},
+											{
+												"text": "блатари",
+												"_id": "st_dyn_news_comm_bandit_10"
+											},
+											{
+												"text": "долговцы",
+												"_id": "st_dyn_news_comm_dolg_9"
+											},
+											{
+												"text": "долгари",
+												"_id": "st_dyn_news_comm_dolg_10"
+											},
+											{
+												"text": "учёные",
+												"_id": "st_dyn_news_comm_ecolog_9"
+											},
+											{
+												"text": "экологи",
+												"_id": "st_dyn_news_comm_ecolog_10"
+											},
+											{
+												"text": "чистые",
+												"_id": "st_dyn_news_comm_csky_9"
+											},
+											{
+												"text": "чистонебовцы",
+												"_id": "st_dyn_news_comm_csky_10"
+											},
+											{
+												"text": "военные",
+												"_id": "st_dyn_news_comm_army_9"
+											},
+											{
+												"text": "армейцы",
+												"_id": "st_dyn_news_comm_army_10"
+											},
+											{
+												"text": "наёмники",
+												"_id": "st_dyn_news_comm_killer_9"
+											},
+											{
+												"text": "зомбированные",
+												"_id": "st_dyn_news_comm_zombied_9"
+											},
+											{
+												"text": "свободовцы",
+												"_id": "st_dyn_news_comm_freedom_9"
+											},
+											{
+												"text": "анарxисты",
+												"_id": "st_dyn_news_comm_freedom_10"
+											}
+										],
+										"_name" : "multi"
+									}
+								],
+								"_name" : "who"
 							},
 							{
-								"text": "одиночка",
-								"_id": "st_dyn_news_comm_actor_2"
-							},
-							{
-								"text": "сталкера",
-								"_id": "st_dyn_news_comm_actor_3"
-							},
-							{
-								"text": "одиночку",
-								"_id": "st_dyn_news_comm_actor_4"
-							},
-							{
-								"text": "сталкер",
-								"_id": "st_dyn_news_comm_actor_5"
-							},
-							{
-								"text": "сталкеры",
-								"_id": "st_dyn_news_comm_actor_9"
-							},
-							{
-								"text": "одиночки",
-								"_id": "st_dyn_news_comm_actor_10"
-							},
-							{
-								"text": "монолитовец",
-								"_id": "st_dyn_news_comm_monolith_1"
-							},
-							{
-								"text": "фанатик",
-								"_id": "st_dyn_news_comm_monolith_2"
-							},
-							{
-								"text": "монолитовца",
-								"_id": "st_dyn_news_comm_monolith_3"
-							},
-							{
-								"text": "фанатика",
-								"_id": "st_dyn_news_comm_monolith_4"
-							},
-							{
-								"text": "боец монолита",
-								"_id": "st_dyn_news_comm_monolith_5"
-							},
-							{
-								"text": "монолитовцы",
-								"_id": "st_dyn_news_comm_monolith_9"
-							},
-							{
-								"text": "фанатики",
-								"_id": "st_dyn_news_comm_monolith_10"
-							},
-							{
-								"text": "бандит",
-								"_id": "st_dyn_news_comm_bandit_1"
-							},
-							{
-								"text": "бандита",
-								"_id": "st_dyn_news_comm_bandit_3"
-							},
-							{
-								"text": "бандиты",
-								"_id": "st_dyn_news_comm_bandit_9"
-							},
-							{
-								"text": "блатари",
-								"_id": "st_dyn_news_comm_bandit_10"
-							},
-							{
-								"text": "долговец",
-								"_id": "st_dyn_news_comm_dolg_1"
-							},
-							{
-								"text": "долгарь",
-								"_id": "st_dyn_news_comm_dolg_2"
-							},
-							{
-								"text": "долговца",
-								"_id": "st_dyn_news_comm_dolg_3"
-							},
-							{
-								"text": "должника",
-								"_id": "st_dyn_news_comm_dolg_4"
-							},
-							{
-								"text": "долговцы",
-								"_id": "st_dyn_news_comm_dolg_9"
-							},
-							{
-								"text": "долгари",
-								"_id": "st_dyn_news_comm_dolg_10"
-							},
-							{
-								"text": "учёный",
-								"_id": "st_dyn_news_comm_ecolog_1"
-							},
-							{
-								"text": "научник",
-								"_id": "st_dyn_news_comm_ecolog_2"
-							},
-							{
-								"text": "учёного",
-								"_id": "st_dyn_news_comm_ecolog_3"
-							},
-							{
-								"text": "эколога",
-								"_id": "st_dyn_news_comm_ecolog_4"
-							},
-							{
-								"text": "эколог",
-								"_id": "st_dyn_news_comm_ecolog_8"
-							},
-							{
-								"text": "учёные",
-								"_id": "st_dyn_news_comm_ecolog_9"
-							},
-							{
-								"text": "экологи",
-								"_id": "st_dyn_news_comm_ecolog_10"
-							},
-							{
-								"text": "чистонебовец",
-								"_id": "st_dyn_news_comm_csky_1"
-							},
-							{
-								"text": "чистонебовец",
-								"_id": "st_dyn_news_comm_csky_2"
-							},
-							{
-								"text": "чистонебовца",
-								"_id": "st_dyn_news_comm_csky_3"
-							},
-							{
-								"text": "чистые",
-								"_id": "st_dyn_news_comm_csky_9"
-							},
-							{
-								"text": "чистонебовцы",
-								"_id": "st_dyn_news_comm_csky_10"
-							},
-							{
-								"text": "военный",
-								"_id": "st_dyn_news_comm_army_1"
-							},
-							{
-								"text": "солдат",
-								"_id": "st_dyn_news_comm_army_2"
-							},
-							{
-								"text": "военного",
-								"_id": "st_dyn_news_comm_army_3"
-							},
-							{
-								"text": "вояку",
-								"_id": "st_dyn_news_comm_army_4"
-							},
-							{
-								"text": "армеец",
-								"_id": "st_dyn_news_comm_army_8"
-							},
-							{
-								"text": "военные",
-								"_id": "st_dyn_news_comm_army_9"
-							},
-							{
-								"text": "армейцы",
-								"_id": "st_dyn_news_comm_army_10"
-							},
-							{
-								"text": "наёмник",
-								"_id": "st_dyn_news_comm_killer_1"
-							},
-							{
-								"text": "мерк",
-								"_id": "st_dyn_news_comm_killer_2"
-							},
-							{
-								"text": "наёмника",
-								"_id": "st_dyn_news_comm_killer_3"
-							},
-							{
-								"text": "наёмники",
-								"_id": "st_dyn_news_comm_killer_9"
-							},
-							{
-								"text": "наёмники",
-								"_id": "st_dyn_news_comm_killer_10"
-							},
-							{
-								"text": "сталкер",
-								"_id": "st_dyn_news_comm_stalker_1"
-							},
-							{
-								"text": "одиночка",
-								"_id": "st_dyn_news_comm_stalker_2"
-							},
-							{
-								"text": "сталкера",
-								"_id": "st_dyn_news_comm_stalker_3"
-							},
-							{
-								"text": "одиночку",
-								"_id": "st_dyn_news_comm_stalker_4"
-							},
-							{
-								"text": "сталкеры",
-								"_id": "st_dyn_news_comm_stalker_9"
-							},
-							{
-								"text": "одиночки",
-								"_id": "st_dyn_news_comm_stalker_10"
-							},
-							{
-								"text": "зомбированный",
-								"_id": "st_dyn_news_comm_zombied_1"
-							},
-							{
-								"text": "зомби",
-								"_id": "st_dyn_news_comm_zombied_2"
-							},
-							{
-								"text": "зомбированного",
-								"_id": "st_dyn_news_comm_zombied_3"
-							},
-							{
-								"text": "зомбированные",
-								"_id": "st_dyn_news_comm_zombied_9"
-							},
-							{
-								"text": "свободовец",
-								"_id": "st_dyn_news_comm_freedom_1"
-							},
-							{
-								"text": "свободовца",
-								"_id": "st_dyn_news_comm_freedom_3"
-							},
-							{
-								"text": "свободного",
-								"_id": "st_dyn_news_comm_freedom_4"
-							},
-							{
-								"text": "свободовцы",
-								"_id": "st_dyn_news_comm_freedom_9"
-							},
-							{
-								"text": "анарxисты",
-								"_id": "st_dyn_news_comm_freedom_10"
+								"whom" : [
+									{
+										"single" : [
+											{
+												"text": "сталкера",
+												"_id": "st_dyn_news_comm_actor_3"
+											},
+											{
+												"text": "одиночку",
+												"_id": "st_dyn_news_comm_actor_4"
+											},
+											{
+												"text": "монолитовца",
+												"_id": "st_dyn_news_comm_monolith_3"
+											},
+											{
+												"text": "фанатика",
+												"_id": "st_dyn_news_comm_monolith_4"
+											},
+											{
+												"text": "бандита",
+												"_id": "st_dyn_news_comm_bandit_3"
+											},
+											{
+												"text": "долговца",
+												"_id": "st_dyn_news_comm_dolg_3"
+											},
+											{
+												"text": "должника",
+												"_id": "st_dyn_news_comm_dolg_4"
+											},
+											{
+												"text": "учёного",
+												"_id": "st_dyn_news_comm_ecolog_3"
+											},
+											{
+												"text": "эколога",
+												"_id": "st_dyn_news_comm_ecolog_4"
+											},
+											{
+												"text": "чистонебовца",
+												"_id": "st_dyn_news_comm_csky_3"
+											},
+											{
+												"text": "военного",
+												"_id": "st_dyn_news_comm_army_3"
+											},
+											{
+												"text": "вояку",
+												"_id": "st_dyn_news_comm_army_4"
+											},
+											{
+												"text": "наёмника",
+												"_id": "st_dyn_news_comm_killer_3"
+											},
+											{
+												"text": "сталкера",
+												"_id": "st_dyn_news_comm_stalker_3"
+											},
+											{
+												"text": "одиночку",
+												"_id": "st_dyn_news_comm_stalker_4"
+											},
+											{
+												"text": "зомбированного",
+												"_id": "st_dyn_news_comm_zombied_3"
+											},
+											{
+												"text": "свободовца",
+												"_id": "st_dyn_news_comm_freedom_3"
+											},
+											{
+												"text": "свободного",
+												"_id": "st_dyn_news_comm_freedom_4"
+											}
+										],
+										"_name" : "single"
+									},
+									{
+										"multi" : [
+											{
+												"group_type" : [
+													{
+														"text": "группу",
+														"_id": "st_dyn_news_comm_group_1"
+													},
+													{
+														"text": "отряд",
+														"_id": "st_dyn_news_comm_group_2"
+													},
+													{
+														"text": "несколько",
+														"_id": "st_dyn_news_comm_group_2"
+													}
+												],
+												"_name" : "group_type"
+											},
+											{
+												"who" : [
+													{
+														"text": "сталкеров",
+														"_id": "st_dyn_news_comm_actor_3"
+													},
+													{
+														"text": "одиночек",
+														"_id": "st_dyn_news_comm_actor_4"
+													},
+													{
+														"text": "монолитовцев",
+														"_id": "st_dyn_news_comm_monolith_3"
+													},
+													{
+														"text": "фанатиков",
+														"_id": "st_dyn_news_comm_monolith_4"
+													},
+													{
+														"text": "бандитов",
+														"_id": "st_dyn_news_comm_bandit_3"
+													},
+													{
+														"text": "долговцев",
+														"_id": "st_dyn_news_comm_dolg_3"
+													},
+													{
+														"text": "должников",
+														"_id": "st_dyn_news_comm_dolg_4"
+													},
+													{
+														"text": "учёных",
+														"_id": "st_dyn_news_comm_ecolog_3"
+													},
+													{
+														"text": "экологов",
+														"_id": "st_dyn_news_comm_ecolog_4"
+													},
+													{
+														"text": "чистонебовцев",
+														"_id": "st_dyn_news_comm_csky_3"
+													},
+													{
+														"text": "военных",
+														"_id": "st_dyn_news_comm_army_3"
+													},
+													{
+														"text": "вояк",
+														"_id": "st_dyn_news_comm_army_4"
+													},
+													{
+														"text": "наёмников",
+														"_id": "st_dyn_news_comm_killer_3"
+													},
+													{
+														"text": "зомбированных",
+														"_id": "st_dyn_news_comm_zombied_3"
+													},
+													{
+														"text": "свободовцев",
+														"_id": "st_dyn_news_comm_freedom_3"
+													},
+													{
+														"text": "анархистов",
+														"_id": "st_dyn_news_comm_freedom_4"
+													}
+												],
+												"_name" : "who"
+											}
+										],
+										"_name" : "multi"
+									}
+								],
+								"_name" : "whom"
 							}
 						],
 						"_name": "who_human"
@@ -1185,262 +1273,162 @@
 						"_name": "Mutants"
 					},
 					{
+						"how_killed" : [
+							{
+								"single" : [
+									{
+										"text": "прикончил",
+										"_id": "st_dyn_news_wpn_cls_2_4"
+									},
+									{
+										"text": "убил",
+										"_id": "st_dyn_news_wpn_cls_2_5"
+									},
+									{
+										"text": "застрелил",
+										"_id": "st_dyn_news_wpn_cls_2_6"
+									},
+									{
+										"text": "замочил",
+										"_id": "st_dyn_news_wpn_cls_2_7"
+									},
+									{
+										"text": "грохнул",
+										"_id": "st_dyn_news_wpn_cls_2_8"
+									},
+									{
+										"text": "зарезал",
+										"_id": "st_dyn_news_wpn_cls_6_3"
+									},
+									{
+										"text": "заколол",
+										"_id": "st_dyn_news_wpn_cls_6_4"
+									},
+									{
+										"text": "прирезал",
+										"_id": "st_dyn_news_wpn_cls_6_6"
+									},
+									{
+										"text": "завалил гранатой",
+										"_id": "st_dyn_news_wpn_cls_8_4"
+									},
+									{
+										"text": "завалил лимонкой",
+										"_id": "st_dyn_news_wpn_cls_8_6"
+									}
+								],
+								"_name": "single"
+							},
+							{
+								"multi" : [
+									{
+										"text": "прикончили",
+										"_id": "st_dyn_news_wpn_cls_2_4"
+									},
+									{
+										"text": "убили",
+										"_id": "st_dyn_news_wpn_cls_2_5"
+									},
+									{
+										"text": "застрелили",
+										"_id": "st_dyn_news_wpn_cls_2_6"
+									},
+									{
+										"text": "замочили",
+										"_id": "st_dyn_news_wpn_cls_2_7"
+									},
+									{
+										"text": "грохнули",
+										"_id": "st_dyn_news_wpn_cls_2_8"
+									},
+									{
+										"text": "зарезали",
+										"_id": "st_dyn_news_wpn_cls_6_3"
+									},
+									{
+										"text": "закололи",
+										"_id": "st_dyn_news_wpn_cls_6_4"
+									},
+									{
+										"text": "прирезали",
+										"_id": "st_dyn_news_wpn_cls_6_6"
+									},
+									{
+										"text": "завалили гранатой",
+										"_id": "st_dyn_news_wpn_cls_8_4"
+									},
+									{
+										"text": "завалили лимонкой",
+										"_id": "st_dyn_news_wpn_cls_8_6"
+									}
+								],
+								"_name" : "multi"
+							}
+						],
+						"_name" : "how killed"
+					},
+					{
 						"weapon class description": [
 							{
 								"text": "Причина неизвестна",
 								"_id": "st_dyn_news_wpn_cls_1_1"
 							},
 							{
-								"text": "какие-то выстрелы",
-								"_id": "st_dyn_news_wpn_cls_1_2"
-							},
-							{
 								"text": "из автомата",
 								"_id": "st_dyn_news_wpn_cls_1_3"
-							},
-							{
-								"text": "прикончил",
-								"_id": "st_dyn_news_wpn_cls_1_4"
-							},
-							{
-								"text": "убил",
-								"_id": "st_dyn_news_wpn_cls_1_5"
-							},
-							{
-								"text": "застрелил",
-								"_id": "st_dyn_news_wpn_cls_1_6"
-							},
-							{
-								"text": "замочил",
-								"_id": "st_dyn_news_wpn_cls_1_7"
-							},
-							{
-								"text": "грохнул",
-								"_id": "st_dyn_news_wpn_cls_1_8"
 							},
 							{
 								"text": "Пулевое ранение",
 								"_id": "st_dyn_news_wpn_cls_2_1"
 							},
 							{
-								"text": "автоматные очереди",
-								"_id": "st_dyn_news_wpn_cls_2_2"
-							},
-							{
 								"text": "из автомата",
 								"_id": "st_dyn_news_wpn_cls_2_3"
 							},
-							{
-								"text": "прикончил",
-								"_id": "st_dyn_news_wpn_cls_2_4"
-							},
-							{
-								"text": "убил",
-								"_id": "st_dyn_news_wpn_cls_2_5"
-							},
-							{
-								"text": "застрелил",
-								"_id": "st_dyn_news_wpn_cls_2_6"
-							},
-							{
-								"text": "замочил",
-								"_id": "st_dyn_news_wpn_cls_2_7"
-							},
-							{
-								"text": "грохнул",
-								"_id": "st_dyn_news_wpn_cls_2_8"
-							},
+
 							{
 								"text": "Пулевое ранение",
 								"_id": "st_dyn_news_wpn_cls_3_1"
-							},
-							{
-								"text": "одиночные выстрелы",
-								"_id": "st_dyn_news_wpn_cls_3_2"
 							},
 							{
 								"text": "из пистолета",
 								"_id": "st_dyn_news_wpn_cls_3_3"
 							},
 							{
-								"text": "прикончил",
-								"_id": "st_dyn_news_wpn_cls_3_4"
-							},
-							{
-								"text": "убил",
-								"_id": "st_dyn_news_wpn_cls_3_5"
-							},
-							{
-								"text": "застрелил",
-								"_id": "st_dyn_news_wpn_cls_3_6"
-							},
-							{
-								"text": "замочил",
-								"_id": "st_dyn_news_wpn_cls_3_7"
-							},
-							{
-								"text": "грохнул",
-								"_id": "st_dyn_news_wpn_cls_3_8"
-							},
-							{
 								"text": "Пулевое ранение",
 								"_id": "st_dyn_news_wpn_cls_4_1"
-							},
-							{
-								"text": "винтовочные выстрелы",
-								"_id": "st_dyn_news_wpn_cls_4_2"
 							},
 							{
 								"text": "из винтовки",
 								"_id": "st_dyn_news_wpn_cls_4_3"
 							},
 							{
-								"text": "прикончил",
-								"_id": "st_dyn_news_wpn_cls_4_4"
-							},
-							{
-								"text": "убил",
-								"_id": "st_dyn_news_wpn_cls_4_5"
-							},
-							{
-								"text": "застрелил",
-								"_id": "st_dyn_news_wpn_cls_4_6"
-							},
-							{
-								"text": "замочил",
-								"_id": "st_dyn_news_wpn_cls_4_7"
-							},
-							{
-								"text": "грохнул",
-								"_id": "st_dyn_news_wpn_cls_4_8"
-							},
-							{
 								"text": "Пулевое ранение",
 								"_id": "st_dyn_news_wpn_cls_5_1"
-							},
-							{
-								"text": "выстрелы из дробовика",
-								"_id": "st_dyn_news_wpn_cls_5_2"
 							},
 							{
 								"text": "из дробовика",
 								"_id": "st_dyn_news_wpn_cls_5_3"
 							},
 							{
-								"text": "прикончил",
-								"_id": "st_dyn_news_wpn_cls_5_4"
-							},
-							{
-								"text": "убил",
-								"_id": "st_dyn_news_wpn_cls_5_5"
-							},
-							{
-								"text": "застрелил",
-								"_id": "st_dyn_news_wpn_cls_5_6"
-							},
-							{
-								"text": "замочил",
-								"_id": "st_dyn_news_wpn_cls_5_7"
-							},
-							{
-								"text": "грохнул",
-								"_id": "st_dyn_news_wpn_cls_5_8"
-							},
-							{
 								"text": "Ножевое ранение",
 								"_id": "st_dyn_news_wpn_cls_6_1"
-							},
-							{
-								"text": "шум рукопашной схватки",
-								"_id": "st_dyn_news_wpn_cls_6_2"
-							},
-							{
-								"text": "зарезал",
-								"_id": "st_dyn_news_wpn_cls_6_3"
-							},
-							{
-								"text": "заколол",
-								"_id": "st_dyn_news_wpn_cls_6_4"
-							},
-							{
-								"text": "убил",
-								"_id": "st_dyn_news_wpn_cls_6_5"
-							},
-							{
-								"text": "прирезал",
-								"_id": "st_dyn_news_wpn_cls_6_6"
-							},
-							{
-								"text": "замочил",
-								"_id": "st_dyn_news_wpn_cls_6_7"
-							},
-							{
-								"text": "грохнул",
-								"_id": "st_dyn_news_wpn_cls_6_8"
 							},
 							{
 								"text": "Взрывная волна",
 								"_id": "st_dyn_news_wpn_cls_7_1"
 							},
 							{
-								"text": "взрывы",
-								"_id": "st_dyn_news_wpn_cls_7_2"
-							},
-							{
 								"text": "из гранатомета",
 								"_id": "st_dyn_news_wpn_cls_7_3"
-							},
-							{
-								"text": "прикончил",
-								"_id": "st_dyn_news_wpn_cls_7_4"
-							},
-							{
-								"text": "убил",
-								"_id": "st_dyn_news_wpn_cls_7_5"
-							},
-							{
-								"text": "застрелил",
-								"_id": "st_dyn_news_wpn_cls_7_6"
-							},
-							{
-								"text": "замочил",
-								"_id": "st_dyn_news_wpn_cls_7_7"
-							},
-							{
-								"text": "грохнул",
-								"_id": "st_dyn_news_wpn_cls_7_8"
 							},
 							{
 								"text": "Осколочное ранение",
 								"_id": "st_dyn_news_wpn_cls_8_1"
 							},
 							{
-								"text": "взрывы гранат",
-								"_id": "st_dyn_news_wpn_cls_8_2"
-							},
-							{
 								"text": "гранатой",
 								"_id": "st_dyn_news_wpn_cls_8_3"
-							},
-							{
-								"text": "завалил гранатой",
-								"_id": "st_dyn_news_wpn_cls_8_4"
-							},
-							{
-								"text": "убил",
-								"_id": "st_dyn_news_wpn_cls_8_5"
-							},
-							{
-								"text": "завалил лимонкой",
-								"_id": "st_dyn_news_wpn_cls_8_6"
-							},
-							{
-								"text": "замочил",
-								"_id": "st_dyn_news_wpn_cls_8_7"
-							},
-							{
-								"text": "грохнул",
-								"_id": "st_dyn_news_wpn_cls_8_8"
 							}
 						],
 						"_name": "weapon class description"
@@ -2271,7 +2259,7 @@
 								"_id": "st_dyn_jupiter_underground_blizko_1"
 							},
 							{
-								"text": "аномалии «Коготь»",
+								"text": "у аномалии «Коготь»",
 								"_id": "st_dyn_zaton_blizko_1"
 							},
 							{
@@ -2335,11 +2323,11 @@
 								"_id": "st_dyn_zaton_blizko_16"
 							},
 							{
-								"text": "на заправки",
+								"text": "на заправке",
 								"_id": "st_dyn_zaton_blizko_17"
 							},
 							{
-								"text": "7на старой барже",
+								"text": "на старой барже",
 								"_id": "st_dyn_zaton_blizko_18"
 							},
 							{
@@ -2783,7 +2771,7 @@
 								"_id": "st_dyn_pripyat_blizko_7"
 							},
 							{
-								"text": "в детского саду",
+								"text": "в детском саду",
 								"_id": "st_dyn_pripyat_blizko_8"
 							},
 							{
@@ -2870,181 +2858,244 @@
 						"_name": "blizko"
 					},
 					{
-						"sentence_builders": [
+						"instant_news": [
 							{
-								"text": "Вот попали! Здесь",
-								"_id": "st_dyn_news_builder_attacked_1"
+								"start" : [
+									{
+										"attacked" : [
+											{
+												"text": "Вот попали! Здесь",
+												"_id": "st_dyn_news_builder_attacked_1"
+											},
+											{
+												"text": "Мы влипли! Тут",
+												"_id": "st_dyn_news_builder_attacked_2"
+											},
+											{
+												"text": "На нас напали, это",
+												"_id": "st_dyn_news_builder_attacked_3"
+											},
+											{
+												"text": "Нападение! Это",
+												"_id": "st_dyn_news_builder_attacked_4"
+											}
+										],
+										"_name": "attacked"
+									},
+									{
+										"hear" : [
+											{
+												"text": "Услышал",
+												"_id": "st_dyn_news_builder_hear_1"
+											},
+											{
+												"text": "Услыхал",
+												"_id": "st_dyn_news_builder_hear_2"
+											},
+											{
+												"text": "Донеслись",
+												"_id": "st_dyn_news_builder_hear_3"
+											},
+											{
+												"text": "Пару минут назад слышал",
+												"_id": "st_dyn_news_builder_hear_4"
+											},
+											{
+												"text": "Пару минут назад слышал",
+												"_id": "st_dyn_news_builder_hear_5"
+											},
+											{
+												"text": "Услышал",
+												"_id": "st_dyn_news_builder_hear_6"
+											},
+											{
+												"text": "Раздались",
+												"_id": "st_dyn_news_builder_hear_7"
+											},
+											{
+												"text": "Услышал",
+												"_id": "st_dyn_news_builder_hear_8"
+											},
+											{
+												"text": "Пару минут назад раздавались",
+												"_id": "st_dyn_news_builder_hear_9"
+											}
+										],
+										"_name": "hear"
+									},
+									{
+										"see" : [
+											{
+												"text": "Видел, как",
+												"_id": "st_dyn_news_builder_sight_1"
+											},
+											{
+												"text": "Вот это кино:",
+												"_id": "st_dyn_news_builder_sight_2"
+											},
+											{
+												"text": "Пару минут назад видел, как",
+												"_id": "st_dyn_news_builder_sight_3"
+											},
+											{
+												"text": "Недавно наблюдал такую картину:",
+												"_id": "st_dyn_news_builder_sight_4"
+											},
+											{
+												"text": "Только что видел, как",
+												"_id": "st_dyn_news_builder_sight_5"
+											},
+											{
+												"text": "Парни, видел, как",
+												"_id": "st_dyn_news_builder_sight_6"
+											},
+											{
+												"text": "Только что наблюдал, как",
+												"_id": "st_dyn_news_builder_sight_7"
+											},
+											{
+												"text": "Видел, как",
+												"_id": "st_dyn_news_builder_sight_8"
+											},
+											{
+												"text": "Эй, я видел, как",
+												"_id": "st_dyn_news_builder_sight_9"
+											}
+										],
+										"_name" : "see"
+									}
+								],
+								"_name" : "start"
 							},
 							{
-								"text": "Мы влипли! Тут",
-								"_id": "st_dyn_news_builder_attacked_2"
+								"hear_mid" : [
+									{
+										"text": "какие-то крики",
+										"_id": "st_dyn_news_builder_middle_1"
+									},
+									{
+										"text": "крики",
+										"_id": "st_dyn_news_builder_middle_2"
+									},
+									{
+										"text": "крики о помощи",
+										"_id": "st_dyn_news_builder_middle_3"
+									},
+									{
+										"text": "крики и выстрелы",
+										"_id": "st_dyn_news_builder_middle_4"
+									},
+									{
+										"text": "вопли",
+										"_id": "st_dyn_news_builder_middle_5"
+									},
+									{
+										"text": "крики и рычание",
+										"_id": "st_dyn_news_builder_middle_6"
+									},
+									{
+										"text": "какие-то выстрелы",
+										"_id": "st_dyn_news_wpn_cls_1_2"
+									},
+									{
+										"text": "автоматные очереди",
+										"_id": "st_dyn_news_wpn_cls_2_2"
+									},
+									{
+										"text": "винтовочные выстрелы",
+										"_id": "st_dyn_news_wpn_cls_4_2"
+									},
+									{
+										"text": "одиночные выстрелы",
+										"_id": "st_dyn_news_wpn_cls_3_2"
+									},
+									{
+										"text": "выстрелы из дробовика",
+										"_id": "st_dyn_news_wpn_cls_5_2"
+									},
+									{
+										"text": "шум рукопашной схватки",
+										"_id": "st_dyn_news_wpn_cls_6_2"
+									},
+									{
+										"text": "взрывы гранат",
+										"_id": "st_dyn_news_wpn_cls_8_2"
+									},
+									{
+										"text": "взрывы",
+										"_id": "st_dyn_news_wpn_cls_7_2"
+									}
+								],
+								"_name" : "hear_mid"
 							},
 							{
-								"text": "На нас напали, это",
-								"_id": "st_dyn_news_builder_attacked_3"
-							},
-							{
-								"text": "Нападение! Это",
-								"_id": "st_dyn_news_builder_attacked_4"
-							},
-							{
-								"text": "Услышал",
-								"_id": "st_dyn_news_builder_hear_1"
-							},
-							{
-								"text": "Услыхал",
-								"_id": "st_dyn_news_builder_hear_2"
-							},
-							{
-								"text": "Донеслись",
-								"_id": "st_dyn_news_builder_hear_3"
-							},
-							{
-								"text": "Пару минут назад слышал",
-								"_id": "st_dyn_news_builder_hear_4"
-							},
-							{
-								"text": "Пару минут назад слышал",
-								"_id": "st_dyn_news_builder_hear_5"
-							},
-							{
-								"text": "Услышал",
-								"_id": "st_dyn_news_builder_hear_6"
-							},
-							{
-								"text": "Раздались",
-								"_id": "st_dyn_news_builder_hear_7"
-							},
-							{
-								"text": "Услышал",
-								"_id": "st_dyn_news_builder_hear_8"
-							},
-							{
-								"text": "Пару минут назад раздавались",
-								"_id": "st_dyn_news_builder_hear_9"
-							},
-							{
-								"text": "Видел, как",
-								"_id": "st_dyn_news_builder_sight_1"
-							},
-							{
-								"text": "Вот это кино:",
-								"_id": "st_dyn_news_builder_sight_2"
-							},
-							{
-								"text": "Пару минут назад видел, как",
-								"_id": "st_dyn_news_builder_sight_3"
-							},
-							{
-								"text": "Недавно наблюдал такую картину:",
-								"_id": "st_dyn_news_builder_sight_4"
-							},
-							{
-								"text": "Только что видел, как",
-								"_id": "st_dyn_news_builder_sight_5"
-							},
-							{
-								"text": "Парни, видел, как",
-								"_id": "st_dyn_news_builder_sight_6"
-							},
-							{
-								"text": "Только что наблюдал, как",
-								"_id": "st_dyn_news_builder_sight_7"
-							},
-							{
-								"text": "Видел, как",
-								"_id": "st_dyn_news_builder_sight_8"
-							},
-							{
-								"text": "Эй, я видел, как",
-								"_id": "st_dyn_news_builder_sight_9"
-							},
-							{
-								"text": "какие-то крики",
-								"_id": "st_dyn_news_builder_middle_1"
-							},
-							{
-								"text": "крики",
-								"_id": "st_dyn_news_builder_middle_2"
-							},
-							{
-								"text": "крики о помощи",
-								"_id": "st_dyn_news_builder_middle_3"
-							},
-							{
-								"text": "крики и выстрелы",
-								"_id": "st_dyn_news_builder_middle_4"
-							},
-							{
-								"text": "вопли",
-								"_id": "st_dyn_news_builder_middle_5"
-							},
-							{
-								"text": "крики и рычание",
-								"_id": "st_dyn_news_builder_middle_6"
-							},
-							{
-								"text": "Будьте начеку!",
-								"_id": "st_dyn_news_builder_ending_1"
-							},
-							{
-								"text": "Весело, а?",
-								"_id": "st_dyn_news_builder_ending_2"
-							},
-							{
-								"text": "Интересно, что случилось?",
-								"_id": "st_dyn_news_builder_ending_3"
-							},
-							{
-								"text": "Да, дела...",
-								"_id": "st_dyn_news_builder_ending_4"
-							},
-							{
-								"text": "Кто-нибудь знает, что происходит?",
-								"_id": "st_dyn_news_builder_ending_5"
-							},
-							{
-								"text": "К чему бы это?",
-								"_id": "st_dyn_news_builder_ending_6"
-							},
-							{
-								"text": "Обходите то место стороной.",
-								"_id": "st_dyn_news_builder_ending_7"
-							},
-							{
-								"text": "Держитесь подальше.",
-								"_id": "st_dyn_news_builder_ending_8"
-							},
-							{
-								"text": "Держите ушки на макушке.",
-								"_id": "st_dyn_news_builder_ending_9"
-							},
-							{
-								"text": "Небезопасно.",
-								"_id": "st_dyn_news_builder_ending_10"
-							},
-							{
-								"text": "Остерегайтесь.",
-								"_id": "st_dyn_news_builder_ending_11"
-							},
-							{
-								"text": "Я бы держался подальше.",
-								"_id": "st_dyn_news_builder_ending_12"
-							},
-							{
-								"text": "Кто-нибудь хочет проверить?",
-								"_id": "st_dyn_news_builder_ending_13"
-							},
-							{
-								"text": "Чёрт, надо валить отсюда, да побыстрее.",
-								"_id": "st_dyn_news_builder_ending_14"
-							},
-							{
-								"text": "Не знаю, что, черт возьми, там происходит.",
-								"_id": "st_dyn_news_builder_ending_15"
+								"end" : [
+									{
+										"text": "Будьте начеку!",
+										"_id": "st_dyn_news_builder_ending_1"
+									},
+									{
+										"text": "Весело, а?",
+										"_id": "st_dyn_news_builder_ending_2"
+									},
+									{
+										"text": "Интересно, что случилось?",
+										"_id": "st_dyn_news_builder_ending_3"
+									},
+									{
+										"text": "Да, дела...",
+										"_id": "st_dyn_news_builder_ending_4"
+									},
+									{
+										"text": "Кто-нибудь знает, что происходит?",
+										"_id": "st_dyn_news_builder_ending_5"
+									},
+									{
+										"text": "К чему бы это?",
+										"_id": "st_dyn_news_builder_ending_6"
+									},
+									{
+										"text": "Обходите то место стороной.",
+										"_id": "st_dyn_news_builder_ending_7"
+									},
+									{
+										"text": "Держитесь подальше.",
+										"_id": "st_dyn_news_builder_ending_8"
+									},
+									{
+										"text": "Держите ушки на макушке.",
+										"_id": "st_dyn_news_builder_ending_9"
+									},
+									{
+										"text": "Небезопасно.",
+										"_id": "st_dyn_news_builder_ending_10"
+									},
+									{
+										"text": "Остерегайтесь.",
+										"_id": "st_dyn_news_builder_ending_11"
+									},
+									{
+										"text": "Я бы держался подальше.",
+										"_id": "st_dyn_news_builder_ending_12"
+									},
+									{
+										"text": "Кто-нибудь хочет проверить?",
+										"_id": "st_dyn_news_builder_ending_13"
+									},
+									{
+										"text": "Чёрт, надо валить отсюда, да побыстрее.",
+										"_id": "st_dyn_news_builder_ending_14"
+									},
+									{
+										"text": "Не знаю, что, черт возьми, там происходит.",
+										"_id": "st_dyn_news_builder_ending_15"
+									}
+								],
+								"_name" : "end"
 							}
+
 						],
-						"_name": "Sentence Builders"
+						"_name": "Instant news"
 					},
 					{
 						"time_scope": [
@@ -5879,7 +5930,7 @@
 										"_id": "st_dyn_news_spam_faction_ecolog_6"
 									},
 									{
-										"text": "Новоприбывшим на Янтарь военным обращаться ко мне, профессору Сахарову.",
+										"text": "Новоприбывшим на Янтарь военным обращаться к профессору Сахарову.",
 										"_id": "st_dyn_news_spam_faction_ecolog_7"
 									},
 									{
@@ -5895,7 +5946,7 @@
 										"_id": "st_dyn_news_spam_faction_ecolog_10"
 									},
 									{
-										"text": "Это профессор Герман. Вот уже двое суток ждём результатов от по исследованию переменного пси-излучения от профессора Сахарова, но он отказывается выйти с нами на связь. Как это понимать?",
+										"text": "Вот уже двое суток ждём результатов от по исследованию переменного пси-излучения от профессора Сахарова, но он отказывается выйти с нами на связь. Как это понимать?",
 										"_id": "st_dyn_news_spam_faction_ecolog_11"
 									}
 								],
@@ -5940,11 +5991,11 @@
 										"_id": "st_dyn_news_spam_faction_freedom_9"
 									},
 									{
-										"text": "Локи, выйди со мной на одну частоту, разговор важный есть. Миклуха.",
+										"text": "Локи, выйди со мной на одну частоту, разговор важный есть.",
 										"_id": "st_dyn_news_spam_faction_freedom_10"
 									},
 									{
-										"text": "Макс, это Скряга. Припасы прибудут через неделю, вы пока с ребятами держись там, всего хорошего, настроения, здоровья.",
+										"text": "Припасы прибудут через неделю, вы пока с ребятами держитесь там, всего хорошего, настроения, здоровья.",
 										"_id": "st_dyn_news_spam_faction_freedom_11"
 									},
 									{
@@ -6028,7 +6079,7 @@
 										"_id": "st_dyn_news_spam_faction_freedom_31"
 									},
 									{
-										"text": "Это Скряга. Мне привезли небольшую партию американских эротических журналов...\\n \\n%c[255,160,160,160]Анонимно\\n%c[default]Да кому они нужны здесь, даун? Все уже давно с большой земли свои пронпаки завозят на харде.",
+										"text": "Мне привезли небольшую партию американских эротических журналов...\\n\\nАнонимно:\\n%Да кому они нужны здесь, даун? Все уже давно с большой земли свои пронпаки завозят на харде.",
 										"_id": "st_dyn_news_spam_faction_freedom_32"
 									}
 								],
@@ -6077,7 +6128,7 @@
 										"_id": "st_dyn_news_spam_faction_killer_10"
 									},
 									{
-										"text": "%c[255,160,160,160]Ясон:\\n%c[default]Мольфар, какая-то тварь кладет наших людей у завода, надо зачистить местность",
+										"text": "Мольфар, какая-то тварь кладет наших людей у завода, надо зачистить местность",
 										"_id": "st_dyn_news_spam_faction_killer_11"
 									},
 									{
@@ -6085,11 +6136,11 @@
 										"_id": "st_dyn_news_spam_faction_killer_12"
 									},
 									{
-										"text": "%c[255,160,160,160]Отряд -Аргонавт-1-:\\n%c[default]Спалили *Свободу*, идут по станции *Янов*, видимо на базу *Долга*.",
+										"text": "Спалили *Свободу*, идут по станции *Янов*, видимо на базу *Долга*.",
 										"_id": "st_dyn_news_spam_faction_killer_13"
 									},
 									{
-										"text": "%c[255,160,160,160]Хог:\\n%c[default]Кажись не врал тот студент с ботаником. Группировка Грех на самом деле сейчас активизировалась, постоянно ищет контакты. Со своих старых баз в Рыжем лесу они снялись. Сейчас проверим, как там в Лиманске дела обстоят...",
+										"text": "Кажись не врал тот студент с ботаником. Группировка Грех на самом деле сейчас активизировалась, постоянно ищет контакты. Со своих старых баз в Рыжем лесу они снялись. Сейчас проверим, как там в Лиманске дела обстоят...",
 										"_id": "st_dyn_news_spam_faction_killer_14"
 									},
 									{
@@ -6101,7 +6152,7 @@
 										"_id": "st_dyn_news_spam_faction_killer_16"
 									},
 									{
-										"text": "%c[255,160,160,160]Макс Крюгер:\\n%c[default]За информацию о Старом плачу большие деньги, или даю другую нужную Вам информацию.",
+										"text": "За информацию о Старом плачу большие деньги, или даю другую нужную Вам информацию.",
 										"_id": "st_dyn_news_spam_faction_killer_17"
 									},
 									{
@@ -6114,11 +6165,11 @@
 							{
 								"army": [
 									{
-										"text": "База, это отряд Дельта, мы заняли вход в лабораторию в Тёмной долине, какие будут приказания?\\n \\n%c[255,160,160,160]Анонимно\\n%c[default]Вашу же мать! Переходите на закрытый канал!",
+										"text": "База, это отряд Дельта, мы заняли вход в лабораторию в Тёмной долине, какие будут приказания?\\n\\nАнонимно:\\nВашу же мать! Переходите на закрытый канал!",
 										"_id": "st_dyn_news_spam_faction_army_1"
 									},
 									{
-										"text": "База, это расчет Сова, с шифровкой проблемы, поэтому мы скидываем сюда сообщение, высадиться в Лиманске, в районе стройплощадки считаю невозможным, большие скопления сил врага, 8 РПГ, 5 снайперов и 4 с неизвестным оружием, наши координаты сообщить не можем, враги тоже общий канал читают, какие будут указания?\\n \\n%c[255,160,160,160]Анонимно\\n%c[default]Сова вас понял, теперь слушайте меня, немедленно возвращайся в Рыжий Лес, перегруппируйтесь с Коршуном а там решим.",
+										"text": "База, это расчет Сова, с шифровкой проблемы, поэтому мы скидываем сюда сообщение, высадиться в Лиманске, в районе стройплощадки считаю невозможным, большие скопления сил врага, 8 РПГ, 5 снайперов и 4 с неизвестным оружием, наши координаты сообщить не можем, враги тоже общий канал читают, какие будут указания?\\n\\nАнонимно:\\nСова вас понял, теперь слушайте меня, немедленно возвращайся в Рыжий Лес, перегруппируйтесь с Коршуном а там решим.",
 										"_id": "st_dyn_news_spam_faction_army_2"
 									},
 									{
@@ -6146,7 +6197,7 @@
 										"_id": "st_dyn_news_spam_faction_army_8"
 									},
 									{
-										"text": "Запрашиваю миномётный обстрел квадрата e2_12.\\n \\n%c[255,160,160,160]Анонимно\\n%c[default]А ну отставить!",
+										"text": "Запрашиваю миномётный обстрел квадрата e2_12.\\n\\nАнонимно:\\nА ну отставить!",
 										"_id": "st_dyn_news_spam_faction_army_9"
 									},
 									{
@@ -6211,7 +6262,7 @@
 										"_id": "st_dyn_news_spam_faction_monolith_6"
 									},
 									{
-										"text": "Из Саркофага исходил какой-то сигнал. Проверить?\\n \\nНи в коем случае, там фон огромный и тварей много, ну я же говорил вам.",
+										"text": "Из Саркофага исходил какой-то сигнал. Проверить?\\n\\nАнонимно:\\nНи в коем случае, там фон огромный и тварей много, ну я же говорил вам.",
 										"_id": "st_dyn_news_spam_faction_monolith_7"
 									},
 									{
