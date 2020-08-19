@@ -2,6 +2,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 //import org.w3c.dom.Document;
 //import org.w3c.dom.Element;
 //import org.w3c.dom.Node;
@@ -45,7 +46,8 @@ public class NewsGenerator {
             //  3 - о выбросе
             //  4 - новости фракций
             //  5 - новости о нахождении артефактов
-            int newsNumb = 6;
+            //  6 - немедленные сообщения от сталкеров увидивших/услышивших что-то
+            int newsNumb = getRndIntInRange(1, 6);
 
             if (group.equals("Зомбированные")) newsNumb = 2;
 
@@ -475,17 +477,19 @@ public class NewsGenerator {
         return strNews;
     }
 
-    public String generateResponse(int responseType) {
+    public String generateResponse(int responseType, MessageReceivedEvent event) {
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Main.mapOfThreads.get(event.getChannel().getName()).interrupt();
         }
 
         StringBuilder responseBuilder = new StringBuilder();
-        StringBuilder nameBuilder = new StringBuilder();
-        while (!name.equals("Зомбированные")) {
-            nameBuilder = createName();
+        StringBuilder nameBuilder = createName();
+        if (group.equals("Зомбированные")) {
+            while (group.equals("Зомбированные")) {
+                nameBuilder = createName();
+            }
         }
         responseBuilder.append(nameBuilder);
 
