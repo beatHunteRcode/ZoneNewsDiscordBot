@@ -19,14 +19,14 @@ public class Main extends ListenerAdapter {
     Date date = new Date();
 
     public static void main(String[] args) throws LoginException {
-        String botToken = "NjM2OTg41337youdontgetmydiscordbottoken1337SJJckVIqk";
+        String botToken = "NjM2OTg4NzAyM1337youdontgetmydiscordbottoken1337MSJJckVIqk";
         JDABuilder builder = new JDABuilder(AccountType.BOT);
         builder.setToken(botToken);
         builder.addEventListeners(new Main());
         builder.build();
 
 //        NewsGenerator newsGenerator = new NewsGenerator();
-//        for (int i = 0; i < 30; i++) {
+//        for (int i = 0; i < 50; i++) {
 //            System.out.println(newsGenerator.generateNews());
 //            System.out.println();
 //        }
@@ -39,9 +39,6 @@ public class Main extends ListenerAdapter {
 
         System.out.println( "Message from " + event.getAuthor().getName() + ": " +
                             event.getMessage().getContentDisplay());
-        if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "старт")) { //новость
-            showCommandList(event);
-        }
         if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "новость")) { //новость
             String news = genNews(newsGenerator);
             event.getChannel().sendMessage(news).queue();
@@ -74,7 +71,7 @@ public class Main extends ListenerAdapter {
 
                         }
                         try {
-                            Thread.sleep(getRandomIntegerBetweenRange(1000 * 60 * 20, 1000 * 60 * 30));
+                            Thread.sleep(getRandomIntegerBetweenRange(1000 * 60 * 15, 1000 * 60 * 30));
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }

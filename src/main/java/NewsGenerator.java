@@ -45,7 +45,7 @@ public class NewsGenerator {
             //  3 - о выбросе
             //  4 - новости фракций
             //  5 - новости о нахождении артефактов
-            int newsNumb = getRndIntInRange(1, 5);
+            int newsNumb = 6;
 
             if (group.equals("Зомбированные")) newsNumb = 2;
 
@@ -70,6 +70,9 @@ public class NewsGenerator {
 //                    System.out.println("ARTEFACT_NEWS");
                     newsBuilder.append(genArtefactNews(node));
                     break;
+                case 6:
+//                    System.out.println("INSTANT_NEWS");
+                    newsBuilder.append(getInstantNews(node));
             }
 
             strNews = replaceTemplates(newsBuilder, node);
@@ -131,15 +134,17 @@ public class NewsGenerator {
             }
         }
         newsBuilder.append(node.findValue("mutants").findValues("text").get(getRndIntInRange(0, 105)).asText()).
-                append(" ").
-                append(node.findValue("direction").findValues("text").get(getRndIntInRange(0, 9)).asText()).
                 append(" ");
         switch (getRndIntInRange(1, 2)) {
             case 1:
-                newsBuilder.append(node.findValue("blizko").findValues("text").get(getRndIntInRange(0, 153)).asText()).append(" ");
+                newsBuilder.append(node.findValue("blizko").findValues("text").get(getRndIntInRange(0, 153)).asText()).append(".");
                 break;
             case 2:
-                newsBuilder.append(node.findValue("daleko").findValues("text").get(getRndIntInRange(0, 153)).asText()).append(" ");
+                newsBuilder.append(node.findValue("direction").findValues("text")
+                                        .get(getRndIntInRange(0, 9)).asText()).
+                            append(" ").
+                            append(node.findValue("daleko").findValues("text")
+                                        .get(getRndIntInRange(0, 153)).asText()).append(".");
                 break;
         }
 
@@ -342,6 +347,79 @@ public class NewsGenerator {
         return newsBuilder;
     }
 
+    private StringBuilder getInstantNews(JsonNode node) {
+        StringBuilder newsBuilder = new StringBuilder();
+
+        int newsNumb = getRndIntInRange(1, 3);
+        switch (newsNumb) {
+            case 1: //новость об атаке кем-то
+                newsBuilder.append(node.findValue("instant_news").findValue("start").findValue("attacked")
+                                        .findValues("text").get(getRndIntInRange(0, 3)).asText()).append(" ")
+                            .append(node.findValue("utilities").findValue("who_mutant")
+                                        .findValues("text").get(getRndIntInRange(0, 42)).asText()).append("!");
+                break;
+            case 2: //новость о том, что что-то услышали
+                newsBuilder.append(node.findValue("instant_news").findValue("start").findValue("hear")
+                                        .findValues("text").get(getRndIntInRange(0, 8)).asText())
+                            .append(" ").append(node.findValue("instant_news").findValue("hear_mid")
+                                                    .findValues("text").get(getRndIntInRange(0, 13)).asText())
+                            .append(" ");
+                switch (getRndIntInRange(1, 2)) {
+                    case 1:
+                        newsBuilder.append(node.findValue("blizko").findValues("text")
+                                                .get(getRndIntInRange(0, 153)).asText()).append(". ");
+                        break;
+                    case 2:
+                        newsBuilder.append(node.findValue("utilities").findValue("direction")
+                                                .findValues("text").get(getRndIntInRange(0, 9)).asText())
+                                    .append(" ")
+                                    .append(node.findValue("daleko").findValues("text")
+                                                .get(getRndIntInRange(0, 153)).asText()).append(". ");
+                        break;
+                }
+                newsBuilder.append(node.findValue("instant_news").findValue("end")
+                                                    .findValues("text").get(getRndIntInRange(0, 14)).asText());
+                break;
+            case 3: //новость о том, что что-то увидели
+                newsBuilder.append(node.findValue("instant_news").findValue("start").findValue("see")
+                                        .findValues("text").get(getRndIntInRange(0, 8)).asText()).append(" ");
+                switch (getRndIntInRange(1, 2)) { //выбираем один человек убил или несколько
+                    case 1:
+                        newsBuilder.append(node.findValue("who_human").findValue("who").findValue("single")
+                                    .findValues("text").get(getRndIntInRange(0, 19)).asText()).append(" ")
+                                    .append(node.findValue("how_killed").findValue("single")
+                                                .findValues("text").get(getRndIntInRange(0, 9)).asText()).append(" ");
+                        break;
+                    case 2:
+                        newsBuilder.append(node.findValue("who_human").findValue("who").findValue("multi")
+                                .findValues("text").get(getRndIntInRange(0, 17)).asText()).append(" ")
+                                .append(node.findValue("how_killed").findValue("multi")
+                                        .findValues("text").get(getRndIntInRange(0, 9)).asText()).append(" ");
+                        break;
+                }
+                switch (getRndIntInRange(1, 2)) { //выбираем убили одного человека или группу
+                    case 1:
+                        newsBuilder.append(node.findValue("who_human").findValue("whom").findValue("single")
+                                    .findValues("text").get(getRndIntInRange(0, 17)).asText()).append(" ");
+                        break;
+                    case 2:
+                        newsBuilder.append(node.findValue("who_human").findValue("whom").findValue("multi")
+                                                .findValue("group_type").findValues("text")
+                                                .get(getRndIntInRange(0, 2)).asText()).append(" ")
+                                    .append(node.findValue("who_human").findValue("whom").findValue("multi")
+                                                .findValue("who").findValues("text")
+                                                .get(getRndIntInRange(0, 15)).asText()).append(" ");
+
+                }
+                newsBuilder.append(node.findValue("blizko").findValues("text")
+                                        .get(getRndIntInRange(0, 153)).asText()).append(".");
+                break;
+        }
+
+
+        return newsBuilder;
+    }
+
     private StringBuilder createName() {
         StringBuilder nameBuilder = new StringBuilder();
 
@@ -405,8 +483,10 @@ public class NewsGenerator {
         }
 
         StringBuilder responseBuilder = new StringBuilder();
-        StringBuilder nameBuilder = createName();
-
+        StringBuilder nameBuilder = new StringBuilder();
+        while (!name.equals("Зомбированные")) {
+            nameBuilder = createName();
+        }
         responseBuilder.append(nameBuilder);
 
         try {
