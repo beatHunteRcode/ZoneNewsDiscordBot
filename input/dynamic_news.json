@@ -1481,1381 +1481,1888 @@
 					{
 						"level_description": [
 							{
-								"text": "в окрестностях «Юпитера»,",
+								"_name" : "jupiter",
+								"location" : [
+									{
+										"loc_name" : "В окрестностях «Юпитера»"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "у аномалии «Пепелище»",
+												"_id": "st_dyn_jupiter_blizko_1"
+											},
+											{
+												"text": "на градирне",
+												"_id": "st_dyn_jupiter_blizko_2"
+											},
+											{
+												"text": "на полустанке",
+												"_id": "st_dyn_jupiter_blizko_3"
+											},
+											{
+												"text": "в аномалии «Плавни»",
+												"_id": "st_dyn_jupiter_blizko_4"
+											},
+											{
+												"text": "на цементном заводе",
+												"_id": "st_dyn_jupiter_blizko_5"
+											},
+											{
+												"text": "в Копачах",
+												"_id": "st_dyn_jupiter_blizko_6"
+											},
+											{
+												"text": "на «Янове»",
+												"_id": "st_dyn_jupiter_blizko_7"
+											},
+											{
+												"text": "в карьере",
+												"_id": "st_dyn_jupiter_blizko_8"
+											},
+											{
+												"text": "в бункере учёных",
+												"_id": "st_dyn_jupiter_blizko_9"
+											},
+											{
+												"text": "на ЗРК «Волхов»",
+												"_id": "st_dyn_jupiter_blizko_10"
+											},
+											{
+												"text": "в аномальной роще",
+												"_id": "st_dyn_jupiter_blizko_11"
+											},
+											{
+												"text": "на стоянке",
+												"_id": "st_dyn_jupiter_blizko_12"
+											},
+											{
+												"text": "на КПП",
+												"_id": "st_dyn_jupiter_blizko_13"
+											},
+											{
+												"text": "в аномалии «Битум»",
+												"_id": "st_dyn_jupiter_blizko_14"
+											},
+											{
+												"text": "в восточном туннеле",
+												"_id": "st_dyn_jupiter_blizko_15"
+											},
+											{
+												"text": "на складе контейнеров",
+												"_id": "st_dyn_jupiter_blizko_16"
+											},
+											{
+												"text": "в вентиляционном комплексе",
+												"_id": "st_dyn_jupiter_blizko_17"
+											},
+											{
+												"text": "на вертолётных площадках",
+												"_id": "st_dyn_jupiter_blizko_18"
+											},
+											{
+												"text": "в аномалии «Бетонная ванна»",
+												"_id": "st_dyn_jupiter_blizko_19"
+											},
+											{
+												"text": "на заводе «Юпитер»",
+												"_id": "st_dyn_jupiter_blizko_20"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "аномалии «Пепелище»",
+												"_id": "st_dyn_jupiter_daleko_1"
+											},
+											{
+												"text": "градирни",
+												"_id": "st_dyn_jupiter_daleko_2"
+											},
+											{
+												"text": "полустанка",
+												"_id": "st_dyn_jupiter_daleko_3"
+											},
+											{
+												"text": "аномалии «Плавни»",
+												"_id": "st_dyn_jupiter_daleko_4"
+											},
+											{
+												"text": "цементного завода",
+												"_id": "st_dyn_jupiter_daleko_5"
+											},
+											{
+												"text": "Копачей",
+												"_id": "st_dyn_jupiter_daleko_6"
+											},
+											{
+												"text": "«Янова»",
+												"_id": "st_dyn_jupiter_daleko_7"
+											},
+											{
+												"text": "карьера",
+												"_id": "st_dyn_jupiter_daleko_8"
+											},
+											{
+												"text": "бункера учёных",
+												"_id": "st_dyn_jupiter_daleko_9"
+											},
+											{
+												"text": "ЗРК «Волхов»",
+												"_id": "st_dyn_jupiter_daleko_10"
+											},
+											{
+												"text": "аномальной рощи",
+												"_id": "st_dyn_jupiter_daleko_11"
+											},
+											{
+												"text": "стоянки",
+												"_id": "st_dyn_jupiter_daleko_12"
+											},
+											{
+												"text": "КПП",
+												"_id": "st_dyn_jupiter_daleko_13"
+											},
+											{
+												"text": "аномалии «Битум»",
+												"_id": "st_dyn_jupiter_daleko_14"
+											},
+											{
+												"text": "восточного туннеля",
+												"_id": "st_dyn_jupiter_daleko_15"
+											},
+											{
+												"text": "склада контейнеров",
+												"_id": "st_dyn_jupiter_daleko_16"
+											},
+											{
+												"text": "вентиляционного комплекса",
+												"_id": "st_dyn_jupiter_daleko_17"
+											},
+											{
+												"text": "вертолётных площадок",
+												"_id": "st_dyn_jupiter_daleko_18"
+											},
+											{
+												"text": "аномалии «Бетонная ванна»",
+												"_id": "st_dyn_jupiter_daleko_19"
+											},
+											{
+												"text": "завода «Юпитер»",
+												"_id": "st_dyn_jupiter_daleko_20"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_jupiter"
 							},
 							{
-								"text": "в Путепроводе,",
+								"_name" : "jupiter_underground",
+								"location" : [
+									{
+										"loc_name": "В Путепроводе"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "в тоннеле",
+												"_id": "st_dyn_jupiter_underground_blizko_1"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "в тоннеле",
+												"_id": "st_dyn_jupiter_underground_daleko_1"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_jupiter_underground"
 							},
 							{
-								"text": "на Болотах,",
+								"_name" : "marsh",
+								"location" : [
+									{
+										"loc_name": "На Болотах"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "на базе «Чистого Неба»",
+												"_id": "st_dyn_k00_marsh_blizko_1"
+											},
+											{
+												"text": "на рыбацком хуторе",
+												"_id": "st_dyn_k00_marsh_blizko_2"
+											},
+											{
+												"text": "на насосной станции",
+												"_id": "st_dyn_k00_marsh_blizko_3"
+											},
+											{
+												"text": "в аномалии «Злая топь»",
+												"_id": "st_dyn_k00_marsh_blizko_4"
+											},
+											{
+												"text": "у перехода на Агропром",
+												"_id": "st_dyn_k00_marsh_blizko_5"
+											},
+											{
+												"text": "на машинном дворе",
+												"_id": "st_dyn_k00_marsh_blizko_6"
+											},
+											{
+												"text": "в аномалии «Медленный огонь»",
+												"_id": "st_dyn_k00_marsh_blizko_7"
+											},
+											{
+												"text": "на южном хуторе",
+												"_id": "st_dyn_k00_marsh_blizko_8"
+											},
+											{
+												"text": "в старой церкви",
+												"_id": "st_dyn_k00_marsh_blizko_9"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "базы «Чистого Неба»",
+												"_id": "st_dyn_k00_marsh_daleko_1"
+											},
+											{
+												"text": "рыбацкого хутора",
+												"_id": "st_dyn_k00_marsh_daleko_2"
+											},
+											{
+												"text": "насосной станции",
+												"_id": "st_dyn_k00_marsh_daleko_3"
+											},
+											{
+												"text": "аномалии «Злая топь»",
+												"_id": "st_dyn_k00_marsh_daleko_4"
+											},
+											{
+												"text": "перехода на Агропром",
+												"_id": "st_dyn_k00_marsh_daleko_5"
+											},
+											{
+												"text": "машинного двора",
+												"_id": "st_dyn_k00_marsh_daleko_6"
+											},
+											{
+												"text": "аномалии «Медленный огонь»",
+												"_id": "st_dyn_k00_marsh_daleko_7"
+											},
+											{
+												"text": "южного хутора",
+												"_id": "st_dyn_k00_marsh_daleko_8"
+											},
+											{
+												"text": "старой церкви",
+												"_id": "st_dyn_k00_marsh_daleko_9"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_k00_marsh"
 							},
 							{
-								"text": "в Тёмной Лощине,",
+								"_name" : "darkscape",
+								"location" : [
+									{
+										"loc_name": "В Тёмной Лощине"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "у перехода на Кордон",
+												"_id": "st_dyn_k01_darkscape_blizko_1"
+											},
+											{
+												"text": "на заправке",
+												"_id": "st_dyn_k01_darkscape_blizko_2"
+											},
+											{
+												"text": "на лесопилке",
+												"_id": "st_dyn_k01_darkscape_blizko_3"
+											},
+											{
+												"text": "у моста",
+												"_id": "st_dyn_k01_darkscape_blizko_4"
+											},
+											{
+												"text": "у перехода в Тёмную Долину",
+												"_id": "st_dyn_k01_darkscape_blizko_5"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "перехода на Кордон",
+												"_id": "st_dyn_k01_darkscape_daleko_1"
+											},
+											{
+												"text": "заправки",
+												"_id": "st_dyn_k01_darkscape_daleko_2"
+											},
+											{
+												"text": "лесопилки",
+												"_id": "st_dyn_k01_darkscape_daleko_3"
+											},
+											{
+												"text": "моста",
+												"_id": "st_dyn_k01_darkscape_daleko_4"
+											},
+											{
+												"text": "перехода в Тёмную Долину",
+												"_id": "st_dyn_k01_darkscape_daleko_5"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_k01_darkscape"
 							},
 							{
-								"text": "на Кладбище Техники,",
+								"_name" : "trucks_cemetery",
+								"location" : [
+									{
+										"loc_name": "На Кладбище Техники"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "на пути к Бару",
+												"_id": "st_dyn_k02_trucks_cemetery_blizko_1"
+											},
+											{
+												"text": "на кладбище вертолётов",
+												"_id": "st_dyn_k02_trucks_cemetery_blizko_2"
+											},
+											{
+												"text": "на кладбище пожарных машин",
+												"_id": "st_dyn_k02_trucks_cemetery_blizko_3"
+											},
+											{
+												"text": "на радиоактивных холмах",
+												"_id": "st_dyn_k02_trucks_cemetery_blizko_4"
+											},
+											{
+												"text": "на северо-восточном блокпоста",
+												"_id": "st_dyn_k02_trucks_cemetery_blizko_5"
+											},
+											{
+												"text": "на холме в лесу",
+												"_id": "st_dyn_k02_trucks_cemetery_blizko_6"
+											},
+											{
+												"text": "в аномальном овраге",
+												"_id": "st_dyn_k02_trucks_cemetery_blizko_7"
+											},
+											{
+												"text": "на стоянке у контейнеров",
+												"_id": "st_dyn_k02_trucks_cemetery_blizko_8"
+											},
+											{
+												"text": "на южной стоянке",
+												"_id": "st_dyn_k02_trucks_cemetery_blizko_9"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "пути к Бару",
+												"_id": "st_dyn_k02_trucks_cemetery_daleko_1"
+											},
+											{
+												"text": "кладбища вертолётов",
+												"_id": "st_dyn_k02_trucks_cemetery_daleko_2"
+											},
+											{
+												"text": "кладбища пожарных машин",
+												"_id": "st_dyn_k02_trucks_cemetery_daleko_3"
+											},
+											{
+												"text": "радиоактивных холмов",
+												"_id": "st_dyn_k02_trucks_cemetery_daleko_4"
+											},
+											{
+												"text": "северо-восточного блокпоста",
+												"_id": "st_dyn_k02_trucks_cemetery_daleko_5"
+											},
+											{
+												"text": "холма в лесу",
+												"_id": "st_dyn_k02_trucks_cemetery_daleko_6"
+											},
+											{
+												"text": "аномального оврага",
+												"_id": "st_dyn_k02_trucks_cemetery_daleko_7"
+											},
+											{
+												"text": "стоянки у контейнеров",
+												"_id": "st_dyn_k02_trucks_cemetery_daleko_8"
+											},
+											{
+												"text": "южной стоянки",
+												"_id": "st_dyn_k02_trucks_cemetery_daleko_9"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_k02_trucks_cemetery"
 							},
 							{
-								"text": "на Кордоне,",
+								"_name" : "escape",
+								"location" : [
+									{
+										"loc_name": "На Кордоне"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "у южного блокпоста",
+												"_id": "st_dyn_l01_escape_blizko_1"
+											},
+											{
+												"text": "в деревне новичков",
+												"_id": "st_dyn_l01_escape_blizko_2"
+											},
+											{
+												"text": "в аномалиях «Мясорубка»",
+												"_id": "st_dyn_l01_escape_blizko_3"
+											},
+											{
+												"text": "на АТП",
+												"_id": "st_dyn_l01_escape_blizko_4"
+											},
+											{
+												"text": "у ж/д насыпи",
+												"_id": "st_dyn_l01_escape_blizko_5"
+											},
+											{
+												"text": "на старой ферме",
+												"_id": "st_dyn_l01_escape_blizko_6"
+											},
+											{
+												"text": "в аномалии «Костянка»",
+												"_id": "st_dyn_l01_escape_blizko_7"
+											},
+											{
+												"text": "в аномалии «Дробилка»",
+												"_id": "st_dyn_l01_escape_blizko_8"
+											},
+											{
+												"text": "у северного блокпоста",
+												"_id": "st_dyn_l01_escape_blizko_9"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "южного блокпоста",
+												"_id": "st_dyn_l01_escape_daleko_1"
+											},
+											{
+												"text": "деревни новичков",
+												"_id": "st_dyn_l01_escape_daleko_2"
+											},
+											{
+												"text": "аномалий «Мясорубка»",
+												"_id": "st_dyn_l01_escape_daleko_3"
+											},
+											{
+												"text": "АТП",
+												"_id": "st_dyn_l01_escape_daleko_4"
+											},
+											{
+												"text": "ж/д насыпи",
+												"_id": "st_dyn_l01_escape_daleko_5"
+											},
+											{
+												"text": "старой фермы",
+												"_id": "st_dyn_l01_escape_daleko_6"
+											},
+											{
+												"text": "аномалии «Костянка»",
+												"_id": "st_dyn_l01_escape_daleko_7"
+											},
+											{
+												"text": "аномалии «Дробилка»",
+												"_id": "st_dyn_l01_escape_daleko_8"
+											},
+											{
+												"text": "северного блокпоста",
+												"_id": "st_dyn_l01_escape_daleko_9"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l01_escape"
 							},
 							{
-								"text": "на Свалке,",
+								"_name" : "garbage",
+								"location" : [
+									{
+										"loc_name": "На Свалке"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "у блокпоста на дороге в Бар",
+												"_id": "st_dyn_l02_garbage_blizko_1"
+											},
+											{
+												"text": "в аномалии «Ведьмин круг»",
+												"_id": "st_dyn_l02_garbage_blizko_2"
+											},
+											{
+												"text": "в депо",
+												"_id": "st_dyn_l02_garbage_blizko_3"
+											},
+											{
+												"text": "на стоянке брошенной техники",
+												"_id": "st_dyn_l02_garbage_blizko_4"
+											},
+											{
+												"text": "в аномалии «Газировка»",
+												"_id": "st_dyn_l02_garbage_blizko_5"
+											},
+											{
+												"text": "в аномалии «Изнанка»",
+												"_id": "st_dyn_l02_garbage_blizko_6"
+											},
+											{
+												"text": "у перехода на Кордон",
+												"_id": "st_dyn_l02_garbage_blizko_7"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "блокпоста на дороге в Бар",
+												"_id": "st_dyn_l02_garbage_daleko_1"
+											},
+											{
+												"text": "аномалии «Ведьмин круг»",
+												"_id": "st_dyn_l02_garbage_daleko_2"
+											},
+											{
+												"text": "депо",
+												"_id": "st_dyn_l02_garbage_daleko_3"
+											},
+											{
+												"text": "стоянки брошенной техники",
+												"_id": "st_dyn_l02_garbage_daleko_4"
+											},
+											{
+												"text": "аномалии «Газировка»",
+												"_id": "st_dyn_l02_garbage_daleko_5"
+											},
+											{
+												"text": "аномалии «Изнанка»",
+												"_id": "st_dyn_l02_garbage_daleko_6"
+											},
+											{
+												"text": "перехода на Кордон",
+												"_id": "st_dyn_l02_garbage_daleko_7"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l02_garbage"
 							},
 							{
-								"text": "на Агропроме,",
+								"_name" : "agroprom",
+								"location" : [
+									{
+										"loc_name": "На Агропроме"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "в аномалии «Птичья карусель»",
+												"_id": "st_dyn_l03_agroprom_blizko_1"
+											},
+											{
+												"text": "в аномалии «Зона ЭМИ»",
+												"_id": "st_dyn_l03_agroprom_blizko_2"
+											},
+											{
+												"text": "в аномалии «Опасный склон»",
+												"_id": "st_dyn_l03_agroprom_blizko_3"
+											},
+											{
+												"text": "около НИИ",
+												"_id": "st_dyn_l03_agroprom_blizko_4"
+											},
+											{
+												"text": "у аномалии «Старые когти»",
+												"_id": "st_dyn_l03_agroprom_blizko_5"
+											},
+											{
+												"text": "в токсичном болоте",
+												"_id": "st_dyn_l03_agroprom_blizko_6"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "аномалии «Птичья карусель»",
+												"_id": "st_dyn_l03_agroprom_daleko_1"
+											},
+											{
+												"text": "аномалии «Зона ЭМИ»",
+												"_id": "st_dyn_l03_agroprom_daleko_2"
+											},
+											{
+												"text": "аномалии «Опасный склон»",
+												"_id": "st_dyn_l03_agroprom_daleko_3"
+											},
+											{
+												"text": "НИИ",
+												"_id": "st_dyn_l03_agroprom_daleko_4"
+											},
+											{
+												"text": "аномалии «Старые когти»",
+												"_id": "st_dyn_l03_agroprom_daleko_5"
+											},
+											{
+												"text": "токсичного болота",
+												"_id": "st_dyn_l03_agroprom_daleko_6"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l03_agroprom"
 							},
 							{
-								"text": "в подземельях Агропрома,",
+								"_name" : "agr_underground",
+								"location" : [
+									{
+										"loc_name": "В подземельях Агропрома"
+									},
+									{
+										"blizko" : [
+
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l03u_agr_underground"
 							},
 							{
-								"text": "в Тёмной Долине,",
+								"_name" : "darkvalley",
+								"location" : [
+									{
+										"loc_name": "В Тёмной Долине"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "на заброшенной ферме",
+												"_id": "st_dyn_l04_darkvalley_blizko_1"
+											},
+											{
+												"text": "в аномалии «Тёмный разлом»",
+												"_id": "st_dyn_l04_darkvalley_blizko_2"
+											},
+											{
+												"text": "возле аномалий «Трамплин»",
+												"_id": "st_dyn_l04_darkvalley_blizko_3"
+											},
+											{
+												"text": "у аномалии «Комета»",
+												"_id": "st_dyn_l04_darkvalley_blizko_4"
+											},
+											{
+												"text": "у аномалии «Смертельное облако»",
+												"_id": "st_dyn_l04_darkvalley_blizko_5"
+											},
+											{
+												"text": "на Северной фабрике",
+												"_id": "st_dyn_l04_darkvalley_blizko_6"
+											},
+											{
+												"text": "у перехода на Свалку",
+												"_id": "st_dyn_l04_darkvalley_blizko_7"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "заброшенной фермы",
+												"_id": "st_dyn_l04_darkvalley_daleko_1"
+											},
+											{
+												"text": "аномалии «Тёмный разлом»",
+												"_id": "st_dyn_l04_darkvalley_daleko_2"
+											},
+											{
+												"text": "аномалий «Трамплин»",
+												"_id": "st_dyn_l04_darkvalley_daleko_3"
+											},
+											{
+												"text": "аномалии «Комета»",
+												"_id": "st_dyn_l04_darkvalley_daleko_4"
+											},
+											{
+												"text": "аномалии «Смертельное облако»",
+												"_id": "st_dyn_l04_darkvalley_daleko_5"
+											},
+											{
+												"text": "Северной фабрики",
+												"_id": "st_dyn_l04_darkvalley_daleko_6"
+											},
+											{
+												"text": "перехода на Свалку",
+												"_id": "st_dyn_l04_darkvalley_daleko_7"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l04_darkvalley"
 							},
 							{
-								"text": "в Х-18,",
+								"_name" : "labx18",
+								"location" : [
+									{
+										"loc_name": "В Х-18"
+									},
+									{
+										"blizko" : [
+
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l04u_labx18"
 							},
 							{
-								"text": "на Ростке,",
-								"_id": "st_dyn_news_l05_bar"
-							},
-							{
-								"text": "на Дикой Территории,",
+								"_name" : "rostok",
+								"location" : [
+									{
+										"loc_name": "На Дикой Территории"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "у перехода на Янтарь",
+												"_id": "st_dyn_l06_rostok_blizko_1"
+											},
+											{
+												"text": "в тоннеле с жарками",
+												"_id": "st_dyn_l06_rostok_blizko_2"
+											},
+											{
+												"text": "в недостроенном здании",
+												"_id": "st_dyn_l06_rostok_blizko_3"
+											},
+											{
+												"text": "у стоянки между стройматериалами",
+												"_id": "st_dyn_l06_rostok_blizko_4"
+											},
+											{
+												"text": "у прохода в Бар",
+												"_id": "st_dyn_l06_rostok_blizko_5"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "перехода на Янтарь",
+												"_id": "st_dyn_l06_rostok_daleko_1"
+											},
+											{
+												"text": "тоннеля с жарками",
+												"_id": "st_dyn_l06_rostok_daleko_2"
+											},
+											{
+												"text": "недостроенного здания",
+												"_id": "st_dyn_l06_rostok_daleko_3"
+											},
+											{
+												"text": "стоянки между стройматериалами",
+												"_id": "st_dyn_l06_rostok_daleko_4"
+											},
+											{
+												"text": "прохода в Бар",
+												"_id": "st_dyn_l06_rostok_daleko_5"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l06_rostok"
 							},
 							{
-								"text": "на Военных Складах,",
+								"_name" : "bar",
+								"location" : [
+									{
+										"loc_name": "На Ростке"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "у западного блокпоста",
+												"_id": "st_dyn_l05_bar_blizko_1"
+											},
+											{
+												"text": "у входа в Бар",
+												"_id": "st_dyn_l05_bar_blizko_2"
+											},
+											{
+												"text": "на базе Долга",
+												"_id": "st_dyn_l05_bar_blizko_3"
+											},
+											{
+												"text": "у прохода на Военные Склады",
+												"_id": "st_dyn_l05_bar_blizko_4"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "западного блокпоста",
+												"_id": "st_dyn_l05_bar_daleko_1"
+											},
+											{
+												"text": "входа в Бар",
+												"_id": "st_dyn_l05_bar_daleko_2"
+											},
+											{
+												"text": "базы Долга",
+												"_id": "st_dyn_l05_bar_daleko_3"
+											},
+											{
+												"text": "прохода на Военные Склады",
+												"_id": "st_dyn_l05_bar_daleko_4"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
+								"_id": "st_dyn_news_l05_bar"
+							},
+							{
+								"_name" : "107_military",
+								"location" : [
+									{
+										"loc_name": "На Военных Складах"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "в аномалии «Пекло»",
+												"_id": "st_dyn_l07_military_blizko_1"
+											},
+											{
+												"text": "у аномалий «Карусель»",
+												"_id": "st_dyn_l07_military_blizko_2"
+											},
+											{
+												"text": "на территории базы",
+												"_id": "st_dyn_l07_military_blizko_3"
+											},
+											{
+												"text": "в «Кислотном болоте»",
+												"_id": "st_dyn_l07_military_blizko_4"
+											},
+											{
+												"text": "в заброшенной деревне",
+												"_id": "st_dyn_l07_military_blizko_5"
+											},
+											{
+												"text": "в аномалии «Гравитационный пучок»",
+												"_id": "st_dyn_l07_military_blizko_6"
+											},
+											{
+												"text": "в аномалии «Ментальный огонь»",
+												"_id": "st_dyn_l07_military_blizko_7"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "аномалии «Пекло»",
+												"_id": "st_dyn_l07_military_daleko_1"
+											},
+											{
+												"text": "аномалий «Карусель»",
+												"_id": "st_dyn_l07_military_daleko_2"
+											},
+											{
+												"text": "входа на базу",
+												"_id": "st_dyn_l07_military_daleko_3"
+											},
+											{
+												"text": "«Кислотного болота»",
+												"_id": "st_dyn_l07_military_daleko_4"
+											},
+											{
+												"text": "заброшенной деревни",
+												"_id": "st_dyn_l07_military_daleko_5"
+											},
+											{
+												"text": "аномалии «Гравитационный пучок»",
+												"_id": "st_dyn_l07_military_daleko_6"
+											},
+											{
+												"text": "аномалии «Ментальный огонь»",
+												"_id": "st_dyn_l07_military_daleko_7"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l07_military"
 							},
 							{
-								"text": "на Янтаре,",
+								"_name" : "yantar",
+								"location" : [
+									{
+										"loc_name": "На Янтаре"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "в «Отравленном озере»",
+												"_id": "st_dyn_l08_yantar_blizko_1"
+											},
+											{
+												"text": "в лагере учёных",
+												"_id": "st_dyn_l08_yantar_blizko_2"
+											},
+											{
+												"text": "в аномалии «Загребущие руки»",
+												"_id": "st_dyn_l08_yantar_blizko_3"
+											},
+											{
+												"text": "у входа на завод",
+												"_id": "st_dyn_l08_yantar_blizko_4"
+											},
+											{
+												"text": "у перехода в Мёртвый Город",
+												"_id": "st_dyn_l08_yantar_blizko_5"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "«Отравленного озера»",
+												"_id": "st_dyn_l08_yantar_daleko_1"
+											},
+											{
+												"text": "лагеря учёных",
+												"_id": "st_dyn_l08_yantar_daleko_2"
+											},
+											{
+												"text": "аномалии «Загребущие руки»",
+												"_id": "st_dyn_l08_yantar_daleko_3"
+											},
+											{
+												"text": "входа на завод",
+												"_id": "st_dyn_l08_yantar_daleko_4"
+											},
+											{
+												"text": "перехода в Мёртвый Город",
+												"_id": "st_dyn_l08_yantar_daleko_5"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l08_yantar"
 							},
 							{
-								"text": "в Мёртвом Городе,",
+								"_name" : "deadcity",
+								"location" : [
+									{
+										"loc_name": "В Мёртвом Городе"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "у тоннеля на Военные Склады",
+												"_id": "st_dyn_l09_deadcity_blizko_1"
+											},
+											{
+												"text": "у прохода на Янтарь",
+												"_id": "st_dyn_l09_deadcity_blizko_2"
+											},
+											{
+												"text": "около памятника",
+												"_id": "st_dyn_l09_deadcity_blizko_3"
+											},
+											{
+												"text": "у прохода в Лиманск",
+												"_id": "st_dyn_l09_deadcity_blizko_4"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "тоннеля на Военные Склады",
+												"_id": "st_dyn_l09_deadcity_daleko_1"
+											},
+											{
+												"text": "прохода на Янтарь",
+												"_id": "st_dyn_l09_deadcity_daleko_2"
+											},
+											{
+												"text": "памятника Ильичу",
+												"_id": "st_dyn_l09_deadcity_daleko_3"
+											},
+											{
+												"text": "прохода в Лиманск",
+												"_id": "st_dyn_l09_deadcity_daleko_4"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l09_deadcity"
 							},
 							{
-								"text": "в Лиманске,",
+								"_name" : "limansk",
+								"location" : [
+									{
+										"loc_name": "В Лиманске"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "у прохода в Мёртвый Город",
+												"_id": "st_dyn_l10_limansk_blizko_1"
+											},
+											{
+												"text": "у тоннеля в Рыжий Лес",
+												"_id": "st_dyn_l10_limansk_blizko_2"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "прохода в Мёртвый Город",
+												"_id": "st_dyn_l10_limansk_daleko_1"
+											},
+											{
+												"text": "тоннеля в Рыжий Лес",
+												"_id": "st_dyn_l10_limansk_daleko_2"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l10_limansk"
 							},
 							{
-								"text": "на Радаре,",
+								"_name" : "radar",
+								"location" : [
+									{
+										"loc_name": "На Радаре"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "около антенн",
+												"_id": "st_dyn_l10_radar_blizko_1"
+											},
+											{
+												"text": "у прохода в Припять",
+												"_id": "st_dyn_l10_radar_blizko_2"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "антенн",
+												"_id": "st_dyn_l10_radar_daleko_1"
+											},
+											{
+												"text": "прохода в Припять",
+												"_id": "st_dyn_l10_radar_daleko_2"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l10_radar"
 							},
 							{
-								"text": "в Рыжем Лесу,",
+								"_name" : "red_forest",
+								"location" : [
+									{
+										"loc_name": "В Рыжем Лесу"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "у моста",
+												"_id": "st_dyn_l10_red_forest_blizko_1"
+											},
+											{
+												"text": "у аномалии «Сверхпроводник»",
+												"_id": "st_dyn_l10_red_forest_blizko_2"
+											},
+											{
+												"text": "у аномалии «Симбионт»",
+												"_id": "st_dyn_l10_red_forest_blizko_3"
+											},
+											{
+												"text": "в аномалии «Вертушка»",
+												"_id": "st_dyn_l10_red_forest_blizko_4"
+											},
+											{
+												"text": "у шахты",
+												"_id": "st_dyn_l10_red_forest_blizko_5"
+											},
+											{
+												"text": "у аномалии «Подземная гроза»",
+												"_id": "st_dyn_l10_red_forest_blizko_6"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "моста",
+												"_id": "st_dyn_l10_red_forest_daleko_1"
+											},
+											{
+												"text": "аномалии «Сверхпроводник»",
+												"_id": "st_dyn_l10_red_forest_daleko_2"
+											},
+											{
+												"text": "аномалии «Симбионт»",
+												"_id": "st_dyn_l10_red_forest_daleko_3"
+											},
+											{
+												"text": "аномалии «Вертушка»",
+												"_id": "st_dyn_l10_red_forest_daleko_4"
+											},
+											{
+												"text": "шахты",
+												"_id": "st_dyn_l10_red_forest_daleko_5"
+											},
+											{
+												"text": "аномалии «Подземная гроза»",
+												"_id": "st_dyn_l10_red_forest_daleko_6"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l10_red_forest"
 							},
 							{
-								"text": "в Х-19,",
+								"_name" : "bunker",
+								"location" : [
+									{
+										"loc_name": "В Х-19"
+									},
+									{
+										"blizko" : [
+
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l10u_bunker"
 							},
 							{
-								"text": "в Заброшенном Госпитале.",
+								"_name" : "hospital",
+								"location" : [
+									{
+										"loc_name": "В Заброшенном Госпитале"
+									},
+									{
+										"blizko" : [
+
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l11_hospital"
 							},
 							{
-								"text": "в центральной Припяти,",
+								"_name" : "111_pripyat",
+								"location" : [
+									{
+										"loc_name": "В центральной Припяти"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "у прохода на Радар",
+												"_id": "st_dyn_l11_pripyat_blizko_1"
+											},
+											{
+												"text": "возле ДК «Энергетик»",
+												"_id": "st_dyn_l11_pripyat_blizko_2"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "прохода на Радар",
+												"_id": "st_dyn_l11_pripyat_daleko_1"
+											},
+											{
+												"text": "ДК «Энергетик»",
+												"_id": "st_dyn_l11_pripyat_daleko_2"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l11_pripyat"
 							},
 							{
-								"text": "в Х-8,",
+								"_name" : "labx8",
+								"location" : [
+									{
+										"loc_name": "В Х-8"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "в лаборатории",
+												"_id": "st_dyn_labx8_blizko_1"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "в лаборатории",
+												"_id": "st_dyn_labx8_daleko_1"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_labx8"
 							},
 							{
-								"text": "на Окраинах Припяти,",
+								"_name" : "pripyat",
+								"location" : [
+									{
+										"loc_name": "На Окраинах Припяти"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "у кинотеатра «Прометей»",
+												"_id": "st_dyn_pripyat_blizko_1"
+											},
+											{
+												"text": "в речном порту",
+												"_id": "st_dyn_pripyat_blizko_2"
+											},
+											{
+												"text": "у старого КБО",
+												"_id": "st_dyn_pripyat_blizko_3"
+											},
+											{
+												"text": "в школе",
+												"_id": "st_dyn_pripyat_blizko_4"
+											},
+											{
+												"text": "в госпитале",
+												"_id": "st_dyn_pripyat_blizko_5"
+											},
+											{
+												"text": "у КБО «Юбилейный»",
+												"_id": "st_dyn_pripyat_blizko_6"
+											},
+											{
+												"text": "в прачечной",
+												"_id": "st_dyn_pripyat_blizko_7"
+											},
+											{
+												"text": "в детском саду",
+												"_id": "st_dyn_pripyat_blizko_8"
+											},
+											{
+												"text": "в общежитии",
+												"_id": "st_dyn_pripyat_blizko_9"
+											},
+											{
+												"text": "у гастронома",
+												"_id": "st_dyn_pripyat_blizko_10"
+											},
+											{
+												"text": "в универмаге",
+												"_id": "st_dyn_pripyat_blizko_11"
+											},
+											{
+												"text": "у магазина «Книги»",
+												"_id": "st_dyn_pripyat_blizko_12"
+											},
+											{
+												"text": "в аномалии «Вулкан»",
+												"_id": "st_dyn_pripyat_blizko_13"
+											},
+											{
+												"text": "в аномалии «Лоза»",
+												"_id": "st_dyn_pripyat_blizko_14"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "кинотеатра «Прометей»",
+												"_id": "st_dyn_pripyat_daleko_1"
+											},
+											{
+												"text": "речного порта",
+												"_id": "st_dyn_pripyat_daleko_2"
+											},
+											{
+												"text": "старого КБО",
+												"_id": "st_dyn_pripyat_daleko_3"
+											},
+											{
+												"text": "школы",
+												"_id": "st_dyn_pripyat_daleko_4"
+											},
+											{
+												"text": "госпиталя",
+												"_id": "st_dyn_pripyat_daleko_5"
+											},
+											{
+												"text": "КБО «Юбилейный»",
+												"_id": "st_dyn_pripyat_daleko_6"
+											},
+											{
+												"text": "прачечной",
+												"_id": "st_dyn_pripyat_daleko_7"
+											},
+											{
+												"text": "детского сада",
+												"_id": "st_dyn_pripyat_daleko_8"
+											},
+											{
+												"text": "общежития",
+												"_id": "st_dyn_pripyat_daleko_9"
+											},
+											{
+												"text": "гастронома",
+												"_id": "st_dyn_pripyat_daleko_10"
+											},
+											{
+												"text": "универмага",
+												"_id": "st_dyn_pripyat_daleko_11"
+											},
+											{
+												"text": "магазина «Книги»",
+												"_id": "st_dyn_pripyat_daleko_12"
+											},
+											{
+												"text": "аномалии «Вулкан»",
+												"_id": "st_dyn_pripyat_daleko_13"
+											},
+											{
+												"text": "аномалии «Лоза»",
+												"_id": "st_dyn_pripyat_daleko_14"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_pripyat"
 							},
 							{
-								"text": "на Затоне,",
+								"_name" : "zaton",
+								"location" : [
+									{
+										"loc_name": "На Затоне"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "у аномалии «Коготь»",
+												"_id": "st_dyn_zaton_blizko_1"
+											},
+											{
+												"text": "у аномалии «Железный лес»",
+												"_id": "st_dyn_zaton_blizko_2"
+											},
+											{
+												"text": "на лесопилке",
+												"_id": "st_dyn_zaton_blizko_3"
+											},
+											{
+												"text": "на ВНЗ «Круг»",
+												"_id": "st_dyn_zaton_blizko_4"
+											},
+											{
+												"text": "на станции переработки отходов",
+												"_id": "st_dyn_zaton_blizko_5"
+											},
+											{
+												"text": "в аномалии «Цирк»",
+												"_id": "st_dyn_zaton_blizko_6"
+											},
+											{
+												"text": "в лесничестве",
+												"_id": "st_dyn_zaton_blizko_7"
+											},
+											{
+												"text": "на «Скадовске»",
+												"_id": "st_dyn_zaton_blizko_8"
+											},
+											{
+												"text": "на сгоревшем хуторе",
+												"_id": "st_dyn_zaton_blizko_9"
+											},
+											{
+												"text": "в аномалии «Котёл»",
+												"_id": "st_dyn_zaton_blizko_10"
+											},
+											{
+												"text": "в аномалии «Топь»",
+												"_id": "st_dyn_zaton_blizko_11"
+											},
+											{
+												"text": "в «Изумрудном»",
+												"_id": "st_dyn_zaton_blizko_12"
+											},
+											{
+												"text": "на «Шевченко»",
+												"_id": "st_dyn_zaton_blizko_13"
+											},
+											{
+												"text": "на земснаряде",
+												"_id": "st_dyn_zaton_blizko_14"
+											},
+											{
+												"text": "на портовых кранах",
+												"_id": "st_dyn_zaton_blizko_15"
+											},
+											{
+												"text": "возле аномалии «Соснодуб»",
+												"_id": "st_dyn_zaton_blizko_16"
+											},
+											{
+												"text": "на заправке",
+												"_id": "st_dyn_zaton_blizko_17"
+											},
+											{
+												"text": "на старой барже",
+												"_id": "st_dyn_zaton_blizko_18"
+											},
+											{
+												"text": "у аномалии «Рубец»",
+												"_id": "st_dyn_zaton_blizko_19"
+											},
+											{
+												"text": "на мосту им. Преображенского",
+												"_id": "st_dyn_zaton_blizko_20"
+											},
+											{
+												"text": "на южном плато",
+												"_id": "st_dyn_zaton_blizko_21"
+											},
+											{
+												"text": "в цехах подстанции",
+												"_id": "st_dyn_zaton_blizko_22"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "аномалии «Коготь»",
+												"_id": "st_dyn_zaton_daleko_1"
+											},
+											{
+												"text": "аномалии «Железный лес»",
+												"_id": "st_dyn_zaton_daleko_2"
+											},
+											{
+												"text": "лесопилки",
+												"_id": "st_dyn_zaton_daleko_3"
+											},
+											{
+												"text": "ВНЗ «Круг»",
+												"_id": "st_dyn_zaton_daleko_4"
+											},
+											{
+												"text": "станции переработки отходов",
+												"_id": "st_dyn_zaton_daleko_5"
+											},
+											{
+												"text": "аномалии «Цирк»",
+												"_id": "st_dyn_zaton_daleko_6"
+											},
+											{
+												"text": "лесничества",
+												"_id": "st_dyn_zaton_daleko_7"
+											},
+											{
+												"text": "«Скадовска»",
+												"_id": "st_dyn_zaton_daleko_8"
+											},
+											{
+												"text": "сгоревшего хутора",
+												"_id": "st_dyn_zaton_daleko_9"
+											},
+											{
+												"text": "аномалии «Котёл»",
+												"_id": "st_dyn_zaton_daleko_10"
+											},
+											{
+												"text": "аномалии «Топь»",
+												"_id": "st_dyn_zaton_daleko_11"
+											},
+											{
+												"text": "«Изумрудного»",
+												"_id": "st_dyn_zaton_daleko_12"
+											},
+											{
+												"text": "«Шевченко»",
+												"_id": "st_dyn_zaton_daleko_13"
+											},
+											{
+												"text": "земснаряда",
+												"_id": "st_dyn_zaton_daleko_14"
+											},
+											{
+												"text": "портовых кранов",
+												"_id": "st_dyn_zaton_daleko_15"
+											},
+											{
+												"text": "аномалии «Соснодуб»",
+												"_id": "st_dyn_zaton_daleko_16"
+											},
+											{
+												"text": "заправки",
+												"_id": "st_dyn_zaton_daleko_17"
+											},
+											{
+												"text": "старой баржи",
+												"_id": "st_dyn_zaton_daleko_18"
+											},
+											{
+												"text": "аномалии «Рубец»",
+												"_id": "st_dyn_zaton_daleko_19"
+											},
+											{
+												"text": "моста им. Преображенского",
+												"_id": "st_dyn_zaton_daleko_20"
+											},
+											{
+												"text": "южного плато",
+												"_id": "st_dyn_zaton_daleko_21"
+											},
+											{
+												"text": "цехов подстанции",
+												"_id": "st_dyn_zaton_daleko_22"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_zaton"
 							},
 							{
-								"text": "на юге ЧАЭС.",
+								"_name" : "stancia",
+								"location" : [
+									{
+										"loc_name": "На юге ЧАЭС"
+									},
+									{
+										"blizko" : [
+
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l12_stancia"
 							},
 							{
-								"text": "на севере ЧАЭС.",
+								"_name" : "stancia_2",
+								"location" : [
+									{
+										"loc_name": "На севере ЧАЭС"
+									},
+									{
+										"blizko" : [
+
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l12_stancia_2"
 							},
 							{
-								"text": "в бункере Монолита,",
+								"_name" : "control_monolith",
+								"location" : [
+									{
+										"loc_name": "В бункере Монолита"
+									},
+									{
+										"blizko" : [
+
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l12u_control_monolith"
 							},
 							{
-								"text": "в Саркофаге,",
+								"_name" : "sarcofag",
+								"location" : [
+									{
+										"loc_name": "В Саркофаге"
+									},
+									{
+										"blizko" : [
+
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l12u_sarcofag"
 							},
 							{
-								"text": "на Генераторах.",
+								"_name" : "generators",
+								"location" : [
+									{
+										"loc_name": "На Генераторах."
+									},
+									{
+										"blizko" : [
+
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l13_generators"
 							},
 							{
-								"text": "в Военной Лаборатории,",
+								"_name" : "warlab",
+								"location" : [
+									{
+										"loc_name": "в Военной Лаборатории"
+									},
+									{
+										"blizko" : [
+
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_l13u_warlab"
 							},
 							{
-								"text": "на Поляне,",
+								"_name" : "pole",
+								"location" : [
+									{
+										"loc_name": "На Поляне"
+									},
+									{
+										"blizko" : [
+
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_y04_pole"
 							},
 							{
-								"text": "на Армейских складах,",
+								"_name" : "military",
+								"location" : [
+									{
+										"loc_name": "На Армейских складах"
+									},
+									{
+										"blizko" : [
+											{
+												"text": "на старом хуторе",
+												"_id": "st_dyn_new_military_blizko_1"
+											},
+											{
+												"text": "на южном холме",
+												"_id": "st_dyn_new_military_blizko_2"
+											},
+											{
+												"text": "на базе «Свободы»",
+												"_id": "st_dyn_new_military_blizko_3"
+											},
+											{
+												"text": "на болоте",
+												"_id": "st_dyn_new_military_blizko_4"
+											},
+											{
+												"text": "в старой деревне",
+												"_id": "st_dyn_new_military_blizko_5"
+											},
+											{
+												"text": "на КПП в Мёртвый город",
+												"_id": "st_dyn_new_military_blizko_6"
+											},
+											{
+												"text": "на Барьере",
+												"_id": "st_dyn_new_military_blizko_7"
+											}
+										],
+										"_name" : "blizko"
+									},
+									{
+										"daleko" : [
+											{
+												"text": "старого хутора",
+												"_id": "st_dyn_new_military_daleko_1"
+											},
+											{
+												"text": "аномалии на южном холме",
+												"_id": "st_dyn_new_military_daleko_2"
+											},
+											{
+												"text": "базы «Свободы»",
+												"_id": "st_dyn_new_military_daleko_3"
+											},
+											{
+												"text": "болотца",
+												"_id": "st_dyn_new_military_daleko_4"
+											},
+											{
+												"text": "заброшенной деревни",
+												"_id": "st_dyn_new_military_daleko_5"
+											},
+											{
+												"text": "дороги в Мёртвый город",
+												"_id": "st_dyn_new_military_daleko_6"
+											},
+											{
+												"text": "дороги на Радар",
+												"_id": "st_dyn_new_military_daleko_7"
+											}
+										],
+										"_name" : "daleko"
+									}
+								],
 								"_id": "st_dyn_news_new_military"
 							}
 						],
 						"_name": "level description"
-					},
-					{
-						"daleko": [
-							{
-								"text": "тоннеля на Военные Склады",
-								"_id": "st_dyn_l09_deadcity_daleko_1"
-							},
-							{
-								"text": "прохода на Янтарь",
-								"_id": "st_dyn_l09_deadcity_daleko_2"
-							},
-							{
-								"text": "памятника Ильичу",
-								"_id": "st_dyn_l09_deadcity_daleko_3"
-							},
-							{
-								"text": "прохода в Лиманск",
-								"_id": "st_dyn_l09_deadcity_daleko_4"
-							},
-							{
-								"text": "в тоннеле",
-								"_id": "st_dyn_jupiter_underground_daleko_1"
-							},
-							{
-								"text": "аномалии «Коготь»",
-								"_id": "st_dyn_zaton_daleko_1"
-							},
-							{
-								"text": "аномалии «Железный лес»",
-								"_id": "st_dyn_zaton_daleko_2"
-							},
-							{
-								"text": "лесопилки",
-								"_id": "st_dyn_zaton_daleko_3"
-							},
-							{
-								"text": "ВНЗ «Круг»",
-								"_id": "st_dyn_zaton_daleko_4"
-							},
-							{
-								"text": "станции переработки отходов",
-								"_id": "st_dyn_zaton_daleko_5"
-							},
-							{
-								"text": "аномалии «Цирк»",
-								"_id": "st_dyn_zaton_daleko_6"
-							},
-							{
-								"text": "лесничества",
-								"_id": "st_dyn_zaton_daleko_7"
-							},
-							{
-								"text": "«Скадовска»",
-								"_id": "st_dyn_zaton_daleko_8"
-							},
-							{
-								"text": "сгоревшего хутора",
-								"_id": "st_dyn_zaton_daleko_9"
-							},
-							{
-								"text": "аномалии «Котёл»",
-								"_id": "st_dyn_zaton_daleko_10"
-							},
-							{
-								"text": "аномалии «Топь»",
-								"_id": "st_dyn_zaton_daleko_11"
-							},
-							{
-								"text": "«Изумрудного»",
-								"_id": "st_dyn_zaton_daleko_12"
-							},
-							{
-								"text": "«Шевченко»",
-								"_id": "st_dyn_zaton_daleko_13"
-							},
-							{
-								"text": "земснаряда",
-								"_id": "st_dyn_zaton_daleko_14"
-							},
-							{
-								"text": "портовых кранов",
-								"_id": "st_dyn_zaton_daleko_15"
-							},
-							{
-								"text": "аномалии «Соснодуб»",
-								"_id": "st_dyn_zaton_daleko_16"
-							},
-							{
-								"text": "заправки",
-								"_id": "st_dyn_zaton_daleko_17"
-							},
-							{
-								"text": "старой баржи",
-								"_id": "st_dyn_zaton_daleko_18"
-							},
-							{
-								"text": "аномалии «Рубец»",
-								"_id": "st_dyn_zaton_daleko_19"
-							},
-							{
-								"text": "моста им. Преображенского",
-								"_id": "st_dyn_zaton_daleko_20"
-							},
-							{
-								"text": "южного плато",
-								"_id": "st_dyn_zaton_daleko_21"
-							},
-							{
-								"text": "цехов подстанции",
-								"_id": "st_dyn_zaton_daleko_22"
-							},
-							{
-								"text": "аномалии «Пепелище»",
-								"_id": "st_dyn_jupiter_daleko_1"
-							},
-							{
-								"text": "градирни",
-								"_id": "st_dyn_jupiter_daleko_2"
-							},
-							{
-								"text": "полустанка",
-								"_id": "st_dyn_jupiter_daleko_3"
-							},
-							{
-								"text": "аномалии «Плавни»",
-								"_id": "st_dyn_jupiter_daleko_4"
-							},
-							{
-								"text": "цементного завода",
-								"_id": "st_dyn_jupiter_daleko_5"
-							},
-							{
-								"text": "Копачей",
-								"_id": "st_dyn_jupiter_daleko_6"
-							},
-							{
-								"text": "«Янова»",
-								"_id": "st_dyn_jupiter_daleko_7"
-							},
-							{
-								"text": "карьера",
-								"_id": "st_dyn_jupiter_daleko_8"
-							},
-							{
-								"text": "бункера учёных",
-								"_id": "st_dyn_jupiter_daleko_9"
-							},
-							{
-								"text": "ЗРК «Волхов»",
-								"_id": "st_dyn_jupiter_daleko_10"
-							},
-							{
-								"text": "аномальной рощи",
-								"_id": "st_dyn_jupiter_daleko_11"
-							},
-							{
-								"text": "стоянки",
-								"_id": "st_dyn_jupiter_daleko_12"
-							},
-							{
-								"text": "КПП",
-								"_id": "st_dyn_jupiter_daleko_13"
-							},
-							{
-								"text": "аномалии «Битум»",
-								"_id": "st_dyn_jupiter_daleko_14"
-							},
-							{
-								"text": "восточного туннеля",
-								"_id": "st_dyn_jupiter_daleko_15"
-							},
-							{
-								"text": "склада контейнеров",
-								"_id": "st_dyn_jupiter_daleko_16"
-							},
-							{
-								"text": "вентиляционного комплекса",
-								"_id": "st_dyn_jupiter_daleko_17"
-							},
-							{
-								"text": "вертолётных площадок",
-								"_id": "st_dyn_jupiter_daleko_18"
-							},
-							{
-								"text": "аномалии «Бетонная ванна»",
-								"_id": "st_dyn_jupiter_daleko_19"
-							},
-							{
-								"text": "завода «Юпитер»",
-								"_id": "st_dyn_jupiter_daleko_20"
-							},
-							{
-								"text": "западного блокпоста",
-								"_id": "st_dyn_l05_bar_daleko_1"
-							},
-							{
-								"text": "входа в Бар",
-								"_id": "st_dyn_l05_bar_daleko_2"
-							},
-							{
-								"text": "базы Долга",
-								"_id": "st_dyn_l05_bar_daleko_3"
-							},
-							{
-								"text": "прохода на Военные Склады",
-								"_id": "st_dyn_l05_bar_daleko_4"
-							},
-							{
-								"text": "аномалии «Пекло»",
-								"_id": "st_dyn_l07_military_daleko_1"
-							},
-							{
-								"text": "аномалий «Карусель»",
-								"_id": "st_dyn_l07_military_daleko_2"
-							},
-							{
-								"text": "входа на базу",
-								"_id": "st_dyn_l07_military_daleko_3"
-							},
-							{
-								"text": "«Кислотного болота»",
-								"_id": "st_dyn_l07_military_daleko_4"
-							},
-							{
-								"text": "заброшенной деревни",
-								"_id": "st_dyn_l07_military_daleko_5"
-							},
-							{
-								"text": "аномалии «Гравитационный пучок»",
-								"_id": "st_dyn_l07_military_daleko_6"
-							},
-							{
-								"text": "аномалии «Ментальный огонь»",
-								"_id": "st_dyn_l07_military_daleko_7"
-							},
-							{
-								"text": "южного блокпоста",
-								"_id": "st_dyn_l01_escape_daleko_1"
-							},
-							{
-								"text": "деревни новичков",
-								"_id": "st_dyn_l01_escape_daleko_2"
-							},
-							{
-								"text": "аномалий «Мясорубка»",
-								"_id": "st_dyn_l01_escape_daleko_3"
-							},
-							{
-								"text": "АТП",
-								"_id": "st_dyn_l01_escape_daleko_4"
-							},
-							{
-								"text": "ж/д насыпи",
-								"_id": "st_dyn_l01_escape_daleko_5"
-							},
-							{
-								"text": "старой фермы",
-								"_id": "st_dyn_l01_escape_daleko_6"
-							},
-							{
-								"text": "аномалии «Костянка»",
-								"_id": "st_dyn_l01_escape_daleko_7"
-							},
-							{
-								"text": "аномалии «Дробилка»",
-								"_id": "st_dyn_l01_escape_daleko_8"
-							},
-							{
-								"text": "северного блокпоста",
-								"_id": "st_dyn_l01_escape_daleko_9"
-							},
-							{
-								"text": "базы «Чистого Неба»",
-								"_id": "st_dyn_k00_marsh_daleko_1"
-							},
-							{
-								"text": "рыбацкого хутора",
-								"_id": "st_dyn_k00_marsh_daleko_2"
-							},
-							{
-								"text": "насосной станции",
-								"_id": "st_dyn_k00_marsh_daleko_3"
-							},
-							{
-								"text": "аномалии «Злая топь»",
-								"_id": "st_dyn_k00_marsh_daleko_4"
-							},
-							{
-								"text": "перехода на Агропром",
-								"_id": "st_dyn_k00_marsh_daleko_5"
-							},
-							{
-								"text": "машинного двора",
-								"_id": "st_dyn_k00_marsh_daleko_6"
-							},
-							{
-								"text": "аномалии «Медленный огонь»",
-								"_id": "st_dyn_k00_marsh_daleko_7"
-							},
-							{
-								"text": "южного хутора",
-								"_id": "st_dyn_k00_marsh_daleko_8"
-							},
-							{
-								"text": "старой церкви",
-								"_id": "st_dyn_k00_marsh_daleko_9"
-							},
-							{
-								"text": "прохода в Мёртвый Город",
-								"_id": "st_dyn_l10_limansk_daleko_1"
-							},
-							{
-								"text": "тоннеля в Рыжий Лес",
-								"_id": "st_dyn_l10_limansk_daleko_2"
-							},
-							{
-								"text": "заброшенной фермы",
-								"_id": "st_dyn_l04_darkvalley_daleko_1"
-							},
-							{
-								"text": "аномалии «Тёмный разлом»",
-								"_id": "st_dyn_l04_darkvalley_daleko_2"
-							},
-							{
-								"text": "аномалий «Трамплин»",
-								"_id": "st_dyn_l04_darkvalley_daleko_3"
-							},
-							{
-								"text": "аномалии «Комета»",
-								"_id": "st_dyn_l04_darkvalley_daleko_4"
-							},
-							{
-								"text": "аномалии «Смертельное облако»",
-								"_id": "st_dyn_l04_darkvalley_daleko_5"
-							},
-							{
-								"text": "Северной фабрики",
-								"_id": "st_dyn_l04_darkvalley_daleko_6"
-							},
-							{
-								"text": "перехода на Свалку",
-								"_id": "st_dyn_l04_darkvalley_daleko_7"
-							},
-							{
-								"text": "пути к Бару",
-								"_id": "st_dyn_k02_trucks_cemetery_daleko_1"
-							},
-							{
-								"text": "кладбища вертолётов",
-								"_id": "st_dyn_k02_trucks_cemetery_daleko_2"
-							},
-							{
-								"text": "кладбища пожарных машин",
-								"_id": "st_dyn_k02_trucks_cemetery_daleko_3"
-							},
-							{
-								"text": "радиоактивных холмов",
-								"_id": "st_dyn_k02_trucks_cemetery_daleko_4"
-							},
-							{
-								"text": "северо-восточного блокпоста",
-								"_id": "st_dyn_k02_trucks_cemetery_daleko_5"
-							},
-							{
-								"text": "холма в лесу",
-								"_id": "st_dyn_k02_trucks_cemetery_daleko_6"
-							},
-							{
-								"text": "аномального оврага",
-								"_id": "st_dyn_k02_trucks_cemetery_daleko_7"
-							},
-							{
-								"text": "стоянки у контейнеров",
-								"_id": "st_dyn_k02_trucks_cemetery_daleko_8"
-							},
-							{
-								"text": "южной стоянки",
-								"_id": "st_dyn_k02_trucks_cemetery_daleko_9"
-							},
-							{
-								"text": "прохода на Радар",
-								"_id": "st_dyn_l11_pripyat_daleko_1"
-							},
-							{
-								"text": "ДК «Энергетик»",
-								"_id": "st_dyn_l11_pripyat_daleko_2"
-							},
-							{
-								"text": "антенн",
-								"_id": "st_dyn_l10_radar_daleko_1"
-							},
-							{
-								"text": "прохода в Припять",
-								"_id": "st_dyn_l10_radar_daleko_2"
-							},
-							{
-								"text": "моста",
-								"_id": "st_dyn_l10_red_forest_daleko_1"
-							},
-							{
-								"text": "аномалии «Сверхпроводник»",
-								"_id": "st_dyn_l10_red_forest_daleko_2"
-							},
-							{
-								"text": "аномалии «Симбионт»",
-								"_id": "st_dyn_l10_red_forest_daleko_3"
-							},
-							{
-								"text": "аномалии «Вертушка»",
-								"_id": "st_dyn_l10_red_forest_daleko_4"
-							},
-							{
-								"text": "шахты",
-								"_id": "st_dyn_l10_red_forest_daleko_5"
-							},
-							{
-								"text": "аномалии «Подземная гроза»",
-								"_id": "st_dyn_l10_red_forest_daleko_6"
-							},
-							{
-								"text": "перехода на Кордон",
-								"_id": "st_dyn_k01_darkscape_daleko_1"
-							},
-							{
-								"text": "заправки",
-								"_id": "st_dyn_k01_darkscape_daleko_2"
-							},
-							{
-								"text": "лесопилки",
-								"_id": "st_dyn_k01_darkscape_daleko_3"
-							},
-							{
-								"text": "моста",
-								"_id": "st_dyn_k01_darkscape_daleko_4"
-							},
-							{
-								"text": "перехода в Тёмную Долину",
-								"_id": "st_dyn_k01_darkscape_daleko_5"
-							},
-							{
-								"text": "«Отравленного озера»",
-								"_id": "st_dyn_l08_yantar_daleko_1"
-							},
-							{
-								"text": "лагеря учёных",
-								"_id": "st_dyn_l08_yantar_daleko_2"
-							},
-							{
-								"text": "аномалии «Загребущие руки»",
-								"_id": "st_dyn_l08_yantar_daleko_3"
-							},
-							{
-								"text": "входа на завод",
-								"_id": "st_dyn_l08_yantar_daleko_4"
-							},
-							{
-								"text": "перехода в Мёртвый Город",
-								"_id": "st_dyn_l08_yantar_daleko_5"
-							},
-							{
-								"text": "в лаборатории",
-								"_id": "st_dyn_labx8_daleko_1"
-							},
-							{
-								"text": "перехода на Янтарь",
-								"_id": "st_dyn_l06_rostok_daleko_1"
-							},
-							{
-								"text": "тоннеля с жарками",
-								"_id": "st_dyn_l06_rostok_daleko_2"
-							},
-							{
-								"text": "недостроенного здания",
-								"_id": "st_dyn_l06_rostok_daleko_3"
-							},
-							{
-								"text": "стоянки между стройматериалами",
-								"_id": "st_dyn_l06_rostok_daleko_4"
-							},
-							{
-								"text": "прохода в Бар",
-								"_id": "st_dyn_l06_rostok_daleko_5"
-							},
-							{
-								"text": "аномалии «Птичья карусель»",
-								"_id": "st_dyn_l03_agroprom_daleko_1"
-							},
-							{
-								"text": "аномалии «Зона ЭМИ»",
-								"_id": "st_dyn_l03_agroprom_daleko_2"
-							},
-							{
-								"text": "аномалии «Опасный склон»",
-								"_id": "st_dyn_l03_agroprom_daleko_3"
-							},
-							{
-								"text": "НИИ",
-								"_id": "st_dyn_l03_agroprom_daleko_4"
-							},
-							{
-								"text": "аномалии «Старые когти»",
-								"_id": "st_dyn_l03_agroprom_daleko_5"
-							},
-							{
-								"text": "токсичного болота",
-								"_id": "st_dyn_l03_agroprom_daleko_6"
-							},
-							{
-								"text": "кинотеатра «Прометей»",
-								"_id": "st_dyn_pripyat_daleko_1"
-							},
-							{
-								"text": "речного порта",
-								"_id": "st_dyn_pripyat_daleko_2"
-							},
-							{
-								"text": "старого КБО",
-								"_id": "st_dyn_pripyat_daleko_3"
-							},
-							{
-								"text": "школы",
-								"_id": "st_dyn_pripyat_daleko_4"
-							},
-							{
-								"text": "госпиталя",
-								"_id": "st_dyn_pripyat_daleko_5"
-							},
-							{
-								"text": "КБО «Юбилейный»",
-								"_id": "st_dyn_pripyat_daleko_6"
-							},
-							{
-								"text": "прачечной",
-								"_id": "st_dyn_pripyat_daleko_7"
-							},
-							{
-								"text": "детского сада",
-								"_id": "st_dyn_pripyat_daleko_8"
-							},
-							{
-								"text": "общежития",
-								"_id": "st_dyn_pripyat_daleko_9"
-							},
-							{
-								"text": "гастронома",
-								"_id": "st_dyn_pripyat_daleko_10"
-							},
-							{
-								"text": "универмага",
-								"_id": "st_dyn_pripyat_daleko_11"
-							},
-							{
-								"text": "магазина «Книги»",
-								"_id": "st_dyn_pripyat_daleko_12"
-							},
-							{
-								"text": "аномалии «Вулкан»",
-								"_id": "st_dyn_pripyat_daleko_13"
-							},
-							{
-								"text": "аномалии «Лоза»",
-								"_id": "st_dyn_pripyat_daleko_14"
-							},
-							{
-								"text": "блокпоста на дороге в Бар",
-								"_id": "st_dyn_l02_garbage_daleko_1"
-							},
-							{
-								"text": "аномалии «Ведьмин круг»",
-								"_id": "st_dyn_l02_garbage_daleko_2"
-							},
-							{
-								"text": "депо",
-								"_id": "st_dyn_l02_garbage_daleko_3"
-							},
-							{
-								"text": "стоянки брошенной техники",
-								"_id": "st_dyn_l02_garbage_daleko_4"
-							},
-							{
-								"text": "аномалии «Газировка»",
-								"_id": "st_dyn_l02_garbage_daleko_5"
-							},
-							{
-								"text": "аномалии «Изнанка»",
-								"_id": "st_dyn_l02_garbage_daleko_6"
-							},
-							{
-								"text": "перехода на Кордон",
-								"_id": "st_dyn_l02_garbage_daleko_7"
-							},
-							{
-								"text": "старого хутора",
-								"_id": "st_dyn_new_military_daleko_1"
-							},
-							{
-								"text": "аномалии на южном холме",
-								"_id": "st_dyn_new_military_daleko_2"
-							},
-							{
-								"text": "базы «Свободы»",
-								"_id": "st_dyn_new_military_daleko_3"
-							},
-							{
-								"text": "болотца",
-								"_id": "st_dyn_new_military_daleko_4"
-							},
-							{
-								"text": "заброшенной деревни",
-								"_id": "st_dyn_new_military_daleko_5"
-							},
-							{
-								"text": "дороги в Мёртвый город",
-								"_id": "st_dyn_new_military_daleko_6"
-							},
-							{
-								"text": "дороги на Радар",
-								"_id": "st_dyn_new_military_daleko_7"
-							}
-						],
-						"_name": "Daleko"
-					},
-					{
-						"blizko": [
-							{
-								"text": "у тоннеля на Военные Склады",
-								"_id": "st_dyn_l09_deadcity_blizko_1"
-							},
-							{
-								"text": "у прохода на Янтарь",
-								"_id": "st_dyn_l09_deadcity_blizko_2"
-							},
-							{
-								"text": "около памятника",
-								"_id": "st_dyn_l09_deadcity_blizko_3"
-							},
-							{
-								"text": "у прохода в Лиманск",
-								"_id": "st_dyn_l09_deadcity_blizko_4"
-							},
-							{
-								"text": "в тоннеле",
-								"_id": "st_dyn_jupiter_underground_blizko_1"
-							},
-							{
-								"text": "у аномалии «Коготь»",
-								"_id": "st_dyn_zaton_blizko_1"
-							},
-							{
-								"text": "у аномалии «Железный лес»",
-								"_id": "st_dyn_zaton_blizko_2"
-							},
-							{
-								"text": "на лесопилке",
-								"_id": "st_dyn_zaton_blizko_3"
-							},
-							{
-								"text": "на ВНЗ «Круг»",
-								"_id": "st_dyn_zaton_blizko_4"
-							},
-							{
-								"text": "на станции переработки отходов",
-								"_id": "st_dyn_zaton_blizko_5"
-							},
-							{
-								"text": "в аномалии «Цирк»",
-								"_id": "st_dyn_zaton_blizko_6"
-							},
-							{
-								"text": "в лесничестве",
-								"_id": "st_dyn_zaton_blizko_7"
-							},
-							{
-								"text": "на «Скадовске»",
-								"_id": "st_dyn_zaton_blizko_8"
-							},
-							{
-								"text": "на сгоревшем хуторе",
-								"_id": "st_dyn_zaton_blizko_9"
-							},
-							{
-								"text": "в аномалии «Котёл»",
-								"_id": "st_dyn_zaton_blizko_10"
-							},
-							{
-								"text": "в аномалии «Топь»",
-								"_id": "st_dyn_zaton_blizko_11"
-							},
-							{
-								"text": "в «Изумрудном»",
-								"_id": "st_dyn_zaton_blizko_12"
-							},
-							{
-								"text": "на «Шевченко»",
-								"_id": "st_dyn_zaton_blizko_13"
-							},
-							{
-								"text": "на земснаряде",
-								"_id": "st_dyn_zaton_blizko_14"
-							},
-							{
-								"text": "на портовых кранах",
-								"_id": "st_dyn_zaton_blizko_15"
-							},
-							{
-								"text": "возле аномалии «Соснодуб»",
-								"_id": "st_dyn_zaton_blizko_16"
-							},
-							{
-								"text": "на заправке",
-								"_id": "st_dyn_zaton_blizko_17"
-							},
-							{
-								"text": "на старой барже",
-								"_id": "st_dyn_zaton_blizko_18"
-							},
-							{
-								"text": "у аномалии «Рубец»",
-								"_id": "st_dyn_zaton_blizko_19"
-							},
-							{
-								"text": "на мосту им. Преображенского",
-								"_id": "st_dyn_zaton_blizko_20"
-							},
-							{
-								"text": "на южном плато",
-								"_id": "st_dyn_zaton_blizko_21"
-							},
-							{
-								"text": "в цехах подстанции",
-								"_id": "st_dyn_zaton_blizko_22"
-							},
-							{
-								"text": "у аномалии «Пепелище»",
-								"_id": "st_dyn_jupiter_blizko_1"
-							},
-							{
-								"text": "на градирне",
-								"_id": "st_dyn_jupiter_blizko_2"
-							},
-							{
-								"text": "на полустанке",
-								"_id": "st_dyn_jupiter_blizko_3"
-							},
-							{
-								"text": "в аномалии «Плавни»",
-								"_id": "st_dyn_jupiter_blizko_4"
-							},
-							{
-								"text": "на цементном заводе",
-								"_id": "st_dyn_jupiter_blizko_5"
-							},
-							{
-								"text": "в Копачах",
-								"_id": "st_dyn_jupiter_blizko_6"
-							},
-							{
-								"text": "на «Янове»",
-								"_id": "st_dyn_jupiter_blizko_7"
-							},
-							{
-								"text": "в карьере",
-								"_id": "st_dyn_jupiter_blizko_8"
-							},
-							{
-								"text": "в бункере учёных",
-								"_id": "st_dyn_jupiter_blizko_9"
-							},
-							{
-								"text": "на ЗРК «Волхов»",
-								"_id": "st_dyn_jupiter_blizko_10"
-							},
-							{
-								"text": "в аномальной роще",
-								"_id": "st_dyn_jupiter_blizko_11"
-							},
-							{
-								"text": "на стоянке",
-								"_id": "st_dyn_jupiter_blizko_12"
-							},
-							{
-								"text": "на КПП",
-								"_id": "st_dyn_jupiter_blizko_13"
-							},
-							{
-								"text": "в аномалии «Битум»",
-								"_id": "st_dyn_jupiter_blizko_14"
-							},
-							{
-								"text": "в восточном туннеле",
-								"_id": "st_dyn_jupiter_blizko_15"
-							},
-							{
-								"text": "на складе контейнеров",
-								"_id": "st_dyn_jupiter_blizko_16"
-							},
-							{
-								"text": "в вентиляционном комплексе",
-								"_id": "st_dyn_jupiter_blizko_17"
-							},
-							{
-								"text": "на вертолётных площадках",
-								"_id": "st_dyn_jupiter_blizko_18"
-							},
-							{
-								"text": "в аномалии «Бетонная ванна»",
-								"_id": "st_dyn_jupiter_blizko_19"
-							},
-							{
-								"text": "на заводе «Юпитер»",
-								"_id": "st_dyn_jupiter_blizko_20"
-							},
-							{
-								"text": "у западного блокпоста",
-								"_id": "st_dyn_l05_bar_blizko_1"
-							},
-							{
-								"text": "у входа в Бар",
-								"_id": "st_dyn_l05_bar_blizko_2"
-							},
-							{
-								"text": "на базе Долга",
-								"_id": "st_dyn_l05_bar_blizko_3"
-							},
-							{
-								"text": "у прохода на Военные Склады",
-								"_id": "st_dyn_l05_bar_blizko_4"
-							},
-							{
-								"text": "в аномалии «Пекло»",
-								"_id": "st_dyn_l07_military_blizko_1"
-							},
-							{
-								"text": "у аномалий «Карусель»",
-								"_id": "st_dyn_l07_military_blizko_2"
-							},
-							{
-								"text": "на территории базы",
-								"_id": "st_dyn_l07_military_blizko_3"
-							},
-							{
-								"text": "в «Кислотном болоте»",
-								"_id": "st_dyn_l07_military_blizko_4"
-							},
-							{
-								"text": "в заброшенной деревне",
-								"_id": "st_dyn_l07_military_blizko_5"
-							},
-							{
-								"text": "в аномалии «Гравитационный пучок»",
-								"_id": "st_dyn_l07_military_blizko_6"
-							},
-							{
-								"text": "в аномалии «Ментальный огонь»",
-								"_id": "st_dyn_l07_military_blizko_7"
-							},
-							{
-								"text": "у южного блокпоста",
-								"_id": "st_dyn_l01_escape_blizko_1"
-							},
-							{
-								"text": "в деревне новичков",
-								"_id": "st_dyn_l01_escape_blizko_2"
-							},
-							{
-								"text": "в аномалиях «Мясорубка»",
-								"_id": "st_dyn_l01_escape_blizko_3"
-							},
-							{
-								"text": "на АТП",
-								"_id": "st_dyn_l01_escape_blizko_4"
-							},
-							{
-								"text": "у ж/д насыпи",
-								"_id": "st_dyn_l01_escape_blizko_5"
-							},
-							{
-								"text": "на старой ферме",
-								"_id": "st_dyn_l01_escape_blizko_6"
-							},
-							{
-								"text": "в аномалии «Костянка»",
-								"_id": "st_dyn_l01_escape_blizko_7"
-							},
-							{
-								"text": "в аномалии «Дробилка»",
-								"_id": "st_dyn_l01_escape_blizko_8"
-							},
-							{
-								"text": "у северного блокпоста",
-								"_id": "st_dyn_l01_escape_blizko_9"
-							},
-							{
-								"text": "на базе «Чистого Неба»",
-								"_id": "st_dyn_k00_marsh_blizko_1"
-							},
-							{
-								"text": "на рыбацком хуторе",
-								"_id": "st_dyn_k00_marsh_blizko_2"
-							},
-							{
-								"text": "на насосной станции",
-								"_id": "st_dyn_k00_marsh_blizko_3"
-							},
-							{
-								"text": "в аномалии «Злая топь»",
-								"_id": "st_dyn_k00_marsh_blizko_4"
-							},
-							{
-								"text": "у перехода на Агропром",
-								"_id": "st_dyn_k00_marsh_blizko_5"
-							},
-							{
-								"text": "на машинном дворе",
-								"_id": "st_dyn_k00_marsh_blizko_6"
-							},
-							{
-								"text": "в аномалии «Медленный огонь»",
-								"_id": "st_dyn_k00_marsh_blizko_7"
-							},
-							{
-								"text": "на южном хуторе",
-								"_id": "st_dyn_k00_marsh_blizko_8"
-							},
-							{
-								"text": "в старой церкви",
-								"_id": "st_dyn_k00_marsh_blizko_9"
-							},
-							{
-								"text": "у прохода в Мёртвый Город",
-								"_id": "st_dyn_l10_limansk_blizko_1"
-							},
-							{
-								"text": "у тоннеля в Рыжий Лес",
-								"_id": "st_dyn_l10_limansk_blizko_2"
-							},
-							{
-								"text": "на заброшенной ферме",
-								"_id": "st_dyn_l04_darkvalley_blizko_1"
-							},
-							{
-								"text": "в аномалии «Тёмный разлом»",
-								"_id": "st_dyn_l04_darkvalley_blizko_2"
-							},
-							{
-								"text": "возле аномалий «Трамплин»",
-								"_id": "st_dyn_l04_darkvalley_blizko_3"
-							},
-							{
-								"text": "у аномалии «Комета»",
-								"_id": "st_dyn_l04_darkvalley_blizko_4"
-							},
-							{
-								"text": "у аномалии «Смертельное облако»",
-								"_id": "st_dyn_l04_darkvalley_blizko_5"
-							},
-							{
-								"text": "на Северной фабрике",
-								"_id": "st_dyn_l04_darkvalley_blizko_6"
-							},
-							{
-								"text": "у перехода на Свалку",
-								"_id": "st_dyn_l04_darkvalley_blizko_7"
-							},
-							{
-								"text": "на пути к Бару",
-								"_id": "st_dyn_k02_trucks_cemetery_blizko_1"
-							},
-							{
-								"text": "на кладбище вертолётов",
-								"_id": "st_dyn_k02_trucks_cemetery_blizko_2"
-							},
-							{
-								"text": "на кладбище пожарных машин",
-								"_id": "st_dyn_k02_trucks_cemetery_blizko_3"
-							},
-							{
-								"text": "на радиоактивных холмах",
-								"_id": "st_dyn_k02_trucks_cemetery_blizko_4"
-							},
-							{
-								"text": "на северо-восточном блокпоста",
-								"_id": "st_dyn_k02_trucks_cemetery_blizko_5"
-							},
-							{
-								"text": "на холме в лесу",
-								"_id": "st_dyn_k02_trucks_cemetery_blizko_6"
-							},
-							{
-								"text": "в аномальном овраге",
-								"_id": "st_dyn_k02_trucks_cemetery_blizko_7"
-							},
-							{
-								"text": "на стоянке у контейнеров",
-								"_id": "st_dyn_k02_trucks_cemetery_blizko_8"
-							},
-							{
-								"text": "на южной стоянке",
-								"_id": "st_dyn_k02_trucks_cemetery_blizko_9"
-							},
-							{
-								"text": "у прохода на Радар",
-								"_id": "st_dyn_l11_pripyat_blizko_1"
-							},
-							{
-								"text": "возле ДК «Энергетик»",
-								"_id": "st_dyn_l11_pripyat_blizko_2"
-							},
-							{
-								"text": "около антенн",
-								"_id": "st_dyn_l10_radar_blizko_1"
-							},
-							{
-								"text": "у прохода в Припять",
-								"_id": "st_dyn_l10_radar_blizko_2"
-							},
-							{
-								"text": "у моста",
-								"_id": "st_dyn_l10_red_forest_blizko_1"
-							},
-							{
-								"text": "у аномалии «Сверхпроводник»",
-								"_id": "st_dyn_l10_red_forest_blizko_2"
-							},
-							{
-								"text": "у аномалии «Симбионт»",
-								"_id": "st_dyn_l10_red_forest_blizko_3"
-							},
-							{
-								"text": "в аномалии «Вертушка»",
-								"_id": "st_dyn_l10_red_forest_blizko_4"
-							},
-							{
-								"text": "у шахты",
-								"_id": "st_dyn_l10_red_forest_blizko_5"
-							},
-							{
-								"text": "у аномалии «Подземная гроза»",
-								"_id": "st_dyn_l10_red_forest_blizko_6"
-							},
-							{
-								"text": "у перехода на Кордон",
-								"_id": "st_dyn_k01_darkscape_blizko_1"
-							},
-							{
-								"text": "на заправке",
-								"_id": "st_dyn_k01_darkscape_blizko_2"
-							},
-							{
-								"text": "на лесопилке",
-								"_id": "st_dyn_k01_darkscape_blizko_3"
-							},
-							{
-								"text": "у моста",
-								"_id": "st_dyn_k01_darkscape_blizko_4"
-							},
-							{
-								"text": "у перехода в Тёмную Долину",
-								"_id": "st_dyn_k01_darkscape_blizko_5"
-							},
-							{
-								"text": "в «Отравленном озере»",
-								"_id": "st_dyn_l08_yantar_blizko_1"
-							},
-							{
-								"text": "в лагере учёных",
-								"_id": "st_dyn_l08_yantar_blizko_2"
-							},
-							{
-								"text": "в аномалии «Загребущие руки»",
-								"_id": "st_dyn_l08_yantar_blizko_3"
-							},
-							{
-								"text": "у входа на завод",
-								"_id": "st_dyn_l08_yantar_blizko_4"
-							},
-							{
-								"text": "у перехода в Мёртвый Город",
-								"_id": "st_dyn_l08_yantar_blizko_5"
-							},
-							{
-								"text": "в лаборатории",
-								"_id": "st_dyn_labx8_blizko_1"
-							},
-							{
-								"text": "у перехода на Янтарь",
-								"_id": "st_dyn_l06_rostok_blizko_1"
-							},
-							{
-								"text": "в тоннеле с жарками",
-								"_id": "st_dyn_l06_rostok_blizko_2"
-							},
-							{
-								"text": "в недостроенном здании",
-								"_id": "st_dyn_l06_rostok_blizko_3"
-							},
-							{
-								"text": "у стоянки между стройматериалами",
-								"_id": "st_dyn_l06_rostok_blizko_4"
-							},
-							{
-								"text": "у прохода в Бар",
-								"_id": "st_dyn_l06_rostok_blizko_5"
-							},
-							{
-								"text": "в аномалии «Птичья карусель»",
-								"_id": "st_dyn_l03_agroprom_blizko_1"
-							},
-							{
-								"text": "в аномалии «Зона ЭМИ»",
-								"_id": "st_dyn_l03_agroprom_blizko_2"
-							},
-							{
-								"text": "в аномалии «Опасный склон»",
-								"_id": "st_dyn_l03_agroprom_blizko_3"
-							},
-							{
-								"text": "около НИИ",
-								"_id": "st_dyn_l03_agroprom_blizko_4"
-							},
-							{
-								"text": "у аномалии «Старые когти»",
-								"_id": "st_dyn_l03_agroprom_blizko_5"
-							},
-							{
-								"text": "в токсичном болоте",
-								"_id": "st_dyn_l03_agroprom_blizko_6"
-							},
-							{
-								"text": "у кинотеатра «Прометей»",
-								"_id": "st_dyn_pripyat_blizko_1"
-							},
-							{
-								"text": "в речном порту",
-								"_id": "st_dyn_pripyat_blizko_2"
-							},
-							{
-								"text": "у старого КБО",
-								"_id": "st_dyn_pripyat_blizko_3"
-							},
-							{
-								"text": "в школе",
-								"_id": "st_dyn_pripyat_blizko_4"
-							},
-							{
-								"text": "в госпитале",
-								"_id": "st_dyn_pripyat_blizko_5"
-							},
-							{
-								"text": "у КБО «Юбилейный»",
-								"_id": "st_dyn_pripyat_blizko_6"
-							},
-							{
-								"text": "в прачечной",
-								"_id": "st_dyn_pripyat_blizko_7"
-							},
-							{
-								"text": "в детском саду",
-								"_id": "st_dyn_pripyat_blizko_8"
-							},
-							{
-								"text": "в общежитии",
-								"_id": "st_dyn_pripyat_blizko_9"
-							},
-							{
-								"text": "у гастронома",
-								"_id": "st_dyn_pripyat_blizko_10"
-							},
-							{
-								"text": "в универмаге",
-								"_id": "st_dyn_pripyat_blizko_11"
-							},
-							{
-								"text": "у магазина «Книги»",
-								"_id": "st_dyn_pripyat_blizko_12"
-							},
-							{
-								"text": "в аномалии «Вулкан»",
-								"_id": "st_dyn_pripyat_blizko_13"
-							},
-							{
-								"text": "в аномалии «Лоза»",
-								"_id": "st_dyn_pripyat_blizko_14"
-							},
-							{
-								"text": "у блокпоста на дороге в Бар",
-								"_id": "st_dyn_l02_garbage_blizko_1"
-							},
-							{
-								"text": "в аномалии «Ведьмин круг»",
-								"_id": "st_dyn_l02_garbage_blizko_2"
-							},
-							{
-								"text": "в депо",
-								"_id": "st_dyn_l02_garbage_blizko_3"
-							},
-							{
-								"text": "на стоянке брошенной техники",
-								"_id": "st_dyn_l02_garbage_blizko_4"
-							},
-							{
-								"text": "в аномалии «Газировка»",
-								"_id": "st_dyn_l02_garbage_blizko_5"
-							},
-							{
-								"text": "в аномалии «Изнанка»",
-								"_id": "st_dyn_l02_garbage_blizko_6"
-							},
-							{
-								"text": "у перехода на Кордон",
-								"_id": "st_dyn_l02_garbage_blizko_7"
-							},
-							{
-								"text": "на старом хуторе",
-								"_id": "st_dyn_new_military_blizko_1"
-							},
-							{
-								"text": "на южном холме",
-								"_id": "st_dyn_new_military_blizko_2"
-							},
-							{
-								"text": "на базе «Свободы»",
-								"_id": "st_dyn_new_military_blizko_3"
-							},
-							{
-								"text": "на болоте",
-								"_id": "st_dyn_new_military_blizko_4"
-							},
-							{
-								"text": "в старой деревне",
-								"_id": "st_dyn_new_military_blizko_5"
-							},
-							{
-								"text": "на КПП в Мёртвый город",
-								"_id": "st_dyn_new_military_blizko_6"
-							},
-							{
-								"text": "на Барьере",
-								"_id": "st_dyn_new_military_blizko_7"
-							}
-						],
-						"_name": "blizko"
 					},
 					{
 						"instant_news": [
