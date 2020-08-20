@@ -93,6 +93,10 @@ public class Resources {
             "Свобода", "Монолит", "Ренегаты", "Чистое Небо", "Наёмники", "Долг", "Учёные", "Бандиты", "Военные",
             "Одиночки", "Зомбированные"
     );
+    private static List<String> groupsListKilled = Arrays.asList(
+            "Свободовец", "\"Свобода\"", "Монолитовец", "\"Монолит\"", "Ренегат", "Чистонебовец", "\"Чистое Небо\"",
+            "Наёмник", "Долговец", "\"Долг\"", "Учёный", "Бандит", "Военный", "Одиночка", "Зомбированный"
+    );
 
     private static List<String> artefactsList = Arrays.asList(
             "Медуза", "Каменный цветок", "Ночная звезда", "Кровь камня", "Ломоть мяса", "Душа", "Выверт", "Грави",
@@ -101,6 +105,8 @@ public class Resources {
             "Капли", "Слизь", "Слизняк", "Слюда", "Колючка", "Кристальная колючка", "Морской еж", "Пружина",
             "Сердце Оазиса", "Измененный штурвал", "Измененный изолятор"
     );
+
+    public static List<String> getGroupsListKilled() { return groupsListKilled; }
 
     public static List<String> getScientistNamesList() { return scientistNamesList; }
 
