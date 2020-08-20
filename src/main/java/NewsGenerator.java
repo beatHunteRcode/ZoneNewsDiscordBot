@@ -20,6 +20,7 @@ public class NewsGenerator {
     private String name;
     private String surname;
     private String group;
+    private int newsType;
 
     public NewsGenerator() {
 
@@ -43,13 +44,14 @@ public class NewsGenerator {
             //  5 - новости о нахождении артефактов
             //  6 - немедленные сообщения от сталкеров увидивших/услышивших что-то
             //  7 - системная новость о гибели сталкера/военного
-            int newsNumb = getRndIntInRange(1, 7);
-            if (newsNumb != 7) {
+            //  8 - анекдот
+            newsType = getRndIntInRange(1, 8);
+            if (newsType != 7) {
                 newsBuilder.append(nameBuilder);
-                if (group.equals("Зомбированные")) newsNumb = 2;
+                if (group.equals("Зомбированные")) newsType = 2;
             }
 
-            switch (newsNumb) {
+            switch (newsType) {
                 case 1:
 //                    System.out.println("HELP_NEWS");
                     newsBuilder.append(genHelpNews(node));
@@ -78,6 +80,10 @@ public class NewsGenerator {
 //                    System.out.println("SYSTEM_KILLED_NEWS");
                     newsBuilder.append(getSystemKilledNews(node));
                     break;
+                case 8:
+//                    System.out.println("JOKE_NEWS");
+                    newsBuilder.append(getJokeNews(node));
+
             }
 
             strNews = replaceTemplates(newsBuilder, node);
@@ -411,7 +417,75 @@ public class NewsGenerator {
         return newsBuilder;
     }
 
-    private StringBuilder generateName() {
+    public StringBuilder getJokeNews(JsonNode node) {
+        StringBuilder newsBuilder = new StringBuilder();
+
+        switch (getRndIntInRange(1, 3)) {
+            case 1:
+                newsBuilder.append(generateStartOfJoke(node));
+                break;
+            case 2:
+                newsBuilder.append(generateStartOfJoke(node));
+                break;
+        }
+
+        List<JsonNode> factJokesList = node.findValue("faction_jokes").findValue("joke").findValue(group).findValues("text");
+        newsBuilder.append(factJokesList.get(getRndIntInRange(0, factJokesList.size() - 1)).asText());
+
+        return newsBuilder;
+    }
+
+    private StringBuilder generateStartOfJoke(JsonNode node) {
+        StringBuilder builder = new StringBuilder();
+
+        if (group.equals("Бандиты") || group.equals("Ренегаты")) {
+            group = "Бандиты";
+            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(group).findValues("text");
+            builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
+        }
+        else if (group.equals("Свобода")) {
+            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(group).findValues("text");
+            builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
+        }
+        else if (group.equals("Долг")) {
+            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(group).findValues("text");
+            builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
+        }
+        else if (group.equals("Военные")) {
+            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(group).findValues("text");
+            builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
+        }
+        else { //"Одиночки", "Монолит", "Чистое Небо", "Наёмники", "Учёные"
+            group = "Одиночки";
+            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(group).findValues("text");
+            builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
+        }
+
+        return builder;
+    }
+
+    private StringBuilder generateResponseToJoke(JsonNode node) {
+        StringBuilder builder = new StringBuilder();
+
+        if (group.equals("Бандиты") || group.equals("Ренегаты")) {
+            group = "Бандиты";
+            List<JsonNode> list = node.findValue("responses_jokes").findValue(group).findValues("text");
+            builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
+        }
+        else if (group.equals("Свобода")) {
+            List<JsonNode> list = node.findValue("responses_jokes").findValue(group).findValues("text");
+            builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
+        }
+        else { //"Одиночки", "Монолит", "Чистое Небо", "Наёмники", "Учёные", "Долг", "Военные"
+            group = "Одиночки";
+            List<JsonNode> list = node.findValue("responses_jokes").findValue(group).findValues("text");
+            builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
+        }
+
+        return builder;
+    }
+
+    public StringBuilder generateName() {
         StringBuilder nameBuilder = new StringBuilder();
 
         group = Resources.getGroupsList().get(getRndIntInRange(0, Resources.getGroupsList().size() - 1));
@@ -436,6 +510,7 @@ public class NewsGenerator {
 
         return nameBuilder;
     }
+
 
     private StringBuilder generateNameKilled() {
         StringBuilder nameBuilder = new StringBuilder();
@@ -531,31 +606,42 @@ public class NewsGenerator {
         return strNews;
     }
 
+    //Генерация ответов на новости
+    //  1 - реакция на зомби
+    //  2 - реакция на анекдот
     public String generateResponse(int responseType, MessageReceivedEvent event) {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            Main.mapOfThreads.get(event.getChannel().getName()).interrupt();
-        }
+
 
         StringBuilder responseBuilder = new StringBuilder();
         StringBuilder nameBuilder = generateName();
-        nameBuilder.append(":\n");
         if (group.equals("Зомбированные")) {
             while (group.equals("Зомбированные")) {
                 nameBuilder = generateName();
             }
         }
-        responseBuilder.append(nameBuilder);
+        responseBuilder.append(nameBuilder).append(":\n");
 
         try {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode node = mapper.readValue(new File("./input/dynamic_news.json"), JsonNode.class);
 
             if (responseType == 1) {
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    Main.mapOfThreads.get(event.getChannel().getName()).interrupt();
+                }
                 responseBuilder.append(node.findValue("response_dumb_zombies").
                                 findValues("text").get(getRndIntInRange(0, 6)).asText()).
                                 append(" ");
+            }
+            if (responseType == 2) {
+                try {
+                    Thread.sleep(getRndIntInRange(1000, 5 * 1000));
+                } catch (InterruptedException e) {
+                    Main.mapOfThreads.get(event.getChannel().getName()).interrupt();
+                }
+                responseBuilder.append(generateResponseToJoke(node));
             }
 
         } catch (IOException e) {
@@ -564,7 +650,12 @@ public class NewsGenerator {
         return responseBuilder.toString();
     }
 
-
+    public int getNewsType() {
+        return newsType;
+    }
+    public String getGroup() {
+        return group;
+    }
     private int getRndIntInRange(int min, int max){
         return (int) (Math.random()*((max-min)+1))+min;
     }

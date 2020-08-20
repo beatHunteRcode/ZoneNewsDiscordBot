@@ -1,17 +1,14 @@
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.OnlineStatus;
-import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.entities.TextChannel;
-import net.dv8tion.jda.api.events.GenericEvent;
-import net.dv8tion.jda.api.events.ReadyEvent;
-import net.dv8tion.jda.api.events.message.GenericMessageEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-import javax.annotation.Nonnull;
 import javax.security.auth.login.LoginException;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 public class Main extends ListenerAdapter {
@@ -20,7 +17,7 @@ public class Main extends ListenerAdapter {
     private final int MAX_TIME_DELAY = 1000 * 60 * 15;
 
     private char prefix = '-';
-    private NewsGenerator newsGenerator = new NewsGenerator();
+
     private ArrayList<String> lastNewsList = new ArrayList<>();
     public static Map<String, Boolean> mapOfGenerators = new HashMap<>();
     public  static Map<String, Thread> mapOfThreads = new HashMap<>();
@@ -34,7 +31,7 @@ public class Main extends ListenerAdapter {
         builder.build();
 
 //        NewsGenerator newsGenerator = new NewsGenerator();
-//        for (int i = 0; i < 50; i++) {
+//        for (int i = 0; i < 100; i++) {
 //            System.out.println(newsGenerator.generateNews());
 //            System.out.println();
 //        }
@@ -43,6 +40,8 @@ public class Main extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
+
+        NewsGenerator newsGenerator = new NewsGenerator();
         Thread thread = new Thread();
 
         System.out.println( "Message from " + event.getAuthor().getName() + " (" + new Date().toString() + ")" + ":\n"
@@ -57,8 +56,74 @@ public class Main extends ListenerAdapter {
                 event.getChannel().sendMessage(response).queue();
                 addNewsToList(news);
             }
+            if (newsGenerator.getNewsType() == 8) {//если тип новости - анекдот - генерируем реакцию на анекдот
+                String response = null;
+                switch (getRndIntInRange(1, 3)) {
+                    case 1:
+                        response = genResponse(newsGenerator, 2, event);
+                        event.getChannel().sendMessage(response).queue();
+                        break;
+                    case 2:
+                        response = genResponse(newsGenerator, 2, event);
+                        event.getChannel().sendMessage(response).queue();
+                        response = genResponse(newsGenerator, 2, event);
+                        event.getChannel().sendMessage(response).queue();
+                        break;
+                    case 3:
+                        response = genResponse(newsGenerator, 2, event);
+                        event.getChannel().sendMessage(response).queue();
+                        response = genResponse(newsGenerator, 2, event);
+                        event.getChannel().sendMessage(response).queue();
+                        response = genResponse(newsGenerator, 2, event);
+                        event.getChannel().sendMessage(response).queue();
+                        break;
+                }
+            }
         }
-        if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "помощь")) { //новость
+        if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "анекдот")) {
+
+            try {
+                ObjectMapper mapper = new ObjectMapper();
+                JsonNode node = mapper.readValue(new File("./input/dynamic_news.json"), JsonNode.class);
+
+                StringBuilder newsBuilder = new StringBuilder();
+                String name = newsGenerator.generateName().toString();
+                if (newsGenerator.getGroup().equals("Зомбированные")) {
+                    while (newsGenerator.getGroup().equals("Зомбированные")) {
+                        name = newsGenerator.generateName().toString();
+                    }
+                }
+                newsBuilder.append(name).append(":\n");
+
+                newsBuilder.append(newsGenerator.getJokeNews(node));
+                event.getChannel().sendMessage(newsBuilder.toString()).queue();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            String response = null;
+            switch (getRndIntInRange(1, 3)) {
+                case 1:
+                    response = genResponse(newsGenerator, 2, event);
+                    event.getChannel().sendMessage(response).queue();
+                    break;
+                case 2:
+                    response = genResponse(newsGenerator, 2, event);
+                    event.getChannel().sendMessage(response).queue();
+                    response = genResponse(newsGenerator, 2, event);
+                    event.getChannel().sendMessage(response).queue();
+                    break;
+                case 3:
+                    response = genResponse(newsGenerator, 2, event);
+                    event.getChannel().sendMessage(response).queue();
+                    response = genResponse(newsGenerator, 2, event);
+                    event.getChannel().sendMessage(response).queue();
+                    response = genResponse(newsGenerator, 2, event);
+                    event.getChannel().sendMessage(response).queue();
+                    break;
+            }
+
+        }
+        if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "помощь")) {
             showCommandList(event);
         }
         if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "startNews")) {
@@ -73,10 +138,32 @@ public class Main extends ListenerAdapter {
                             if (news.contains("Зомбированные")) {
                                 String response = genResponse(newsGenerator, 1, event);
                                 event.getChannel().sendMessage(response).queue();
-                                addNewsToList(response);
+                            }
+                            if (newsGenerator.getNewsType() == 8) {//если тип новости - анекдот - генерируем реакцию на анекдот
+                                String response = null;
+                                switch (getRndIntInRange(1, 3)) {
+                                    case 1:
+                                        response = genResponse(newsGenerator, 2, event);
+                                        event.getChannel().sendMessage(response).queue();
+                                        break;
+                                    case 2:
+                                        response = genResponse(newsGenerator, 2, event);
+                                        event.getChannel().sendMessage(response).queue();
+                                        response = genResponse(newsGenerator, 2, event);
+                                        event.getChannel().sendMessage(response).queue();
+                                        break;
+                                    case 3:
+                                        response = genResponse(newsGenerator, 2, event);
+                                        event.getChannel().sendMessage(response).queue();
+                                        response = genResponse(newsGenerator, 2, event);
+                                        event.getChannel().sendMessage(response).queue();
+                                        response = genResponse(newsGenerator, 2, event);
+                                        event.getChannel().sendMessage(response).queue();
+                                        break;
+                                }
                             }
                             try {
-                                Thread.sleep(getRandomIntegerBetweenRange(MIN_TIME_DELAY, MAX_TIME_DELAY));
+                                Thread.sleep(getRndIntInRange(MIN_TIME_DELAY, MAX_TIME_DELAY));
                             } catch (InterruptedException e) {
                                 /**
                                  * здесь вылетает NullPointerException на вызове .interrupt(), но при этом поток завершается (?),
@@ -123,6 +210,7 @@ public class Main extends ListenerAdapter {
         event.getChannel().sendMessage(
                         "Список команд: \n" +
                                 prefix + "новость : выводит новость\n" +
+                                prefix + "анекдот : выводит анекдот\n" +
                                 prefix + "недавнее : выводит список последних 5 новостей\n" +
                                 prefix + "startNews : включить появление новостей в случайный момент времени\n" +
                                 prefix + "stopNews : выключить появление новостей в случайный момент времени\n" +
@@ -138,7 +226,7 @@ public class Main extends ListenerAdapter {
     public static String genResponse(NewsGenerator newsGenerator, int responseType, MessageReceivedEvent event) {
         return newsGenerator.generateResponse(responseType, event);
     }
-    private static int getRandomIntegerBetweenRange(int min, int max){
+    private static int getRndIntInRange(int min, int max){
         return (int) (Math.random()*((max-min)+1))+min;
     }
 
