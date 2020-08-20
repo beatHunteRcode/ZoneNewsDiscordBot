@@ -45,8 +45,8 @@ public class Main extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
         Thread thread = new Thread();
 
-        System.out.println( "Message from " + event.getAuthor().getName() + ": " +
-                            event.getMessage().getContentDisplay());
+        System.out.println( "Message from " + event.getAuthor().getName() + " (" + new Date().toString() + ")" + ":\n"
+                            + "[--- " + event.getMessage().getContentDisplay() + " ---]");
         if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "новость")) { //новость
             String news = genNews(newsGenerator);
             event.getChannel().sendMessage(news).queue();
