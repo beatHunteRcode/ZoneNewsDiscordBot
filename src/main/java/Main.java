@@ -16,8 +16,8 @@ import java.util.*;
 
 public class Main extends ListenerAdapter {
 
-    private final int MIN_TIME_DELAY = 1000 * 60 * 15;
-    private final int MAX_TIME_DELAY = 1000 * 60 * 30;
+    private final int MIN_TIME_DELAY = 1000 * 60 * 10;
+    private final int MAX_TIME_DELAY = 1000 * 60 * 15;
 
     private char prefix = '-';
     private NewsGenerator newsGenerator = new NewsGenerator();
@@ -27,7 +27,7 @@ public class Main extends ListenerAdapter {
 
 
     public static void main(String[] args) throws LoginException {
-        String botToken = "NjM2O1337youdontgetmydiscordbottoken1337OMSJJckVIqk";
+        String botToken = "NjM2OTg4N1337youdontgetmydiscordbottoken1337OMSJJckVIqk";
         JDABuilder builder = new JDABuilder(AccountType.BOT);
         builder.setToken(botToken);
         builder.addEventListeners(new Main());

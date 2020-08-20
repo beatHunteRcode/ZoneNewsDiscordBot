@@ -28,9 +28,8 @@ public class NewsGenerator {
     public String generateNews() {
         String strNews = null;
         StringBuilder newsBuilder = new StringBuilder();
-        StringBuilder nameBuilder = generateName();
+        StringBuilder nameBuilder = generateName().append(":\n");
 
-        newsBuilder.append(nameBuilder);
         try {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode node = mapper.readValue(new File("./input/dynamic_news.json"), JsonNode.class);
@@ -43,9 +42,12 @@ public class NewsGenerator {
             //  4 - новости фракций
             //  5 - новости о нахождении артефактов
             //  6 - немедленные сообщения от сталкеров увидивших/услышивших что-то
-            int newsNumb = 6;
-
-            if (group.equals("Зомбированные")) newsNumb = 2;
+            //  7 - системная новость о гибели сталкера/военного
+            int newsNumb = getRndIntInRange(1, 7);
+            if (newsNumb != 7) {
+                newsBuilder.append(nameBuilder);
+                if (group.equals("Зомбированные")) newsNumb = 2;
+            }
 
             switch (newsNumb) {
                 case 1:
@@ -71,6 +73,11 @@ public class NewsGenerator {
                 case 6:
 //                    System.out.println("INSTANT_NEWS");
                     newsBuilder.append(getInstantNews(node));
+                    break;
+                case 7:
+//                    System.out.println("SYSTEM_KILLED_NEWS");
+                    newsBuilder.append(getSystemKilledNews(node));
+                    break;
             }
 
             strNews = replaceTemplates(newsBuilder, node);
@@ -397,6 +404,13 @@ public class NewsGenerator {
         return newsBuilder;
     }
 
+    private StringBuilder getSystemKilledNews(JsonNode node) {
+        StringBuilder newsBuilder = new StringBuilder();
+        newsBuilder.append("Общий канал:\n");
+        newsBuilder.append(generateNameKilled()).append(". ").append(generateLocation(node));
+        return newsBuilder;
+    }
+
     private StringBuilder generateName() {
         StringBuilder nameBuilder = new StringBuilder();
 
@@ -419,7 +433,38 @@ public class NewsGenerator {
         nameBuilder.append(name).append(" ");
         nameBuilder.append(surname).append(" ");
         nameBuilder.append("(").append(group).append(")");
-        nameBuilder.append(":").append("\n");
+
+        return nameBuilder;
+    }
+
+    private StringBuilder generateNameKilled() {
+        StringBuilder nameBuilder = new StringBuilder();
+
+        group = Resources.getGroupsListKilled().get(getRndIntInRange(0, Resources.getGroupsListKilled().size() - 1));
+
+        if (group.equals("Военный") || group.equals("Долговец") || group.equals("\"Долг\"")) {
+            name = Resources.getMilitaryRanks().get(getRndIntInRange(0, Resources.getMilitaryRanks().size() - 1));
+            surname = Resources.getMilitarySurnames().get(getRndIntInRange(0, Resources.getMilitarySurnames().size() - 1));
+        }
+        else if (group.equals("Учёный")) {
+            name = Resources.getScientistNamesList().get(getRndIntInRange(0, Resources.getScientistNamesList().size() - 1));
+            surname = Resources.getMilitarySurnames().get(getRndIntInRange(0, Resources.getMilitarySurnames().size() - 1));
+        }
+        else {
+            name = Resources.getStalkerNamesList().get(getRndIntInRange(0, Resources.getStalkerNamesList().size() - 1));
+            surname = Resources.getStalkerSurnamesList().get(getRndIntInRange(0, Resources.getStalkerSurnamesList().size() - 1));
+        }
+
+        nameBuilder.append("    Погиб ");
+        if (group.equals("Военный")) {
+            nameBuilder.append("военный: ");
+            nameBuilder.append(name).append(" ").append(surname);
+        }
+        else {
+            nameBuilder.append("сталкер: ");
+            nameBuilder.append(name).append(" ").append(surname);
+            nameBuilder.append(". ").append(group);
+        }
 
         return nameBuilder;
     }
@@ -431,7 +476,7 @@ public class NewsGenerator {
         List<JsonNode> blizkoPlaces = locNode.findValue("blizko").findValues("text");
         List<JsonNode> dalekoPlaces = locNode.findValue("daleko").findValues("text");
         String place = null;
-        if (blizkoPlaces.size() != 0 || dalekoPlaces.size() != 0) {
+        if (blizkoPlaces.size() > 1 || dalekoPlaces.size() > 1) {
             switch (getRndIntInRange(1, 2)) {
                 case 1:
                     place = locNode.findValue("blizko").findValues("text")
@@ -444,6 +489,11 @@ public class NewsGenerator {
                                     .get(getRndIntInRange(0, dalekoPlaces.size() - 1)).asText();
                     break;
             }
+            locationBuilder.append(locNode.findValue("loc_name").asText()).append(", ").append(place).append(". ");
+        }
+        else if (blizkoPlaces.size() == 1 || dalekoPlaces.size() == 1) {
+            place = locNode.findValue("blizko").findValues("text")
+                            .get(getRndIntInRange(0, blizkoPlaces.size() - 1)).asText();
             locationBuilder.append(locNode.findValue("loc_name").asText()).append(", ").append(place).append(". ");
         }
         else {
