@@ -1,7 +1,5 @@
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 //import org.w3c.dom.Document;
 //import org.w3c.dom.Element;
@@ -14,9 +12,7 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 //import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
 
 public class NewsGenerator {
 
@@ -32,7 +28,7 @@ public class NewsGenerator {
     public String generateNews() {
         String strNews = null;
         StringBuilder newsBuilder = new StringBuilder();
-        StringBuilder nameBuilder = createName();
+        StringBuilder nameBuilder = generateName();
 
         newsBuilder.append(nameBuilder);
         try {
@@ -47,7 +43,7 @@ public class NewsGenerator {
             //  4 - новости фракций
             //  5 - новости о нахождении артефактов
             //  6 - немедленные сообщения от сталкеров увидивших/услышивших что-то
-            int newsNumb = getRndIntInRange(1, 6);
+            int newsNumb = 6;
 
             if (group.equals("Зомбированные")) newsNumb = 2;
 
@@ -135,20 +131,9 @@ public class NewsGenerator {
                     break;
             }
         }
-        newsBuilder.append(node.findValue("mutants").findValues("text").get(getRndIntInRange(0, 105)).asText()).
-                append(" ");
-        switch (getRndIntInRange(1, 2)) {
-            case 1:
-                newsBuilder.append(node.findValue("blizko").findValues("text").get(getRndIntInRange(0, 153)).asText()).append(".");
-                break;
-            case 2:
-                newsBuilder.append(node.findValue("direction").findValues("text")
-                                        .get(getRndIntInRange(0, 9)).asText()).
-                            append(" ").
-                            append(node.findValue("daleko").findValues("text")
-                                        .get(getRndIntInRange(0, 153)).asText()).append(".");
-                break;
-        }
+        newsBuilder.append(node.findValue("mutants").findValues("text").get(getRndIntInRange(0, 105)).asText());
+        newsBuilder.append(". ");
+        newsBuilder.append(generateLocation(node).toString());
 
         return newsBuilder;
     }
@@ -359,26 +344,16 @@ public class NewsGenerator {
                                         .findValues("text").get(getRndIntInRange(0, 3)).asText()).append(" ")
                             .append(node.findValue("utilities").findValue("who_mutant")
                                         .findValues("text").get(getRndIntInRange(0, 42)).asText()).append("!");
+                newsBuilder.append(" ");
+                newsBuilder.append(generateLocation(node).toString());
                 break;
             case 2: //новость о том, что что-то услышали
                 newsBuilder.append(node.findValue("instant_news").findValue("start").findValue("hear")
                                         .findValues("text").get(getRndIntInRange(0, 8)).asText())
                             .append(" ").append(node.findValue("instant_news").findValue("hear_mid")
-                                                    .findValues("text").get(getRndIntInRange(0, 13)).asText())
-                            .append(" ");
-                switch (getRndIntInRange(1, 2)) {
-                    case 1:
-                        newsBuilder.append(node.findValue("blizko").findValues("text")
-                                                .get(getRndIntInRange(0, 153)).asText()).append(". ");
-                        break;
-                    case 2:
-                        newsBuilder.append(node.findValue("utilities").findValue("direction")
-                                                .findValues("text").get(getRndIntInRange(0, 9)).asText())
-                                    .append(" ")
-                                    .append(node.findValue("daleko").findValues("text")
-                                                .get(getRndIntInRange(0, 153)).asText()).append(". ");
-                        break;
-                }
+                                                    .findValues("text").get(getRndIntInRange(0, 13)).asText());
+                newsBuilder.append(". ");
+                newsBuilder.append(generateLocation(node).toString());
                 newsBuilder.append(node.findValue("instant_news").findValue("end")
                                                     .findValues("text").get(getRndIntInRange(0, 14)).asText());
                 break;
@@ -402,7 +377,7 @@ public class NewsGenerator {
                 switch (getRndIntInRange(1, 2)) { //выбираем убили одного человека или группу
                     case 1:
                         newsBuilder.append(node.findValue("who_human").findValue("whom").findValue("single")
-                                    .findValues("text").get(getRndIntInRange(0, 17)).asText()).append(" ");
+                                    .findValues("text").get(getRndIntInRange(0, 17)).asText());
                         break;
                     case 2:
                         newsBuilder.append(node.findValue("who_human").findValue("whom").findValue("multi")
@@ -410,11 +385,11 @@ public class NewsGenerator {
                                                 .get(getRndIntInRange(0, 2)).asText()).append(" ")
                                     .append(node.findValue("who_human").findValue("whom").findValue("multi")
                                                 .findValue("who").findValues("text")
-                                                .get(getRndIntInRange(0, 15)).asText()).append(" ");
+                                                .get(getRndIntInRange(0, 15)).asText());
 
                 }
-                newsBuilder.append(node.findValue("blizko").findValues("text")
-                                        .get(getRndIntInRange(0, 153)).asText()).append(".");
+                newsBuilder.append(". ");
+                newsBuilder.append(generateLocation(node).toString());
                 break;
         }
 
@@ -422,7 +397,7 @@ public class NewsGenerator {
         return newsBuilder;
     }
 
-    private StringBuilder createName() {
+    private StringBuilder generateName() {
         StringBuilder nameBuilder = new StringBuilder();
 
         group = Resources.getGroupsList().get(getRndIntInRange(0, Resources.getGroupsList().size() - 1));
@@ -449,11 +424,40 @@ public class NewsGenerator {
         return nameBuilder;
     }
 
+    private StringBuilder generateLocation(JsonNode node) {
+        StringBuilder locationBuilder = new StringBuilder();
+        int rndNumb = getRndIntInRange(0, 32);
+        JsonNode locNode  = node.findValue("level_description").findValues("location").get(rndNumb);
+        List<JsonNode> blizkoPlaces = locNode.findValue("blizko").findValues("text");
+        List<JsonNode> dalekoPlaces = locNode.findValue("daleko").findValues("text");
+        String place = null;
+        if (blizkoPlaces.size() != 0 || dalekoPlaces.size() != 0) {
+            switch (getRndIntInRange(1, 2)) {
+                case 1:
+                    place = locNode.findValue("blizko").findValues("text")
+                            .get(getRndIntInRange(0, blizkoPlaces.size() - 1)).asText();
+                    break;
+                case 2:
+                    place = node.findValue("utilities").findValue("direction")
+                            .findValues("text").get(getRndIntInRange(0, 9)).asText() + " " +
+                            locNode.findValue("daleko").findValues("text")
+                                    .get(getRndIntInRange(0, dalekoPlaces.size() - 1)).asText();
+                    break;
+            }
+            locationBuilder.append(locNode.findValue("loc_name").asText()).append(", ").append(place).append(". ");
+        }
+        else {
+            locationBuilder.append(locNode.findValue("loc_name").asText()).append(". ");
+        }
+
+        return locationBuilder;
+    }
+
     private String replaceTemplates(StringBuilder newsBuilder, JsonNode node) {
         String strNews = newsBuilder.toString();
 
         if (newsBuilder.toString().contains("$who")) {
-            String replacement = node.findValue("who_mutant").findValues("text").get(getRndIntInRange(0, 43)).asText();
+            String replacement = node.findValue("who_mutant").findValues("text").get(getRndIntInRange(0, 42)).asText();
             strNews = newsBuilder.toString().replaceAll("\\$who", replacement);
         }
 
@@ -485,10 +489,10 @@ public class NewsGenerator {
         }
 
         StringBuilder responseBuilder = new StringBuilder();
-        StringBuilder nameBuilder = createName();
+        StringBuilder nameBuilder = generateName();
         if (group.equals("Зомбированные")) {
             while (group.equals("Зомбированные")) {
-                nameBuilder = createName();
+                nameBuilder = generateName();
             }
         }
         responseBuilder.append(nameBuilder);
@@ -508,6 +512,7 @@ public class NewsGenerator {
         }
         return responseBuilder.toString();
     }
+
 
     private int getRndIntInRange(int min, int max){
         return (int) (Math.random()*((max-min)+1))+min;

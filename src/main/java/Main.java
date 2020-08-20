@@ -16,25 +16,23 @@ import java.util.*;
 
 public class Main extends ListenerAdapter {
 
-    private final int MAX_THREADS = 1;
     private final int MIN_TIME_DELAY = 1000 * 60 * 15;
     private final int MAX_TIME_DELAY = 1000 * 60 * 30;
 
     private char prefix = '-';
     private NewsGenerator newsGenerator = new NewsGenerator();
     private ArrayList<String> lastNewsList = new ArrayList<>();
-    private Deque<Thread> listOfThreads = new LinkedList<>();
-    Date date = new Date();
     public static Map<String, Boolean> mapOfGenerators = new HashMap<>();
     public  static Map<String, Thread> mapOfThreads = new HashMap<>();
 
 
     public static void main(String[] args) throws LoginException {
-        String botToken = "NjM2OTg4Nz1337youdontgetmydiscordbottoken1337OMSJJckVIqk";
+        String botToken = "NjM2O1337youdontgetmydiscordbottoken1337OMSJJckVIqk";
         JDABuilder builder = new JDABuilder(AccountType.BOT);
         builder.setToken(botToken);
         builder.addEventListeners(new Main());
         builder.build();
+
 //        NewsGenerator newsGenerator = new NewsGenerator();
 //        for (int i = 0; i < 50; i++) {
 //            System.out.println(newsGenerator.generateNews());
@@ -78,7 +76,6 @@ public class Main extends ListenerAdapter {
                                 addNewsToList(response);
                             }
                             try {
-    //                               Thread.sleep(getRandomIntegerBetweenRange(MIN_TIME_DELAY, MAX_TIME_DELAY));
                                 Thread.sleep(getRandomIntegerBetweenRange(MIN_TIME_DELAY, MAX_TIME_DELAY));
                             } catch (InterruptedException e) {
                                 /**
