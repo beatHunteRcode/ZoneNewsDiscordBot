@@ -540,6 +540,7 @@ public class NewsGenerator {
 
         StringBuilder responseBuilder = new StringBuilder();
         StringBuilder nameBuilder = generateName();
+        nameBuilder.append(":\n");
         if (group.equals("Зомбированные")) {
             while (group.equals("Зомбированные")) {
                 nameBuilder = generateName();
