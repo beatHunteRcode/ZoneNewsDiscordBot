@@ -554,19 +554,19 @@ public class NewsGenerator {
 
         if (hoursNow >= 0 && hoursNow <= 5) {           //night
             List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_night").findValues("text");
-            newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)));
+            newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
         }
         else if (hoursNow >= 6 && hoursNow <= 11) {     //morning
             List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_morning").findValues("text");
-            newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)));
+            newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
         }
         else if (hoursNow >= 12 && hoursNow <= 17) {    //noon
             List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_noon").findValues("text");
-            newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)));
+            newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
         }
         else { //hoursNow >= 18 && hoursNow <= 23       //evening
             List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_evening").findValues("text");
-            newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)));
+            newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
         }
 
         return newsBuilder;
