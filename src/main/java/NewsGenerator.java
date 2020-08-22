@@ -10,8 +10,10 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 //import javax.xml.parsers.DocumentBuilder;
 //import javax.xml.parsers.DocumentBuilderFactory;
 //import javax.xml.parsers.ParserConfigurationException;
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 public class NewsGenerator {
@@ -45,7 +47,8 @@ public class NewsGenerator {
             //  6 - немедленные сообщения от сталкеров увидивших/услышивших что-то
             //  7 - системная новость о гибели сталкера/военного
             //  8 - анекдот
-            newsType = getRndIntInRange(1, 8);
+            //  9 - новости о времени суток
+            newsType = getRndIntInRange(1, 9);
             if (newsType != 7) {
                 newsBuilder.append(nameBuilder);
                 if (group.equals("Зомбированные")) newsType = 2;
@@ -74,16 +77,20 @@ public class NewsGenerator {
                     break;
                 case 6:
 //                    System.out.println("INSTANT_NEWS");
-                    newsBuilder.append(getInstantNews(node));
+                    newsBuilder.append(genInstantNews(node));
                     break;
                 case 7:
 //                    System.out.println("SYSTEM_KILLED_NEWS");
-                    newsBuilder.append(getSystemKilledNews(node));
+                    newsBuilder.append(genSystemKilledNews(node));
                     break;
                 case 8:
 //                    System.out.println("JOKE_NEWS");
-                    newsBuilder.append(getJokeNews(node));
-
+                    newsBuilder.append(genJokeNews(node));
+                    break;
+                case 9:
+//                    System.out.println("TIME_NEWS");
+                    newsBuilder.append(genTimeNews(node));
+                    break;
             }
 
             strNews = replaceTemplates(newsBuilder, node);
@@ -97,54 +104,151 @@ public class NewsGenerator {
     }
 
 
+    public StringBuilder generateName() {
+        StringBuilder nameBuilder = new StringBuilder();
+
+        group = Resources.getGroupsList().get(getRndIntInRange(0, Resources.getGroupsList().size() - 1));
+
+        if (group.equals("Военные") || group.equals("Долг")) {
+            name = Resources.getMilitaryRanks().get(getRndIntInRange(0, Resources.getMilitaryRanks().size() - 1));
+            surname = Resources.getMilitarySurnames().get(getRndIntInRange(0, Resources.getMilitarySurnames().size() - 1));
+        }
+        else if (group.equals("Учёные")) {
+            name = Resources.getScientistNamesList().get(getRndIntInRange(0, Resources.getScientistNamesList().size() - 1));
+            surname = Resources.getMilitarySurnames().get(getRndIntInRange(0, Resources.getMilitarySurnames().size() - 1));
+        }
+        else {
+            name = Resources.getStalkerNamesList().get(getRndIntInRange(0, Resources.getStalkerNamesList().size() - 1));
+            surname = Resources.getStalkerSurnamesList().get(getRndIntInRange(0, Resources.getStalkerSurnamesList().size() - 1));
+        }
+
+
+        nameBuilder.append(name).append(" ");
+        nameBuilder.append(surname).append(" ");
+        nameBuilder.append("(").append(group).append(")");
+
+        return nameBuilder;
+    }
+
+    private StringBuilder generateNameKilled() {
+        StringBuilder nameBuilder = new StringBuilder();
+
+        group = Resources.getGroupsListKilled().get(getRndIntInRange(0, Resources.getGroupsListKilled().size() - 1));
+
+        if (group.equals("Военный") || group.equals("Долговец") || group.equals("\"Долг\"")) {
+            name = Resources.getMilitaryRanks().get(getRndIntInRange(0, Resources.getMilitaryRanks().size() - 1));
+            surname = Resources.getMilitarySurnames().get(getRndIntInRange(0, Resources.getMilitarySurnames().size() - 1));
+        }
+        else if (group.equals("Учёный")) {
+            name = Resources.getScientistNamesList().get(getRndIntInRange(0, Resources.getScientistNamesList().size() - 1));
+            surname = Resources.getMilitarySurnames().get(getRndIntInRange(0, Resources.getMilitarySurnames().size() - 1));
+        }
+        else {
+            name = Resources.getStalkerNamesList().get(getRndIntInRange(0, Resources.getStalkerNamesList().size() - 1));
+            surname = Resources.getStalkerSurnamesList().get(getRndIntInRange(0, Resources.getStalkerSurnamesList().size() - 1));
+        }
+
+        nameBuilder.append("    Погиб ");
+        if (group.equals("Военный")) {
+            nameBuilder.append("военный: ");
+            nameBuilder.append(name).append(" ").append(surname);
+        }
+        else {
+            nameBuilder.append("сталкер: ");
+            nameBuilder.append(name).append(" ").append(surname);
+            nameBuilder.append(". ").append(group);
+        }
+
+        return nameBuilder;
+    }
+
+    private StringBuilder generateLocation(JsonNode node) {
+        StringBuilder locationBuilder = new StringBuilder();
+        List<JsonNode> locsList = node.findValue("level_description").findValues("location");
+        JsonNode locNode  = locsList.get(getRndIntInRange(0, locsList.size() - 1));
+        List<JsonNode> blizkoPlaces = locNode.findValue("blizko").findValues("text");
+        List<JsonNode> dalekoPlaces = locNode.findValue("daleko").findValues("text");
+        String place = null;
+        if (blizkoPlaces.size() > 1 || dalekoPlaces.size() > 1) {
+            switch (getRndIntInRange(1, 2)) {
+                case 1:
+                    place = locNode.findValue("blizko").findValues("text")
+                            .get(getRndIntInRange(0, blizkoPlaces.size() - 1)).asText();
+                    break;
+                case 2:
+                    List<JsonNode> directionsList = node.findValue("utilities").findValue("direction").findValues("text");
+                    place = directionsList.get(getRndIntInRange(0, directionsList.size() - 1)).asText() + " " +
+                            locNode.findValue("daleko").findValues("text")
+                                    .get(getRndIntInRange(0, dalekoPlaces.size() - 1)).asText();
+                    break;
+            }
+            locationBuilder.append(locNode.findValue("loc_name").asText()).append(", ").append(place).append(". ");
+        }
+        else if (blizkoPlaces.size() == 1 || dalekoPlaces.size() == 1) {
+            place = locNode.findValue("blizko").findValues("text")
+                    .get(getRndIntInRange(0, blizkoPlaces.size() - 1)).asText();
+            locationBuilder.append(locNode.findValue("loc_name").asText()).append(", ").append(place).append(". ");
+        }
+        else {
+            locationBuilder.append(locNode.findValue("loc_name").asText()).append(". ");
+        }
+
+        return locationBuilder;
+    }
+
+
+
     private StringBuilder genHelpNews(JsonNode node) {
         StringBuilder newsBuilder = new StringBuilder();
         int newsNumb = getRndIntInRange(1,2); //определяем зовут ли на помощь: 1 - зовут, 2 - не зовут
         if (newsNumb == 1) {
+            List<JsonNode> phrasesList;
             switch (group) {
                 case "Одиночки":
-                    newsBuilder.append(node.findValue("SOS").findValue("loner").findValues("text")
-                            .get(getRndIntInRange(0, 3)).asText()).append(" ");
+                    phrasesList = node.findValue("SOS").findValue("loner").findValues("text");
+                    newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                     break;
                 case "Монолит":
-                    newsBuilder.append(node.findValue("SOS").findValue("monolith").findValues("text")
-                            .get(getRndIntInRange(0, 3)).asText()).append(" ");
+                    phrasesList = node.findValue("SOS").findValue("monolith").findValues("text");
+                    newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                     break;
                 case "Бандиты":
-                    newsBuilder.append(node.findValue("SOS").findValue("bandit").findValues("text")
-                            .get(getRndIntInRange(0, 3)).asText()).append(" ");
+                    phrasesList = node.findValue("SOS").findValue("bandit").findValues("text");
+                    newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                     break;
                 case "Ренегаты":
-                    newsBuilder.append(node.findValue("SOS").findValue("bandit").findValues("text")
-                            .get(getRndIntInRange(0, 3)).asText()).append(" ");
+                    phrasesList = node.findValue("SOS").findValue("bandit").findValues("text");
+                    newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                     break;
                 case "Долг":
-                    newsBuilder.append(node.findValue("SOS").findValue("dolg").findValues("text")
-                            .get(getRndIntInRange(0, 3)).asText()).append(" ");
+                    phrasesList = node.findValue("SOS").findValue("dolg").findValues("text");
+                    newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                     break;
                 case "Учёные":
-                    newsBuilder.append(node.findValue("SOS").findValue("ecolog").findValues("text")
-                            .get(getRndIntInRange(0, 3)).asText()).append(" ");
+                    phrasesList = node.findValue("SOS").findValue("ecolog").findValues("text");
+                    newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                     break;
                 case "Чистое Небо":
-                    newsBuilder.append(node.findValue("SOS").findValue("clear_sky").findValues("text")
-                            .get(getRndIntInRange(0, 3)).asText()).append(" ");
+                    phrasesList = node.findValue("SOS").findValue("clear_sky").findValues("text");
+                    newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                     break;
                 case "Военные":
-                    newsBuilder.append(node.findValue("SOS").findValue("army").findValues("text")
-                            .get(getRndIntInRange(0, 3)).asText()).append(" ");
+                    phrasesList = node.findValue("SOS").findValue("army").findValues("text");
+                    newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                     break;
                 case "Наёмники":
-                    newsBuilder.append(node.findValue("SOS").findValue("mercenary").findValues("text")
-                            .get(getRndIntInRange(0, 3)).asText()).append(" ");
+                    phrasesList = node.findValue("SOS").findValue("mercenary").findValues("text");
+                    newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                     break;
                 case "Свобода":
-                    newsBuilder.append(node.findValue("SOS").findValue("freedom").findValues("text")
-                            .get(getRndIntInRange(0, 3)).asText()).append(" ");
+                    phrasesList = node.findValue("SOS").findValue("freedom").findValues("text");
+                    newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                     break;
             }
         }
-        newsBuilder.append(node.findValue("mutants").findValues("text").get(getRndIntInRange(0, 105)).asText());
+
+        List<JsonNode> mutantsList = node.findValue("mutants").findValues("text");
+        newsBuilder.append(mutantsList.get(getRndIntInRange(0, mutantsList.size() - 1)).asText());
         newsBuilder.append(". ");
         newsBuilder.append(generateLocation(node).toString());
 
@@ -154,14 +258,12 @@ public class NewsGenerator {
     private StringBuilder genSpecialNews(JsonNode node) {
         StringBuilder newsBuilder = new StringBuilder();
         if (group.equals("Зомбированные")) {
-            newsBuilder.append(node.findValue("zombie_news").
-                    findValue("dumb_zombies").
-                    findValues("text").get(getRndIntInRange(0, 5)).asText()).
-                    append(" ");
+            List<JsonNode> phrasesList = node.findValue("zombie_news").findValue("dumb_zombies").findValues("text");
+            newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
         }
         else {
-            newsBuilder.append(node.findValue("special_news").findValues("text").get(getRndIntInRange(0, 175)).asText()).
-                    append(" ");
+            List<JsonNode> phrasesList = node.findValue("special_news").findValues("text");
+            newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
         }
         return newsBuilder;
     }
@@ -170,120 +272,133 @@ public class NewsGenerator {
         StringBuilder newsBuilder = new StringBuilder();
         int newsNumb = getRndIntInRange(1, 2); //1 - случайная новость, 2 - составление новости фракции из кусков
         if (newsNumb == 1) {
-            newsBuilder.append(node.findValue("surge_template").findValues("text")
-                    .get(getRndIntInRange(0, 13)).asText()).append(" ");
+            List<JsonNode> templatesList = node.findValue("surge_template").findValues("text");
+            newsBuilder.append(templatesList.get(getRndIntInRange(0, templatesList.size() - 1)).asText()).append(" ");
         }
         else {
+            List<JsonNode> startsList;
+            List<JsonNode> midsList;
+            List<JsonNode> endsList;
             switch (group) {
                 case "Одиночки":
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("loner")
-                            .findValue("start").findValues("text").get(getRndIntInRange(0, 6))
-                            .asText()).append(" ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("loner")
-                            .findValue("mid").findValues("text").get(getRndIntInRange(0, 5))
-                            .asText()).append(". ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("loner")
-                            .findValue("end").findValues("text").get(getRndIntInRange(0, 3))
-                            .asText()).append(" ");
+                    startsList = node.findValue("surge_builder_by_faction").findValue("loner")
+                            .findValue("start").findValues("text");
+                    midsList = node.findValue("surge_builder_by_faction").findValue("loner")
+                            .findValue("mid").findValues("text");
+                    endsList = node.findValue("surge_builder_by_faction").findValue("loner")
+                            .findValue("end").findValues("text");
+
+                    newsBuilder.append(startsList.get(getRndIntInRange(0, startsList.size() - 1)).asText()).append(" ");
+                    newsBuilder.append(midsList.get(getRndIntInRange(0, midsList.size() - 1)).asText()).append(". ");
+                    newsBuilder.append(endsList.get(getRndIntInRange(0, endsList.size() - 1)).asText()).append(" ");
                     break;
                 case "Монолит":
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("monolith")
-                            .findValue("start").findValues("text").get(getRndIntInRange(0, 3))
-                            .asText()).append(" ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("loner")
-                            .findValue("mid").findValues("text").get(getRndIntInRange(0, 5))
-                            .asText()).append(". ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("loner")
-                            .findValue("end").findValues("text").get(getRndIntInRange(0, 3))
-                            .asText()).append(" ");
+                    startsList = node.findValue("surge_builder_by_faction").findValue("monolith")
+                            .findValue("start").findValues("text");
+                    midsList = node.findValue("surge_builder_by_faction").findValue("monolith")
+                            .findValue("mid").findValues("text");
+                    endsList = node.findValue("surge_builder_by_faction").findValue("monolith")
+                            .findValue("end").findValues("text");
+
+                    newsBuilder.append(startsList.get(getRndIntInRange(0, startsList.size() - 1)).asText()).append(" ");
+                    newsBuilder.append(midsList.get(getRndIntInRange(0, midsList.size() - 1)).asText()).append(". ");
+                    newsBuilder.append(endsList.get(getRndIntInRange(0, endsList.size() - 1)).asText()).append(" ");
                     break;
                 case "Бандиты":
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("bandit")
-                            .findValue("start").findValues("text").get(getRndIntInRange(0, 6))
-                            .asText()).append(" ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("bandit")
-                            .findValue("mid").findValues("text").get(getRndIntInRange(0, 5))
-                            .asText()).append(". ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("bandit")
-                            .findValue("end").findValues("text").get(getRndIntInRange(0, 4))
-                            .asText()).append(" ");
+                    startsList = node.findValue("surge_builder_by_faction").findValue("bandit")
+                            .findValue("start").findValues("text");
+                    midsList = node.findValue("surge_builder_by_faction").findValue("bandit")
+                            .findValue("mid").findValues("text");
+                    endsList = node.findValue("surge_builder_by_faction").findValue("bandit")
+                            .findValue("end").findValues("text");
+
+                    newsBuilder.append(startsList.get(getRndIntInRange(0, startsList.size() - 1)).asText()).append(" ");
+                    newsBuilder.append(midsList.get(getRndIntInRange(0, midsList.size() - 1)).asText()).append(". ");
+                    newsBuilder.append(endsList.get(getRndIntInRange(0, endsList.size() - 1)).asText()).append(" ");
                     break;
                 case "Ренегаты":
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("bandit")
-                            .findValue("start").findValues("text").get(getRndIntInRange(0, 6))
-                            .asText()).append(" ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("bandit")
-                            .findValue("mid").findValues("text").get(getRndIntInRange(0, 5))
-                            .asText()).append(". ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("bandit")
-                            .findValue("end").findValues("text").get(getRndIntInRange(0, 4))
-                            .asText()).append(" ");
+                    startsList = node.findValue("surge_builder_by_faction").findValue("bandit")
+                            .findValue("start").findValues("text");
+                    midsList = node.findValue("surge_builder_by_faction").findValue("bandit")
+                            .findValue("mid").findValues("text");
+                    endsList = node.findValue("surge_builder_by_faction").findValue("bandit")
+                            .findValue("end").findValues("text");
+
+                    newsBuilder.append(startsList.get(getRndIntInRange(0, startsList.size() - 1)).asText()).append(" ");
+                    newsBuilder.append(midsList.get(getRndIntInRange(0, midsList.size() - 1)).asText()).append(". ");
+                    newsBuilder.append(endsList.get(getRndIntInRange(0, endsList.size() - 1)).asText()).append(" ");
                     break;
                 case "Долг":
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("dolg")
-                            .findValue("start").findValues("text").get(getRndIntInRange(0, 6))
-                            .asText()).append(" ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("dolg")
-                            .findValue("mid").findValues("text").get(getRndIntInRange(0, 5))
-                            .asText()).append(". ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("dolg")
-                            .findValue("end").findValues("text").get(getRndIntInRange(0, 3))
-                            .asText()).append(" ");
+                    startsList = node.findValue("surge_builder_by_faction").findValue("dolg")
+                            .findValue("start").findValues("text");
+                    midsList = node.findValue("surge_builder_by_faction").findValue("dolg")
+                            .findValue("mid").findValues("text");
+                    endsList = node.findValue("surge_builder_by_faction").findValue("dolg")
+                            .findValue("end").findValues("text");
+
+                    newsBuilder.append(startsList.get(getRndIntInRange(0, startsList.size() - 1)).asText()).append(" ");
+                    newsBuilder.append(midsList.get(getRndIntInRange(0, midsList.size() - 1)).asText()).append(". ");
+                    newsBuilder.append(endsList.get(getRndIntInRange(0, endsList.size() - 1)).asText()).append(" ");
                     break;
                 case "Учёные":
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("scientist")
-                            .findValue("start").findValues("text").get(getRndIntInRange(0, 6))
-                            .asText()).append(" ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("scientist")
-                            .findValue("mid").findValues("text").get(getRndIntInRange(0, 5))
-                            .asText()).append(". ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("scientist")
-                            .findValue("end").findValues("text").get(getRndIntInRange(0, 3))
-                            .asText()).append(" ");
+                    startsList = node.findValue("surge_builder_by_faction").findValue("scientist")
+                            .findValue("start").findValues("text");
+                    midsList = node.findValue("surge_builder_by_faction").findValue("scientist")
+                            .findValue("mid").findValues("text");
+                    endsList = node.findValue("surge_builder_by_faction").findValue("scientist")
+                            .findValue("end").findValues("text");
+
+                    newsBuilder.append(startsList.get(getRndIntInRange(0, startsList.size() - 1)).asText()).append(" ");
+                    newsBuilder.append(midsList.get(getRndIntInRange(0, midsList.size() - 1)).asText()).append(". ");
+                    newsBuilder.append(endsList.get(getRndIntInRange(0, endsList.size() - 1)).asText()).append(" ");
                     break;
                 case "Чистое Небо":
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("clear_sky")
-                            .findValue("start").findValues("text").get(getRndIntInRange(0, 6))
-                            .asText()).append(" ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("clear_sky")
-                            .findValue("mid").findValues("text").get(getRndIntInRange(0, 5))
-                            .asText()).append(". ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("clear_sky")
-                            .findValue("end").findValues("text").get(getRndIntInRange(0, 3))
-                            .asText()).append(" ");
+                    startsList = node.findValue("surge_builder_by_faction").findValue("clear_sky")
+                            .findValue("start").findValues("text");
+                    midsList = node.findValue("surge_builder_by_faction").findValue("clear_sky")
+                            .findValue("mid").findValues("text");
+                    endsList = node.findValue("surge_builder_by_faction").findValue("clear_sky")
+                            .findValue("end").findValues("text");
+
+                    newsBuilder.append(startsList.get(getRndIntInRange(0, startsList.size() - 1)).asText()).append(" ");
+                    newsBuilder.append(midsList.get(getRndIntInRange(0, midsList.size() - 1)).asText()).append(". ");
+                    newsBuilder.append(endsList.get(getRndIntInRange(0, endsList.size() - 1)).asText()).append(" ");
                     break;
                 case "Военные":
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("army")
-                            .findValue("start").findValues("text").get(getRndIntInRange(0, 6))
-                            .asText()).append(" ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("army")
-                            .findValue("mid").findValues("text").get(getRndIntInRange(0, 5))
-                            .asText()).append(". ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("army")
-                            .findValue("end").findValues("text").get(getRndIntInRange(0, 3))
-                            .asText()).append(" ");
+                    startsList = node.findValue("surge_builder_by_faction").findValue("army")
+                            .findValue("start").findValues("text");
+                    midsList = node.findValue("surge_builder_by_faction").findValue("army")
+                            .findValue("mid").findValues("text");
+                    endsList = node.findValue("surge_builder_by_faction").findValue("army")
+                            .findValue("end").findValues("text");
+
+                    newsBuilder.append(startsList.get(getRndIntInRange(0, startsList.size() - 1)).asText()).append(" ");
+                    newsBuilder.append(midsList.get(getRndIntInRange(0, midsList.size() - 1)).asText()).append(". ");
+                    newsBuilder.append(endsList.get(getRndIntInRange(0, endsList.size() - 1)).asText()).append(" ");
                     break;
                 case "Наёмники":
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("mercenary")
-                            .findValue("start").findValues("text").get(getRndIntInRange(0, 6))
-                            .asText()).append(" ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("mercenary")
-                            .findValue("mid").findValues("text").get(getRndIntInRange(0, 5))
-                            .asText()).append(". ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("mercenary")
-                            .findValue("end").findValues("text").get(getRndIntInRange(0, 3))
-                            .asText()).append(" ");
+                    startsList = node.findValue("surge_builder_by_faction").findValue("mercenary")
+                            .findValue("start").findValues("text");
+                    midsList = node.findValue("surge_builder_by_faction").findValue("mercenary")
+                            .findValue("mid").findValues("text");
+                    endsList = node.findValue("surge_builder_by_faction").findValue("mercenary")
+                            .findValue("end").findValues("text");
+
+                    newsBuilder.append(startsList.get(getRndIntInRange(0, startsList.size() - 1)).asText()).append(" ");
+                    newsBuilder.append(midsList.get(getRndIntInRange(0, midsList.size() - 1)).asText()).append(". ");
+                    newsBuilder.append(endsList.get(getRndIntInRange(0, endsList.size() - 1)).asText()).append(" ");
                     break;
                 case "Свобода":
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("freedom")
-                            .findValue("start").findValues("text").get(getRndIntInRange(0, 6))
-                            .asText()).append(" ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("freedom")
-                            .findValue("mid").findValues("text").get(getRndIntInRange(0, 5))
-                            .asText()).append(". ");
-                    newsBuilder.append(node.findValue("surge_builder_by_faction").findValue("freedom")
-                            .findValue("end").findValues("text").get(getRndIntInRange(0, 3))
-                            .asText()).append(" ");
+                    startsList = node.findValue("surge_builder_by_faction").findValue("freedom")
+                            .findValue("start").findValues("text");
+                    midsList = node.findValue("surge_builder_by_faction").findValue("freedom")
+                            .findValue("mid").findValues("text");
+                    endsList = node.findValue("surge_builder_by_faction").findValue("freedom")
+                            .findValue("end").findValues("text");
+
+                    newsBuilder.append(startsList.get(getRndIntInRange(0, startsList.size() - 1)).asText()).append(" ");
+                    newsBuilder.append(midsList.get(getRndIntInRange(0, midsList.size() - 1)).asText()).append(". ");
+                    newsBuilder.append(endsList.get(getRndIntInRange(0, endsList.size() - 1)).asText()).append(" ");
                     break;
             }
         }
@@ -293,46 +408,47 @@ public class NewsGenerator {
     private StringBuilder genFactionNews(JsonNode node) {
         StringBuilder newsBuilder = new StringBuilder();
 
+        List<JsonNode> phrasesList;
         switch (group) {
             case "Одиночки":
-                newsBuilder.append(node.findValue("faction_news").findValue("clear_sky").findValues("text")
-                        .get(getRndIntInRange(0, 11)).asText()).append(" ");
+                phrasesList = node.findValue("faction_news").findValue("clear_sky").findValues("text");
+                newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                 break;
             case "Монолит":
-                newsBuilder.append(node.findValue("faction_news").findValue("monolith").findValues("text")
-                        .get(getRndIntInRange(0, 23)).asText()).append(" ");
+                phrasesList = node.findValue("faction_news").findValue("monolith").findValues("text");
+                newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                 break;
             case "Бандиты":
-                newsBuilder.append(node.findValue("faction_news").findValue("bandit").findValues("text")
-                        .get(getRndIntInRange(0, 16)).asText()).append(" ");
+                phrasesList = node.findValue("faction_news").findValue("bandit").findValues("text");
+                newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                 break;
             case "Ренегаты":
-                newsBuilder.append(node.findValue("faction_news").findValue("bandit").findValues("text")
-                        .get(getRndIntInRange(0, 16)).asText()).append(" ");
+                phrasesList = node.findValue("faction_news").findValue("bandit").findValues("text");
+                newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                 break;
             case "Долг":
-                newsBuilder.append(node.findValue("faction_news").findValue("dolg").findValues("text")
-                        .get(getRndIntInRange(0, 28)).asText()).append(" ");
+                phrasesList = node.findValue("faction_news").findValue("dolg").findValues("text");
+                newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                 break;
             case "Учёные":
-                newsBuilder.append(node.findValue("faction_news").findValue("scientist").findValues("text")
-                        .get(getRndIntInRange(0, 10)).asText()).append(" ");
+                phrasesList = node.findValue("faction_news").findValue("scientist").findValues("text");
+                newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                 break;
             case "Чистое Небо":
-                newsBuilder.append(node.findValue("faction_news").findValue("clear_sky").findValues("text")
-                        .get(getRndIntInRange(0, 11)).asText()).append(" ");
+                phrasesList = node.findValue("faction_news").findValue("clear_sky").findValues("text");
+                newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                 break;
             case "Военные":
-                newsBuilder.append(node.findValue("faction_news").findValue("army").findValues("text")
-                        .get(getRndIntInRange(0, 16)).asText()).append(" ");
+                phrasesList = node.findValue("faction_news").findValue("army").findValues("text");
+                newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                 break;
             case "Наёмники":
-                newsBuilder.append(node.findValue("faction_news").findValue("mercenary").findValues("text")
-                        .get(getRndIntInRange(0, 17)).asText()).append(" ");
+                phrasesList = node.findValue("faction_news").findValue("mercenary").findValues("text");
+                newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                 break;
             case "Свобода":
-                newsBuilder.append(node.findValue("faction_news").findValue("freedom").findValues("text")
-                        .get(getRndIntInRange(0, 31)).asText()).append(" ");
+                phrasesList = node.findValue("faction_news").findValue("freedom").findValues("text");
+                newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
                 break;
         }
         return newsBuilder;
@@ -340,84 +456,123 @@ public class NewsGenerator {
 
     private StringBuilder genArtefactNews(JsonNode node) {
         StringBuilder newsBuilder = new StringBuilder();
-
-        newsBuilder.append(node.findValue("found_artefacts").findValues("text")
-                .get(getRndIntInRange(0, 3)).asText()).append(" ");
+        List<JsonNode> phrasesList = node.findValue("found_artefacts").findValues("text");
+        newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
 
         return newsBuilder;
     }
 
-    private StringBuilder getInstantNews(JsonNode node) {
+    private StringBuilder genInstantNews(JsonNode node) {
         StringBuilder newsBuilder = new StringBuilder();
 
         int newsNumb = getRndIntInRange(1, 3);
         switch (newsNumb) {
             case 1: //новость об атаке кем-то
-                newsBuilder.append(node.findValue("instant_news").findValue("start").findValue("attacked")
-                                        .findValues("text").get(getRndIntInRange(0, 3)).asText()).append(" ")
-                            .append(node.findValue("utilities").findValue("who_mutant")
-                                        .findValues("text").get(getRndIntInRange(0, 42)).asText()).append("!");
+                List<JsonNode> attackStartsList = node.findValue("instant_news").findValue("start")
+                                                    .findValue("attacked").findValues("text");
+                List<JsonNode> mutantsList = node.findValue("utilities").findValue("who_mutant").findValues("text");
+                newsBuilder.append(attackStartsList.get(getRndIntInRange(0, attackStartsList.size() - 1)).asText()).append(" ")
+                            .append(mutantsList.get(getRndIntInRange(0, mutantsList.size() - 1)).asText()).append("!");
                 newsBuilder.append(" ");
                 newsBuilder.append(generateLocation(node).toString());
                 break;
             case 2: //новость о том, что что-то услышали
-                newsBuilder.append(node.findValue("instant_news").findValue("start").findValue("hear")
-                                        .findValues("text").get(getRndIntInRange(0, 8)).asText())
-                            .append(" ").append(node.findValue("instant_news").findValue("hear_mid")
-                                                    .findValues("text").get(getRndIntInRange(0, 13)).asText());
+                List<JsonNode> hearStartsList = node.findValue("instant_news").findValue("start")
+                                                    .findValue("hear").findValues("text");
+                List<JsonNode> hearMidsList = node.findValue("instant_news")
+                                                    .findValue("hear_mid").findValues("text");
+                List<JsonNode> hearEndsList = node.findValue("instant_news").findValue("end").findValues("text");
+
+                newsBuilder.append(hearStartsList.get(getRndIntInRange(0, hearStartsList.size() - 1)).asText())
+                            .append(" ").append(hearMidsList.get(getRndIntInRange(0, hearMidsList.size() - 1)).asText());
                 newsBuilder.append(". ");
                 newsBuilder.append(generateLocation(node).toString());
-                newsBuilder.append(node.findValue("instant_news").findValue("end")
-                                                    .findValues("text").get(getRndIntInRange(0, 14)).asText());
+                newsBuilder.append(hearEndsList.get(getRndIntInRange(0, hearEndsList.size() - 1)).asText());
                 break;
             case 3: //новость о том, что что-то увидели
-                newsBuilder.append(node.findValue("instant_news").findValue("start").findValue("see")
-                                        .findValues("text").get(getRndIntInRange(0, 8)).asText()).append(" ");
+                List<JsonNode> seeStartsList = node.findValue("instant_news").findValue("start")
+                                                    .findValue("see").findValues("text");
+                newsBuilder.append(seeStartsList.get(getRndIntInRange(0, seeStartsList.size() - 1)).asText()).append(" ");
+
+                List<JsonNode> whosList;
+                List<JsonNode> howKilledList;
                 switch (getRndIntInRange(1, 2)) { //выбираем один человек убил или несколько
                     case 1:
-                        newsBuilder.append(node.findValue("who_human").findValue("who").findValue("single")
-                                    .findValues("text").get(getRndIntInRange(0, 19)).asText()).append(" ")
-                                    .append(node.findValue("how_killed").findValue("single")
-                                                .findValues("text").get(getRndIntInRange(0, 9)).asText()).append(" ");
+                        whosList = node.findValue("who_human").findValue("who")
+                                        .findValue("single").findValues("text");
+                        howKilledList = node.findValue("how_killed").findValue("single")
+                                            .findValues("text");
+                        newsBuilder.append(whosList.get(getRndIntInRange(0, whosList.size() - 1)).asText()).append(" ")
+                                    .append(howKilledList.get(getRndIntInRange(0, howKilledList.size() - 1)).asText()).append(" ");
                         break;
                     case 2:
-                        newsBuilder.append(node.findValue("who_human").findValue("who").findValue("multi")
-                                .findValues("text").get(getRndIntInRange(0, 17)).asText()).append(" ")
-                                .append(node.findValue("how_killed").findValue("multi")
-                                        .findValues("text").get(getRndIntInRange(0, 9)).asText()).append(" ");
+                        whosList = node.findValue("who_human").findValue("who").findValue("multi").findValues("text");
+                        howKilledList = node.findValue("how_killed").findValue("multi").findValues("text");
+                        newsBuilder.append(whosList.get(getRndIntInRange(0, whosList.size() - 1)).asText()).append(" ")
+                                .append(howKilledList.get(getRndIntInRange(0, howKilledList.size() - 1)).asText()).append(" ");
                         break;
                 }
+
+                List<JsonNode> whomsList = node.findValue("who_human").findValue("whom")
+                                                .findValue("single").findValues("text");
                 switch (getRndIntInRange(1, 2)) { //выбираем убили одного человека или группу
                     case 1:
-                        newsBuilder.append(node.findValue("who_human").findValue("whom").findValue("single")
-                                    .findValues("text").get(getRndIntInRange(0, 17)).asText());
+                        newsBuilder.append(whomsList.get(getRndIntInRange(0, whomsList.size() - 1)).asText());
                         break;
                     case 2:
-                        newsBuilder.append(node.findValue("who_human").findValue("whom").findValue("multi")
-                                                .findValue("group_type").findValues("text")
-                                                .get(getRndIntInRange(0, 2)).asText()).append(" ")
-                                    .append(node.findValue("who_human").findValue("whom").findValue("multi")
-                                                .findValue("who").findValues("text")
-                                                .get(getRndIntInRange(0, 15)).asText());
+                        List<JsonNode> groupTypesList = node.findValue("who_human").findValue("whom")
+                                                            .findValue("multi").findValue("group_type").findValues("text");
+                        whomsList = node.findValue("who_human").findValue("whom").findValue("multi")
+                                         .findValue("who").findValues("text");
 
+                        newsBuilder.append(groupTypesList.get(getRndIntInRange(0, groupTypesList.size() - 1)).asText()).append(" ")
+                                    .append(whomsList.get(getRndIntInRange(0, whomsList.size() - 1)).asText());
                 }
                 newsBuilder.append(". ");
                 newsBuilder.append(generateLocation(node).toString());
                 break;
         }
 
-
         return newsBuilder;
     }
 
-    private StringBuilder getSystemKilledNews(JsonNode node) {
+    private StringBuilder genSystemKilledNews(JsonNode node) {
         StringBuilder newsBuilder = new StringBuilder();
         newsBuilder.append("Общий канал:\n");
         newsBuilder.append(generateNameKilled()).append(". ").append(generateLocation(node));
         return newsBuilder;
     }
 
-    public StringBuilder getJokeNews(JsonNode node) {
+    private StringBuilder genTimeNews(JsonNode node) {
+        StringBuilder newsBuilder = new StringBuilder();
+        Date date = new Date();
+        //date.toString() -> Sat Aug 22 21:52:58 MSK 2020
+        //date.toString().split(" ")[3] -> 21:52:58
+        //date.toString().split(" ")[3].split(":")[0] -> 21
+        //получаем текущий час (24-часовой формат времени)
+        int hoursNow = Integer.parseInt(date.toString().split(" ")[3].split(":")[0]);
+
+        if (hoursNow >= 0 && hoursNow <= 5) {           //night
+            List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_night").findValues("text");
+            newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)));
+        }
+        else if (hoursNow >= 6 && hoursNow <= 11) {     //morning
+            List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_morning").findValues("text");
+            newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)));
+        }
+        else if (hoursNow >= 12 && hoursNow <= 17) {    //noon
+            List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_noon").findValues("text");
+            newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)));
+        }
+        else { //hoursNow >= 18 && hoursNow <= 23       //evening
+            List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_evening").findValues("text");
+            newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)));
+        }
+
+        return newsBuilder;
+    }
+
+    public StringBuilder genJokeNews(JsonNode node) {
         StringBuilder newsBuilder = new StringBuilder();
 
         switch (getRndIntInRange(1, 3)) {
@@ -485,115 +640,28 @@ public class NewsGenerator {
         return builder;
     }
 
-    public StringBuilder generateName() {
-        StringBuilder nameBuilder = new StringBuilder();
 
-        group = Resources.getGroupsList().get(getRndIntInRange(0, Resources.getGroupsList().size() - 1));
-
-        if (group.equals("Военные") || group.equals("Долг")) {
-            name = Resources.getMilitaryRanks().get(getRndIntInRange(0, Resources.getMilitaryRanks().size() - 1));
-            surname = Resources.getMilitarySurnames().get(getRndIntInRange(0, Resources.getMilitarySurnames().size() - 1));
-        }
-        else if (group.equals("Учёные")) {
-            name = Resources.getScientistNamesList().get(getRndIntInRange(0, Resources.getScientistNamesList().size() - 1));
-            surname = Resources.getMilitarySurnames().get(getRndIntInRange(0, Resources.getMilitarySurnames().size() - 1));
-        }
-        else {
-            name = Resources.getStalkerNamesList().get(getRndIntInRange(0, Resources.getStalkerNamesList().size() - 1));
-            surname = Resources.getStalkerSurnamesList().get(getRndIntInRange(0, Resources.getStalkerSurnamesList().size() - 1));
-        }
-
-
-        nameBuilder.append(name).append(" ");
-        nameBuilder.append(surname).append(" ");
-        nameBuilder.append("(").append(group).append(")");
-
-        return nameBuilder;
-    }
-
-
-    private StringBuilder generateNameKilled() {
-        StringBuilder nameBuilder = new StringBuilder();
-
-        group = Resources.getGroupsListKilled().get(getRndIntInRange(0, Resources.getGroupsListKilled().size() - 1));
-
-        if (group.equals("Военный") || group.equals("Долговец") || group.equals("\"Долг\"")) {
-            name = Resources.getMilitaryRanks().get(getRndIntInRange(0, Resources.getMilitaryRanks().size() - 1));
-            surname = Resources.getMilitarySurnames().get(getRndIntInRange(0, Resources.getMilitarySurnames().size() - 1));
-        }
-        else if (group.equals("Учёный")) {
-            name = Resources.getScientistNamesList().get(getRndIntInRange(0, Resources.getScientistNamesList().size() - 1));
-            surname = Resources.getMilitarySurnames().get(getRndIntInRange(0, Resources.getMilitarySurnames().size() - 1));
-        }
-        else {
-            name = Resources.getStalkerNamesList().get(getRndIntInRange(0, Resources.getStalkerNamesList().size() - 1));
-            surname = Resources.getStalkerSurnamesList().get(getRndIntInRange(0, Resources.getStalkerSurnamesList().size() - 1));
-        }
-
-        nameBuilder.append("    Погиб ");
-        if (group.equals("Военный")) {
-            nameBuilder.append("военный: ");
-            nameBuilder.append(name).append(" ").append(surname);
-        }
-        else {
-            nameBuilder.append("сталкер: ");
-            nameBuilder.append(name).append(" ").append(surname);
-            nameBuilder.append(". ").append(group);
-        }
-
-        return nameBuilder;
-    }
-
-    private StringBuilder generateLocation(JsonNode node) {
-        StringBuilder locationBuilder = new StringBuilder();
-        int rndNumb = getRndIntInRange(0, 32);
-        JsonNode locNode  = node.findValue("level_description").findValues("location").get(rndNumb);
-        List<JsonNode> blizkoPlaces = locNode.findValue("blizko").findValues("text");
-        List<JsonNode> dalekoPlaces = locNode.findValue("daleko").findValues("text");
-        String place = null;
-        if (blizkoPlaces.size() > 1 || dalekoPlaces.size() > 1) {
-            switch (getRndIntInRange(1, 2)) {
-                case 1:
-                    place = locNode.findValue("blizko").findValues("text")
-                            .get(getRndIntInRange(0, blizkoPlaces.size() - 1)).asText();
-                    break;
-                case 2:
-                    place = node.findValue("utilities").findValue("direction")
-                            .findValues("text").get(getRndIntInRange(0, 9)).asText() + " " +
-                            locNode.findValue("daleko").findValues("text")
-                                    .get(getRndIntInRange(0, dalekoPlaces.size() - 1)).asText();
-                    break;
-            }
-            locationBuilder.append(locNode.findValue("loc_name").asText()).append(", ").append(place).append(". ");
-        }
-        else if (blizkoPlaces.size() == 1 || dalekoPlaces.size() == 1) {
-            place = locNode.findValue("blizko").findValues("text")
-                            .get(getRndIntInRange(0, blizkoPlaces.size() - 1)).asText();
-            locationBuilder.append(locNode.findValue("loc_name").asText()).append(", ").append(place).append(". ");
-        }
-        else {
-            locationBuilder.append(locNode.findValue("loc_name").asText()).append(". ");
-        }
-
-        return locationBuilder;
-    }
 
     private String replaceTemplates(StringBuilder newsBuilder, JsonNode node) {
         String strNews = newsBuilder.toString();
 
         if (newsBuilder.toString().contains("$who")) {
-            String replacement = node.findValue("who_mutant").findValues("text").get(getRndIntInRange(0, 42)).asText();
+            List<JsonNode> mutantsList = node.findValue("who_mutant").findValues("text");
+            String replacement = mutantsList.get(getRndIntInRange(0, mutantsList.size() - 1)).asText();
             strNews = newsBuilder.toString().replaceAll("\\$who", replacement);
         }
 
         if (newsBuilder.toString().contains("$surge") && newsBuilder.toString().contains("$when")) {
-            String replacement = node.findValue("surge_type").findValues("text").get(getRndIntInRange(0, 2)).asText();
+            List<JsonNode> surgesList = node.findValue("surge_type").findValues("text");
+            String replacement = surgesList.get(getRndIntInRange(0, surgesList.size() - 1)).asText();
             strNews = newsBuilder.toString().replaceAll("\\$surge", replacement);
-            replacement = node.findValue("utilities").findValue("time_phase").findValues("text").get(getRndIntInRange(0, 2)).asText();
+            List<JsonNode> timePhasesList = node.findValue("utilities").findValue("time_phase").findValues("text");
+            replacement = timePhasesList.get(getRndIntInRange(0, timePhasesList.size() - 1)).asText();
             strNews = strNews.replaceAll("\\$when", replacement);
         }
         else if (newsBuilder.toString().contains("$when")) {
-            String replacement = node.findValue("utilities").findValue("time_phase").findValues("text").get(getRndIntInRange(0, 2)).asText();
+            List<JsonNode> timePhasesList = node.findValue("utilities").findValue("time_phase").findValues("text");
+            String replacement = timePhasesList.get(getRndIntInRange(0, timePhasesList.size() - 1)).asText();
             strNews = newsBuilder.toString().replaceAll("\\$when", replacement);
         }
 
@@ -631,9 +699,8 @@ public class NewsGenerator {
                 } catch (InterruptedException e) {
                     Main.mapOfThreads.get(event.getChannel().getName()).interrupt();
                 }
-                responseBuilder.append(node.findValue("response_dumb_zombies").
-                                findValues("text").get(getRndIntInRange(0, 6)).asText()).
-                                append(" ");
+                List<JsonNode> responsesList = node.findValue("response_dumb_zombies").findValues("text");
+                responseBuilder.append(responsesList.get(getRndIntInRange(0, responsesList.size() - 1)).asText()).append(" ");
             }
             if (responseType == 2) {
                 try {

@@ -31,7 +31,7 @@ public class Main extends ListenerAdapter {
         builder.build();
 
 //        NewsGenerator newsGenerator = new NewsGenerator();
-//        for (int i = 0; i < 100; i++) {
+//        for (int i = 0; i < 30; i++) {
 //            System.out.println(newsGenerator.generateNews());
 //            System.out.println();
 //        }
@@ -95,7 +95,7 @@ public class Main extends ListenerAdapter {
                 }
                 newsBuilder.append(name).append(":\n");
 
-                newsBuilder.append(newsGenerator.getJokeNews(node));
+                newsBuilder.append(newsGenerator.genJokeNews(node));
                 event.getChannel().sendMessage(newsBuilder.toString()).queue();
             } catch (IOException e) {
                 e.printStackTrace();
