@@ -4,18 +4,324 @@
 			{
 				"utilities": [
 					{
-						"artefact" : [
-
+						"stalker" : [
+							{
+								"text": "сталкера",
+								"_id": "st_dyn_news_comm_actor_3"
+							},
+							{
+								"text": "одиночку",
+								"_id": "st_dyn_news_comm_actor_4"
+							},
+							{
+								"text": "монолитовца",
+								"_id": "st_dyn_news_comm_monolith_3"
+							},
+							{
+								"text": "фанатика",
+								"_id": "st_dyn_news_comm_monolith_4"
+							},
+							{
+								"text": "бандита",
+								"_id": "st_dyn_news_comm_bandit_3"
+							},
+							{
+								"text": "долговца",
+								"_id": "st_dyn_news_comm_dolg_3"
+							},
+							{
+								"text": "должника",
+								"_id": "st_dyn_news_comm_dolg_4"
+							},
+							{
+								"text": "учёного",
+								"_id": "st_dyn_news_comm_ecolog_3"
+							},
+							{
+								"text": "эколога",
+								"_id": "st_dyn_news_comm_ecolog_4"
+							},
+							{
+								"text": "чистонебовца",
+								"_id": "st_dyn_news_comm_csky_3"
+							},
+							{
+								"text": "военного",
+								"_id": "st_dyn_news_comm_army_3"
+							},
+							{
+								"text": "вояку",
+								"_id": "st_dyn_news_comm_army_4"
+							},
+							{
+								"text": "наёмника",
+								"_id": "st_dyn_news_comm_killer_3"
+							},
+							{
+								"text": "сталкера",
+								"_id": "st_dyn_news_comm_stalker_3"
+							},
+							{
+								"text": "одиночку",
+								"_id": "st_dyn_news_comm_stalker_4"
+							},
+							{
+								"text": "зомбированного",
+								"_id": "st_dyn_news_comm_zombied_3"
+							},
+							{
+								"text": "свободовца",
+								"_id": "st_dyn_news_comm_freedom_3"
+							},
+							{
+								"text": "свободного",
+								"_id": "st_dyn_news_comm_freedom_4"
+							},
+							{
+								"text": "сталкеров",
+								"_id": "st_dyn_news_comm_actor_3"
+							},
+							{
+								"text": "одиночек",
+								"_id": "st_dyn_news_comm_actor_4"
+							},
+							{
+								"text": "монолитовцев",
+								"_id": "st_dyn_news_comm_monolith_3"
+							},
+							{
+								"text": "фанатиков",
+								"_id": "st_dyn_news_comm_monolith_4"
+							},
+							{
+								"text": "бандитов",
+								"_id": "st_dyn_news_comm_bandit_3"
+							},
+							{
+								"text": "долговцев",
+								"_id": "st_dyn_news_comm_dolg_3"
+							},
+							{
+								"text": "должников",
+								"_id": "st_dyn_news_comm_dolg_4"
+							},
+							{
+								"text": "учёных",
+								"_id": "st_dyn_news_comm_ecolog_3"
+							},
+							{
+								"text": "экологов",
+								"_id": "st_dyn_news_comm_ecolog_4"
+							},
+							{
+								"text": "чистонебовцев",
+								"_id": "st_dyn_news_comm_csky_3"
+							},
+							{
+								"text": "военных",
+								"_id": "st_dyn_news_comm_army_3"
+							},
+							{
+								"text": "вояк",
+								"_id": "st_dyn_news_comm_army_4"
+							},
+							{
+								"text": "наёмников",
+								"_id": "st_dyn_news_comm_killer_3"
+							},
+							{
+								"text": "зомбированных",
+								"_id": "st_dyn_news_comm_zombied_3"
+							},
+							{
+								"text": "свободовцев",
+								"_id": "st_dyn_news_comm_freedom_3"
+							},
+							{
+								"text": "анархистов",
+								"_id": "st_dyn_news_comm_freedom_4"
+							}
 						],
-						"_name" : "artefact"
+						"_name" : "stalker"
 					},
-					{
-						"enemy" : [
-
-						],
-						"_name" : "enemy"
-					},
-					{
+                    {
+                    "mutant" : [
+                      {
+                        "text": "химеру",
+                        "_id": "st_dyn_news_lurker_1"
+                      },
+                      {
+                        "text": "выводок химер",
+                        "_id": "st_dyn_news_lurker_6"
+                      },
+                      {
+                        "text": "кровососа",
+                        "_id": "st_dyn_news_psysucker_1"
+                      },
+                      {
+                        "text": "выводок кровососов",
+                        "_id": "st_dyn_news_psysucker_6"
+                      },
+                      {
+                        "text": "кабана",
+                        "_id": "st_dyn_news_boar_1"
+                      },
+                      {
+                        "text": "стадо кабанов",
+                        "_id": "st_dyn_news_boar_6"
+                      },
+                      {
+                        "text": "пса",
+                        "_id": "st_dyn_news_dog_1"
+                      },
+                      {
+                        "text": "стаю собак",
+                        "_id": "st_dyn_news_dog_6"
+                      },
+                      {
+                        "text": "плоть",
+                        "_id": "st_dyn_news_flesh_1"
+                      },
+                      {
+                        "text": "стадо плотей",
+                        "_id": "st_dyn_news_flesh_6"
+                      },
+                      {
+                        "text": "псевдособаку",
+                        "_id": "st_dyn_news_pseudodog_1"
+                      },
+                      {
+                        "text": "стаю псевдособак",
+                        "_id": "st_dyn_news_pseudodog_6"
+                      },
+                      {
+                        "text": "снорка",
+                        "_id": "st_dyn_news_snork_1"
+                      },
+                      {
+                        "text": "стаю снорков",
+                        "_id": "st_dyn_news_snork_6"
+                      },
+                      {
+                        "text": "кровососа",
+                        "_id": "st_dyn_news_bloodsucker_1"
+                      },
+                      {
+                        "text": "выводок кровососов",
+                        "_id": "st_dyn_news_bloodsucker_6"
+                      },
+                      {
+                        "text": "бюрера",
+                        "_id": "st_dyn_news_burer_1"
+                      },
+                      {
+                        "text": "группу бюреров",
+                        "_id": "st_dyn_news_burer_6"
+                      },
+                      {
+                        "text": "химеру",
+                        "_id": "st_dyn_news_chimera_1"
+                      },
+                      {
+                        "text": "выводок химер",
+                        "_id": "st_dyn_news_chimera_6"
+                      },
+                      {
+                        "text": "контролёра",
+                        "_id": "st_dyn_news_controller_1"
+                      },
+                      {
+                        "text": "группу контролёров",
+                        "_id": "st_dyn_news_controller_6"
+                      },
+                      {
+                        "text": "полтергейста",
+                        "_id": "st_dyn_news_poltergeist_1"
+                      },
+                      {
+                        "text": "полтергейстов",
+                        "_id": "st_dyn_news_poltergeist_6"
+                      },
+                      {
+                        "text": "псевдогиганта",
+                        "_id": "st_dyn_news_gigant_1"
+                      },
+                      {
+                        "text": "группу псевдогигантов",
+                        "_id": "st_dyn_news_gigant_6"
+                      },
+                      {
+                        "text": "карлика",
+                        "_id": "st_dyn_news_karlik_1"
+                      },
+                      {
+                        "text": "кучу карликов",
+                        "_id": "st_dyn_news_karlik_6"
+                      },
+                      {
+                        "text": "тушкана",
+                        "_id": "st_dyn_news_tushkano_1"
+                      },
+                      {
+                        "text": "стаю тушканов",
+                        "_id": "st_dyn_news_tushkano_6"
+                      },
+                      {
+                        "text": "пси-собаку",
+                        "_id": "st_dyn_news_psy_dog_1"
+                      },
+                      {
+                        "text": "стаю пси-собак",
+                        "_id": "st_dyn_news_psy_dog_6"
+                      },
+                      {
+                        "text": "фантома",
+                        "_id": "st_dyn_news_psy_dog_phantom_1"
+                      },
+                      {
+                        "text": "зомбированного",
+                        "_id": "st_dyn_news_zombied_1"
+                      },
+                      {
+                        "text": "отряд зомбированных",
+                        "_id": "st_dyn_news_zombied_6"
+                      },
+                      {
+                        "text": "кота",
+                        "_id": "st_dyn_news_cat_1"
+                      },
+                      {
+                        "text": "стаю котов",
+                        "_id": "st_dyn_news_cat_6"
+                      },
+                      {
+                        "text": "излома",
+                        "_id": "st_dyn_news_fracture_1"
+                      },
+                      {
+                        "text": "стаю изломов",
+                        "_id": "st_dyn_news_fracture_6"
+                      },
+                      {
+                        "text": "зомби",
+                        "_id": "st_dyn_news_zombie_1"
+                      },
+                      {
+                        "text": "орду зомби",
+                        "_id": "st_dyn_news_zombie_6"
+                      },
+                      {
+                        "text": "крысу",
+                        "_id": "st_dyn_news_rat_1"
+                      },
+                      {
+                        "text": "стаю крыс",
+                        "_id": "st_dyn_news_rat_6"
+                      }
+                    ],
+                    "_name" :  "mutant"
+                  },
+                  {
 						"thing" : [
 
 						],
@@ -3868,15 +4174,15 @@
 										"_id": "st_dyn_news_gossip_heli_4"
 									},
 									{
-										"text": "Запрашиваю поддержку вертолёта, $where. Противник - $enemy.",
+										"text": "Запрашиваю поддержку вертолёта, $where. Противник - $who.",
 										"_id": "st_dyn_news_gossip_heli_5"
 									},
 									{
-										"text": "Воздух, я - Земля. Противник расположен $where. Это $enemy.",
+										"text": "Воздух, я - Земля. Противник расположен $where. Это $who.",
 										"_id": "st_dyn_news_gossip_heli_6"
 									},
 									{
-										"text": "Земля - Воздуху. Нужна помощь $where. Цель - $enemy. Уничтожить!",
+										"text": "Земля - Воздуху. Нужна помощь $where. Цель - $who. Уничтожить!",
 										"_id": "st_dyn_news_gossip_heli_7"
 									}
 								],
@@ -8282,291 +8588,317 @@
 							}
 						],
 						"_name": "Weather news"
-					},
-					{
-						"nearby_enemy_activity": [
-							{
-								"text": "Эй, один из наших парней заметил $who недалеко отсюда. Их там может быть и больше.",
-								"_id": "st_dyn_news_enemy_activity_zombied_1"
-							},
-							{
-								"text": "Мой друг видел $who рядом.",
-								"_id": "st_dyn_news_enemy_activity_zombied_2"
-							},
-							{
-								"text": "Говорят, $who видели. Они бродят по всему району.",
-								"_id": "st_dyn_news_enemy_activity_zombied_3"
-							},
-							{
-								"text": "Кто-то видел $who.",
-								"_id": "st_dyn_news_enemy_activity_zombied_4"
-							},
-							{
-								"text": "Кажется, видели $who, их тут много бродит.",
-								"_id": "st_dyn_news_enemy_activity_zombied_5"
-							},
-							{
-								"text": "Вы знаете, что делать, если увидите, что один из них приближается.",
-								"_id": "st_dyn_news_res_enemy_activity_zombied_1"
-							},
-							{
-								"text": "Ненавижу этих уродов.",
-								"_id": "st_dyn_news_res_enemy_activity_zombied_2"
-							},
-							{
-								"text": "Один безмозглый зомби не должен быть проблемой. Другое дело - когда их орды. Если такое заметите, сообщите как можно быстрее.",
-								"_id": "st_dyn_news_res_enemy_activity_zombied_3"
-							},
-							{
-								"text": "Это что, большая проблема?",
-								"_id": "st_dyn_news_res_enemy_activity_zombied_4"
-							},
-							{
-								"text": "Вероятно, он просто ищет свой потерянный мозг.",
-								"_id": "st_dyn_news_res_enemy_activity_zombied_5"
-							},
-							{
-								"text": "Эй, один из парней заметил $who недалеко отсюда. Их там может быть и больше.",
-								"_id": "st_dyn_news_enemy_activity_stalker_1"
-							},
-							{
-								"text": "Мой друг видел $who поблизости.",
-								"_id": "st_dyn_news_enemy_activity_stalker_2"
-							},
-							{
-								"text": "Говорят, $who видели. Они бродят по всему району.",
-								"_id": "st_dyn_news_enemy_activity_stalker_3"
-							},
-							{
-								"text": "Кто-то видел $who, будьте бдительны.",
-								"_id": "st_dyn_news_enemy_activity_stalker_4"
-							},
-							{
-								"text": "Я думаю, только что увидел $who, будьте осторожны.",
-								"_id": "st_dyn_news_enemy_activity_stalker_5"
-							},
-							{
-								"text": "Тут у нас кто-то неизвестный объявился. Похож на $who.",
-								"_id": "st_dyn_news_enemy_activity_stalker_6"
-							},
-							{
-								"text": "Я не уверен, но думаю, что только что видел $who.",
-								"_id": "st_dyn_news_enemy_activity_stalker_7"
-							},
-							{
-								"text": "Опасайтесь, неподалёку $who видели.",
-								"_id": "st_dyn_news_enemy_activity_stalker_8"
-							},
-							{
-								"text": "Кто-то ищет проблемы.",
-								"_id": "st_dyn_news_res_enemy_activity_stalker_1"
-							},
-							{
-								"text": "Держите стволы наготове.",
-								"_id": "st_dyn_news_res_enemy_activity_stalker_2"
-							},
-							{
-								"text": "Если попытается что-то сделать, он заплатит за это.",
-								"_id": "st_dyn_news_res_enemy_activity_stalker_3"
-							},
-							{
-								"text": "Надо готовить ствол, так будет спокойнее.",
-								"_id": "st_dyn_news_res_enemy_activity_stalker_4"
-							},
-							{
-								"text": "Это точно?",
-								"_id": "st_dyn_news_res_enemy_activity_stalker_5"
-							},
-							{
-								"text": "Может быть, они что-то готовят, теперь нам нужно быть более осторожными.",
-								"_id": "st_dyn_news_res_enemy_activity_stalker_6"
-							},
-							{
-								"text": "Можно точнее?",
-								"_id": "st_dyn_news_res_enemy_activity_stalker_7"
-							},
-							{
-								"text": "Что же эти козлы попытаются сделать сейчас?",
-								"_id": "st_dyn_news_res_enemy_activity_stalker_8"
-							},
-							{
-								"text": "Немедленно открывайте огонь.",
-								"_id": "st_dyn_news_res_enemy_activity_stalker_9"
-							},
-							{
-								"text": "Они убили одного из моих друзей, чёртовы ублюдки. Дайте мне знать, если он приблизится.",
-								"_id": "st_dyn_news_res_enemy_activity_stalker_10"
-							},
-							{
-								"text": "Большие неприятности, один из наших парней заметил $who недалеко отсюда.",
-								"_id": "st_dyn_news_enemy_activity_mutant_4_1"
-							},
-							{
-								"text": "Это кто там? Похоже на $who.",
-								"_id": "st_dyn_news_enemy_activity_mutant_4_2"
-							},
-							{
-								"text": "Чёрт... кажется, $who видели рядом.",
-								"_id": "st_dyn_news_enemy_activity_mutant_4_3"
-							},
-							{
-								"text": "Эй, $who неподалёку заметили - готовь стволы!",
-								"_id": "st_dyn_news_enemy_activity_mutant_4_4"
-							},
-							{
-								"text": "Что-то не так, я слышу голоса в голове... похоже на $who...",
-								"_id": "st_dyn_news_enemy_activity_mutant_4_5"
-							},
-							{
-								"text": "Ты серьёзно?!",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_4_1"
-							},
-							{
-								"text": "Серьёзно?! Ненавижу этих чёртовых уродов.",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_4_2"
-							},
-							{
-								"text": "У меня уже головокружение...",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_4_3"
-							},
-							{
-								"text": "Даже мысль об этом неприятна.",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_4_4"
-							},
-							{
-								"text": "Чёрт...",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_4_5"
-							},
-							{
-								"text": "Большие неприятности, один из наших парней заметил $who недалеко отсюда.",
-								"_id": "st_dyn_news_enemy_activity_mutant_3_1"
-							},
-							{
-								"text": "Это кто там? Похоже на $who.",
-								"_id": "st_dyn_news_enemy_activity_mutant_3_2"
-							},
-							{
-								"text": "Чёрт, кажется, $who видели рядом.",
-								"_id": "st_dyn_news_enemy_activity_mutant_3_3"
-							},
-							{
-								"text": "Эй, рядом видели $who. Готовь стволы, парни!",
-								"_id": "st_dyn_news_enemy_activity_mutant_3_4"
-							},
-							{
-								"text": "Будьте осторожны, рядом видели $who.",
-								"_id": "st_dyn_news_enemy_activity_mutant_3_5"
-							},
-							{
-								"text": "Эй, ребята, слышали?! Похоже на рык $who.",
-								"_id": "st_dyn_news_enemy_activity_mutant_3_6"
-							},
-							{
-								"text": "Держитесь подальше, и старайтесь не привлекать внимания, если нет планов умереть сегодня.",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_3_1"
-							},
-							{
-								"text": "Не пытайтесь геройствовать. Такая зверюга несколько дней назад убила целый отряд.",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_3_2"
-							},
-							{
-								"text": "Вот, блин! Готовь стволы, парни.",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_3_3"
-							},
-							{
-								"text": "О, отлично. Будьте бдительны.",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_3_4"
-							},
-							{
-								"text": "Я слышу $who, похоже у нас неприятности.",
-								"_id": "st_dyn_news_enemy_activity_mutant_2_1"
-							},
-							{
-								"text": "Один из наших парней заметил $who.",
-								"_id": "st_dyn_news_enemy_activity_mutant_2_2"
-							},
-							{
-								"text": "Будьте осторожны, поблизости видели $who.",
-								"_id": "st_dyn_news_enemy_activity_mutant_2_3"
-							},
-							{
-								"text": "Это кто там? Похоже на $who.",
-								"_id": "st_dyn_news_enemy_activity_mutant_2_4"
-							},
-							{
-								"text": "Смотреть в оба, поблизости видели $who.",
-								"_id": "st_dyn_news_enemy_activity_mutant_2_5"
-							},
-							{
-								"text": "Чёрт...",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_2_1"
-							},
-							{
-								"text": "Правда? Отлично, мой ствол готов.",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_2_2"
-							},
-							{
-								"text": "Эти твари убили моего друга.",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_2_3"
-							},
-							{
-								"text": "Эти уроды шутить не любят. Будьте начеку.",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_2_4"
-							},
-							{
-								"text": "Это что там? Похоже на $who.",
-								"_id": "st_dyn_news_enemy_activity_mutant_1_1"
-							},
-							{
-								"text": "Что это за звук? Похоже на $who.",
-								"_id": "st_dyn_news_enemy_activity_mutant_1_2"
-							},
-							{
-								"text": "Будьте осторожны, рядом видели $who.",
-								"_id": "st_dyn_news_enemy_activity_mutant_1_3"
-							},
-							{
-								"text": "Один из наших парней заметил $who недалеко отсюда.",
-								"_id": "st_dyn_news_enemy_activity_mutant_1_4"
-							},
-							{
-								"text": "Такие уж дела.",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_1_1"
-							},
-							{
-								"text": "Просто стреляй.",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_1_2"
-							},
-							{
-								"text": "Я поберегу пули для чего-нибудь большего.",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_1_3"
-							},
-							{
-								"text": "Похоже, хорошее время для охоты, кто со мной?",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_1_4"
-							},
-							{
-								"text": "Не стоит недооценивать противника, эти твари убили моего друга.",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_1_5"
-							},
-							{
-								"text": "Эти твари смерти хотят?",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_1_6"
-							},
-							{
-								"text": "Ничего необычного.",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_1_7"
-							},
-							{
-								"text": "Понеслась! Кто со мной на охоту?!",
-								"_id": "st_dyn_news_res_enemy_activity_mutant_1_8"
-							}
-						],
-						"_name": "Nearby enemy activity"
 					}
 				],
 				"_name": "Special news"
 			},
+            {
+            "nearby_enemy_activity_news": [
+              {
+                "messages" : [
+                  {
+                    "stalker" : [
+                      {
+                        "text": "Эй, один из парней заметил $stalker недалеко отсюда. Их там может быть и больше.",
+                        "_id": "st_dyn_news_enemy_activity_stalker_1"
+                      },
+                      {
+                        "text": "Мой друг видел $stalker поблизости.",
+                        "_id": "st_dyn_news_enemy_activity_stalker_2"
+                      },
+                      {
+                        "text": "Говорят, $stalker видели. Они бродят по всему району.",
+                        "_id": "st_dyn_news_enemy_activity_stalker_3"
+                      },
+                      {
+                        "text": "Кто-то видел $stalker, будьте бдительны.",
+                        "_id": "st_dyn_news_enemy_activity_stalker_4"
+                      },
+                      {
+                        "text": "Я думаю, только что увидел $stalker, будьте осторожны.",
+                        "_id": "st_dyn_news_enemy_activity_stalker_5"
+                      },
+                      {
+                        "text": "Тут у нас кто-то неизвестный объявился. Похож на $stalker.",
+                        "_id": "st_dyn_news_enemy_activity_stalker_6"
+                      },
+                      {
+                        "text": "Я не уверен, но думаю, что только что видел $stalker.",
+                        "_id": "st_dyn_news_enemy_activity_stalker_7"
+                      },
+                      {
+                        "text": "Опасайтесь, неподалёку $stalker видели.",
+                        "_id": "st_dyn_news_enemy_activity_stalker_8"
+                      },
+                      {
+                        "text": "Опасайтесь, неподалёку видели $stalker.",
+                        "_id": "st_dyn_news_enemy_activity_stalker_9"
+                      }
+                    ],
+                    "_name" :  "stalker"
+                  },
+                  {
+                    "mutant" : [
+                      {
+                        "text": "Эй, один из наших парней заметил $mutant недалеко отсюда. Их там может быть и больше.",
+                        "_id": "st_dyn_news_enemy_activity_zombied_1"
+                      },
+                      {
+                        "text": "Мой друг видел $mutant рядом.",
+                        "_id": "st_dyn_news_enemy_activity_zombied_2"
+                      },
+                      {
+                        "text": "Говорят, $mutant видели. Они бродят по всему району.",
+                        "_id": "st_dyn_news_enemy_activity_zombied_3"
+                      },
+                      {
+                        "text": "Кто-то видел $mutant.",
+                        "_id": "st_dyn_news_enemy_activity_zombied_4"
+                      },
+                      {
+                        "text": "Кажется, видели $mutant, их тут много бродит.",
+                        "_id": "st_dyn_news_enemy_activity_zombied_5"
+                      },
+                      {
+                        "text": "Большие неприятности, один из наших парней заметил $mutant недалеко отсюда.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_4_1"
+                      },
+                      {
+                        "text": "Это кто там? Похоже на $mutant.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_4_2"
+                      },
+                      {
+                        "text": "Чёрт... кажется, $mutant видели рядом.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_4_3"
+                      },
+                      {
+                        "text": "Эй, $mutant неподалёку заметили - готовь стволы!",
+                        "_id": "st_dyn_news_enemy_activity_mutant_4_4"
+                      },
+                      {
+                        "text": "Что-то не так, я слышу голоса в голове... похоже на $mutant...",
+                        "_id": "st_dyn_news_enemy_activity_mutant_4_5"
+                      },
+                      {
+                        "text": "Большие неприятности, один из наших парней заметил $mutant недалеко отсюда.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_3_1"
+                      },
+                      {
+                        "text": "Это кто там? Похоже на $mutant.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_3_2"
+                      },
+                      {
+                        "text": "Чёрт, кажется, $mutant видели рядом.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_3_3"
+                      },
+                      {
+                        "text": "Эй, рядом видели $mutant. Готовь стволы, парни!",
+                        "_id": "st_dyn_news_enemy_activity_mutant_3_4"
+                      },
+                      {
+                        "text": "Будьте осторожны, рядом видели $mutant.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_3_5"
+                      },
+                      {
+                        "text": "Эй, ребята, слышали?! Похоже на рык $mutant.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_3_6"
+                      },
+                      {
+                        "text": "Я слышу $mutant, похоже у нас неприятности.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_2_1"
+                      },
+                      {
+                        "text": "Один из наших парней заметил $mutant.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_2_2"
+                      },
+                      {
+                        "text": "Будьте осторожны, поблизости видели $mutant.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_2_3"
+                      },
+                      {
+                        "text": "Это кто там? Похоже на $mutant.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_2_4"
+                      },
+                      {
+                        "text": "Смотреть в оба, поблизости видели $mutant.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_2_5"
+                      },
+                      {
+                        "text": "Это что там? Похоже на $mutant.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_1_1"
+                      },
+                      {
+                        "text": "Что это за звук? Похоже на $mutant.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_1_2"
+                      },
+                      {
+                        "text": "Будьте осторожны, рядом видели $mutant.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_1_3"
+                      },
+                      {
+                        "text": "Один из наших парней заметил $mutant недалеко отсюда.",
+                        "_id": "st_dyn_news_enemy_activity_mutant_1_4"
+                      }
+                    ],
+                    "_name" :  "mutant"
+                  }
+                ],
+                "_name" : "messages"
+              },
+              {
+                "responses" : [
+                  {
+                    "text": "Вы знаете, что делать, если увидите, что один из них приближается.",
+                    "_id": "st_dyn_news_res_enemy_activity_zombied_1"
+                  },
+                  {
+                    "text": "Ненавижу этих уродов.",
+                    "_id": "st_dyn_news_res_enemy_activity_zombied_2"
+                  },
+                  {
+                    "text": "Один безмозглый зомби не должен быть проблемой. Другое дело - когда их орды. Если такое заметите, сообщите как можно быстрее.",
+                    "_id": "st_dyn_news_res_enemy_activity_zombied_3"
+                  },
+                  {
+                    "text": "Это что, большая проблема?",
+                    "_id": "st_dyn_news_res_enemy_activity_zombied_4"
+                  },
+                  {
+                    "text": "Вероятно, он просто ищет свой потерянный мозг.",
+                    "_id": "st_dyn_news_res_enemy_activity_zombied_5"
+                  },
+
+                  {
+                    "text": "Кто-то ищет проблемы.",
+                    "_id": "st_dyn_news_res_enemy_activity_stalker_1"
+                  },
+                  {
+                    "text": "Держите стволы наготове.",
+                    "_id": "st_dyn_news_res_enemy_activity_stalker_2"
+                  },
+                  {
+                    "text": "Если попытается что-то сделать, он заплатит за это.",
+                    "_id": "st_dyn_news_res_enemy_activity_stalker_3"
+                  },
+                  {
+                    "text": "Надо готовить ствол, так будет спокойнее.",
+                    "_id": "st_dyn_news_res_enemy_activity_stalker_4"
+                  },
+                  {
+                    "text": "Это точно?",
+                    "_id": "st_dyn_news_res_enemy_activity_stalker_5"
+                  },
+                  {
+                    "text": "Может быть, они что-то готовят, теперь нам нужно быть более осторожными.",
+                    "_id": "st_dyn_news_res_enemy_activity_stalker_6"
+                  },
+                  {
+                    "text": "Можно точнее?",
+                    "_id": "st_dyn_news_res_enemy_activity_stalker_7"
+                  },
+                  {
+                    "text": "Что же эти козлы попытаются сделать сейчас?",
+                    "_id": "st_dyn_news_res_enemy_activity_stalker_8"
+                  },
+                  {
+                    "text": "Немедленно открывайте огонь.",
+                    "_id": "st_dyn_news_res_enemy_activity_stalker_9"
+                  },
+                  {
+                    "text": "Они убили одного из моих друзей, чёртовы ублюдки. Дайте мне знать, если он приблизится.",
+                    "_id": "st_dyn_news_res_enemy_activity_stalker_10"
+                  },
+                  {
+                    "text": "Ты серьёзно?!",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_4_1"
+                  },
+                  {
+                    "text": "Серьёзно?! Ненавижу этих чёртовых уродов.",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_4_2"
+                  },
+                  {
+                    "text": "У меня уже головокружение...",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_4_3"
+                  },
+                  {
+                    "text": "Даже мысль об этом неприятна.",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_4_4"
+                  },
+                  {
+                    "text": "Чёрт...",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_4_5"
+                  },
+
+                  {
+                    "text": "Держитесь подальше, и старайтесь не привлекать внимания, если нет планов умереть сегодня.",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_3_1"
+                  },
+                  {
+                    "text": "Не пытайтесь геройствовать. Такая зверюга несколько дней назад убила целый отряд.",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_3_2"
+                  },
+                  {
+                    "text": "Вот, блин! Готовь стволы, парни.",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_3_3"
+                  },
+                  {
+                    "text": "О, отлично. Будьте бдительны.",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_3_4"
+                  },
+                  {
+                    "text": "Чёрт...",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_2_1"
+                  },
+                  {
+                    "text": "Правда? Отлично, мой ствол готов.",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_2_2"
+                  },
+                  {
+                    "text": "Эти твари убили моего друга.",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_2_3"
+                  },
+                  {
+                    "text": "Эти уроды шутить не любят. Будьте начеку.",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_2_4"
+                  },
+                  {
+                    "text": "Такие уж дела.",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_1_1"
+                  },
+                  {
+                    "text": "Просто стреляй.",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_1_2"
+                  },
+                  {
+                    "text": "Я поберегу пули для чего-нибудь большего.",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_1_3"
+                  },
+                  {
+                    "text": "Похоже, хорошее время для охоты, кто со мной?",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_1_4"
+                  },
+                  {
+                    "text": "Не стоит недооценивать противника, эти твари убили моего друга.",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_1_5"
+                  },
+                  {
+                    "text": "Эти твари смерти хотят?",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_1_6"
+                  },
+                  {
+                    "text": "Ничего необычного.",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_1_7"
+                  },
+                  {
+                    "text": "Понеслась! Кто со мной на охоту?!",
+                    "_id": "st_dyn_news_res_enemy_activity_mutant_1_8"
+                  }
+                ],
+                "_name" : "responses"
+              }
+            ],
+            "_name": "Nearby enemy activity news"
+          },
 			{
 				"time_news": [
 					{

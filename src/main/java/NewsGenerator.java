@@ -10,7 +10,6 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 //import javax.xml.parsers.DocumentBuilder;
 //import javax.xml.parsers.DocumentBuilderFactory;
 //import javax.xml.parsers.ParserConfigurationException;
-import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
@@ -31,7 +30,7 @@ public class NewsGenerator {
     public String generateNews() {
         String strNews = null;
         StringBuilder newsBuilder = new StringBuilder();
-        StringBuilder nameBuilder = generateName().append(":\n");
+        StringBuilder nameBuilder = genName().append(":\n");
 
         try {
             ObjectMapper mapper = new ObjectMapper();
@@ -48,7 +47,8 @@ public class NewsGenerator {
             //  7 - системная новость о гибели сталкера/военного
             //  8 - анекдот
             //  9 - новости о времени суток
-            newsType = getRndIntInRange(1, 9);
+            //  10 - новость о активности кого-то рядом со сталкером
+            newsType = getRndIntInRange(0, 10);
             if (newsType != 7) {
                 newsBuilder.append(nameBuilder);
                 if (group.equals("Зомбированные")) newsType = 2;
@@ -91,6 +91,10 @@ public class NewsGenerator {
 //                    System.out.println("TIME_NEWS");
                     newsBuilder.append(genTimeNews(node));
                     break;
+                case 10:
+//                    System.out.println("NEARBY_ENEMY_ACTIVITY_NEWS");
+                    newsBuilder.append(genNearbyEnemyActivityNews(node));
+                    break;
             }
 
             strNews = replaceTemplates(newsBuilder, node);
@@ -104,7 +108,7 @@ public class NewsGenerator {
     }
 
 
-    public StringBuilder generateName() {
+    public StringBuilder genName() {
         StringBuilder nameBuilder = new StringBuilder();
 
         group = Resources.getGroupsList().get(getRndIntInRange(0, Resources.getGroupsList().size() - 1));
@@ -130,7 +134,7 @@ public class NewsGenerator {
         return nameBuilder;
     }
 
-    private StringBuilder generateNameKilled() {
+    private StringBuilder genNameKilled() {
         StringBuilder nameBuilder = new StringBuilder();
 
         group = Resources.getGroupsListKilled().get(getRndIntInRange(0, Resources.getGroupsListKilled().size() - 1));
@@ -162,7 +166,7 @@ public class NewsGenerator {
         return nameBuilder;
     }
 
-    private StringBuilder generateLocation(JsonNode node) {
+    private StringBuilder genLocation(JsonNode node) {
         StringBuilder locationBuilder = new StringBuilder();
         List<JsonNode> locsList = node.findValue("level_description").findValues("location");
         JsonNode locNode  = locsList.get(getRndIntInRange(0, locsList.size() - 1));
@@ -250,7 +254,7 @@ public class NewsGenerator {
         List<JsonNode> mutantsList = node.findValue("mutants").findValues("text");
         newsBuilder.append(mutantsList.get(getRndIntInRange(0, mutantsList.size() - 1)).asText());
         newsBuilder.append(". ");
-        newsBuilder.append(generateLocation(node).toString());
+        newsBuilder.append(genLocation(node).toString());
 
         return newsBuilder;
     }
@@ -474,7 +478,7 @@ public class NewsGenerator {
                 newsBuilder.append(attackStartsList.get(getRndIntInRange(0, attackStartsList.size() - 1)).asText()).append(" ")
                             .append(mutantsList.get(getRndIntInRange(0, mutantsList.size() - 1)).asText()).append("!");
                 newsBuilder.append(" ");
-                newsBuilder.append(generateLocation(node).toString());
+                newsBuilder.append(genLocation(node).toString());
                 break;
             case 2: //новость о том, что что-то услышали
                 List<JsonNode> hearStartsList = node.findValue("instant_news").findValue("start")
@@ -486,7 +490,7 @@ public class NewsGenerator {
                 newsBuilder.append(hearStartsList.get(getRndIntInRange(0, hearStartsList.size() - 1)).asText())
                             .append(" ").append(hearMidsList.get(getRndIntInRange(0, hearMidsList.size() - 1)).asText());
                 newsBuilder.append(". ");
-                newsBuilder.append(generateLocation(node).toString());
+                newsBuilder.append(genLocation(node).toString());
                 newsBuilder.append(hearEndsList.get(getRndIntInRange(0, hearEndsList.size() - 1)).asText());
                 break;
             case 3: //новость о том, что что-то увидели
@@ -529,7 +533,7 @@ public class NewsGenerator {
                                     .append(whomsList.get(getRndIntInRange(0, whomsList.size() - 1)).asText());
                 }
                 newsBuilder.append(". ");
-                newsBuilder.append(generateLocation(node).toString());
+                newsBuilder.append(genLocation(node).toString());
                 break;
         }
 
@@ -539,17 +543,19 @@ public class NewsGenerator {
     private StringBuilder genSystemKilledNews(JsonNode node) {
         StringBuilder newsBuilder = new StringBuilder();
         newsBuilder.append("Общий канал:\n");
-        newsBuilder.append(generateNameKilled()).append(". ").append(generateLocation(node));
+        newsBuilder.append(genNameKilled()).append(". ").append(genLocation(node));
         return newsBuilder;
     }
 
     private StringBuilder genTimeNews(JsonNode node) {
         StringBuilder newsBuilder = new StringBuilder();
-        Date date = new Date();
+
+        //определяем текущее время
         //date.toString() -> Sat Aug 22 21:52:58 MSK 2020
         //date.toString().split(" ")[3] -> 21:52:58
         //date.toString().split(" ")[3].split(":")[0] -> 21
         //получаем текущий час (24-часовой формат времени)
+        Date date = new Date();
         int hoursNow = Integer.parseInt(date.toString().split(" ")[3].split(":")[0]);
 
         if (hoursNow >= 0 && hoursNow <= 5) {           //night
@@ -577,10 +583,10 @@ public class NewsGenerator {
 
         switch (getRndIntInRange(1, 3)) {
             case 1:
-                newsBuilder.append(generateStartOfJoke(node));
+                newsBuilder.append(genStartOfJoke(node));
                 break;
             case 2:
-                newsBuilder.append(generateStartOfJoke(node));
+                newsBuilder.append(genStartOfJoke(node));
                 break;
         }
 
@@ -589,8 +595,7 @@ public class NewsGenerator {
 
         return newsBuilder;
     }
-
-    private StringBuilder generateStartOfJoke(JsonNode node) {
+    private StringBuilder genStartOfJoke(JsonNode node) {
         StringBuilder builder = new StringBuilder();
 
         if (group.equals("Бандиты") || group.equals("Ренегаты")) {
@@ -618,8 +623,7 @@ public class NewsGenerator {
 
         return builder;
     }
-
-    private StringBuilder generateResponseToJoke(JsonNode node) {
+    private StringBuilder genResponseToJoke(JsonNode node) {
         StringBuilder builder = new StringBuilder();
 
         if (group.equals("Бандиты") || group.equals("Ренегаты")) {
@@ -640,37 +644,112 @@ public class NewsGenerator {
         return builder;
     }
 
-
+    private StringBuilder genNearbyEnemyActivityNews(JsonNode node) {
+        StringBuilder newsBuilder = new StringBuilder();
+        List<JsonNode> phrasesList = node.findValue("nearby_enemy_activity_news").findValue("messages").findValues("text");
+        newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
+        newsBuilder.append(genLocation(node));
+        return newsBuilder;
+    }
+    private StringBuilder genNearbyEnemyActivityResponse(JsonNode node) {
+        StringBuilder responseBuilder = new StringBuilder();
+        List<JsonNode> phrasesList = node.findValue("nearby_enemy_activity_news").findValue("responses").findValues("text");
+        responseBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
+        return responseBuilder;
+    }
 
     private String replaceTemplates(StringBuilder newsBuilder, JsonNode node) {
         String strNews = newsBuilder.toString();
 
-        if (newsBuilder.toString().contains("$who")) {
+        if (strNews.contains("$who")) {
             List<JsonNode> mutantsList = node.findValue("who_mutant").findValues("text");
             String replacement = mutantsList.get(getRndIntInRange(0, mutantsList.size() - 1)).asText();
             strNews = newsBuilder.toString().replaceAll("\\$who", replacement);
         }
 
-        if (newsBuilder.toString().contains("$surge") && newsBuilder.toString().contains("$when")) {
+        if (strNews.contains("$surge") && newsBuilder.toString().contains("$when")) {
             List<JsonNode> surgesList = node.findValue("surge_type").findValues("text");
             String replacement = surgesList.get(getRndIntInRange(0, surgesList.size() - 1)).asText();
             strNews = newsBuilder.toString().replaceAll("\\$surge", replacement);
-            List<JsonNode> timePhasesList = node.findValue("utilities").findValue("time_phase").findValues("text");
-            replacement = timePhasesList.get(getRndIntInRange(0, timePhasesList.size() - 1)).asText();
-            strNews = strNews.replaceAll("\\$when", replacement);
+
+            //определяем текущее время
+            //определяем текущее время
+            //date.toString() -> Sat Aug 22 21:52:58 MSK 2020
+            //date.toString().split(" ")[3] -> 21:52:58
+            //date.toString().split(" ")[3].split(":")[0] -> 21
+            //получаем текущий час (24-часовой формат времени)
+            Date date = new Date();
+            int hoursNow = Integer.parseInt(date.toString().split(" ")[3].split(":")[0]);
+            if (hoursNow >= 0 && hoursNow <= 5) { //сейчас ночь, выброс - утром
+                replacement = "утром";
+                strNews = strNews.replaceAll("\\$when", replacement);
+            }
+            else if (hoursNow >= 6 && hoursNow <= 11) { //сейчас утро, выброс - днём
+                replacement = "днём";
+                strNews = strNews.replaceAll("\\$when", replacement);
+            }
+            else if (hoursNow >= 12 && hoursNow <= 14) { //сейчас день, выброс - после обеда
+                replacement = "после обеда";
+                strNews = strNews.replaceAll("\\$when", replacement);
+            }
+            else if (hoursNow >= 15 && hoursNow <= 17) { //сейчас после обеда, выброс - вечером
+                replacement = "вечером";
+                strNews = strNews.replaceAll("\\$when", replacement);
+            }
+            else { //hoursNow >= 18 && hoursNow <= 23      сейчас вечер, выброс - ночью
+                replacement = "ночью";
+                strNews = strNews.replaceAll("\\$when", replacement);
+            }
         }
-        else if (newsBuilder.toString().contains("$when")) {
-            List<JsonNode> timePhasesList = node.findValue("utilities").findValue("time_phase").findValues("text");
-            String replacement = timePhasesList.get(getRndIntInRange(0, timePhasesList.size() - 1)).asText();
-            strNews = newsBuilder.toString().replaceAll("\\$when", replacement);
+        else if (strNews.contains("$when")) {
+            String replacement = "";
+            //определяем текущее время
+            //определяем текущее время
+            //date.toString() -> Sat Aug 22 21:52:58 MSK 2020
+            //date.toString().split(" ")[3] -> 21:52:58
+            //date.toString().split(" ")[3].split(":")[0] -> 21
+            //получаем текущий час (24-часовой формат времени)
+            Date date = new Date();
+            int hoursNow = Integer.parseInt(date.toString().split(" ")[3].split(":")[0]);
+            if (hoursNow >= 0 && hoursNow <= 5) { //сейчас ночь, выброс - утром
+                replacement = "утром";
+                strNews = strNews.replaceAll("\\$when", replacement);
+            }
+            else if (hoursNow >= 6 && hoursNow <= 11) { //сейчас утро, выброс - днём
+                replacement = "днём";
+                strNews = strNews.replaceAll("\\$when", replacement);
+            }
+            else if (hoursNow >= 12 && hoursNow <= 14) { //сейчас день, выброс - после обеда
+                replacement = "после обеда";
+                strNews = strNews.replaceAll("\\$when", replacement);
+            }
+            else if (hoursNow >= 15 && hoursNow <= 17) { //сейчас после обеда, выброс - вечером
+                replacement = "вечером";
+                strNews = strNews.replaceAll("\\$when", replacement);
+            }
+            else { //hoursNow >= 18 && hoursNow <= 23      сейчас вечер, выброс - ночью
+                replacement = "ночью";
+                strNews = strNews.replaceAll("\\$when", replacement);
+            }
         }
 
-        if (newsBuilder.toString().contains("$artefact")) {
+        if (strNews.contains("$artefact")) {
             List<String> artefactsList = Resources.getArtefactsList();
             String replacement = artefactsList.get(getRndIntInRange(0, artefactsList.size() - 1));
             strNews = newsBuilder.toString().replaceAll("\\$artefact", replacement);
         }
 
+        if (strNews.contains("$stalker")) {
+            List<JsonNode> stalkersList = node.findValue("utilities").findValue("stalker").findValues("text");
+            String replacement = stalkersList.get(getRndIntInRange(0, stalkersList.size() - 1)).asText();
+            strNews = newsBuilder.toString().replaceAll("\\$stalker", replacement);
+        }
+
+        if (strNews.contains("$mutant")) {
+            List<JsonNode> mutantsList = node.findValue("utilities").findValue("mutant").findValues("text");
+            String replacement = mutantsList.get(getRndIntInRange(0, mutantsList.size() - 1)).asText();
+            strNews = newsBuilder.toString().replaceAll("\\$mutant", replacement);
+        }
         return strNews;
     }
 
@@ -678,13 +757,11 @@ public class NewsGenerator {
     //  1 - реакция на зомби
     //  2 - реакция на анекдот
     public String generateResponse(int responseType, MessageReceivedEvent event) {
-
-
         StringBuilder responseBuilder = new StringBuilder();
-        StringBuilder nameBuilder = generateName();
+        StringBuilder nameBuilder = genName();
         if (group.equals("Зомбированные")) {
             while (group.equals("Зомбированные")) {
-                nameBuilder = generateName();
+                nameBuilder = genName();
             }
         }
         responseBuilder.append(nameBuilder).append(":\n");
@@ -708,7 +785,15 @@ public class NewsGenerator {
                 } catch (InterruptedException e) {
                     Main.mapOfThreads.get(event.getChannel().getName()).interrupt();
                 }
-                responseBuilder.append(generateResponseToJoke(node));
+                responseBuilder.append(genResponseToJoke(node));
+            }
+            if (responseType == 3) {
+                try {
+                    Thread.sleep(getRndIntInRange(3 * 1000, 5 * 1000));
+                } catch (InterruptedException e) {
+                    Main.mapOfThreads.get(event.getChannel().getName()).interrupt();
+                }
+                responseBuilder.append(genNearbyEnemyActivityResponse(node));
             }
 
         } catch (IOException e) {
