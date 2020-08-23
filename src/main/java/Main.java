@@ -79,6 +79,10 @@ public class Main extends ListenerAdapter {
                         break;
                 }
             }
+            if (newsGenerator.getNewsType() == 10) { //если тип новости - новость о врагах рядом - генерируем реакцию
+                String response = genResponse(newsGenerator, 3, event);
+                event.getChannel().sendMessage(response).queue();
+            }
         }
         if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "анекдот")) {
 
@@ -87,10 +91,10 @@ public class Main extends ListenerAdapter {
                 JsonNode node = mapper.readValue(new File("./input/dynamic_news.json"), JsonNode.class);
 
                 StringBuilder newsBuilder = new StringBuilder();
-                String name = newsGenerator.generateName().toString();
+                String name = newsGenerator.genName().toString();
                 if (newsGenerator.getGroup().equals("Зомбированные")) {
                     while (newsGenerator.getGroup().equals("Зомбированные")) {
-                        name = newsGenerator.generateName().toString();
+                        name = newsGenerator.genName().toString();
                     }
                 }
                 newsBuilder.append(name).append(":\n");
@@ -121,7 +125,6 @@ public class Main extends ListenerAdapter {
                     event.getChannel().sendMessage(response).queue();
                     break;
             }
-
         }
         if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "помощь")) {
             showCommandList(event);
@@ -161,6 +164,10 @@ public class Main extends ListenerAdapter {
                                         event.getChannel().sendMessage(response).queue();
                                         break;
                                 }
+                            }
+                            if (newsGenerator.getNewsType() == 10) { //если тип новости - новость о врагах рядом - генерируем реакцию
+                                String response = genResponse(newsGenerator, 3, event);
+                                event.getChannel().sendMessage(response).queue();
                             }
                             try {
                                 Thread.sleep(getRndIntInRange(MIN_TIME_DELAY, MAX_TIME_DELAY));
