@@ -48,7 +48,7 @@ public class NewsGenerator {
             //  8 - анекдот
             //  9 - новости о времени суток
             //  10 - новость о активности кого-то рядом со сталкером
-            newsType = getRndIntInRange(0, 10);
+            newsType = getRndIntInRange(1, 10);
             if (newsType != 7) {
                 newsBuilder.append(nameBuilder);
                 if (group.equals("Зомбированные")) newsType = 2;
