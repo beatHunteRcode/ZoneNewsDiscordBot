@@ -209,6 +209,9 @@ public class Main extends ListenerAdapter {
         if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "stopAll")) {
             deleteGenInAllServerChannels(event);
         }
+        if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "botInfo")) {
+            event.getChannel().sendMessage(Resources.botInfo).queue();
+        }
     }
 
 
@@ -219,10 +222,11 @@ public class Main extends ListenerAdapter {
                                 prefix + "новость : выводит новость\n" +
                                 prefix + "анекдот : выводит анекдот\n" +
                                 prefix + "недавнее : выводит список последних 5 новостей\n" +
-                                prefix + "startNews : включить появление новостей в случайный момент времени\n" +
-                                prefix + "stopNews : выключить появление новостей в случайный момент времени\n" +
-                                prefix + "stopAll : выключить появление новостей в случайный момент времени во всех каналах на сервере\n" +
-                                prefix + "chList : вывести список всех каналов на сервере, на которых запущено появление новостей в случайный момент времени\n"
+                                prefix + "startNews : включить генератор новостей в данном канале\n" +
+                                prefix + "stopNews : выключить генератор новостей в данном канале\n" +
+                                prefix + "stopAll : выключить генератор новостей во всех каналах на сервере\n" +
+                                prefix + "chList : вывести список всех каналов на сервере, на которых запущен генератор новостей\n" +
+                                prefix + "botInfo : выводит информацию о боте"
         ).queue();
     }
 
