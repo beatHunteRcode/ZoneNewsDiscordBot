@@ -49,7 +49,7 @@ public class NewsGenerator {
             //  9 - новости о времени суток
             //  10 - новость о активности кого-то рядом со сталкером
             //  11 - новость о торговце и товаре
-            newsType = 11;
+            newsType = getRndIntInRange(1, 12);
             if (newsType != 7) {
                 newsBuilder.append(nameBuilder);
                 if (faction.equals("Зомбированные")) newsType = 2;
@@ -100,6 +100,11 @@ public class NewsGenerator {
 //                    System.out.println("TRADERS_AND_GOODS_NEWS");
                     newsBuilder.append(genTradersAndGoodsNews(node));
                     break;
+                case 12:
+//                    System.out.println("CONDUCT_NEWS");
+                    newsBuilder.append(genConductNews(node));
+                    break;
+
             }
 
             strNews = replaceTemplates(newsBuilder, node);
@@ -566,8 +571,19 @@ public class NewsGenerator {
 
     private StringBuilder genSystemKilledNews(JsonNode node) {
         StringBuilder newsBuilder = new StringBuilder();
-        newsBuilder.append("Общий канал:\n");
-        newsBuilder.append(genNameKilled()).append(". ").append(genLocation(node));
+        switch (getRndIntInRange(1, 2)) {
+            case 1: {
+                newsBuilder.append("Общий канал:\n");
+                newsBuilder.append(genNameKilled()).append(". ").append(genLocation(node));
+                return newsBuilder;
+            }
+            case 2: {
+                newsBuilder.append("Некролог:\n");
+                newsBuilder.append("\t").append(genName()).append(" убил сталкера ").append(genName()).append("\n");
+                newsBuilder.append("\t").append("Локация: ").append(genLocation(node));
+                return newsBuilder;
+            }
+        }
         return newsBuilder;
     }
 
@@ -688,6 +704,16 @@ public class NewsGenerator {
         List<JsonNode> phrasesList = node.findValue("reports_and_responses").findValue("reports").
                                             findValue("buy gossip").findValues("text");
         newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
+        return newsBuilder;
+    }
+
+    private StringBuilder genConductNews(JsonNode node) {
+        StringBuilder newsBuilder = new StringBuilder();
+        List<JsonNode> conductLocsList = node.findValue("utilities").findValue("level_description").findValues("loc_name_for_conduct");
+        newsBuilder.append("Ищется опытный сталкер, который сможет провести в указанное место: ")
+                    .append(conductLocsList.get(getRndIntInRange(0, conductLocsList.size() - 1)).asText()).append("\n")
+                    .append("Моё текущее местоположение: ").append(genLocation(node));
+
         return newsBuilder;
     }
 
