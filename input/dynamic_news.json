@@ -4057,6 +4057,9 @@
 									{
 										"loc_name" : "В окрестностях «Юпитера»"
 									},
+                                   {
+                                      "loc_name_for_conduct" : "окрестности «Юпитера»"
+                                   },
 									{
 										"blizko" : [
 											{
@@ -4236,6 +4239,9 @@
 									{
 										"loc_name": "В Путепроводе"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Путепровод"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -4263,6 +4269,9 @@
 									{
 										"loc_name": "На Болотах"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Болота"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -4354,6 +4363,9 @@
 									{
 										"loc_name": "В Тёмной Лощине"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Тёмная Лощина"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -4413,6 +4425,9 @@
 									{
 										"loc_name": "На Кладбище Техники"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Кладбище Техники"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -4504,6 +4519,9 @@
 									{
 										"loc_name": "На Кордоне"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Кордон"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -4595,6 +4613,9 @@
 									{
 										"loc_name": "На Свалке"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Свалка"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -4670,6 +4691,9 @@
 									{
 										"loc_name": "На Агропроме"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Агропром"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -4737,6 +4761,9 @@
 									{
 										"loc_name": "В подземельях Агропрома"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "подземелья Агропрома"
+                                  },
 									{
 										"blizko" : [
 
@@ -4758,6 +4785,9 @@
 									{
 										"loc_name": "В Тёмной Долине"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Тёмная Долина"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -4833,6 +4863,9 @@
 									{
 										"loc_name": "В Х-18"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "X-18"
+                                  },
 									{
 										"blizko" : [
 
@@ -4854,6 +4887,9 @@
 									{
 										"loc_name": "На Дикой Территории"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Дикая Территория"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -4913,6 +4949,9 @@
 									{
 										"loc_name": "На Ростке"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Росток"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -4964,6 +5003,9 @@
 									{
 										"loc_name": "На Военных Складах"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Военные склады"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -5039,6 +5081,9 @@
 									{
 										"loc_name": "На Янтаре"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Янтарь"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -5098,6 +5143,9 @@
 									{
 										"loc_name": "В Мёртвом Городе"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Мёртвый Город"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -5149,6 +5197,9 @@
 									{
 										"loc_name": "В Лиманске"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Лиманск"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -5184,6 +5235,9 @@
 									{
 										"loc_name": "На Радаре"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Радар"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -5219,6 +5273,9 @@
 									{
 										"loc_name": "В Рыжем Лесу"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Рыжий Лес"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -5286,6 +5343,9 @@
 									{
 										"loc_name": "В Х-19"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "X-19"
+                                  },
 									{
 										"blizko" : [
 
@@ -5307,6 +5367,9 @@
 									{
 										"loc_name": "В Заброшенном Госпитале"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Заброшенный Госпиталь"
+                                  },
 									{
 										"blizko" : [
 
@@ -5328,6 +5391,9 @@
 									{
 										"loc_name": "В центральной Припяти"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "центральная Припять"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -5363,6 +5429,9 @@
 									{
 										"loc_name": "В Х-8"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "X-8"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -5390,6 +5459,9 @@
 									{
 										"loc_name": "На Окраинах Припяти"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Окраины Припяти"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -5521,6 +5593,9 @@
 									{
 										"loc_name": "На Затоне"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Затон"
+                                  },
 									{
 										"blizko" : [
 											{
@@ -5716,6 +5791,9 @@
 									{
 										"loc_name": "На юге ЧАЭС"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "юг ЧАЭС"
+                                  },
 									{
 										"blizko" : [
 
@@ -5737,6 +5815,9 @@
 									{
 										"loc_name": "На севере ЧАЭС"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "север ЧАЭС"
+                                  },
 									{
 										"blizko" : [
 
@@ -5758,6 +5839,9 @@
 									{
 										"loc_name": "В бункере Монолита"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "бункер Монолита"
+                                  },
 									{
 										"blizko" : [
 
@@ -5779,6 +5863,9 @@
 									{
 										"loc_name": "В Саркофаге"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Саркофаг"
+                                  },
 									{
 										"blizko" : [
 
@@ -5800,6 +5887,9 @@
 									{
 										"loc_name": "На Генераторах"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Генераторы"
+                                  },
 									{
 										"blizko" : [
 
@@ -5821,6 +5911,9 @@
 									{
 										"loc_name": "в Военной Лаборатории"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Военная Лаборатория"
+                                  },
 									{
 										"blizko" : [
 
@@ -5842,6 +5935,9 @@
 									{
 										"loc_name": "На Поляне"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Поляна"
+                                  },
 									{
 										"blizko" : [
 
@@ -5863,6 +5959,9 @@
 									{
 										"loc_name": "На Армейских складах"
 									},
+                                  {
+                                    "loc_name_for_conduct" : "Армейские склады"
+                                  },
 									{
 										"blizko" : [
 											{
