@@ -20,7 +20,7 @@ public class NewsGenerator {
 
     private String name;
     private String surname;
-    private String group;
+    private String faction;
     private int newsType;
 
     public NewsGenerator() {
@@ -48,10 +48,11 @@ public class NewsGenerator {
             //  8 - анекдот
             //  9 - новости о времени суток
             //  10 - новость о активности кого-то рядом со сталкером
-            newsType = getRndIntInRange(1, 10);
+            //  11 - новость о торговце и товаре
+            newsType = 11;
             if (newsType != 7) {
                 newsBuilder.append(nameBuilder);
-                if (group.equals("Зомбированные")) newsType = 2;
+                if (faction.equals("Зомбированные")) newsType = 2;
             }
 
             switch (newsType) {
@@ -95,6 +96,10 @@ public class NewsGenerator {
 //                    System.out.println("NEARBY_ENEMY_ACTIVITY_NEWS");
                     newsBuilder.append(genNearbyEnemyActivityNews(node));
                     break;
+                case 11:
+//                    System.out.println("TRADERS_AND_GOODS_NEWS");
+                    newsBuilder.append(genTradersAndGoodsNews(node));
+                    break;
             }
 
             strNews = replaceTemplates(newsBuilder, node);
@@ -111,13 +116,13 @@ public class NewsGenerator {
     public StringBuilder genName() {
         StringBuilder nameBuilder = new StringBuilder();
 
-        group = Resources.getGroupsList().get(getRndIntInRange(0, Resources.getGroupsList().size() - 1));
+        faction = Resources.getGroupsList().get(getRndIntInRange(0, Resources.getGroupsList().size() - 1));
 
-        if (group.equals("Военные") || group.equals("Долг")) {
+        if (faction.equals("Военные") || faction.equals("Долг")) {
             name = Resources.getMilitaryRanks().get(getRndIntInRange(0, Resources.getMilitaryRanks().size() - 1));
             surname = Resources.getMilitarySurnames().get(getRndIntInRange(0, Resources.getMilitarySurnames().size() - 1));
         }
-        else if (group.equals("Учёные")) {
+        else if (faction.equals("Учёные")) {
             name = Resources.getScientistNamesList().get(getRndIntInRange(0, Resources.getScientistNamesList().size() - 1));
             surname = Resources.getMilitarySurnames().get(getRndIntInRange(0, Resources.getMilitarySurnames().size() - 1));
         }
@@ -129,21 +134,20 @@ public class NewsGenerator {
 
         nameBuilder.append(name).append(" ");
         nameBuilder.append(surname).append(" ");
-        nameBuilder.append("(").append(group).append(")");
+        nameBuilder.append("(").append(faction).append(")");
 
         return nameBuilder;
     }
-
     private StringBuilder genNameKilled() {
         StringBuilder nameBuilder = new StringBuilder();
 
-        group = Resources.getGroupsListKilled().get(getRndIntInRange(0, Resources.getGroupsListKilled().size() - 1));
+        faction = Resources.getGroupsListKilled().get(getRndIntInRange(0, Resources.getGroupsListKilled().size() - 1));
 
-        if (group.equals("Военный") || group.equals("Долговец") || group.equals("\"Долг\"")) {
+        if (faction.equals("Военный") || faction.equals("Долговец") || faction.equals("\"Долг\"")) {
             name = Resources.getMilitaryRanks().get(getRndIntInRange(0, Resources.getMilitaryRanks().size() - 1));
             surname = Resources.getMilitarySurnames().get(getRndIntInRange(0, Resources.getMilitarySurnames().size() - 1));
         }
-        else if (group.equals("Учёный")) {
+        else if (faction.equals("Учёный")) {
             name = Resources.getScientistNamesList().get(getRndIntInRange(0, Resources.getScientistNamesList().size() - 1));
             surname = Resources.getMilitarySurnames().get(getRndIntInRange(0, Resources.getMilitarySurnames().size() - 1));
         }
@@ -153,16 +157,36 @@ public class NewsGenerator {
         }
 
         nameBuilder.append("    Погиб ");
-        if (group.equals("Военный")) {
+        if (faction.equals("Военный")) {
             nameBuilder.append("военный: ");
             nameBuilder.append(name).append(" ").append(surname);
         }
         else {
             nameBuilder.append("сталкер: ");
             nameBuilder.append(name).append(" ").append(surname);
-            nameBuilder.append(". ").append(group);
+            nameBuilder.append(". ").append(faction);
         }
 
+        return nameBuilder;
+    }
+    private StringBuilder genTraderName() {
+        StringBuilder nameBuilder = new StringBuilder();
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode node = mapper.readValue(new File("./input/dynamic_news.json"), JsonNode.class);
+            List<JsonNode> tradersNamesList = node.findValue("traders").findValue("traders_names").findValues("text");
+            name = tradersNamesList.get(getRndIntInRange(0, tradersNamesList.size() - 1)).asText();
+            if (name.equals("Сахаров") || name.equals("Герман")) {
+                faction = "Профессор " + Resources.getTradersFactionsMap().get(name);
+            }
+            else {
+                faction = Resources.getTradersFactionsMap().get(name);
+            }
+            nameBuilder.append(name).append(" (").append(faction).append(") ");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return nameBuilder;
     }
 
@@ -207,7 +231,7 @@ public class NewsGenerator {
         int newsNumb = getRndIntInRange(1,2); //определяем зовут ли на помощь: 1 - зовут, 2 - не зовут
         if (newsNumb == 1) {
             List<JsonNode> phrasesList;
-            switch (group) {
+            switch (faction) {
                 case "Одиночки":
                     phrasesList = node.findValue("SOS").findValue("loner").findValues("text");
                     newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
@@ -261,7 +285,7 @@ public class NewsGenerator {
 
     private StringBuilder genSpecialNews(JsonNode node) {
         StringBuilder newsBuilder = new StringBuilder();
-        if (group.equals("Зомбированные")) {
+        if (faction.equals("Зомбированные")) {
             List<JsonNode> phrasesList = node.findValue("zombie_news").findValue("dumb_zombies").findValues("text");
             newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
         }
@@ -283,7 +307,7 @@ public class NewsGenerator {
             List<JsonNode> startsList;
             List<JsonNode> midsList;
             List<JsonNode> endsList;
-            switch (group) {
+            switch (faction) {
                 case "Одиночки":
                     startsList = node.findValue("surge_builder_by_faction").findValue("loner")
                             .findValue("start").findValues("text");
@@ -413,7 +437,7 @@ public class NewsGenerator {
         StringBuilder newsBuilder = new StringBuilder();
 
         List<JsonNode> phrasesList;
-        switch (group) {
+        switch (faction) {
             case "Одиночки":
                 phrasesList = node.findValue("faction_news").findValue("clear_sky").findValues("text");
                 newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
@@ -590,7 +614,7 @@ public class NewsGenerator {
                 break;
         }
 
-        List<JsonNode> factJokesList = node.findValue("faction_jokes").findValue("joke").findValue(group).findValues("text");
+        List<JsonNode> factJokesList = node.findValue("faction_jokes").findValue("joke").findValue(faction).findValues("text");
         newsBuilder.append(factJokesList.get(getRndIntInRange(0, factJokesList.size() - 1)).asText());
 
         return newsBuilder;
@@ -598,26 +622,26 @@ public class NewsGenerator {
     private StringBuilder genStartOfJoke(JsonNode node) {
         StringBuilder builder = new StringBuilder();
 
-        if (group.equals("Бандиты") || group.equals("Ренегаты")) {
-            group = "Бандиты";
-            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(group).findValues("text");
+        if (faction.equals("Бандиты") || faction.equals("Ренегаты")) {
+            faction = "Бандиты";
+            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(faction).findValues("text");
             builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
         }
-        else if (group.equals("Свобода")) {
-            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(group).findValues("text");
+        else if (faction.equals("Свобода")) {
+            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(faction).findValues("text");
             builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
         }
-        else if (group.equals("Долг")) {
-            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(group).findValues("text");
+        else if (faction.equals("Долг")) {
+            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(faction).findValues("text");
             builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
         }
-        else if (group.equals("Военные")) {
-            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(group).findValues("text");
+        else if (faction.equals("Военные")) {
+            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(faction).findValues("text");
             builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
         }
         else { //"Одиночки", "Монолит", "Чистое Небо", "Наёмники", "Учёные"
-            group = "Одиночки";
-            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(group).findValues("text");
+            faction = "Одиночки";
+            List<JsonNode> list = node.findValue("faction_jokes").findValue("joke_start").findValue(faction).findValues("text");
             builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
         }
 
@@ -626,18 +650,18 @@ public class NewsGenerator {
     private StringBuilder genResponseToJoke(JsonNode node) {
         StringBuilder builder = new StringBuilder();
 
-        if (group.equals("Бандиты") || group.equals("Ренегаты")) {
-            group = "Бандиты";
-            List<JsonNode> list = node.findValue("responses_jokes").findValue(group).findValues("text");
+        if (faction.equals("Бандиты") || faction.equals("Ренегаты")) {
+            faction = "Бандиты";
+            List<JsonNode> list = node.findValue("responses_jokes").findValue(faction).findValues("text");
             builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
         }
-        else if (group.equals("Свобода")) {
-            List<JsonNode> list = node.findValue("responses_jokes").findValue(group).findValues("text");
+        else if (faction.equals("Свобода")) {
+            List<JsonNode> list = node.findValue("responses_jokes").findValue(faction).findValues("text");
             builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
         }
         else { //"Одиночки", "Монолит", "Чистое Небо", "Наёмники", "Учёные", "Долг", "Военные"
-            group = "Одиночки";
-            List<JsonNode> list = node.findValue("responses_jokes").findValue(group).findValues("text");
+            faction = "Одиночки";
+            List<JsonNode> list = node.findValue("responses_jokes").findValue(faction).findValues("text");
             builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
         }
 
@@ -656,6 +680,15 @@ public class NewsGenerator {
         List<JsonNode> phrasesList = node.findValue("nearby_enemy_activity_news").findValue("responses").findValues("text");
         responseBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
         return responseBuilder;
+    }
+
+    private StringBuilder genTradersAndGoodsNews(JsonNode node) {
+        StringBuilder newsBuilder = new StringBuilder();
+
+        List<JsonNode> phrasesList = node.findValue("reports_and_responses").findValue("reports").
+                                            findValue("buy gossip").findValues("text");
+        newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
+        return newsBuilder;
     }
 
     private String replaceTemplates(StringBuilder newsBuilder, JsonNode node) {
@@ -750,6 +783,25 @@ public class NewsGenerator {
             String replacement = mutantsList.get(getRndIntInRange(0, mutantsList.size() - 1)).asText();
             strNews = newsBuilder.toString().replaceAll("\\$mutant", replacement);
         }
+
+        if (strNews.contains("$goods") && strNews.contains("$trader")) {
+            List<JsonNode> tradersList = node.findValue("traders").findValue("traders_names").findValues("text");
+            String trader = tradersList.get(getRndIntInRange(0, tradersList.size() - 1)).asText();
+            List<JsonNode> goodsList = node.findValue("traders").findValue("traders_goods").findValue(trader).findValues("text");
+            String goods = goodsList.get(getRndIntInRange(0, goodsList.size() - 1)).asText();
+            strNews = strNews.replaceAll("\\$trader", trader);
+            strNews = strNews.replaceAll("\\$goods", goods);
+        }
+        else if (strNews.contains("$goods") && !strNews.contains("$trader")) {
+            List<JsonNode> goodsList = node.findValue("traders").findValue("traders_goods").findValues("text");
+            String goods = goodsList.get(getRndIntInRange(0, goodsList.size() - 1)).asText();
+            strNews = strNews.replaceAll("\\$goods", goods);
+        }
+        else if (!strNews.contains("$goods") && strNews.contains("$trader")) {
+            List<JsonNode> tradersList = node.findValue("traders").findValue("traders_names").findValues("text");
+            String trader = tradersList.get(getRndIntInRange(0, tradersList.size() - 1)).asText();
+            strNews = strNews.replaceAll("\\$trader", trader);
+        }
         return strNews;
     }
 
@@ -759,8 +811,8 @@ public class NewsGenerator {
     public String generateResponse(int responseType, MessageReceivedEvent event) {
         StringBuilder responseBuilder = new StringBuilder();
         StringBuilder nameBuilder = genName();
-        if (group.equals("Зомбированные")) {
-            while (group.equals("Зомбированные")) {
+        if (faction.equals("Зомбированные")) {
+            while (faction.equals("Зомбированные")) {
                 nameBuilder = genName();
             }
         }
@@ -805,8 +857,8 @@ public class NewsGenerator {
     public int getNewsType() {
         return newsType;
     }
-    public String getGroup() {
-        return group;
+    public String getFaction() {
+        return faction;
     }
     private int getRndIntInRange(int min, int max){
         return (int) (Math.random()*((max-min)+1))+min;
