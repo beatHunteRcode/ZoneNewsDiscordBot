@@ -92,8 +92,8 @@ public class Main extends ListenerAdapter {
 
                 StringBuilder newsBuilder = new StringBuilder();
                 String name = newsGenerator.genName().toString();
-                if (newsGenerator.getGroup().equals("Зомбированные")) {
-                    while (newsGenerator.getGroup().equals("Зомбированные")) {
+                if (newsGenerator.getFaction().equals("Зомбированные")) {
+                    while (newsGenerator.getFaction().equals("Зомбированные")) {
                         name = newsGenerator.genName().toString();
                     }
                 }
@@ -210,7 +210,7 @@ public class Main extends ListenerAdapter {
             deleteGenInAllServerChannels(event);
         }
         if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "botInfo")) {
-            event.getChannel().sendMessage(Resources.botInfo).queue();
+            event.getChannel().sendMessage(Resources.getBotInfo()).queue();
         }
     }
 
