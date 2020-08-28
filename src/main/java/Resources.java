@@ -1,3 +1,4 @@
+import javax.print.DocFlavor;
 import java.lang.reflect.Array;
 import java.util.*;
 
@@ -108,7 +109,27 @@ public class Resources {
             "Сердце Оазиса", "Измененный штурвал", "Измененный изолятор"
     );
 
-    public static String botInfo = "Zone News Bot (Новости Зоны) v0.3 by beatHunteR";
+    private static Map<String, String> tradersFactionsMap = new HashMap<String, String>(){{
+        put("Сидорович", "Одиночки");
+        put("Бармен", "Одиночки");
+        put("Сахаров", "Учёные");
+        put("Петренко", "Долг");
+        put("Скряга", "Свобода");
+        put("Суслов", "Чистое небо");
+        put("Шилов", "Одиночки");
+        put("Ашот", "Свобода");
+        put("Зуб", "Бандиты");
+        put("Дрозд", "Одиночки");
+        put("Митяй", "Долг");
+        put("Сыч", "Одиночки");
+        put("Гаваец", "Одиночки");
+        put("Борода", "Одиночки");
+        put("Тремор", "Одиночки");
+        put("Костоправ", "Одиночки");
+        put("Герман", "Учёные");
+    }};
+
+    private static String botInfo = "Zone News Bot (Новости Зоны) v0.3 by beatHunteR";
 
     public static List<String> getGroupsListKilled() { return groupsListKilled; }
 
@@ -128,5 +149,13 @@ public class Resources {
 
     public static List<String> getMilitaryRanks() {
         return militaryRanks;
+    }
+
+    public static Map<String, String> getTradersFactionsMap() {
+        return tradersFactionsMap;
+    }
+
+    public static String getBotInfo() {
+        return botInfo;
     }
 }
