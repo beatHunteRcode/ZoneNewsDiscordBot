@@ -49,6 +49,7 @@ public class NewsGenerator {
             //  9 - новости о времени суток
             //  10 - новость о активности кого-то рядом со сталкером
             //  11 - новость о торговце и товаре
+            //  12 - просьба перевести сталкера из точки А в точку Б
             newsType = getRndIntInRange(1, 12);
             if (newsType != 7) {
                 newsBuilder.append(nameBuilder);
@@ -121,7 +122,7 @@ public class NewsGenerator {
     public StringBuilder genName() {
         StringBuilder nameBuilder = new StringBuilder();
 
-        faction = Resources.getGroupsList().get(getRndIntInRange(0, Resources.getGroupsList().size() - 1));
+        faction = Resources.getFactionsList().get(getRndIntInRange(0, Resources.getFactionsList().size() - 1));
 
         if (faction.equals("Военные") || faction.equals("Долг")) {
             name = Resources.getMilitaryRanks().get(getRndIntInRange(0, Resources.getMilitaryRanks().size() - 1));
@@ -146,7 +147,7 @@ public class NewsGenerator {
     private StringBuilder genNameKilled() {
         StringBuilder nameBuilder = new StringBuilder();
 
-        faction = Resources.getGroupsListKilled().get(getRndIntInRange(0, Resources.getGroupsListKilled().size() - 1));
+        faction = Resources.getFactionsListKilled().get(getRndIntInRange(0, Resources.getFactionsListKilled().size() - 1));
 
         if (faction.equals("Военный") || faction.equals("Долговец") || faction.equals("\"Долг\"")) {
             name = Resources.getMilitaryRanks().get(getRndIntInRange(0, Resources.getMilitaryRanks().size() - 1));
@@ -680,7 +681,6 @@ public class NewsGenerator {
             List<JsonNode> list = node.findValue("responses_jokes").findValue(faction).findValues("text");
             builder.append(list.get(getRndIntInRange(0, list.size() - 1)).asText());
         }
-
         return builder;
     }
 
@@ -695,6 +695,15 @@ public class NewsGenerator {
         StringBuilder responseBuilder = new StringBuilder();
         List<JsonNode> phrasesList = node.findValue("nearby_enemy_activity_news").findValue("responses").findValues("text");
         responseBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText()).append(" ");
+        return responseBuilder;
+    }
+
+    private StringBuilder genSystemKilledResponse(JsonNode node) {
+        StringBuilder responseBuilder = new StringBuilder();
+
+        List<JsonNode> phrasesList = node.findValue("reports_and_responses").findValue("responses").
+                                            findValue("response_death_by_stalker").findValues("text");
+        responseBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
         return responseBuilder;
     }
 
@@ -834,7 +843,8 @@ public class NewsGenerator {
     //Генерация ответов на новости
     //  1 - реакция на зомби
     //  2 - реакция на анекдот
-    public String generateResponse(int responseType, MessageReceivedEvent event) {
+    //  3 - реакция на врага рядом
+    public String generateResponse(double responseType, MessageReceivedEvent event) {
         StringBuilder responseBuilder = new StringBuilder();
         StringBuilder nameBuilder = genName();
         if (faction.equals("Зомбированные")) {
@@ -872,6 +882,14 @@ public class NewsGenerator {
                     Main.mapOfThreads.get(event.getChannel().getName()).interrupt();
                 }
                 responseBuilder.append(genNearbyEnemyActivityResponse(node));
+            }
+            if (responseType == 4) {
+                try {
+                    Thread.sleep(getRndIntInRange(3 * 1000, 5 * 1000));
+                } catch (InterruptedException e) {
+                    Main.mapOfThreads.get(event.getChannel().getName()).interrupt();
+                }
+                responseBuilder.append(genSystemKilledResponse(node));
             }
 
         } catch (IOException e) {
