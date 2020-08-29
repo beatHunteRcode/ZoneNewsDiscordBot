@@ -129,7 +129,7 @@ public class Resources {
         put("Герман", "Учёные");
     }};
 
-    private static String botInfo = "Zone News Bot (Новости Зоны) v0.3 by beatHunteR";
+    private static String botInfo = "Zone News Bot (Новости Зоны) v0.4 by beatHunteR";
 
     public static List<String> getGroupsListKilled() { return groupsListKilled; }
 
