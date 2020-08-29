@@ -47,42 +47,10 @@ public class Main extends ListenerAdapter {
         System.out.println( "Message from " + event.getAuthor().getName() + " (" + new Date().toString() + ")" + ":\n"
                             + "[--- " + event.getMessage().getContentDisplay() + " ---]");
         if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "новость")) { //новость
-            String news = genNews(newsGenerator);
+            String news = newsGenerator.generateNews();
             event.getChannel().sendMessage(news).queue();
             addNewsToList(news);
-
-            if (news.contains("Зомбированные")) {
-                String response = genResponse(newsGenerator, 1, event);
-                event.getChannel().sendMessage(response).queue();
-                addNewsToList(news);
-            }
-            if (newsGenerator.getNewsType() == 8) {//если тип новости - анекдот - генерируем реакцию на анекдот
-                String response = null;
-                switch (getRndIntInRange(1, 3)) {
-                    case 1:
-                        response = genResponse(newsGenerator, 2, event);
-                        event.getChannel().sendMessage(response).queue();
-                        break;
-                    case 2:
-                        response = genResponse(newsGenerator, 2, event);
-                        event.getChannel().sendMessage(response).queue();
-                        response = genResponse(newsGenerator, 2, event);
-                        event.getChannel().sendMessage(response).queue();
-                        break;
-                    case 3:
-                        response = genResponse(newsGenerator, 2, event);
-                        event.getChannel().sendMessage(response).queue();
-                        response = genResponse(newsGenerator, 2, event);
-                        event.getChannel().sendMessage(response).queue();
-                        response = genResponse(newsGenerator, 2, event);
-                        event.getChannel().sendMessage(response).queue();
-                        break;
-                }
-            }
-            if (newsGenerator.getNewsType() == 10) { //если тип новости - новость о врагах рядом - генерируем реакцию
-                String response = genResponse(newsGenerator, 3, event);
-                event.getChannel().sendMessage(response).queue();
-            }
+            genResponse(news, newsGenerator, event);
         }
         if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "анекдот")) {
 
@@ -107,21 +75,21 @@ public class Main extends ListenerAdapter {
             String response = null;
             switch (getRndIntInRange(1, 3)) {
                 case 1:
-                    response = genResponse(newsGenerator, 2, event);
+                    response = newsGenerator.generateResponse(2, event);
                     event.getChannel().sendMessage(response).queue();
                     break;
                 case 2:
-                    response = genResponse(newsGenerator, 2, event);
+                    response = newsGenerator.generateResponse(2, event);
                     event.getChannel().sendMessage(response).queue();
-                    response = genResponse(newsGenerator, 2, event);
+                    response = newsGenerator.generateResponse(2, event);
                     event.getChannel().sendMessage(response).queue();
                     break;
                 case 3:
-                    response = genResponse(newsGenerator, 2, event);
+                    response = newsGenerator.generateResponse(2, event);
                     event.getChannel().sendMessage(response).queue();
-                    response = genResponse(newsGenerator, 2, event);
+                    response = newsGenerator.generateResponse(2, event);
                     event.getChannel().sendMessage(response).queue();
-                    response = genResponse(newsGenerator, 2, event);
+                    response = newsGenerator.generateResponse(2, event);
                     event.getChannel().sendMessage(response).queue();
                     break;
             }
@@ -135,40 +103,10 @@ public class Main extends ListenerAdapter {
                     @Override
                     public void run() {
                         while (true) {
-                            String news = genNews(newsGenerator);
+                            String news = newsGenerator.generateNews();
                             event.getChannel().sendMessage(news).queue();
                             addNewsToList(news);
-                            if (news.contains("Зомбированные")) {
-                                String response = genResponse(newsGenerator, 1, event);
-                                event.getChannel().sendMessage(response).queue();
-                            }
-                            if (newsGenerator.getNewsType() == 8) {//если тип новости - анекдот - генерируем реакцию на анекдот
-                                String response = null;
-                                switch (getRndIntInRange(1, 3)) {
-                                    case 1:
-                                        response = genResponse(newsGenerator, 2, event);
-                                        event.getChannel().sendMessage(response).queue();
-                                        break;
-                                    case 2:
-                                        response = genResponse(newsGenerator, 2, event);
-                                        event.getChannel().sendMessage(response).queue();
-                                        response = genResponse(newsGenerator, 2, event);
-                                        event.getChannel().sendMessage(response).queue();
-                                        break;
-                                    case 3:
-                                        response = genResponse(newsGenerator, 2, event);
-                                        event.getChannel().sendMessage(response).queue();
-                                        response = genResponse(newsGenerator, 2, event);
-                                        event.getChannel().sendMessage(response).queue();
-                                        response = genResponse(newsGenerator, 2, event);
-                                        event.getChannel().sendMessage(response).queue();
-                                        break;
-                                }
-                            }
-                            if (newsGenerator.getNewsType() == 10) { //если тип новости - новость о врагах рядом - генерируем реакцию
-                                String response = genResponse(newsGenerator, 3, event);
-                                event.getChannel().sendMessage(response).queue();
-                            }
+                            genResponse(news, newsGenerator, event);
                             try {
                                 Thread.sleep(getRndIntInRange(MIN_TIME_DELAY, MAX_TIME_DELAY));
                             } catch (InterruptedException e) {
@@ -230,13 +168,44 @@ public class Main extends ListenerAdapter {
         ).queue();
     }
 
-    public static String genNews(NewsGenerator newsGenerator) {
-        return newsGenerator.generateNews();
+    public static void genResponse(String news, NewsGenerator newsGenerator, MessageReceivedEvent event) {
+        if (news.contains("Зомбированные")) {
+            String response = newsGenerator.generateResponse(1, event);
+            event.getChannel().sendMessage(response).queue();
+        }
+        if (newsGenerator.getNewsType() == 8) {//если тип новости - анекдот - генерируем реакцию на анекдот
+            String response = null;
+            switch (getRndIntInRange(1, 3)) {
+                case 1:
+                    response = newsGenerator.generateResponse(2, event);
+                    event.getChannel().sendMessage(response).queue();
+                    break;
+                case 2:
+                    response = newsGenerator.generateResponse(2, event);
+                    event.getChannel().sendMessage(response).queue();
+                    response = newsGenerator.generateResponse(2, event);
+                    event.getChannel().sendMessage(response).queue();
+                    break;
+                case 3:
+                    response = newsGenerator.generateResponse(2, event);
+                    event.getChannel().sendMessage(response).queue();
+                    response = newsGenerator.generateResponse(2, event);
+                    event.getChannel().sendMessage(response).queue();
+                    response = newsGenerator.generateResponse(2, event);
+                    event.getChannel().sendMessage(response).queue();
+                    break;
+            }
+        }
+        if (newsGenerator.getNewsType() == 7) {
+            String response = newsGenerator.generateResponse(4, event);
+            event.getChannel().sendMessage(response).queue();
+        }
+        if (newsGenerator.getNewsType() == 10) { //если тип новости - новость о врагах рядом - генерируем реакцию
+            String response = newsGenerator.generateResponse(3, event);
+            event.getChannel().sendMessage(response).queue();
+        }
     }
 
-    public static String genResponse(NewsGenerator newsGenerator, int responseType, MessageReceivedEvent event) {
-        return newsGenerator.generateResponse(responseType, event);
-    }
     private static int getRndIntInRange(int min, int max){
         return (int) (Math.random()*((max-min)+1))+min;
     }
