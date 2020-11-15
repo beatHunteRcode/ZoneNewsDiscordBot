@@ -24,9 +24,8 @@ public class Main extends ListenerAdapter {
 
 
     public static void main(String[] args) throws LoginException {
-        String botToken = "NjM2OTg4N1337youdontgetmydiscordbottoken1337OMSJJckVIqk";
-        JDABuilder builder = new JDABuilder(AccountType.BOT);
-        builder.setToken(botToken);
+        String botToken = "NjM2OTg4NzAyM1337youdontgetmydiscordbottoken133730oo792d0";
+        JDABuilder builder = JDABuilder.createDefault(botToken);
         builder.addEventListeners(new Main());
         builder.build();
 
