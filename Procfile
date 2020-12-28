@@ -1,1 +1,1 @@
-web:node src\main\java\Main.java
+web: java $JAVA_OPTS -jar out/artifacts/mydiscordbot_jar/mydiscordbot.jar --port $PORT target/*.war
