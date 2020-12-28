@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/mydiscordbot.jar --port $PORT target/*.war
+web: java $JAVA_OPTS -jar target/mydiscordbot.jar --port 1337 target/*.war
