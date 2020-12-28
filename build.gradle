@@ -15,9 +15,16 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'net.dv8tion:JDA:4.2.0_214'
-    
+
+    //for JSON parsing
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.3'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.11.3'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.11.3'
 
+
+    //for uploading pictures from Web Page
+    compile group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: '2.45.0'
+
+    task stage(dependsOn: ['build', 'clean'])
+    build.mustRunAfter clean
 }
