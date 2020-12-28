@@ -1,1 +1,1 @@
-web: java -jar mydiscordbot.jar
+web:node src\main\java\Main.java
