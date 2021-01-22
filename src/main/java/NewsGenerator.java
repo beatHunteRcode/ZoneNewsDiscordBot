@@ -1,5 +1,12 @@
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.DomNode;
+import com.gargoylesoftware.htmlunit.html.DomNodeList;
+import com.gargoylesoftware.htmlunit.html.HtmlImage;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.restfb.Version;
+import com.restfb.types.InstagramUser;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 //import org.w3c.dom.Document;
 //import org.w3c.dom.Element;
@@ -10,8 +17,14 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 //import javax.xml.parsers.DocumentBuilder;
 //import javax.xml.parsers.DocumentBuilderFactory;
 //import javax.xml.parsers.ParserConfigurationException;
-import java.io.File;
-import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.text.html.HTML;
+import java.awt.*;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -36,21 +49,24 @@ public class NewsGenerator {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode node = mapper.readValue(new File("./input/dynamic_news.json"), JsonNode.class);
 
-            //начинаем составлять новость
-            //определяем тип новости:
-            //  1 - о помощи,
-            //  2 - специальная новость,
-            //  3 - о выбросе
-            //  4 - новости фракций
-            //  5 - новости о нахождении артефактов
-            //  6 - немедленные сообщения от сталкеров увидивших/услышивших что-то
-            //  7 - системная новость о гибели сталкера/военного
-            //  8 - анекдот
-            //  9 - новости о времени суток
-            //  10 - новость о активности кого-то рядом со сталкером
-            //  11 - новость о торговце и товаре
-            //  12 - просьба перевести сталкера из точки А в точку Б
-            newsType = getRndIntInRange(1, 12);
+            /*
+              начинаем составлять новость
+              определяем тип новости:
+              1 - о помощи,
+              2 - специальная новость,
+              3 - о выбросе
+              4 - новости фракций
+              5 - новости о нахождении артефактов
+              6 - немедленные сообщения от сталкеров увидивших/услышивших что-то
+              7 - системная новость о гибели сталкера/военного
+              8 - анекдот
+              9 - о времени суток
+              10 - о активности кого-то рядом со сталкером
+              11 - о торговце и товаре
+              12 - просьба перевести сталкера из точки А в точку Б
+              13 - мем
+             */
+            newsType = getRndIntInRange(1, 13);
             if (newsType != 7) {
                 newsBuilder.append(nameBuilder);
                 if (faction.equals("Зомбированные")) newsType = 2;
@@ -105,7 +121,9 @@ public class NewsGenerator {
 //                    System.out.println("CONDUCT_NEWS");
                     newsBuilder.append(genConductNews(node));
                     break;
-
+                case 13:
+//                    System.out.println("MEME_NEWS");
+                    newsBuilder.append(genMemeNews());
             }
 
             strNews = replaceTemplates(newsBuilder, node);
@@ -726,6 +744,12 @@ public class NewsGenerator {
         return newsBuilder;
     }
 
+    public StringBuilder genMemeNews() {
+        StringBuilder newsBuilder = new StringBuilder();
+        newsBuilder.append(Main.urlsList.get(getRndIntInRange(0, Main.urlsList.size())));
+        return newsBuilder;
+    }
+
     private String replaceTemplates(StringBuilder newsBuilder, JsonNode node) {
         String strNews = newsBuilder.toString();
 
@@ -844,6 +868,7 @@ public class NewsGenerator {
     //  1 - реакция на зомби
     //  2 - реакция на анекдот
     //  3 - реакция на врага рядом
+    //  4 - реакция на некролог
     public String generateResponse(double responseType, MessageReceivedEvent event) {
         StringBuilder responseBuilder = new StringBuilder();
         StringBuilder nameBuilder = genName();
@@ -897,6 +922,8 @@ public class NewsGenerator {
         }
         return responseBuilder.toString();
     }
+
+
 
     public int getNewsType() {
         return newsType;

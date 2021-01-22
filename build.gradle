@@ -25,6 +25,11 @@ dependencies {
     //for uploading pictures from Web Page
     compile group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: '2.45.0'
 
+    //for working with Instagram
+    compile group: 'com.restfb', name: 'restfb', version: '3.13.0'
+    implementation 'com.github.instagram4j:instagram4j:2.0.3'
+    compile group: 'org.brunocvcunha.instagram4j', name: 'instagram4j', version: '1.14'
+    
     task stage(dependsOn: ['build', 'clean'])
     build.mustRunAfter clean
 }
