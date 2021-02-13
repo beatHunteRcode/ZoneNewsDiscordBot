@@ -746,7 +746,11 @@ public class NewsGenerator {
 
     public StringBuilder genMemeNews() {
         StringBuilder newsBuilder = new StringBuilder();
-        newsBuilder.append(Main.urlsList.get(getRndIntInRange(0, Main.urlsList.size())));
+        if (Main.urlsList.size() == 0) {
+            newsBuilder.append(Resources.getNoMemePhrase());
+            newsType = 0;
+        }
+        else newsBuilder.append(Main.urlsList.get(getRndIntInRange(0, Main.urlsList.size())));
         return newsBuilder;
     }
 

@@ -20,8 +20,8 @@ import java.util.concurrent.CompletableFuture;
 
 public class Main extends ListenerAdapter {
 
-    private final int MIN_TIME_DELAY = 1000 * 60 * 10;
-    private final int MAX_TIME_DELAY = 1000 * 60 * 15;
+    private static final int MIN_TIME_DELAY = 1000 * 60 * 10;
+    private static final int MAX_TIME_DELAY = 1000 * 60 * 15;
 
     private char prefix = '-';
 
@@ -39,8 +39,21 @@ public class Main extends ListenerAdapter {
         builder.addEventListeners(new Main());
         builder.build();
 
-        downloadMemesThread = new Thread(Main::downloadMemes);
+
+        downloadMemesThread = new Thread(() -> {
+           while (urlsList.size() == 0) {
+               Main.downloadMemes();
+               try {
+                   Thread.sleep(getRndIntInRange(MIN_TIME_DELAY, MAX_TIME_DELAY));
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
+           }
+        });
         downloadMemesThread.start();
+
+//        downloadMemesThread = new Thread(Main::downloadMemes);
+//        downloadMemesThread.start();
 
 //        NewsGenerator newsGenerator = new NewsGenerator();
 //        for (int i = 0; i < 1; i++) {
@@ -157,7 +170,7 @@ public class Main extends ListenerAdapter {
             builder.append(":\n");
             builder.append(newsGenerator.genMemeNews());
             event.getChannel().sendMessage(builder.toString()).queue();
-            genResponseToJoke(newsGenerator, event);
+            if (!builder.toString().contains(Resources.getNoMemePhrase())) genResponseToJoke(newsGenerator, event);
         }
     }
 
@@ -183,7 +196,7 @@ public class Main extends ListenerAdapter {
             String response = newsGenerator.generateResponse(1, event);
             event.getChannel().sendMessage(response).queue();
         }
-        if (newsGenerator.getNewsType() == 8) {//если тип новости - анекдот - генерируем реакцию на анекдот
+        if (newsGenerator.getNewsType() == 8 || newsGenerator.getNewsType() == 13) {//если тип новости - анекдот/мем - генерируем реакцию на анекдот/мем
             genResponseToJoke(newsGenerator, event);
         }
         if (newsGenerator.getNewsType() == 7) {

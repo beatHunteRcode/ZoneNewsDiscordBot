@@ -129,6 +129,7 @@ public class Resources {
     }};
 
     private static String botInfo = "Zone News Bot (Новости Зоны) v0.5 by beatHunteR";
+    private static String noMemePhrase = "Пока что без мемов. Сталкеры в процессе устранения проблемы...";
 
     public static List<String> getFactionsListKilled() { return factionsListKilled; }
 
@@ -154,7 +155,7 @@ public class Resources {
         return tradersFactionsMap;
     }
 
-    public static String getBotInfo() {
-        return botInfo;
-    }
+    public static String getBotInfo() { return botInfo; }
+
+    public static String getNoMemePhrase() { return noMemePhrase; }
 }
