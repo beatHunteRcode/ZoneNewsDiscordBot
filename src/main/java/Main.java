@@ -7,7 +7,6 @@ import com.github.instagram4j.instagram4j.models.media.timeline.TimelineMedia;
 import com.github.instagram4j.instagram4j.requests.feed.FeedUserRequest;
 import com.github.instagram4j.instagram4j.responses.feed.FeedUserResponse;
 import com.github.instagram4j.instagram4j.responses.users.UsersSearchResponse;
-import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -56,6 +55,7 @@ public class Main extends ListenerAdapter {
         NewsGenerator newsGenerator = new NewsGenerator();
 
         System.out.println( "Message from " + event.getAuthor().getName() + " in " + event.getChannel().getName() +
+                            " from " + event.getGuild().getName() +
                             " (" + new Date().toString() + ")" + ":\n"
                             + "[--- " + event.getMessage().getContentDisplay() + " ---]");
 
@@ -118,7 +118,7 @@ public class Main extends ListenerAdapter {
             }
             else {
                 if (mapOfGenerators.get(event.getChannel().getName())) {
-                    event.getChannel().sendMessage("Error: Генератор новостей уже запущен!").queue();
+                    event.getChannel().sendMessage("Error: Лента новостей уже запущена!").queue();
                 }
             }
         }
@@ -141,12 +141,15 @@ public class Main extends ListenerAdapter {
         if (message.equalsIgnoreCase(prefix + "botInfo")) {
             event.getChannel().sendMessage(Resources.getBotInfo()).queue();
         }
-        if (    (message.toLowerCase().contains("анек") ||
-                message.toLowerCase().contains("шут") ||
-                message.toLowerCase().contains("рофл")) &&
-                !message.toLowerCase().contains("-")
+        if (!event.getAuthor().getName().equalsIgnoreCase("новости зоны")) {
+            if (   (message.toLowerCase().contains("анек") ||
+                    message.toLowerCase().contains("шут") ||
+                    message.toLowerCase().contains("рофл") ||
+                    message.toLowerCase().contains("юмор")) &&
+                    !message.toLowerCase().contains("-")
             ) {
-            genResponseToJoke(newsGenerator, event);
+                genResponseToJoke(newsGenerator, event);
+            }
         }
         if (message.equalsIgnoreCase(prefix + "мем")) {
             StringBuilder builder = new StringBuilder();
@@ -176,7 +179,7 @@ public class Main extends ListenerAdapter {
     }
 
     public static void genResponse(String news, NewsGenerator newsGenerator, MessageReceivedEvent event) {
-        if (news.contains("(Зомбированные)")) {
+        if (news.contains("(Зомбированные):")) {
             String response = newsGenerator.generateResponse(1, event);
             event.getChannel().sendMessage(response).queue();
         }
@@ -253,7 +256,7 @@ public class Main extends ListenerAdapter {
         }
 
         if (mapOfGenerators.isEmpty()) {
-            event.getChannel().sendMessage("Нигде ещё не запущен генератор новостей.").queue();
+            event.getChannel().sendMessage("Нигде ещё не запущена лента новостей.").queue();
         }
         for (String key : mapOfGenerators.keySet()) {
             if (channelsNamesList.contains(key)) event.getChannel().sendMessage(key).queue();
