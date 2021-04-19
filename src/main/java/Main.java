@@ -34,7 +34,7 @@ public class Main extends ListenerAdapter {
     private static Thread downloadMemesThread = new Thread();
 
     public static void main(String[] args) throws LoginException {
-        String botToken = "NjM2OTg4NzAyMjI0MDIzNTg0.XbHn9Q.MM0-krmdSDhUyfrwIC30oo792d0";
+        String botToken = "NjM2OTg1337youdontgetmydiscordbottoken1337oo792d0";
         JDABuilder builder = JDABuilder.createDefault(botToken);
         builder.addEventListeners(new Main());
         builder.build();
