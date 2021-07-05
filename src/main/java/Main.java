@@ -52,8 +52,18 @@ public class Main extends ListenerAdapter {
         });
         downloadMemesThread.start();
 
-//        downloadMemesThread = new Thread(Main::downloadMemes);
-//        downloadMemesThread.start();
+        Thread checkStartOfDayThread = new Thread(() -> {
+            Calendar calendar = Calendar.getInstance();
+            while (true) {
+                if (Resources.getStartOfDay().equals(calendar.getTime())) {
+                    urlsList.clear();
+                    downloadMemesThread = new Thread(Main::downloadMemes);
+                    downloadMemesThread.start();
+                }
+            }
+        });
+        checkStartOfDayThread.start();
+
 
 //        NewsGenerator newsGenerator = new NewsGenerator();
 //        for (int i = 0; i < 1; i++) {

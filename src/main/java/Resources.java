@@ -128,6 +128,16 @@ public class Resources {
         put("Герман", "Учёные");
     }};
 
+
+    public static Date getStartOfDay() {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DATE);
+        calendar.set(year, month, day, 0, 0, 0);
+        return calendar.getTime();
+    }
+
     private static String botInfo = "Zone News Bot (Новости Зоны) v0.5 by beatHunteR";
     private static String noMemePhrase = "Пока что без мемов. Сталкеры в процессе устранения проблемы...";
 
