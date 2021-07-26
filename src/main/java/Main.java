@@ -39,10 +39,12 @@ public class Main extends ListenerAdapter {
         builder.addEventListeners(new Main());
         builder.build();
 
+        instLogin();
+
 
         downloadMemesThread = new Thread(() -> {
            while (urlsList.size() == 0) {
-               Main.downloadMemes();
+               Main.downloadMemes(Resources.getCurrentIGClient());
                try {
                    Thread.sleep(getRndIntInRange(MIN_TIME_DELAY, MAX_TIME_DELAY));
                } catch (InterruptedException e) {
@@ -52,18 +54,10 @@ public class Main extends ListenerAdapter {
         });
         downloadMemesThread.start();
 
-        Thread checkStartOfDayThread = new Thread(() -> {
-            Calendar calendar = Calendar.getInstance();
-            while (true) {
-                if (Resources.getStartOfDay().equals(calendar.getTime())) {
-                    urlsList.clear();
-                    downloadMemesThread = new Thread(Main::downloadMemes);
-                    downloadMemesThread.start();
-                }
-            }
-        });
-        checkStartOfDayThread.start();
-
+        Calendar calendar = Calendar.getInstance();
+        Resources.setCurrentDayNumber(calendar.get(Calendar.DAY_OF_MONTH));
+        Resources.setCurrentMonthNumber(calendar.get(Calendar.MONTH));
+        Resources.setCurrentYearNumber(calendar.get(Calendar.YEAR));
 
 //        NewsGenerator newsGenerator = new NewsGenerator();
 //        for (int i = 0; i < 1; i++) {
@@ -182,6 +176,8 @@ public class Main extends ListenerAdapter {
             event.getChannel().sendMessage(builder.toString()).queue();
             if (!builder.toString().contains(Resources.getNoMemePhrase())) genResponseToJoke(newsGenerator, event);
         }
+
+        dateCheck();
     }
 
 
@@ -290,14 +286,20 @@ public class Main extends ListenerAdapter {
         event.getChannel().sendMessage(event.getChannel().getName()).queue();
     }
 
-    private static void downloadMemes() {
+    private static void instLogin() {
         try {
             IGClient client = IGClient.builder()
-                    .username("zndsbfguf")
-                    .password("sherepa2000spb")
+                    .username("***")
+                    .password("***")
                     .login();
 
+            Resources.setCurrentIGClient(client);
+        } catch (IGLoginException e) {
+            e.printStackTrace();
+        }
+    }
 
+    private static void downloadMemes(IGClient client) {
             CompletableFuture task1 = client.actions().search().searchUser("stalker.mem").thenAccept(usersSearchResponse -> {
                 downloadTask(usersSearchResponse, client);
             });
@@ -305,9 +307,6 @@ public class Main extends ListenerAdapter {
             CompletableFuture task2 = client.actions().search().searchUser("stalker.mem4").thenAccept(usersSearchResponse -> {
                 downloadTask(usersSearchResponse, client);
             });
-        } catch (IGLoginException e) {
-            e.printStackTrace();
-        }
     }
 
     private static void downloadTask(UsersSearchResponse usersSearchResponse, IGClient client) {
@@ -327,6 +326,22 @@ public class Main extends ListenerAdapter {
         Collections.shuffle(urlsList);
         System.out.println( "[----- " + new Date().toString() + ": SUCCESSFULLY DOWNLOADED ALL " + urlsList.size() +
                             " MEMES from " + usersSearchResponse.getUsers().get(0).getFull_name() + " -----]");
+    }
+
+    private void dateCheck() {
+        Calendar calendar = Calendar.getInstance();
+        int dayNow = calendar.get(Calendar.DAY_OF_MONTH);
+        int monthNow = calendar.get(Calendar.MONTH);
+        int yearNow = calendar.get(Calendar.YEAR);
+        if (dayNow != Resources.getCurrentDayNumber() ||
+            monthNow != Resources.getCurrentMonthNumber() ||
+            yearNow != Resources.getCurrentYearNumber()) {
+            urlsList.clear();
+            downloadMemes(Resources.getCurrentIGClient());
+            Resources.setCurrentDayNumber(dayNow);
+            Resources.setCurrentMonthNumber(monthNow);
+            Resources.setCurrentYearNumber(yearNow);
+        }
     }
 
 }

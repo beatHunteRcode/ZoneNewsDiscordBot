@@ -1,3 +1,5 @@
+import com.github.instagram4j.instagram4j.IGClient;
+
 import java.util.*;
 
 public class Resources {
@@ -134,12 +136,32 @@ public class Resources {
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DATE);
-        calendar.set(year, month, day, 0, 0, 0);
+        calendar.set(year, month, day, 0, 49, 0);
         return calendar.getTime();
     }
 
     private static String botInfo = "Zone News Bot (Новости Зоны) v0.5 by beatHunteR";
     private static String noMemePhrase = "Пока что без мемов. Сталкеры в процессе устранения проблемы...";
+    private static int currentDayNumber = 0;
+    private static int currentMonthNumber = 0;
+    private static int currentYearNumber = 0;
+    private static IGClient currentIGClient = null;
+
+    public static IGClient getCurrentIGClient() { return currentIGClient; }
+
+    public static void setCurrentIGClient(IGClient currentIGClient) { Resources.currentIGClient = currentIGClient; }
+
+    public static int getCurrentMonthNumber() { return currentMonthNumber; }
+
+    public static void setCurrentMonthNumber(int currentMonthNumber) { Resources.currentMonthNumber = currentMonthNumber; }
+
+    public static int getCurrentYearNumber() { return currentYearNumber; }
+
+    public static void setCurrentYearNumber(int currentYearNumber) { Resources.currentYearNumber = currentYearNumber; }
+
+    public static int getCurrentDayNumber() { return currentDayNumber; }
+
+    public static void setCurrentDayNumber(int currentDayNumber) { Resources.currentDayNumber = currentDayNumber; }
 
     public static List<String> getFactionsListKilled() { return factionsListKilled; }
 
