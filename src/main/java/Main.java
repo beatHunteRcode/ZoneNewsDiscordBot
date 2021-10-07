@@ -300,13 +300,14 @@ public class Main extends ListenerAdapter {
     }
 
     private static void downloadMemes(IGClient client) {
-            CompletableFuture task1 = client.actions().search().searchUser("stalker.mem").thenAccept(usersSearchResponse -> {
+            client.actions().search().searchUser("stalker.mem").thenAccept(usersSearchResponse -> {
                 downloadTask(usersSearchResponse, client);
-            });
+            }).join();
 
-            CompletableFuture task2 = client.actions().search().searchUser("stalker.mem4").thenAccept(usersSearchResponse -> {
+
+            client.actions().search().searchUser("stalker.mem4").thenAccept(usersSearchResponse -> {
                 downloadTask(usersSearchResponse, client);
-            });
+            }).join();
     }
 
     private static void downloadTask(UsersSearchResponse usersSearchResponse, IGClient client) {
