@@ -594,19 +594,19 @@ public class NewsGenerator {
         Date date = new Date();
         int hoursNow = Integer.parseInt(date.toString().split(" ")[3].split(":")[0]);
 
-        if (hoursNow >= 0 && hoursNow <= 5) {           //night
+        if ((hoursNow >= 21 && hoursNow <= 23) || (hoursNow >= 0 && hoursNow <= 3)) {           //night
             List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_night").findValues("text");
             newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
         }
-        else if (hoursNow >= 6 && hoursNow <= 11) {     //morning
+        else if (hoursNow >= 4 && hoursNow <= 9) {     //morning
             List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_morning").findValues("text");
             newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
         }
-        else if (hoursNow >= 12 && hoursNow <= 17) {    //noon
+        else if (hoursNow >= 10 && hoursNow <= 15) {    //noon
             List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_noon").findValues("text");
             newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
         }
-        else { //hoursNow >= 18 && hoursNow <= 23       //evening
+        else { //hoursNow >= 16 && hoursNow <= 20       //evening
             List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_evening").findValues("text");
             newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
         }
@@ -745,7 +745,7 @@ public class NewsGenerator {
             String replacement = surgesList.get(getRndIntInRange(0, surgesList.size() - 1)).asText();
             strNews = newsBuilder.toString().replaceAll("\\$surge", replacement);
 
-            //определяем текущее время
+
             //определяем текущее время
             //date.toString() -> Sat Aug 22 21:52:58 MSK 2020
             //date.toString().split(" ")[3] -> 21:52:58
