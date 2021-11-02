@@ -323,6 +323,11 @@ public class Main extends ListenerAdapter {
                     }
                 }
             }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
         Collections.shuffle(urlsList);
         System.out.println( "[----- " + new Date().toString() + ": SUCCESSFULLY DOWNLOADED ALL " + urlsList.size() +
