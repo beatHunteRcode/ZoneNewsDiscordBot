@@ -19,12 +19,12 @@ ___
 
 #### Примеры работы бота
 
-- Лента новостей<br>![startnews.png](D:\Programming\Java\Idea Projects\ZoneNewsDiscordBot\img\startnews.PNG)
+- Лента новостей<br>![startnews.png](\img\startnews.PNG)
 
 - Мемы
 
-  ![meme.png](D:\Programming\Java\Idea Projects\ZoneNewsDiscordBot\img\meme.PNG)
+  ![meme.png](\img\meme.PNG)
 
 - Анекдоты
 
-  ![joke.png](D:\Programming\Java\Idea Projects\ZoneNewsDiscordBot\img\joke.PNG)
+  ![joke.png](\img\joke.PNG)
