@@ -19,12 +19,12 @@ ___
 
 #### Примеры работы бота
 
-- Лента новостей<br>![startnews.png](\img\startnews.PNG)
+- Лента новостей<br>![startnews.png](./img/startnews.PNG)
 
 - Мемы
 
-  ![meme.png](\img\meme.PNG)
+  ![meme.png](./img/meme.PNG)
 
 - Анекдоты
 
-  ![joke.png](\img\joke.PNG)
+  ![joke.png](./img/joke.PNG)
