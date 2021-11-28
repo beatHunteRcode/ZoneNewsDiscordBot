@@ -34,7 +34,9 @@ public class Main extends ListenerAdapter {
     private static Thread downloadMemesThread = new Thread();
 
     public static void main(String[] args) throws LoginException {
-        String botToken = "NjM2OTg1337youdontgetmydiscordbottoken1337oo792d0";
+
+
+        String botToken = System.getenv("DISCORD_BOT_API_TOKEN");
         JDABuilder builder = JDABuilder.createDefault(botToken);
         builder.addEventListeners(new Main());
         builder.build();
@@ -289,8 +291,8 @@ public class Main extends ListenerAdapter {
     private static void instLogin() {
         try {
             IGClient client = IGClient.builder()
-                    .username("***")
-                    .password("***")
+                    .username(System.getenv("INST_LOGIN"))
+                    .password(System.getenv("INST_PASSWORD"))
                     .login();
 
             Resources.setCurrentIGClient(client);
