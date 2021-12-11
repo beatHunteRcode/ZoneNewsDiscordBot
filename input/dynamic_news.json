@@ -6819,134 +6819,596 @@
 					{
 						"responses": [
 							{
-								"Response - death by stalker": [
+								"response_death_by_stalker": [
 									{
-										"text": "Убило мужика!",
-										"_id": "st_dyn_news_res_death_stalker_1"
+										"real" : [
+											{
+												"text": "Убило мужика!",
+												"_id": "st_dyn_news_res_death_stalker_1"
+											},
+											{
+												"text": "Завалили такого человека!",
+												"_id": "st_dyn_news_res_death_stalker_2"
+											},
+											{
+												"text": "Вот гниды, найду и урою нахрен того, кто это сделал!",
+												"_id": "st_dyn_news_res_death_stalker_3"
+											},
+											{
+												"text": "Грустно видеть такое...",
+												"_id": "st_dyn_news_res_death_stalker_4"
+											},
+											{
+												"text": "Жалость-то какая...",
+												"_id": "st_dyn_news_res_death_stalker_5"
+											},
+											{
+												"text": "Эмм, что тут произошло?",
+												"_id": "st_dyn_news_res_death_stalker_6"
+											},
+											{
+												"text": "Я найду того, кто это сделал!",
+												"_id": "st_dyn_news_res_death_stalker_7"
+											},
+											{
+												"text": "Хм, тело ещё свежее, похоже убийца где-то тут рядом!",
+												"_id": "st_dyn_news_res_death_stalker_8"
+											},
+											{
+												"text": "Ну чё там у жмура по хабару?",
+												"_id": "st_dyn_news_res_death_stalker_9"
+											},
+											{
+												"text": "Хороший был мужик...",
+												"_id": "st_dyn_news_res_death_stalker_10"
+											},
+											{
+												"text": "Вчера только ещё у костра сидели и анекдоты рассказывали, а тут вот...",
+												"_id": "st_dyn_news_res_death_stalker_11"
+											},
+											{
+												"text": "Ну помер да помер мужик, тут кстати если работа нужна - идите к Сахарову, за части монстров отличные деньги даёт! Ну и ассистент его, Семёнов вроде, всё время ему нужна помощь с изучением монстров.",
+												"_id": "st_dyn_news_res_death_stalker_12"
+											},
+											{
+												"text": "Ооо, ништяк! Как раз был заказ на этого упыря, а его хоба уже и кокнули! Меньше мороки!",
+												"_id": "st_dyn_news_res_death_stalker_13"
+											},
+											{
+												"text": "Был мужик - и нету мужика.",
+												"_id": "st_dyn_news_res_death_stalker_14"
+											},
+											{
+												"text": "Зона тебе пухом, чувак.",
+												"_id": "st_dyn_news_res_death_stalker_15"
+											},
+											{
+												"text": "Самая приятная смерть в Зоне - от пули, это всё лучше чем в когтях мутантов, поверьте...",
+												"_id": "st_dyn_news_res_death_stalker_16"
+											},
+											{
+												"text": "Отмучился пацан...",
+												"_id": "st_dyn_news_res_death_stalker_17"
+											},
+											{
+												"text": "Хоть не монстр сожрал, и то хорошо!",
+												"_id": "st_dyn_news_res_death_stalker_18"
+											},
+											{
+												"text": "Надо бы его хабарок подобрать, пока рядом никого...",
+												"_id": "st_dyn_news_res_death_stalker_19"
+											},
+											{
+												"text": "Жил без страха и умер без страха!",
+												"_id": "st_dyn_news_res_death_stalker_20"
+											},
+											{
+												"text": "Здоровый, сильный был пацан, пока маслин он не поймал...",
+												"_id": "st_dyn_news_res_death_stalker_21"
+											},
+											{
+												"text": "Ну чё мужики, выпьем за упокой души погибшего!?",
+												"_id": "st_dyn_news_res_death_stalker_22"
+											},
+											{
+												"text": "А жмур он добрый, жмур ведь со мной поделится, ага?",
+												"_id": "st_dyn_news_res_death_stalker_23"
+											},
+											{
+												"text": "Самое время собирать трофеи!",
+												"_id": "st_dyn_news_res_death_stalker_24"
+											},
+											{
+												"text": "Ну почему тут люди стреляют в людей? Тут и так выжить трудно!",
+												"_id": "st_dyn_news_res_death_stalker_25"
+											},
+											{
+												"text": "И так каждый день...",
+												"_id": "st_dyn_news_res_death_stalker_26"
+											},
+											{
+												"text": "Блин, ну жалко поцыка, чё ещё сказать...",
+												"_id": "st_dyn_news_res_death_stalker_27"
+											},
+											{
+												"text": "Не, ну я ваще не понял...",
+												"_id": "st_dyn_news_res_death_stalker_28"
+											},
+											{
+												"text": "Ампец вам, падлы!",
+												"_id": "st_dyn_news_res_death_stalker_29"
+											},
+											{
+												"text": "Да я щас этого убийцу в бушлат деревянный одену, сука!",
+												"_id": "st_dyn_news_res_death_stalker_30"
+											},
+											{
+												"text": "Чики-брики и в жмурики!",
+												"_id": "st_dyn_news_res_death_stalker_31"
+											},
+											{
+												"text": "Зажмурился сталкер.",
+												"_id": "st_dyn_news_res_death_stalker_32"
+											}
+										],
+										"_name" : "real"
 									},
 									{
-										"text": "Завалили такого человека!",
-										"_id": "st_dyn_news_res_death_stalker_2"
-									},
-									{
-										"text": "Вот гниды, найду и урою нахрен того, кто это сделал!",
-										"_id": "st_dyn_news_res_death_stalker_3"
-									},
-									{
-										"text": "Грустно видеть такое...",
-										"_id": "st_dyn_news_res_death_stalker_4"
-									},
-									{
-										"text": "Жалость-то какая...",
-										"_id": "st_dyn_news_res_death_stalker_5"
-									},
-									{
-										"text": "Эмм, что тут произошло?",
-										"_id": "st_dyn_news_res_death_stalker_6"
-									},
-									{
-										"text": "Я найду того, кто это сделал!",
-										"_id": "st_dyn_news_res_death_stalker_7"
-									},
-									{
-										"text": "Хм, тело ещё свежее, похоже убийца где-то тут рядом!",
-										"_id": "st_dyn_news_res_death_stalker_8"
-									},
-									{
-										"text": "Ну чё там у жмура по хабару?",
-										"_id": "st_dyn_news_res_death_stalker_9"
-									},
-									{
-										"text": "Хороший был мужик...",
-										"_id": "st_dyn_news_res_death_stalker_10"
-									},
-									{
-										"text": "Вчера только ещё у костра сидели и анекдоты рассказывали, а тут вот...",
-										"_id": "st_dyn_news_res_death_stalker_11"
-									},
-									{
-										"text": "Ну помер да помер мужик, тут кстати если работа нужна - идите к Сахарову, за части монстров отличные деньги даёт! Ну и ассистент его, Семёнов вроде, всё время ему нужна помощь с изучением монстров.",
-										"_id": "st_dyn_news_res_death_stalker_12"
-									},
-									{
-										"text": "Ооо, ништяк! Как раз был заказ на этого упыря, а его хоба уже и кокнули! Меньше мороки!",
-										"_id": "st_dyn_news_res_death_stalker_13"
-									},
-									{
-										"text": "Был мужик - и нету мужика.",
-										"_id": "st_dyn_news_res_death_stalker_14"
-									},
-									{
-										"text": "Зона тебе пухом, чувак.",
-										"_id": "st_dyn_news_res_death_stalker_15"
-									},
-									{
-										"text": "Самая приятная смерть в Зоне - от пули, это всё лучше чем в когтях мутантов, поверьте...",
-										"_id": "st_dyn_news_res_death_stalker_16"
-									},
-									{
-										"text": "Отмучился пацан...",
-										"_id": "st_dyn_news_res_death_stalker_17"
-									},
-									{
-										"text": "Хоть не монстр сожрал, и то хорошо!",
-										"_id": "st_dyn_news_res_death_stalker_18"
-									},
-									{
-										"text": "Надо бы его хабарок подобрать, пока рядом никого...",
-										"_id": "st_dyn_news_res_death_stalker_19"
-									},
-									{
-										"text": "Жил без страха и умер без страха!",
-										"_id": "st_dyn_news_res_death_stalker_20"
-									},
-									{
-										"text": "Здоровый, сильный был пацан, пока маслин он не поймал...",
-										"_id": "st_dyn_news_res_death_stalker_21"
-									},
-									{
-										"text": "Ну чё мужики, выпьем за упокой души погибшего!?",
-										"_id": "st_dyn_news_res_death_stalker_22"
-									},
-									{
-										"text": "А жмур он добрый, жмур ведь со мной поделится, ага?",
-										"_id": "st_dyn_news_res_death_stalker_23"
-									},
-									{
-										"text": "Самое время собирать трофеи!",
-										"_id": "st_dyn_news_res_death_stalker_24"
-									},
-									{
-										"text": "Ну почему тут люди стреляют в людей? Тут и так выжить трудно!",
-										"_id": "st_dyn_news_res_death_stalker_25"
-									},
-									{
-										"text": "И так каждый день...",
-										"_id": "st_dyn_news_res_death_stalker_26"
-									},
-									{
-										"text": "Блин, ну жалко поцыка, чё ещё сказать...",
-										"_id": "st_dyn_news_res_death_stalker_27"
-									},
-									{
-										"text": "Не, ну я ваще не понял...",
-										"_id": "st_dyn_news_res_death_stalker_28"
-									},
-									{
-										"text": "Ампец вам, падлы!",
-										"_id": "st_dyn_news_res_death_stalker_29"
-									},
-									{
-										"text": "Да я щас этого убийцу в бушлат деревянный одену, сука!",
-										"_id": "st_dyn_news_res_death_stalker_30"
-									},
-									{
-										"text": "Чики-брики и в жмурики!",
-										"_id": "st_dyn_news_res_death_stalker_31"
-									},
-									{
-										"text": "Зажмурился сталкер.",
-										"_id": "st_dyn_news_res_death_stalker_32"
+										"fake" : [
+											{
+												"text": "Что за похерень?",
+												"_id": "st_dyn_news_res_fake_death_stalker_1"
+											},
+											{
+												"text": "Знаком с ним был, жалко парня.",
+												"_id": "st_dyn_news_res_fake_death_stalker_2"
+											},
+											{
+												"text": "Может, это был суицид.",
+												"_id": "st_dyn_news_res_fake_death_stalker_3"
+											},
+											{
+												"text": "Давно такой хрени не видел.",
+												"_id": "st_dyn_news_res_fake_death_stalker_4"
+											},
+											{
+												"text": "Я знал, что он допрыгается...",
+												"_id": "st_dyn_news_res_fake_death_stalker_5"
+											},
+											{
+												"text": "[Вырезано цензурой]",
+												"_id": "st_dyn_news_res_fake_death_stalker_6"
+											},
+											{
+												"text": "Ещё один...",
+												"_id": "st_dyn_news_res_fake_death_stalker_7"
+											},
+											{
+												"text": "Таак...",
+												"_id": "st_dyn_news_res_fake_death_stalker_8"
+											},
+											{
+												"text": "Мдя, ни дня без этого.",
+												"_id": "st_dyn_news_res_fake_death_stalker_9"
+											},
+											{
+												"text": "Одним больше, одним меньше...",
+												"_id": "st_dyn_news_res_fake_death_stalker_10"
+											},
+											{
+												"text": "Все там будем",
+												"_id": "st_dyn_news_res_fake_death_stalker_11"
+											},
+											{
+												"text": "Помянуть надо бы...",
+												"_id": "st_dyn_news_res_fake_death_stalker_12"
+											},
+											{
+												"text": "Зона тебе пухом.",
+												"_id": "st_dyn_news_res_fake_death_stalker_13"
+											},
+											{
+												"text": "Как в воду глядел - скопытился!",
+												"_id": "st_dyn_news_res_fake_death_stalker_14"
+											},
+											{
+												"text": "Мля.",
+												"_id": "st_dyn_news_res_fake_death_stalker_15"
+											},
+											{
+												"text": "Звиздец.",
+												"_id": "st_dyn_news_res_fake_death_stalker_16"
+											},
+											{
+												"text": "Звиздец да и только.",
+												"_id": "st_dyn_news_res_fake_death_stalker_17"
+											},
+											{
+												"text": "Замочить бы всех...",
+												"_id": "st_dyn_news_res_fake_death_stalker_18"
+											},
+											{
+												"text": "Жопа кароче.",
+												"_id": "st_dyn_news_res_fake_death_stalker_19"
+											},
+											{
+												"text": "Кароче, хрень полная.",
+												"_id": "st_dyn_news_res_fake_death_stalker_20"
+											},
+											{
+												"text": "Суки! Такого человека погубили! Найду - жопу на британский флаг порву!",
+												"_id": "st_dyn_news_res_fake_death_stalker_21"
+											},
+											{
+												"text": "Трупом больше - трупом меньше, хех!",
+												"_id": "st_dyn_news_res_fake_death_stalker_22"
+											},
+											{
+												"text": "О! Сидрыч, хоть и не я убил его, но с тебя всё равно причитается!",
+												"_id": "st_dyn_news_res_fake_death_stalker_23"
+											},
+											{
+												"text": "Бармен, чё делать-то теперь? Ладно, пойду посмотрю на труп, вдруг на флешке инфа эта есть... Если чё, пиши в личку.",
+												"_id": "st_dyn_news_res_fake_death_stalker_24"
+											},
+											{
+												"text": "Оба-на, ходил-то с такой-то пушкой, а отбиться не смог... Пойду прогуляюсь за его стволом... Если чё, то я ёе первый забил!",
+												"_id": "st_dyn_news_res_fake_death_stalker_25"
+											},
+											{
+												"text": "Эх, собаке - собачья смерть.",
+												"_id": "st_dyn_news_res_fake_death_stalker_26"
+											},
+											{
+												"text": "Шакальё совсем озверело, давно пора этих уродов в расход...",
+												"_id": "st_dyn_news_res_fake_death_stalker_27"
+											},
+											{
+												"text": "Уроды! Мать их! Совсем страх потеряли!...",
+												"_id": "st_dyn_news_res_fake_death_stalker_28"
+											},
+											{
+												"text": "Ээээээ... Ну чё, братцы?! Кто со мной, крыс этих мочить?!...",
+												"_id": "st_dyn_news_res_fake_death_stalker_29"
+											},
+											{
+												"text": "Да когда ж это кончится?!...",
+												"_id": "st_dyn_news_res_fake_death_stalker_30"
+											},
+											{
+												"text": "Твою мать! А я-то думал, что всех порешил...",
+												"_id": "st_dyn_news_res_fake_death_stalker_31"
+											},
+											{
+												"text": "Мля, только вчера с ним виделись...  Жаль пацана...",
+												"_id": "st_dyn_news_res_fake_death_stalker_32"
+											},
+											{
+												"text": "Земля пухом! Хороший сталкер был...  Пойду КПК подберу, мож хабар остался...",
+												"_id": "st_dyn_news_res_fake_death_stalker_33"
+											},
+											{
+												"text": "Что с зоной происходит?...  Раньше вот за хабаром ходили, боялись монстров и аномалий, а сейчас и брата сталкера опасаться приходится...",
+												"_id": "st_dyn_news_res_fake_death_stalker_34"
+											},
+											{
+												"text": "Вояки новое оружие в Зону закинули. Вот бы достать...",
+												"_id": "st_dyn_news_res_fake_death_stalker_35"
+											},
+											{
+												"text": "Жалко парня...",
+												"_id": "st_dyn_news_res_fake_death_stalker_36"
+											},
+											{
+												"text": "Ещё один пропавший в Зоне...",
+												"_id": "st_dyn_news_res_fake_death_stalker_37"
+											},
+											{
+												"text": "Был фраер и нету фраера...",
+												"_id": "st_dyn_news_res_fake_death_stalker_38"
+											},
+											{
+												"text": "Знатно парня порешали, однако.",
+												"_id": "st_dyn_news_res_fake_death_stalker_39"
+											},
+											{
+												"text": "Во, не повезло мэну...",
+												"_id": "st_dyn_news_res_fake_death_stalker_40"
+											},
+											{
+												"text": "Вот сучары, друга моего убили, размолочу нахер этого убийцу!",
+												"_id": "st_dyn_news_res_fake_death_stalker_41"
+											},
+											{
+												"text": "То монстры, то бандиты,то зомби, то фанатики, то военные, достали блин, и те и те поиметь тебя пытаются.",
+												"_id": "st_dyn_news_res_fake_death_stalker_42"
+											},
+											{
+												"text": "Ну сдох мужик, с кем не бывает?",
+												"_id": "st_dyn_news_res_fake_death_stalker_43"
+											},
+											{
+												"text": "Ну, достанем водяру, помянем покойничка!",
+												"_id": "st_dyn_news_res_fake_death_stalker_44"
+											},
+											{
+												"text": "Хе-хе, поглядим, чем богат усопший был!",
+												"_id": "st_dyn_news_res_fake_death_stalker_45"
+											},
+											{
+												"text": "Че там, успели жмурика то обчистить или нет?",
+												"_id": "st_dyn_news_res_fake_death_stalker_46"
+											},
+											{
+												"text": "Ну вот и ещё один конкурент в мир иной отошёл... Аминь!...",
+												"_id": "st_dyn_news_res_fake_death_stalker_47"
+											},
+											{
+												"text": "А говорил - заговорённый!...   хех!...",
+												"_id": "st_dyn_news_res_fake_death_stalker_48"
+											},
+											{
+												"text": "Вот мля, а он мне денег должен!",
+												"_id": "st_dyn_news_res_fake_death_stalker_49"
+											},
+											{
+												"text": "Что у него было при себе? Иль всё убийца выгреб?",
+												"_id": "st_dyn_news_res_fake_death_stalker_50"
+											},
+											{
+												"text": "Такого человека погубили!!!",
+												"_id": "st_dyn_news_res_fake_death_stalker_51"
+											},
+											{
+												"text": "Ну и поделом ему!!!",
+												"_id": "st_dyn_news_res_fake_death_stalker_52"
+											},
+											{
+												"text": "Я недалеко! Могу помочь!",
+												"_id": "st_dyn_news_res_fake_death_stalker_53"
+											},
+											{
+												"text": "Друга моего сволочи убили! Парни, вы не видели кто это сделал? Если видели, стукните в личку",
+												"_id": "st_dyn_news_res_fake_death_stalker_54"
+											},
+											{
+												"text": "Одним 'стариком' меньше.",
+												"_id": "st_dyn_news_res_fake_death_stalker_55"
+											},
+											{
+												"text": "Опа! Чур снаряга этого лошары моя!",
+												"_id": "st_dyn_news_res_fake_death_stalker_56"
+											},
+											{
+												"text": "Жопой чую, не к добру это...",
+												"_id": "st_dyn_news_res_fake_death_stalker_57"
+											},
+											{
+												"text": "Не засоряем канал! Ну помер мужик... не первый и не последний.",
+												"_id": "st_dyn_news_res_fake_death_stalker_58"
+											},
+											{
+												"text": "Видал я этого. Давно надо было порешить.",
+												"_id": "st_dyn_news_res_fake_death_stalker_59"
+											},
+											{
+												"text": "Минус один.",
+												"_id": "st_dyn_news_res_fake_death_stalker_60"
+											},
+											{
+												"text": "Фу-х! Слава Богу, что я с ним не пошёл сегодня на ходку. Вот чуяло моё сердце!",
+												"_id": "st_dyn_news_res_fake_death_stalker_61"
+											},
+											{
+												"text": "Хорошо, что меня рядом с ним не было, вот прям очком чувствовал!",
+												"_id": "st_dyn_news_res_fake_death_stalker_62"
+											},
+											{
+												"text": "Ну да, ну да, не повезло пацану.",
+												"_id": "st_dyn_news_res_fake_death_stalker_63"
+											},
+											{
+												"text": "Чувака скопытило!",
+												"_id": "st_dyn_news_res_fake_death_stalker_64"
+											},
+											{
+												"text": "Приплыл мэн...",
+												"_id": "st_dyn_news_res_fake_death_stalker_65"
+											},
+											{
+												"text": "Вот факушки! Походу перестрелка рядом!",
+												"_id": "st_dyn_news_res_fake_death_stalker_66"
+											},
+											{
+												"text": "А неверных становится все меньше и меньше...",
+												"_id": "st_dyn_news_res_fake_death_stalker_67"
+											},
+											{
+												"text": "Меньше народа - больше кислорода.",
+												"_id": "st_dyn_news_res_fake_death_stalker_68"
+											},
+											{
+												"text": "Эти идиоты и впрямь перестрелку устроили!",
+												"_id": "st_dyn_news_res_fake_death_stalker_69"
+											},
+											{
+												"text": "Ну шо сказать... лох это судьба!",
+												"_id": "st_dyn_news_res_fake_death_stalker_70"
+											},
+											{
+												"text": "Вот и правильно, нехрен было выёживаться.",
+												"_id": "st_dyn_news_res_fake_death_stalker_71"
+											},
+											{
+												"text": "Поглядим, чем ты богатый был...",
+												"_id": "st_dyn_news_res_fake_death_stalker_72"
+											},
+											{
+												"text": "Щас глянем насчёт трофеев.",
+												"_id": "st_dyn_news_res_fake_death_stalker_73"
+											},
+											{
+												"text": "Опа-опа! И чё у нас тут?",
+												"_id": "st_dyn_news_res_fake_death_stalker_74"
+											},
+											{
+												"text": "Так, жмуров к осмотру!",
+												"_id": "st_dyn_news_res_fake_death_stalker_75"
+											},
+											{
+												"text": "Так уважаемый покойничек, чем мы там, интересно, богатые?",
+												"_id": "st_dyn_news_res_fake_death_stalker_76"
+											},
+											{
+												"text": "Ну-ка мэн, полежи-ка ещё пять сек и я заберу твое добро, на том свете тебе точно не понадобится твоя снаряга.",
+												"_id": "st_dyn_news_res_fake_death_stalker_77"
+											},
+											{
+												"text": "Такс, ну чё там у этого дяди интересного в карманах было?",
+												"_id": "st_dyn_news_res_fake_death_stalker_78"
+											},
+											{
+												"text": "А ну-ка, ну-ка...",
+												"_id": "st_dyn_news_res_fake_death_stalker_79"
+											},
+											{
+												"text": "Положили его в гроб... хуй уперся в потолок... так, просто к случаю, песню вспомнил про деда Максима, хех.",
+												"_id": "st_dyn_news_res_fake_death_stalker_80"
+											},
+											{
+												"text": "Убило мужика!",
+												"_id": "st_dyn_news_res_fake_death_stalker_81"
+											},
+											{
+												"text": "Завалили такого человека!",
+												"_id": "st_dyn_news_res_fake_death_stalker_82"
+											},
+											{
+												"text": "Вот гниды, найду и урою нахрен того, кто это сделал!",
+												"_id": "st_dyn_news_res_fake_death_stalker_83"
+											},
+											{
+												"text": "Грустно видеть такое...",
+												"_id": "st_dyn_news_res_fake_death_stalker_84"
+											},
+											{
+												"text": "Жалость-то какая...",
+												"_id": "st_dyn_news_res_fake_death_stalker_85"
+											},
+											{
+												"text": "Эмм, что тут произошло?",
+												"_id": "st_dyn_news_res_fake_death_stalker_86"
+											},
+											{
+												"text": "Я найду того, кто это сделал!",
+												"_id": "st_dyn_news_res_fake_death_stalker_87"
+											},
+											{
+												"text": "Хм, тело ещё свежее, похоже убийца где-то тут рядом!",
+												"_id": "st_dyn_news_res_fake_death_stalker_88"
+											},
+											{
+												"text": "Ну чё там у жмура по хабару?",
+												"_id": "st_dyn_news_res_fake_death_stalker_89"
+											},
+											{
+												"text": "Хороший был мужик...",
+												"_id": "st_dyn_news_res_fake_death_stalker_90"
+											},
+											{
+												"text": "Вчера только ещё у костра сидели и анекдоты рассказывали, а тут вот...",
+												"_id": "st_dyn_news_res_fake_death_stalker_91"
+											},
+											{
+												"text": "Ну помер да помер мужик, тут кстати если работа нужна - идите к Сахарову, за части монстров отличные деньги даёт! Ну и ассистент его, Семёнов вроде, всё время ему нужна помощь с изучением монстров.",
+												"_id": "st_dyn_news_res_fake_death_stalker_92"
+											},
+											{
+												"text": "Ооо, ништяк! Как раз был заказ на этого упыря, а его хоба уже и кокнули! Меньше мороки!",
+												"_id": "st_dyn_news_res_fake_death_stalker_93"
+											},
+											{
+												"text": "Был мужик - и нету мужика.",
+												"_id": "st_dyn_news_res_fake_death_stalker_94"
+											},
+											{
+												"text": "Зона тебе пухом, чувак.",
+												"_id": "st_dyn_news_res_fake_death_stalker_95"
+											},
+											{
+												"text": "Самая приятная смерть в Зоне - от пули, это всё лучше чем в когтях мутантов, поверьте...",
+												"_id": "st_dyn_news_res_fake_death_stalker_96"
+											},
+											{
+												"text": "Отмучился пацан...",
+												"_id": "st_dyn_news_res_fake_death_stalker_97"
+											},
+											{
+												"text": "Хоть не монстр сожрал, и то хорошо!",
+												"_id": "st_dyn_news_res_fake_death_stalker_98"
+											},
+											{
+												"text": "Надо бы его хабарок подобрать, пока рядом никого...",
+												"_id": "st_dyn_news_res_fake_death_stalker_99"
+											},
+											{
+												"text": "Жил без страха и умер без страха!",
+												"_id": "st_dyn_news_res_fake_death_stalker_100"
+											},
+											{
+												"text": "Здоровый, сильный был пацан, пока маслин он не поймал...",
+												"_id": "st_dyn_news_res_fake_death_stalker_101"
+											},
+											{
+												"text": "Ну чё мужики, выпьем за упокой души погибшего!?",
+												"_id": "st_dyn_news_res_fake_death_stalker_102"
+											},
+											{
+												"text": "А жмур он добрый, жмур ведь со мной поделится, ага?",
+												"_id": "st_dyn_news_res_fake_death_stalker_103"
+											},
+											{
+												"text": "Самое время собирать трофеи!",
+												"_id": "st_dyn_news_res_fake_death_stalker_104"
+											},
+											{
+												"text": "Ну почему тут люди стреляют в людей? Тут и так выжить трудно!",
+												"_id": "st_dyn_news_res_fake_death_stalker_105"
+											},
+											{
+												"text": "И так каждый день...",
+												"_id": "st_dyn_news_res_fake_death_stalker_106"
+											},
+											{
+												"text": "Блин, ну жалко поцыка, чё ещё сказать...",
+												"_id": "st_dyn_news_res_fake_death_stalker_107"
+											},
+											{
+												"text": "Не, ну я ваще не понял...",
+												"_id": "st_dyn_news_res_fake_death_stalker_108"
+											},
+											{
+												"text": "Ампец вам, падлы!",
+												"_id": "st_dyn_news_res_fake_death_stalker_109"
+											},
+											{
+												"text": "Да я щас этого убийцу в бушлат деревянный одену, сука!",
+												"_id": "st_dyn_news_res_fake_death_stalker_110"
+											},
+											{
+												"text": "Чики-брики и в жмурики!",
+												"_id": "st_dyn_news_res_fake_death_stalker_111"
+											},
+											{
+												"text": "Зажмурился сталкер.",
+												"_id": "st_dyn_news_res_fake_death_stalker_112"
+											},
+											{
+												"text": "Ну, бывает",
+												"_id": "st_dyn_news_res_fake_death_stalker_113"
+											}
+										],
+										"_name" : "fake"
 									}
 								],
 								"_name": "Response - death by stalker"
@@ -7083,463 +7545,6 @@
 									}
 								],
 								"_name": "Response - death by mutant"
-							},
-							{
-								"Response fake - death by stalker": [
-									{
-										"text": "Что за похерень?",
-										"_id": "st_dyn_news_res_fake_death_stalker_1"
-									},
-									{
-										"text": "Знаком с ним был, жалко парня.",
-										"_id": "st_dyn_news_res_fake_death_stalker_2"
-									},
-									{
-										"text": "Может, это был суицид.",
-										"_id": "st_dyn_news_res_fake_death_stalker_3"
-									},
-									{
-										"text": "Давно такой хрени не видел.",
-										"_id": "st_dyn_news_res_fake_death_stalker_4"
-									},
-									{
-										"text": "Я знал, что он допрыгается...",
-										"_id": "st_dyn_news_res_fake_death_stalker_5"
-									},
-									{
-										"text": "[Вырезано цензурой]",
-										"_id": "st_dyn_news_res_fake_death_stalker_6"
-									},
-									{
-										"text": "Ещё один...",
-										"_id": "st_dyn_news_res_fake_death_stalker_7"
-									},
-									{
-										"text": "Таак...",
-										"_id": "st_dyn_news_res_fake_death_stalker_8"
-									},
-									{
-										"text": "Мдя, ни дня без этого.",
-										"_id": "st_dyn_news_res_fake_death_stalker_9"
-									},
-									{
-										"text": "Одним больше, одним меньше...",
-										"_id": "st_dyn_news_res_fake_death_stalker_10"
-									},
-									{
-										"text": "Все там будем",
-										"_id": "st_dyn_news_res_fake_death_stalker_11"
-									},
-									{
-										"text": "Помянуть надо бы...",
-										"_id": "st_dyn_news_res_fake_death_stalker_12"
-									},
-									{
-										"text": "Зона тебе пухом.",
-										"_id": "st_dyn_news_res_fake_death_stalker_13"
-									},
-									{
-										"text": "Как в воду глядел - скопытился!",
-										"_id": "st_dyn_news_res_fake_death_stalker_14"
-									},
-									{
-										"text": "Мля.",
-										"_id": "st_dyn_news_res_fake_death_stalker_15"
-									},
-									{
-										"text": "Звиздец.",
-										"_id": "st_dyn_news_res_fake_death_stalker_16"
-									},
-									{
-										"text": "Звиздец да и только.",
-										"_id": "st_dyn_news_res_fake_death_stalker_17"
-									},
-									{
-										"text": "Замочить бы всех...",
-										"_id": "st_dyn_news_res_fake_death_stalker_18"
-									},
-									{
-										"text": "Жопа кароче.",
-										"_id": "st_dyn_news_res_fake_death_stalker_19"
-									},
-									{
-										"text": "Кароче, хрень полная.",
-										"_id": "st_dyn_news_res_fake_death_stalker_20"
-									},
-									{
-										"text": "Суки! Такого человека погубили! Найду - жопу на британский флаг порву!",
-										"_id": "st_dyn_news_res_fake_death_stalker_21"
-									},
-									{
-										"text": "Трупом больше - трупом меньше, хех!",
-										"_id": "st_dyn_news_res_fake_death_stalker_22"
-									},
-									{
-										"text": "О! Сидрыч, хоть и не я убил его, но с тебя всё равно причитается!",
-										"_id": "st_dyn_news_res_fake_death_stalker_23"
-									},
-									{
-										"text": "Бармен, чё делать-то теперь? Ладно, пойду посмотрю на труп, вдруг на флешке инфа эта есть... Если чё, пиши в личку.",
-										"_id": "st_dyn_news_res_fake_death_stalker_24"
-									},
-									{
-										"text": "Оба-на, ходил-то с такой-то пушкой, а отбиться не смог... Пойду прогуляюсь за его стволом... Если чё, то я ёе первый забил!",
-										"_id": "st_dyn_news_res_fake_death_stalker_25"
-									},
-									{
-										"text": "Эх, собаке - собачья смерть.",
-										"_id": "st_dyn_news_res_fake_death_stalker_26"
-									},
-									{
-										"text": "Шакальё совсем озверело, давно пора этих уродов в расход...",
-										"_id": "st_dyn_news_res_fake_death_stalker_27"
-									},
-									{
-										"text": "Уроды! Мать их! Совсем страх потеряли!...",
-										"_id": "st_dyn_news_res_fake_death_stalker_28"
-									},
-									{
-										"text": "Ээээээ... Ну чё, братцы?! Кто со мной, крыс этих мочить?!...",
-										"_id": "st_dyn_news_res_fake_death_stalker_29"
-									},
-									{
-										"text": "Да когда ж это кончится?!...",
-										"_id": "st_dyn_news_res_fake_death_stalker_30"
-									},
-									{
-										"text": "Твою мать! А я-то думал, что всех порешил...",
-										"_id": "st_dyn_news_res_fake_death_stalker_31"
-									},
-									{
-										"text": "Мля, только вчера с ним виделись...  Жаль пацана...",
-										"_id": "st_dyn_news_res_fake_death_stalker_32"
-									},
-									{
-										"text": "Земля пухом! Хороший сталкер был...  Пойду КПК подберу, мож хабар остался...",
-										"_id": "st_dyn_news_res_fake_death_stalker_33"
-									},
-									{
-										"text": "Что с зоной происходит?...  Раньше вот за хабаром ходили, боялись монстров и аномалий, а сейчас и брата сталкера опасаться приходится...",
-										"_id": "st_dyn_news_res_fake_death_stalker_34"
-									},
-									{
-										"text": "Вояки новое оружие в Зону закинули. Вот бы достать...",
-										"_id": "st_dyn_news_res_fake_death_stalker_35"
-									},
-									{
-										"text": "Жалко парня...",
-										"_id": "st_dyn_news_res_fake_death_stalker_36"
-									},
-									{
-										"text": "Ещё один пропавший в Зоне...",
-										"_id": "st_dyn_news_res_fake_death_stalker_37"
-									},
-									{
-										"text": "Был фраер и нету фраера...",
-										"_id": "st_dyn_news_res_fake_death_stalker_38"
-									},
-									{
-										"text": "Знатно парня порешали, однако.",
-										"_id": "st_dyn_news_res_fake_death_stalker_39"
-									},
-									{
-										"text": "Во, не повезло мэну...",
-										"_id": "st_dyn_news_res_fake_death_stalker_40"
-									},
-									{
-										"text": "Вот сучары, друга моего убили, размолочу нахер этого убийцу!",
-										"_id": "st_dyn_news_res_fake_death_stalker_41"
-									},
-									{
-										"text": "То монстры, то бандиты,то зомби, то фанатики, то военные, достали блин, и те и те поиметь тебя пытаются.",
-										"_id": "st_dyn_news_res_fake_death_stalker_42"
-									},
-									{
-										"text": "Ну сдох мужик, с кем не бывает?",
-										"_id": "st_dyn_news_res_fake_death_stalker_43"
-									},
-									{
-										"text": "Ну, достанем водяру, помянем покойничка!",
-										"_id": "st_dyn_news_res_fake_death_stalker_44"
-									},
-									{
-										"text": "Хе-хе, поглядим, чем богат усопший был!",
-										"_id": "st_dyn_news_res_fake_death_stalker_45"
-									},
-									{
-										"text": "Че там, успели жмурика то обчистить или нет?",
-										"_id": "st_dyn_news_res_fake_death_stalker_46"
-									},
-									{
-										"text": "Ну вот и ещё один конкурент в мир иной отошёл... Аминь!...",
-										"_id": "st_dyn_news_res_fake_death_stalker_47"
-									},
-									{
-										"text": "А говорил - заговорённый!...   хех!...",
-										"_id": "st_dyn_news_res_fake_death_stalker_48"
-									},
-									{
-										"text": "Вот мля, а он мне денег должен!",
-										"_id": "st_dyn_news_res_fake_death_stalker_49"
-									},
-									{
-										"text": "Что у него было при себе? Иль всё убийца выгреб?",
-										"_id": "st_dyn_news_res_fake_death_stalker_50"
-									},
-									{
-										"text": "Такого человека погубили!!!",
-										"_id": "st_dyn_news_res_fake_death_stalker_51"
-									},
-									{
-										"text": "Ну и поделом ему!!!",
-										"_id": "st_dyn_news_res_fake_death_stalker_52"
-									},
-									{
-										"text": "Я недалеко! Могу помочь!",
-										"_id": "st_dyn_news_res_fake_death_stalker_53"
-									},
-									{
-										"text": "Друга моего сволочи убили! Парни, вы не видели кто это сделал? Если видели, стукните в личку",
-										"_id": "st_dyn_news_res_fake_death_stalker_54"
-									},
-									{
-										"text": "Одним 'стариком' меньше.",
-										"_id": "st_dyn_news_res_fake_death_stalker_55"
-									},
-									{
-										"text": "Опа! Чур снаряга этого лошары моя!",
-										"_id": "st_dyn_news_res_fake_death_stalker_56"
-									},
-									{
-										"text": "Жопой чую, не к добру это...",
-										"_id": "st_dyn_news_res_fake_death_stalker_57"
-									},
-									{
-										"text": "Не засоряем канал! Ну помер мужик... не первый и не последний.",
-										"_id": "st_dyn_news_res_fake_death_stalker_58"
-									},
-									{
-										"text": "Видал я этого. Давно надо было порешить.",
-										"_id": "st_dyn_news_res_fake_death_stalker_59"
-									},
-									{
-										"text": "Минус один.",
-										"_id": "st_dyn_news_res_fake_death_stalker_60"
-									},
-									{
-										"text": "Фу-х! Слава Богу, что я с ним не пошёл сегодня на ходку. Вот чуяло моё сердце!",
-										"_id": "st_dyn_news_res_fake_death_stalker_61"
-									},
-									{
-										"text": "Хорошо, что меня рядом с ним не было, вот прям очком чувствовал!",
-										"_id": "st_dyn_news_res_fake_death_stalker_62"
-									},
-									{
-										"text": "Ну да, ну да, не повезло пацану.",
-										"_id": "st_dyn_news_res_fake_death_stalker_63"
-									},
-									{
-										"text": "Чувака скопытило!",
-										"_id": "st_dyn_news_res_fake_death_stalker_64"
-									},
-									{
-										"text": "Приплыл мэн...",
-										"_id": "st_dyn_news_res_fake_death_stalker_65"
-									},
-									{
-										"text": "Вот факушки! Походу перестрелка рядом!",
-										"_id": "st_dyn_news_res_fake_death_stalker_66"
-									},
-									{
-										"text": "А неверных становится все меньше и меньше...",
-										"_id": "st_dyn_news_res_fake_death_stalker_67"
-									},
-									{
-										"text": "Меньше народа - больше кислорода.",
-										"_id": "st_dyn_news_res_fake_death_stalker_68"
-									},
-									{
-										"text": "Эти идиоты и впрямь перестрелку устроили!",
-										"_id": "st_dyn_news_res_fake_death_stalker_69"
-									},
-									{
-										"text": "Ну шо сказать... лох это судьба!",
-										"_id": "st_dyn_news_res_fake_death_stalker_70"
-									},
-									{
-										"text": "Вот и правильно, нехрен было выёживаться.",
-										"_id": "st_dyn_news_res_fake_death_stalker_71"
-									},
-									{
-										"text": "Поглядим, чем ты богатый был...",
-										"_id": "st_dyn_news_res_fake_death_stalker_72"
-									},
-									{
-										"text": "Щас глянем насчёт трофеев.",
-										"_id": "st_dyn_news_res_fake_death_stalker_73"
-									},
-									{
-										"text": "Опа-опа! И чё у нас тут?",
-										"_id": "st_dyn_news_res_fake_death_stalker_74"
-									},
-									{
-										"text": "Так, жмуров к осмотру!",
-										"_id": "st_dyn_news_res_fake_death_stalker_75"
-									},
-									{
-										"text": "Так уважаемый покойничек, чем мы там, интересно, богатые?",
-										"_id": "st_dyn_news_res_fake_death_stalker_76"
-									},
-									{
-										"text": "Ну-ка мэн, полежи-ка ещё пять сек и я заберу твое добро, на том свете тебе точно не понадобится твоя снаряга.",
-										"_id": "st_dyn_news_res_fake_death_stalker_77"
-									},
-									{
-										"text": "Такс, ну чё там у этого дяди интересного в карманах было?",
-										"_id": "st_dyn_news_res_fake_death_stalker_78"
-									},
-									{
-										"text": "А ну-ка, ну-ка...",
-										"_id": "st_dyn_news_res_fake_death_stalker_79"
-									},
-									{
-										"text": "Положили его в гроб... хуй уперся в потолок... так, просто к случаю, песню вспомнил про деда Максима, хех.",
-										"_id": "st_dyn_news_res_fake_death_stalker_80"
-									},
-									{
-										"text": "Убило мужика!",
-										"_id": "st_dyn_news_res_fake_death_stalker_81"
-									},
-									{
-										"text": "Завалили такого человека!",
-										"_id": "st_dyn_news_res_fake_death_stalker_82"
-									},
-									{
-										"text": "Вот гниды, найду и урою нахрен того, кто это сделал!",
-										"_id": "st_dyn_news_res_fake_death_stalker_83"
-									},
-									{
-										"text": "Грустно видеть такое...",
-										"_id": "st_dyn_news_res_fake_death_stalker_84"
-									},
-									{
-										"text": "Жалость-то какая...",
-										"_id": "st_dyn_news_res_fake_death_stalker_85"
-									},
-									{
-										"text": "Эмм, что тут произошло?",
-										"_id": "st_dyn_news_res_fake_death_stalker_86"
-									},
-									{
-										"text": "Я найду того, кто это сделал!",
-										"_id": "st_dyn_news_res_fake_death_stalker_87"
-									},
-									{
-										"text": "Хм, тело ещё свежее, похоже убийца где-то тут рядом!",
-										"_id": "st_dyn_news_res_fake_death_stalker_88"
-									},
-									{
-										"text": "Ну чё там у жмура по хабару?",
-										"_id": "st_dyn_news_res_fake_death_stalker_89"
-									},
-									{
-										"text": "Хороший был мужик...",
-										"_id": "st_dyn_news_res_fake_death_stalker_90"
-									},
-									{
-										"text": "Вчера только ещё у костра сидели и анекдоты рассказывали, а тут вот...",
-										"_id": "st_dyn_news_res_fake_death_stalker_91"
-									},
-									{
-										"text": "Ну помер да помер мужик, тут кстати если работа нужна - идите к Сахарову, за части монстров отличные деньги даёт! Ну и ассистент его, Семёнов вроде, всё время ему нужна помощь с изучением монстров.",
-										"_id": "st_dyn_news_res_fake_death_stalker_92"
-									},
-									{
-										"text": "Ооо, ништяк! Как раз был заказ на этого упыря, а его хоба уже и кокнули! Меньше мороки!",
-										"_id": "st_dyn_news_res_fake_death_stalker_93"
-									},
-									{
-										"text": "Был мужик - и нету мужика.",
-										"_id": "st_dyn_news_res_fake_death_stalker_94"
-									},
-									{
-										"text": "Зона тебе пухом, чувак.",
-										"_id": "st_dyn_news_res_fake_death_stalker_95"
-									},
-									{
-										"text": "Самая приятная смерть в Зоне - от пули, это всё лучше чем в когтях мутантов, поверьте...",
-										"_id": "st_dyn_news_res_fake_death_stalker_96"
-									},
-									{
-										"text": "Отмучился пацан...",
-										"_id": "st_dyn_news_res_fake_death_stalker_97"
-									},
-									{
-										"text": "Хоть не монстр сожрал, и то хорошо!",
-										"_id": "st_dyn_news_res_fake_death_stalker_98"
-									},
-									{
-										"text": "Надо бы его хабарок подобрать, пока рядом никого...",
-										"_id": "st_dyn_news_res_fake_death_stalker_99"
-									},
-									{
-										"text": "Жил без страха и умер без страха!",
-										"_id": "st_dyn_news_res_fake_death_stalker_100"
-									},
-									{
-										"text": "Здоровый, сильный был пацан, пока маслин он не поймал...",
-										"_id": "st_dyn_news_res_fake_death_stalker_101"
-									},
-									{
-										"text": "Ну чё мужики, выпьем за упокой души погибшего!?",
-										"_id": "st_dyn_news_res_fake_death_stalker_102"
-									},
-									{
-										"text": "А жмур он добрый, жмур ведь со мной поделится, ага?",
-										"_id": "st_dyn_news_res_fake_death_stalker_103"
-									},
-									{
-										"text": "Самое время собирать трофеи!",
-										"_id": "st_dyn_news_res_fake_death_stalker_104"
-									},
-									{
-										"text": "Ну почему тут люди стреляют в людей? Тут и так выжить трудно!",
-										"_id": "st_dyn_news_res_fake_death_stalker_105"
-									},
-									{
-										"text": "И так каждый день...",
-										"_id": "st_dyn_news_res_fake_death_stalker_106"
-									},
-									{
-										"text": "Блин, ну жалко поцыка, чё ещё сказать...",
-										"_id": "st_dyn_news_res_fake_death_stalker_107"
-									},
-									{
-										"text": "Не, ну я ваще не понял...",
-										"_id": "st_dyn_news_res_fake_death_stalker_108"
-									},
-									{
-										"text": "Ампец вам, падлы!",
-										"_id": "st_dyn_news_res_fake_death_stalker_109"
-									},
-									{
-										"text": "Да я щас этого убийцу в бушлат деревянный одену, сука!",
-										"_id": "st_dyn_news_res_fake_death_stalker_110"
-									},
-									{
-										"text": "Чики-брики и в жмурики!",
-										"_id": "st_dyn_news_res_fake_death_stalker_111"
-									},
-									{
-										"text": "Зажмурился сталкер.",
-										"_id": "st_dyn_news_res_fake_death_stalker_112"
-									},
-									{
-										"text": "Ну, бывает",
-										"_id": "st_dyn_news_res_fake_death_stalker_113"
-									}
-								],
-								"_name": "Response fake - death by stalker"
 							},
 							{
 								"Response fake - death by mutant": [

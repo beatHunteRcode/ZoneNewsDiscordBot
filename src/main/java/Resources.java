@@ -1,5 +1,3 @@
-import javax.print.DocFlavor;
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Resources {
@@ -37,8 +35,9 @@ public class Resources {
             "Начальник","Ниндзя","Нарцисс","Насос","Ништяк","Нытик","Нудный","Неудачник","Неумёха","Небрежный",
             "Нельсон","Нептун","Наполеон","Нерв", "Очко", "Кочерга", "Короткий", "Прикол", "Бомж", "Свиноколбас",
             "Посейдон", "Решала", "Санитар", "Штурман", "Поц", "Купчино", "Кила", "Программист", "Половой демократ",
-            "Крыса", "Подзаборный", "Неудачник"
-            );
+            "Крыса", "Подзаборный", "Неудачник", "Чирий", "Щачло", "Хозяин", "Заднепривод", "Кремень", "Неудачник",
+            "Иксбокс", "Путин", "Кроль", "Пузо"
+    );
 
     private static List<String> stalkerNamesList = Arrays.asList(
             "Руслан","Саша","Сергей","Слава","Толик","Юра","Богдан","Вениамин","Виталий","Вова","Дима","Иван",
@@ -54,7 +53,7 @@ public class Resources {
             "Игорек","Илья","Костя","Костик","Толик","Лева","Леня","Ленька","Макс","Матвей","Митя","Миша","Мишка",
             "Никита","Ник","Антон","Коля","Олег","Паша","Пашка","Петро","Петя","Петька","Рома","Ромка","Ростик",
             "Тошка","Рус","Сава","Семен","Сема","Серега","Сеня","Степан","Степа","Тима","Тимка","Артем","Федор",
-            "Федя","Федька","Филя","Филька","Эдик","Юрка","Юрик","Юрко","Яша"
+            "Федя","Федька","Филя","Филька","Эдик","Юрка","Юрик","Юрко","Яша", "Пахомий"
     );
 
     private static List<String> scientistNamesList = Arrays.asList(
@@ -92,11 +91,11 @@ public class Resources {
             "Генерал","Полковник","Подполковник","Майор","Капитан","Лейтенант","Прапорщик","Сержант","Рядовой"
     );
 
-    private static List<String> groupsList = Arrays.asList(
+    private static List<String> factionsList = Arrays.asList(
             "Свобода", "Монолит", "Ренегаты", "Чистое Небо", "Наёмники", "Долг", "Учёные", "Бандиты", "Военные",
             "Одиночки", "Зомбированные"
     );
-    private static List<String> groupsListKilled = Arrays.asList(
+    private static List<String> factionsListKilled = Arrays.asList(
             "Свободовец", "\"Свобода\"", "Монолитовец", "\"Монолит\"", "Ренегат", "Чистонебовец", "\"Чистое Небо\"",
             "Наёмник", "Долговец", "\"Долг\"", "Учёный", "Бандит", "Военный", "Одиночка", "Зомбированный"
     );
@@ -131,7 +130,7 @@ public class Resources {
 
     private static String botInfo = "Zone News Bot (Новости Зоны) v0.4 by beatHunteR";
 
-    public static List<String> getGroupsListKilled() { return groupsListKilled; }
+    public static List<String> getFactionsListKilled() { return factionsListKilled; }
 
     public static List<String> getScientistNamesList() { return scientistNamesList; }
 
@@ -139,7 +138,7 @@ public class Resources {
 
     public static List<String> getStalkerNamesList() { return stalkerNamesList; }
 
-    public static List<String> getGroupsList() { return groupsList; }
+    public static List<String> getFactionsList() { return factionsList; }
 
     public static List<String> getArtefactsList() { return artefactsList; }
 
