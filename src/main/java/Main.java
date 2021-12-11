@@ -1,6 +1,12 @@
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import net.dv8tion.jda.api.AccountType;
+import com.github.instagram4j.instagram4j.IGClient;
+import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
+import com.github.instagram4j.instagram4j.models.media.timeline.TimelineImageMedia;
+import com.github.instagram4j.instagram4j.models.media.timeline.TimelineMedia;
+import com.github.instagram4j.instagram4j.requests.feed.FeedUserRequest;
+import com.github.instagram4j.instagram4j.responses.feed.FeedUserResponse;
+import com.github.instagram4j.instagram4j.responses.users.UsersSearchResponse;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -10,27 +16,51 @@ import javax.security.auth.login.LoginException;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
 
 public class Main extends ListenerAdapter {
 
-    private final int MIN_TIME_DELAY = 1000 * 60 * 10;
-    private final int MAX_TIME_DELAY = 1000 * 60 * 15;
+    private static final int MIN_TIME_DELAY = 1000 * 60 * 10;
+    private static final int MAX_TIME_DELAY = 1000 * 60 * 15;
 
     private char prefix = '-';
 
     private ArrayList<String> lastNewsList = new ArrayList<>();
     public static Map<String, Boolean> mapOfGenerators = new HashMap<>();
     public  static Map<String, Thread> mapOfThreads = new HashMap<>();
+    public static List<String> urlsList = new ArrayList<>();
 
+
+    private static Thread downloadMemesThread = new Thread();
 
     public static void main(String[] args) throws LoginException {
-        String botToken = "NjM2OTg4NzAyMjI0MDIzNTg0.XbHn9Q.MM0-krmdSDhUyfrwIC30oo792d0";
+        String botToken = "NjM2OTg1337youdontgetmydiscordbottoken1337oo792d0";
         JDABuilder builder = JDABuilder.createDefault(botToken);
         builder.addEventListeners(new Main());
         builder.build();
 
+        instLogin();
+
+
+        downloadMemesThread = new Thread(() -> {
+           while (urlsList.size() == 0) {
+               Main.downloadMemes(Resources.getCurrentIGClient());
+               try {
+                   Thread.sleep(getRndIntInRange(MIN_TIME_DELAY, MAX_TIME_DELAY));
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
+           }
+        });
+        downloadMemesThread.start();
+
+        Calendar calendar = Calendar.getInstance();
+        Resources.setCurrentDayNumber(calendar.get(Calendar.DAY_OF_MONTH));
+        Resources.setCurrentMonthNumber(calendar.get(Calendar.MONTH));
+        Resources.setCurrentYearNumber(calendar.get(Calendar.YEAR));
+
 //        NewsGenerator newsGenerator = new NewsGenerator();
-//        for (int i = 0; i < 30; i++) {
+//        for (int i = 0; i < 1; i++) {
 //            System.out.println(newsGenerator.generateNews());
 //            System.out.println();
 //        }
@@ -39,19 +69,21 @@ public class Main extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-
         NewsGenerator newsGenerator = new NewsGenerator();
-        Thread thread = new Thread();
 
-        System.out.println( "Message from " + event.getAuthor().getName() + " (" + new Date().toString() + ")" + ":\n"
+        System.out.println( "Message from " + event.getAuthor().getName() + " in " + event.getChannel().getName() +
+                            " from " + event.getGuild().getName() +
+                            " (" + new Date().toString() + ")" + ":\n"
                             + "[--- " + event.getMessage().getContentDisplay() + " ---]");
-        if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "новость")) { //новость
+
+        String message = event.getMessage().getContentRaw();
+        if (message.equalsIgnoreCase(prefix + "новость")) { //новость
             String news = newsGenerator.generateNews();
             event.getChannel().sendMessage(news).queue();
             addNewsToList(news);
             genResponse(news, newsGenerator, event);
         }
-        if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "анекдот")) {
+        if (message.equalsIgnoreCase(prefix + "анекдот")) {
 
             try {
                 ObjectMapper mapper = new ObjectMapper();
@@ -71,52 +103,29 @@ public class Main extends ListenerAdapter {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            String response = null;
-            switch (getRndIntInRange(1, 3)) {
-                case 1:
-                    response = newsGenerator.generateResponse(2, event);
-                    event.getChannel().sendMessage(response).queue();
-                    break;
-                case 2:
-                    response = newsGenerator.generateResponse(2, event);
-                    event.getChannel().sendMessage(response).queue();
-                    response = newsGenerator.generateResponse(2, event);
-                    event.getChannel().sendMessage(response).queue();
-                    break;
-                case 3:
-                    response = newsGenerator.generateResponse(2, event);
-                    event.getChannel().sendMessage(response).queue();
-                    response = newsGenerator.generateResponse(2, event);
-                    event.getChannel().sendMessage(response).queue();
-                    response = newsGenerator.generateResponse(2, event);
-                    event.getChannel().sendMessage(response).queue();
-                    break;
-            }
+            genResponseToJoke(newsGenerator, event);
         }
-        if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "помощь")) {
+        if (message.equalsIgnoreCase(prefix + "помощь")) {
             showCommandList(event);
         }
-        if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "startNews")) {
+        if (message.equalsIgnoreCase(prefix + "startNews")) {
             if (!mapOfGenerators.containsKey(event.getChannel().getName())) {
-                thread = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        while (true) {
-                            String news = newsGenerator.generateNews();
-                            event.getChannel().sendMessage(news).queue();
-                            addNewsToList(news);
-                            genResponse(news, newsGenerator, event);
-                            try {
-                                Thread.sleep(getRndIntInRange(MIN_TIME_DELAY, MAX_TIME_DELAY));
-                            } catch (InterruptedException e) {
-                                /**
-                                 * здесь вылетает NullPointerException на вызове .interrupt(), но при этом поток завершается (?),
-                                 * новости перестают поступать и всё продолжает нормально работать.
-                                 *
-                                 * нужно попытаться исправить...
-                                 * */
-                                mapOfThreads.get(event.getChannel().getName()).interrupt();
-                            }
+                Thread thread = new Thread(() -> {
+                    while (true) {
+                        String news = newsGenerator.generateNews();
+                        event.getChannel().sendMessage(news).queue();
+                        addNewsToList(news);
+                        genResponse(news, newsGenerator, event);
+                        try {
+                            Thread.sleep(getRndIntInRange(MIN_TIME_DELAY, MAX_TIME_DELAY));
+                        } catch (InterruptedException e) {
+                            /**
+                             * здесь вылетает NullPointerException на вызове .interrupt(), но при этом поток завершается (?),
+                             * новости перестают поступать и всё продолжает нормально работать.
+                             *
+                             * нужно попытаться исправить...
+                             * */
+                            mapOfThreads.get(event.getChannel().getName()).interrupt();
                         }
                     }
                 });
@@ -126,29 +135,49 @@ public class Main extends ListenerAdapter {
             }
             else {
                 if (mapOfGenerators.get(event.getChannel().getName())) {
-                    event.getChannel().sendMessage("Error: Генератор новостей уже запущен!").queue();
+                    event.getChannel().sendMessage("Error: Лента новостей уже запущена!").queue();
                 }
             }
         }
-        if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "stopNews")) {
+        if (message.equalsIgnoreCase(prefix + "stopNews")) {
             mapOfThreads.get(event.getChannel().getName()).interrupt();
             mapOfThreads.remove(event.getChannel().getName());
             mapOfGenerators.remove(event.getChannel().getName());
         }
-        if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "недавнее")) {
+        if (message.equalsIgnoreCase(prefix + "недавнее")) {
             for (String news : lastNewsList) {
                 event.getChannel().sendMessage(news).queue();
             }
         }
-        if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "chList")) {
+        if (message.equalsIgnoreCase(prefix + "chList")) {
             getChannelsWithGensList(event);
         }
-        if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "stopAll")) {
+        if (message.equalsIgnoreCase(prefix + "stopAll")) {
             deleteGenInAllServerChannels(event);
         }
-        if (event.getMessage().getContentRaw().equalsIgnoreCase(prefix + "botInfo")) {
+        if (message.equalsIgnoreCase(prefix + "botInfo")) {
             event.getChannel().sendMessage(Resources.getBotInfo()).queue();
         }
+        if (!event.getAuthor().getName().equalsIgnoreCase("новости зоны")) {
+            if (   (message.toLowerCase().contains("анек") ||
+                    message.toLowerCase().contains("шут") ||
+                    message.toLowerCase().contains("рофл") ||
+                    message.toLowerCase().contains("юмор")) &&
+                    !message.toLowerCase().contains("-")
+            ) {
+                genResponseToJoke(newsGenerator, event);
+            }
+        }
+        if (message.equalsIgnoreCase(prefix + "мем")) {
+            StringBuilder builder = new StringBuilder();
+            builder.append(newsGenerator.genName());
+            builder.append(":\n");
+            builder.append(newsGenerator.genMemeNews());
+            event.getChannel().sendMessage(builder.toString()).queue();
+            if (!builder.toString().contains(Resources.getNoMemePhrase())) genResponseToJoke(newsGenerator, event);
+        }
+
+        dateCheck();
     }
 
 
@@ -156,44 +185,25 @@ public class Main extends ListenerAdapter {
     public void showCommandList(MessageReceivedEvent event) {
         event.getChannel().sendMessage(
                         "Список команд: \n" +
-                                prefix + "новость : выводит новость\n" +
-                                prefix + "анекдот : выводит анекдот\n" +
-                                prefix + "недавнее : выводит список последних 5 новостей\n" +
-                                prefix + "startNews : включить генератор новостей в данном канале\n" +
-                                prefix + "stopNews : выключить генератор новостей в данном канале\n" +
-                                prefix + "stopAll : выключить генератор новостей во всех каналах на сервере\n" +
-                                prefix + "chList : вывести список всех каналов на сервере, на которых запущен генератор новостей\n" +
-                                prefix + "botInfo : выводит информацию о боте"
+                                "`" + prefix + "новость` : новость\n" +
+                                "`" + prefix + "анекдот` : анекдот\n" +
+                                "`" + prefix + "мем` : мем\n" +
+                                "`" + prefix + "недавнее` : список последних 5 новостей\n" +
+                                "`" + prefix + "startnews` : включить ленту новостей в текущем канале\n" +
+                                "`" + prefix + "stopnews` : выключить ленту новостей в текущем канале\n" +
+                                "`" + prefix + "stopall` : выключить ленту новостей во всех каналах на сервере\n" +
+                                "`" + prefix + "chlist` : список всех каналов на сервере, на которых запущена лента новостей\n" +
+                                "`" + prefix + "botinfo` : информация о боте"
         ).queue();
     }
 
     public static void genResponse(String news, NewsGenerator newsGenerator, MessageReceivedEvent event) {
-        if (news.contains("Зомбированные")) {
+        if (news.contains("(Зомбированные):")) {
             String response = newsGenerator.generateResponse(1, event);
             event.getChannel().sendMessage(response).queue();
         }
-        if (newsGenerator.getNewsType() == 8) {//если тип новости - анекдот - генерируем реакцию на анекдот
-            String response = null;
-            switch (getRndIntInRange(1, 3)) {
-                case 1:
-                    response = newsGenerator.generateResponse(2, event);
-                    event.getChannel().sendMessage(response).queue();
-                    break;
-                case 2:
-                    response = newsGenerator.generateResponse(2, event);
-                    event.getChannel().sendMessage(response).queue();
-                    response = newsGenerator.generateResponse(2, event);
-                    event.getChannel().sendMessage(response).queue();
-                    break;
-                case 3:
-                    response = newsGenerator.generateResponse(2, event);
-                    event.getChannel().sendMessage(response).queue();
-                    response = newsGenerator.generateResponse(2, event);
-                    event.getChannel().sendMessage(response).queue();
-                    response = newsGenerator.generateResponse(2, event);
-                    event.getChannel().sendMessage(response).queue();
-                    break;
-            }
+        if (newsGenerator.getNewsType() == 8 || newsGenerator.getNewsType() == 13) {//если тип новости - анекдот/мем - генерируем реакцию на анекдот/мем
+            genResponseToJoke(newsGenerator, event);
         }
         if (newsGenerator.getNewsType() == 7) {
             String response = newsGenerator.generateResponse(4, event);
@@ -205,6 +215,29 @@ public class Main extends ListenerAdapter {
         }
     }
 
+    private static void genResponseToJoke(NewsGenerator newsGenerator, MessageReceivedEvent event) {
+        String response = null;
+        switch (getRndIntInRange(1, 3)) {
+            case 1:
+                response = newsGenerator.generateResponse(2, event);
+                event.getChannel().sendMessage(response).queue();
+                break;
+            case 2:
+                response = newsGenerator.generateResponse(2, event);
+                event.getChannel().sendMessage(response).queue();
+                response = newsGenerator.generateResponse(2, event);
+                event.getChannel().sendMessage(response).queue();
+                break;
+            case 3:
+                response = newsGenerator.generateResponse(2, event);
+                event.getChannel().sendMessage(response).queue();
+                response = newsGenerator.generateResponse(2, event);
+                event.getChannel().sendMessage(response).queue();
+                response = newsGenerator.generateResponse(2, event);
+                event.getChannel().sendMessage(response).queue();
+                break;
+        }
+    }
     private static int getRndIntInRange(int min, int max){
         return (int) (Math.random()*((max-min)+1))+min;
     }
@@ -242,7 +275,7 @@ public class Main extends ListenerAdapter {
         }
 
         if (mapOfGenerators.isEmpty()) {
-            event.getChannel().sendMessage("Нигде ещё не запущен генератор новостей.").queue();
+            event.getChannel().sendMessage("Нигде ещё не запущена лента новостей.").queue();
         }
         for (String key : mapOfGenerators.keySet()) {
             if (channelsNamesList.contains(key)) event.getChannel().sendMessage(key).queue();
@@ -253,5 +286,68 @@ public class Main extends ListenerAdapter {
         event.getChannel().sendMessage(event.getChannel().getName()).queue();
     }
 
+    private static void instLogin() {
+        try {
+            IGClient client = IGClient.builder()
+                    .username("***")
+                    .password("***")
+                    .login();
+
+            Resources.setCurrentIGClient(client);
+        } catch (IGLoginException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void downloadMemes(IGClient client) {
+            client.actions().search().searchUser("stalker.mem").thenAccept(usersSearchResponse -> {
+                downloadTask(usersSearchResponse, client);
+            }).join();
+
+
+            client.actions().search().searchUser("stalker.mem4").thenAccept(usersSearchResponse -> {
+                downloadTask(usersSearchResponse, client);
+            }).join();
+    }
+
+    private static void downloadTask(UsersSearchResponse usersSearchResponse, IGClient client) {
+        Long pk = usersSearchResponse.getUsers().get(0).getPk();
+        FeedUserRequest req = new FeedUserRequest(pk);
+        FeedUserResponse response = client.sendRequest(req).join();
+        while (response.isMore_available()) {
+            response = client.sendRequest(new FeedUserRequest(pk, response.getNext_max_id())).join();
+            for (TimelineMedia item : response.getItems()) {
+                if (item.getMedia_type().equals("1")) {
+                    if (((TimelineImageMedia) item).getImage_versions2() != null) {
+                        urlsList.add(((TimelineImageMedia) item).getImage_versions2().getCandidates().get(0).getUrl());
+                    }
+                }
+            }
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        Collections.shuffle(urlsList);
+        System.out.println( "[----- " + new Date().toString() + ": SUCCESSFULLY DOWNLOADED ALL " + urlsList.size() +
+                            " MEMES from " + usersSearchResponse.getUsers().get(0).getFull_name() + " -----]");
+    }
+
+    private void dateCheck() {
+        Calendar calendar = Calendar.getInstance();
+        int dayNow = calendar.get(Calendar.DAY_OF_MONTH);
+        int monthNow = calendar.get(Calendar.MONTH);
+        int yearNow = calendar.get(Calendar.YEAR);
+        if (dayNow != Resources.getCurrentDayNumber() ||
+            monthNow != Resources.getCurrentMonthNumber() ||
+            yearNow != Resources.getCurrentYearNumber()) {
+            urlsList.clear();
+            downloadMemes(Resources.getCurrentIGClient());
+            Resources.setCurrentDayNumber(dayNow);
+            Resources.setCurrentMonthNumber(monthNow);
+            Resources.setCurrentYearNumber(yearNow);
+        }
+    }
 
 }

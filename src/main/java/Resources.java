@@ -1,8 +1,10 @@
+import com.github.instagram4j.instagram4j.IGClient;
+
 import java.util.*;
 
 public class Resources {
 
-    private static List<String> stalkerSurnamesList = Arrays.asList(
+    private static final List<String> stalkerSurnamesList = Arrays.asList(
             "Лысый", "Гуцул", "Цыган", "Академик", "Арап", "Зима", "Крученый", "Курок", "Чирий", "Трэш", "Тыр",
             "Клямпер", "Мальчик", "Кривой", "Бэн", "Силя", "Пашканчик", "Терминатор", "Батон", "Кот", "Сика",
             "Шапито", "Репа", "Мозг", "Боров", "Свин", "Свинец", "Навзик", "Чиж", "Лещ", "Чиркан", "Молодой",
@@ -36,10 +38,14 @@ public class Resources {
             "Нельсон","Нептун","Наполеон","Нерв", "Очко", "Кочерга", "Короткий", "Прикол", "Бомж", "Свиноколбас",
             "Посейдон", "Решала", "Санитар", "Штурман", "Поц", "Купчино", "Кила", "Программист", "Половой демократ",
             "Крыса", "Подзаборный", "Неудачник", "Чирий", "Щачло", "Хозяин", "Заднепривод", "Кремень", "Неудачник",
-            "Иксбокс", "Путин", "Кроль", "Пузо"
+            "Иксбокс", "Путин", "Кроль", "Пузо", "Бубэльбуш", "Квейк", "Контр-страйк", "Сишарп", "Джавист", "Вупсень",
+            "Пупсень", "Ненаркоторговец", "СБЭУ", "Яйчишка", "Упитыш", "Яебу", "Торч", "Светлоозерский", "Заводской",
+            "Бигмак", "Чсвешник", "Правильный", "Неправильный", "Тамада", "Абуза", "Микрофон", "Меченый", "Разрядник",
+            "Небоскрёб", "Арматура", "Левый", "Правый", "Сколопендра", "Макака", "Хорс", "Студент", "Болт", "Провод",
+            "Проводник", "Дристомёт", "Блендер", "Тридемакс", "Тюльпан", "Круглый", "Чингисхан", "Татарин"
     );
 
-    private static List<String> stalkerNamesList = Arrays.asList(
+    private static final List<String> stalkerNamesList = Arrays.asList(
             "Руслан","Саша","Сергей","Слава","Толик","Юра","Богдан","Вениамин","Виталий","Вова","Дима","Иван",
             "Костя","Леша","Андрей","Санек","Шурик","Вадя","Васян","Васек","Витюха","Веталь","Вован","Жорка","Гришка",
             "Гришко","Димон","Леха","Димуха","Жека","Фимка","Илюха","Костян","Митька","Михал","Миха","Михась","Колян",
@@ -56,14 +62,14 @@ public class Resources {
             "Федя","Федька","Филя","Филька","Эдик","Юрка","Юрик","Юрко","Яша", "Пахомий"
     );
 
-    private static List<String> scientistNamesList = Arrays.asList(
+    private static final List<String> scientistNamesList = Arrays.asList(
             "Иван", "Кирилл", "Никита","Профессор", "Михаил", "Профессор", "Егор", "Матвей","Профессор", "Профессор",
             "Андрей", "Илья", "Алексей", "Роман", "Сергей", "Профессор", "Владислав", "Профессор", "Ярослав",
             "Профессор", "Тимофей", "Арсений", "Денис", "Профессор", "Владимир", "Павел", "Профессор", "Глеб",
             "Константин", "Богдан", "Евгений","Профессор",  "Николай", "Степан", "Захар", "Профессор"
     );
 
-    private static List<String> militarySurnames = Arrays.asList(
+    private static final List<String> militarySurnames = Arrays.asList(
             "Абдурхманов","Алтынник","Андрейчук","Андрущенко","Анисьев","Ардашев","Башаков","Биноев","Бабич","Бойко",
             "Бондарёв","Блинов","Буряк","Болдескул","Борисов","Бойченко","Башмаков","Брич","Бутурин","Бяло","Баранов",
             "Баул","Балан","Барановский","Барсак","Бешевлий","Бронштейн","Богданов","Ворохаев","Воронцов","Васильев",
@@ -81,26 +87,26 @@ public class Resources {
             "Мазепа","Никаноров","Никулин","Никешин","Неприцкий","Навроцкий","Носань","Нордиев","Новиков","Орлевич",
             "Орлов","Ополев","Прасолов","Прудов","Петренко","Петкевич","Петров","Подьячев","Поплавский","Пучёк",
             "Проценко","Плохенко","Пустовар","Портных","Прокопенко","Попов","Полянин","Проскурин","Паков","Резун",
-            "Русанов","Роднянский, Рублёв","Рогоза","Рабинович","Рудик","Ротань","Рычагирский", "Радкевич","Синицын",
+            "Русанов","Роднянский", "Рублёв","Рогоза","Рабинович","Рудик","Ротань","Рычагирский", "Радкевич","Синицын",
             "Сыкула","Сагитов","Стацюра","Свиридов","Смолий","Сидоров","Сорокин","Савчук","Скамейка","Слуцкий",
             "Сидоренко","Седых","Синий","Савченко","Середа","Степчин","Стычинский","Смелов","Тарнавский","Татарчук",
             "Тимчук"
             );
 
-    private static List<String> militaryRanks = Arrays.asList(
+    private static final List<String> militaryRanks = Arrays.asList(
             "Генерал","Полковник","Подполковник","Майор","Капитан","Лейтенант","Прапорщик","Сержант","Рядовой"
     );
 
-    private static List<String> factionsList = Arrays.asList(
+    private static final List<String> factionsList = Arrays.asList(
             "Свобода", "Монолит", "Ренегаты", "Чистое Небо", "Наёмники", "Долг", "Учёные", "Бандиты", "Военные",
             "Одиночки", "Зомбированные"
     );
-    private static List<String> factionsListKilled = Arrays.asList(
+    private static final List<String> factionsListKilled = Arrays.asList(
             "Свободовец", "\"Свобода\"", "Монолитовец", "\"Монолит\"", "Ренегат", "Чистонебовец", "\"Чистое Небо\"",
             "Наёмник", "Долговец", "\"Долг\"", "Учёный", "Бандит", "Военный", "Одиночка", "Зомбированный"
     );
 
-    private static List<String> artefactsList = Arrays.asList(
+    private static final List<String> artefactsList = Arrays.asList(
             "Медуза", "Каменный цветок", "Ночная звезда", "Кровь камня", "Ломоть мяса", "Душа", "Выверт", "Грави",
             "Золотая рыбка", "Огненный шар", "Кристалл", "Мамины бусы", "Бенгальский огонь", "Вспышка", "Лунный свет",
             "Колобок", "Батарейка", "Пустышка", "Глаз", "Пламя", "Снежинка", "Светляк", "Пузырь", "Компас", "Пленка",
@@ -108,7 +114,7 @@ public class Resources {
             "Сердце Оазиса", "Измененный штурвал", "Измененный изолятор"
     );
 
-    private static Map<String, String> tradersFactionsMap = new HashMap<String, String>(){{
+    private static final Map<String, String> tradersFactionsMap = new HashMap<String, String>(){{
         put("Сидорович", "Одиночки");
         put("Бармен", "Одиночки");
         put("Сахаров", "Учёные");
@@ -128,7 +134,38 @@ public class Resources {
         put("Герман", "Учёные");
     }};
 
-    private static String botInfo = "Zone News Bot (Новости Зоны) v0.4 by beatHunteR";
+
+    public static Date getStartOfDay() {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DATE);
+        calendar.set(year, month, day, 0, 49, 0);
+        return calendar.getTime();
+    }
+
+    private static final String botInfo = "Zone News Bot (Новости Зоны) v0.5 by beatHunteR";
+    private static final String noMemePhrase = "Пока что без мемов. Сталкеры в процессе устранения проблемы...";
+    private static int currentDayNumber = 0;
+    private static int currentMonthNumber = 0;
+    private static int currentYearNumber = 0;
+    private static IGClient currentIGClient = null;
+
+    public static IGClient getCurrentIGClient() { return currentIGClient; }
+
+    public static void setCurrentIGClient(IGClient currentIGClient) { Resources.currentIGClient = currentIGClient; }
+
+    public static int getCurrentMonthNumber() { return currentMonthNumber; }
+
+    public static void setCurrentMonthNumber(int currentMonthNumber) { Resources.currentMonthNumber = currentMonthNumber; }
+
+    public static int getCurrentYearNumber() { return currentYearNumber; }
+
+    public static void setCurrentYearNumber(int currentYearNumber) { Resources.currentYearNumber = currentYearNumber; }
+
+    public static int getCurrentDayNumber() { return currentDayNumber; }
+
+    public static void setCurrentDayNumber(int currentDayNumber) { Resources.currentDayNumber = currentDayNumber; }
 
     public static List<String> getFactionsListKilled() { return factionsListKilled; }
 
@@ -154,7 +191,7 @@ public class Resources {
         return tradersFactionsMap;
     }
 
-    public static String getBotInfo() {
-        return botInfo;
-    }
+    public static String getBotInfo() { return botInfo; }
+
+    public static String getNoMemePhrase() { return noMemePhrase; }
 }

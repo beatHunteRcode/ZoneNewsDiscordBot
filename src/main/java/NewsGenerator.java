@@ -1,17 +1,7 @@
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-//import org.w3c.dom.Document;
-//import org.w3c.dom.Element;
-//import org.w3c.dom.Node;
-//import org.w3c.dom.NodeList;
-//import org.xml.sax.SAXException;
-//
-//import javax.xml.parsers.DocumentBuilder;
-//import javax.xml.parsers.DocumentBuilderFactory;
-//import javax.xml.parsers.ParserConfigurationException;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.Date;
 import java.util.List;
 
@@ -280,21 +270,24 @@ public class NewsGenerator {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode node = mapper.readValue(new File("./input/dynamic_news.json"), JsonNode.class);
 
-            //начинаем составлять новость
-            //определяем тип новости:
-            //  1 - о помощи,
-            //  2 - специальная новость,
-            //  3 - о выбросе
-            //  4 - новости фракций
-            //  5 - новости о нахождении артефактов
-            //  6 - немедленные сообщения от сталкеров увидивших/услышивших что-то
-            //  7 - системная новость о гибели сталкера/военного
-            //  8 - анекдот
-            //  9 - новости о времени суток
-            //  10 - новость о активности кого-то рядом со сталкером
-            //  11 - новость о торговце и товаре
-            //  12 - просьба перевести сталкера из точки А в точку Б
-            newsType = getRndIntInRange(1, 12);
+            /*
+              начинаем составлять новость
+              определяем тип новости:
+              1 - о помощи,
+              2 - специальная новость,
+              3 - о выбросе
+              4 - новости фракций
+              5 - новости о нахождении артефактов
+              6 - немедленные сообщения от сталкеров увидивших/услышивших что-то
+              7 - системная новость о гибели сталкера/военного
+              8 - анекдот
+              9 - о времени суток
+              10 - о активности кого-то рядом со сталкером
+              11 - о торговце и товаре
+              12 - просьба перевести сталкера из точки А в точку Б
+              13 - мем
+             */
+            newsType = getRndIntInRange(1, 13);
             if (newsType != 7) {
                 newsBuilder.append(nameBuilder);
                 if (faction.equals("Зомбированные")) newsType = 2;
@@ -349,7 +342,9 @@ public class NewsGenerator {
 //                    System.out.println("CONDUCT_NEWS");
                     newsBuilder.append(genConductNews(node));
                     break;
-
+                case 13:
+//                    System.out.println("MEME_NEWS");
+                    newsBuilder.append(genMemeNews());
             }
 
             strNews = replaceTemplates(newsBuilder, node);
@@ -843,19 +838,19 @@ public class NewsGenerator {
         Date date = new Date();
         int hoursNow = Integer.parseInt(date.toString().split(" ")[3].split(":")[0]);
 
-        if (hoursNow >= 0 && hoursNow <= 5) {           //night
+        if ((hoursNow >= 21 && hoursNow <= 23) || (hoursNow >= 0 && hoursNow <= 3)) {           //night
             List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_night").findValues("text");
             newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
         }
-        else if (hoursNow >= 6 && hoursNow <= 11) {     //morning
+        else if (hoursNow >= 4 && hoursNow <= 9) {     //morning
             List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_morning").findValues("text");
             newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
         }
-        else if (hoursNow >= 12 && hoursNow <= 17) {    //noon
+        else if (hoursNow >= 10 && hoursNow <= 15) {    //noon
             List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_noon").findValues("text");
             newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
         }
-        else { //hoursNow >= 18 && hoursNow <= 23       //evening
+        else { //hoursNow >= 16 && hoursNow <= 20       //evening
             List<JsonNode> phrasesList = node.findValue("time_news").findValue("time_evening").findValues("text");
             newsBuilder.append(phrasesList.get(getRndIntInRange(0, phrasesList.size() - 1)).asText());
         }
@@ -970,6 +965,16 @@ public class NewsGenerator {
         return newsBuilder;
     }
 
+    public StringBuilder genMemeNews() {
+        StringBuilder newsBuilder = new StringBuilder();
+        if (Main.urlsList.size() == 0) {
+            newsBuilder.append(Resources.getNoMemePhrase());
+            newsType = 0;
+        }
+        else newsBuilder.append(Main.urlsList.get(getRndIntInRange(0, Main.urlsList.size())));
+        return newsBuilder;
+    }
+
     private String replaceTemplates(StringBuilder newsBuilder, JsonNode node) {
         String strNews = newsBuilder.toString();
 
@@ -984,7 +989,7 @@ public class NewsGenerator {
             String replacement = surgesList.get(getRndIntInRange(0, surgesList.size() - 1)).asText();
             strNews = newsBuilder.toString().replaceAll("\\$surge", replacement);
 
-            //определяем текущее время
+
             //определяем текущее время
             //date.toString() -> Sat Aug 22 21:52:58 MSK 2020
             //date.toString().split(" ")[3] -> 21:52:58
@@ -1088,6 +1093,7 @@ public class NewsGenerator {
     //  1 - реакция на зомби
     //  2 - реакция на анекдот
     //  3 - реакция на врага рядом
+    //  4 - реакция на некролог
     public String generateResponse(double responseType, MessageReceivedEvent event) {
         StringBuilder responseBuilder = new StringBuilder();
         StringBuilder nameBuilder = genName();
@@ -1141,6 +1147,8 @@ public class NewsGenerator {
         }
         return responseBuilder.toString();
     }
+
+
 
     public int getNewsType() {
         return newsType;
