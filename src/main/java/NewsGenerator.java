@@ -406,19 +406,14 @@ public class NewsGenerator {
 
         return nameBuilder;
     }
-    private StringBuilder genTraderName() {
+    public StringBuilder genTraderName() {
         StringBuilder nameBuilder = new StringBuilder();
         try {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode node = mapper.readValue(new File("./input/dynamic_news.json"), JsonNode.class);
             List<JsonNode> tradersNamesList = node.findValue("traders").findValue("traders_names").findValues("text");
             name = tradersNamesList.get(getRndIntInRange(0, tradersNamesList.size() - 1)).asText();
-            if (name.equals("Сахаров") || name.equals("Герман")) {
-                faction = "Профессор " + Resources.getTradersFactionsMap().get(name);
-            }
-            else {
-                faction = Resources.getTradersFactionsMap().get(name);
-            }
+            faction = Resources.getTradersFactionsMap().get(name);
             nameBuilder.append(name).append(" (").append(faction).append(") ");
 
         } catch (IOException e) {
@@ -952,6 +947,9 @@ public class NewsGenerator {
     public String getFaction() {
         return faction;
     }
+    public String getName() { return name; }
+    public String getSurname() { return surname; }
+
     private int getRndIntInRange(int min, int max){
         return (int) (Math.random()*((max-min)+1))+min;
     }
