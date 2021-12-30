@@ -15,14 +15,11 @@ public class NewsGenerator {
 
     public NewsGenerator() {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     public String generateNews() {
         String str =    resources.getMilitaryRanks().get(2) + " " + resources.getMilitarySurnames().get(5) +
                         " застрелил " +
                         resources.getMilitaryRanks().get(4) + " " + resources.getMilitarySurnames().get(23);
         return str;
-=======
     private StringBuilder genFactionNews(JsonNode node) {
         StringBuilder newsBuilder = new StringBuilder();
 
@@ -256,9 +253,7 @@ public class NewsGenerator {
         }
 
         return builder;
->>>>>>> 42dc28a (fixed some stuff)
-=======
->>>>>>> release
+
     }
 
     public String generateNews() {
