@@ -1,8 +1,9 @@
 # Discord-бот "Новости Зоны"
 
-master: ![https://github.com/beatHunteRcode/ZoneNewsDiscordBot/actions?query=branch%3Amaster](https://github.com/beatHunteRcode/ZoneNewsDiscordBot/actions/workflows/zonenewsbot.yml/badge.svg?branch=master)
+master: [![Build Status](https://github.com/beatHunteRcode/ZoneNewsDiscordBot/actions/workflows/zonenewsbot.yml/badge.svg?branch=master)](https://github.com/beatHunteRcode/ZoneNewsDiscordBot/actions?query=branch%3Amaster)
 
-develop: ![https://github.com/beatHunteRcode/ZoneNewsDiscordBot/actions?query=branch%3Amaster](https://github.com/beatHunteRcode/ZoneNewsDiscordBot/actions/workflows/zonenewsbot.yml/badge.svg?branch=master)
+develop: [![Build Status](https://github.com/beatHunteRcode/ZoneNewsDiscordBot/actions/workflows/zonenewsbot.yml/badge.svg?branch=develop)](https://github.com/beatHunteRcode/ZoneNewsDiscordBot/actions?query=branch%3Adevelop)
+
 ___
 
 "Новости Зоны" - discord-бот, который предоставляет функционал модификации "Dynamic News" к игре S.T.A.L.K.E.R.
