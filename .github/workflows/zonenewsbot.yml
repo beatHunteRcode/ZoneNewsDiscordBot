@@ -19,9 +19,7 @@ jobs:
         with:
           java-version: '8'
           distribution: 'adopt'
-      - name: Grant Permissions to gradlew
-          run: chmod +x gradlew
-            - name: Gradle Test Action
-              uses: gradle/gradle-build-action@v2.0.1
-              with:
-                arguments: test
+      - name: Gradle Test Action
+        uses: gradle/gradle-build-action@v2.0.1
+        with:
+          arguments: test
