@@ -134,6 +134,14 @@ public class Resources {
         put("Герман", "Учёные");
     }};
 
+    public static final List<String> voiceChannelConnectPhrases = Arrays.asList (
+
+    );
+
+    public static final List<String> voiceChannelDisconnectPhrases = Arrays.asList (
+            "Всё мужики. Отбой.",
+            "Ну, можно и передохнуть маленько..."
+    );
 
     public static Date getStartOfDay() {
         Calendar calendar = Calendar.getInstance();

@@ -7,7 +7,6 @@ import java.util.List;
 
 public class NewsGenerator {
 
-
     private String name;
     private String surname;
     private String faction;
@@ -952,7 +951,7 @@ public class NewsGenerator {
     public String getFaction() {
         return faction;
     }
-    private int getRndIntInRange(int min, int max){
+    public int getRndIntInRange(int min, int max){
         return (int) (Math.random()*((max-min)+1))+min;
     }
 

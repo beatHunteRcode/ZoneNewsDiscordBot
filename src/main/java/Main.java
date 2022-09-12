@@ -1,3 +1,6 @@
+import Music.GuildMusicManager;
+import Music.MusicPlayerManager;
+import Music.MusicQueriesHandler;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.instagram4j.instagram4j.IGClient;
@@ -7,16 +10,19 @@ import com.github.instagram4j.instagram4j.models.media.timeline.TimelineMedia;
 import com.github.instagram4j.instagram4j.requests.feed.FeedUserRequest;
 import com.github.instagram4j.instagram4j.responses.feed.FeedUserResponse;
 import com.github.instagram4j.instagram4j.responses.users.UsersSearchResponse;
+import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
+import com.sedmelluq.discord.lavaplayer.track.AudioTrackEndReason;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.entities.VoiceChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.managers.AudioManager;
 
 import javax.security.auth.login.LoginException;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.CompletableFuture;
 
 public class Main extends ListenerAdapter {
 
@@ -30,6 +36,7 @@ public class Main extends ListenerAdapter {
     public  static Map<String, Thread> mapOfThreads = new HashMap<>();
     public static List<String> urlsList = new ArrayList<>();
 
+    private boolean enableMemes = false;
 
     private static Thread downloadMemesThread = new Thread();
 
@@ -40,7 +47,6 @@ public class Main extends ListenerAdapter {
         builder.build();
 
         instLogin();
-
 
         downloadMemesThread = new Thread(() -> {
            while (urlsList.size() == 0) {
@@ -176,8 +182,195 @@ public class Main extends ListenerAdapter {
             event.getChannel().sendMessage(builder.toString()).queue();
             if (!builder.toString().contains(Resources.getNoMemePhrase())) genResponseToJoke(newsGenerator, event);
         }
+        if (message.equalsIgnoreCase(prefix + "enablememes")) {
+            if (!enableMemes) {
+                enableMemes = true;
+                event.getChannel().sendMessage("Мемы **включены**").queue();
+            }
+            else {
+                enableMemes = false;
+                event.getChannel().sendMessage("Мемы **выключены**").queue();
+            }
+        }
 
-        dateCheck();
+        //---------------MUSIC SECTION---------------
+        if (message.split(" ")[0].equalsIgnoreCase(prefix + "play") && message.split(" ").length > 1) {
+            if (!event.getMember().getVoiceState().inAudioChannel()) {
+                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+            }
+            else {
+                //bot joining in channel process
+                if (!event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
+                    final AudioManager audioManager = event.getGuild().getAudioManager();
+                    final VoiceChannel memberChannel = (VoiceChannel) event.getMember().getVoiceState().getChannel();
+                    audioManager.openAudioConnection(memberChannel);
+                }
+
+                String link = message.split(" ")[1];
+                if (!MusicQueriesHandler.isURL(link)) {
+                    link = "ytsearch:" + link + " audio";
+                }
+
+                MusicPlayerManager.getINSTANCE().loadAndPlay(event.getTextChannel(), link);
+            }
+        }
+        if (message.equalsIgnoreCase(prefix + "pause")) {
+            if (!event.getMember().getVoiceState().inAudioChannel()) {
+                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+            }
+            else {
+                //bot leaving current channel process
+                if (event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
+                    GuildMusicManager musicManager = MusicPlayerManager.getINSTANCE().getMusicManager(event.getGuild());
+                    if (!musicManager.audioPlayer.isPaused()) {
+                        musicManager.trackScheduler.onPlayerResume(musicManager.audioPlayer);
+                        event.getChannel().sendMessage("Музыка на паузе").queue();
+                    }
+                }
+            }
+        }
+        if (message.equalsIgnoreCase(prefix + "resume")) {
+            if (!event.getMember().getVoiceState().inAudioChannel()) {
+                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+            }
+            else {
+                //bot leaving current channel process
+                if (event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
+                    GuildMusicManager musicManager = MusicPlayerManager.getINSTANCE().getMusicManager(event.getGuild());
+                    if (musicManager.audioPlayer.isPaused()) {
+                        musicManager.trackScheduler.onPlayerResume(musicManager.audioPlayer);
+                        event.getChannel().sendMessage("Музыка возобновлена").queue();
+                    }
+                }
+            }
+        }
+        if (message.equalsIgnoreCase(prefix + "leave")) {
+            if (!event.getMember().getVoiceState().inAudioChannel()) {
+                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+            }
+            else {
+                //bot leaving current channel process
+                if (event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
+                    final AudioManager audioManager = event.getGuild().getAudioManager();
+                    GuildMusicManager musicManager = MusicPlayerManager.getINSTANCE().getMusicManager(event.getGuild());
+                    musicManager.trackScheduler.tracksQueue.clear();
+                    audioManager.closeAudioConnection();
+                    event.getChannel().sendMessage("Покинул `" + audioManager.getConnectedChannel().getName() + "`").queue();
+                }
+            }
+        }
+        if (message.equalsIgnoreCase(prefix + "loop")) {
+            if (!event.getMember().getVoiceState().inAudioChannel()) {
+                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+            }
+            else {
+                if (event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
+                    GuildMusicManager musicManager = MusicPlayerManager.getINSTANCE().getMusicManager(event.getGuild());
+                    if (!musicManager.trackScheduler.isLoop()) {
+                        musicManager.trackScheduler.setLoop(true);
+                        event.getChannel().sendMessage("Повтор очереди **включен**").queue();
+                    }
+                    else {
+                        musicManager.trackScheduler.setLoop(false);
+                        event.getChannel().sendMessage("Повтор очереди **выключен**").queue();
+                    }
+                }
+            }
+        }
+        if (message.equalsIgnoreCase(prefix + "queue")) {
+            if (!event.getMember().getVoiceState().inAudioChannel()) {
+                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+            }
+            else {
+                if (event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
+                    final AudioManager audioManager = event.getGuild().getAudioManager();
+                    StringBuilder sb = new StringBuilder();
+                    GuildMusicManager musicManager = MusicPlayerManager.getINSTANCE().getMusicManager(event.getGuild());
+                    Object[] trackQueue = musicManager.trackScheduler.tracksQueue.toArray();
+                    sb.append("В очереди **").append(musicManager.trackScheduler.tracksQueue.size()).append(" треков**\n\n");
+                    for (int i = 0; i < (
+                            (musicManager.trackScheduler.tracksQueue.size() < musicManager.trackScheduler.trackPageSize)
+                                    ? musicManager.trackScheduler.tracksQueue.size() : musicManager.trackScheduler.trackPageSize);
+                         i++) {
+                        if (trackQueue[i] != null) {
+                            sb.append("**").append(i + 1).append(".** ").
+                                    append(((AudioTrack)trackQueue[i]).getInfo().title).
+                                    append(" - ").
+                                    append(((AudioTrack)trackQueue[i]).getInfo().author).append("\n");
+                        }
+                    }
+                    if (musicManager.trackScheduler.tracksQueue.size() > musicManager.trackScheduler.trackPageSize) {
+                        sb.append("\n").
+                                append("... и еще **").
+                                append(musicManager.trackScheduler.tracksQueue.size() - musicManager.trackScheduler.trackPageSize).
+                                append("** треков");
+                    }
+                    if (!sb.toString().isEmpty()) event.getChannel().sendMessage(sb.toString()).queue();
+                    else event.getChannel().sendMessage("Нет треков в очереди").queue();
+                }
+            }
+        }
+        if (message.equalsIgnoreCase(prefix + "np")) {
+            if (!event.getMember().getVoiceState().inAudioChannel()) {
+                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+            }
+            else {
+                if (event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
+                    StringBuilder sb = new StringBuilder();
+                    sb.append("Сейчас играет: `");
+
+                    GuildMusicManager musicManager = MusicPlayerManager.getINSTANCE().getMusicManager(event.getGuild());
+                    sb.append(musicManager.trackScheduler.audioPlayer.getPlayingTrack().getInfo().title).
+                            append(" - ").
+                            append(musicManager.trackScheduler.audioPlayer.getPlayingTrack().getInfo().author).
+                            append("`");
+                    event.getChannel().sendMessage(sb.toString()).queue();
+                }
+            }
+        }
+        if (message.equalsIgnoreCase(prefix + "skip")) {
+            if (!event.getMember().getVoiceState().inAudioChannel()) {
+                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+            }
+            else {
+                if (event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
+                    GuildMusicManager musicManager = MusicPlayerManager.getINSTANCE().getMusicManager(event.getGuild());
+                    if (musicManager.audioPlayer.getPlayingTrack() != null) {
+                        StringBuilder sb = new StringBuilder();
+                        sb.append("Пропущено `");
+                        sb.append(musicManager.trackScheduler.audioPlayer.getPlayingTrack().getInfo().title).
+                                append(" - ").
+                                append(musicManager.trackScheduler.audioPlayer.getPlayingTrack().getInfo().author).
+                                append("`");
+                        event.getChannel().sendMessage(sb.toString()).queue();
+
+                        musicManager.trackScheduler.onTrackEnd(musicManager.audioPlayer, musicManager.audioPlayer.getPlayingTrack(), AudioTrackEndReason.FINISHED);
+                    }
+                    else event.getChannel().sendMessage("В данный момент музыка не играет").queue();
+                }
+            }
+        }
+        if (message.equalsIgnoreCase(prefix + "shuffle")) {
+            if (!event.getMember().getVoiceState().inAudioChannel()) {
+                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+            }
+            else {
+                if (event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
+                    GuildMusicManager musicManager = MusicPlayerManager.getINSTANCE().getMusicManager(event.getGuild());
+                    if (!musicManager.trackScheduler.tracksQueue.isEmpty()) {
+                        List<AudioTrack> tracksList = new LinkedList<>(musicManager.trackScheduler.tracksQueue);
+                        Collections.shuffle(tracksList);
+                        musicManager.trackScheduler.tracksQueue.clear();
+                        musicManager.trackScheduler.tracksQueue.addAll(tracksList);
+                        event.getChannel().sendMessage("Очередь перемешана").queue();
+                    }
+                    else event.getChannel().sendMessage("В данный момент очередь пуста").queue();
+                }
+            }
+        }
+        //-------------------------------------------
+
+        if (enableMemes) dateCheck();
     }
 
 
