@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'com.mydiscordbot'
+group 'com.ZoneNewsDiscordBot'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
@@ -34,7 +34,7 @@ dependencies {
     compile group: 'com.restfb', name: 'restfb', version: '3.13.0'
     implementation 'com.github.instagram4j:instagram4j:2.0.3'
     compile group: 'org.brunocvcunha.instagram4j', name: 'instagram4j', version: '1.14'
-    
+
     task stage(dependsOn: ['build', 'clean'])
     build.mustRunAfter clean
 }
