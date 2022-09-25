@@ -29,15 +29,6 @@ public class Tests {
     }
 
     @Test
-    public void genZombieNewsTest() {
-        for (int i = 0; i < attempts; i++) {
-            newsGenerator.generateNews();
-            if (newsGenerator.getFaction().equals("Зомбированные"))
-                Assert.assertTrue(newsGenerator.getNewsType() == 2 || newsGenerator.getNewsType() == 7);
-        }
-    }
-
-    @Test
     public void genTraderNameTest() {
         for (int i = 0; i < attempts; i++) {
             StringBuilder name = newsGenerator.genTraderName();
@@ -45,20 +36,4 @@ public class Tests {
         }
     }
 
-    @Test
-    public void noMemesExceptionTest() {
-        for (int i = 0; i < attempts; i++) {
-            String news = newsGenerator.generateNews();
-            if (newsGenerator.getNewsType() == 13) {
-                Assert.assertEquals(Resources.getNoMemePhrase(), news.split(":")[1]);
-            }
-        }
-    }
-
-    @Test
-    public void generateNewsTest() {
-        for (int i = 0; i < attempts; i++) {
-            Assert.assertNotNull(newsGenerator.generateNews());
-        }
-    }
 }

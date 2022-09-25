@@ -7,6 +7,30 @@ import java.util.List;
 
 public class NewsGenerator {
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setFaction(String faction) {
+        this.faction = faction;
+    }
+
+    public void setNewsType(int newsType) {
+        this.newsType = newsType;
+    }
+
     private String name;
     private String surname;
     private String faction;
@@ -405,7 +429,7 @@ public class NewsGenerator {
 
         return nameBuilder;
     }
-    private StringBuilder genTraderName() {
+    public StringBuilder genTraderName() {
         StringBuilder nameBuilder = new StringBuilder();
         try {
             ObjectMapper mapper = new ObjectMapper();
