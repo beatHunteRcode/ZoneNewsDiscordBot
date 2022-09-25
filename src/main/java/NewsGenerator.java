@@ -436,12 +436,7 @@ public class NewsGenerator {
             JsonNode node = mapper.readValue(new File("./input/dynamic_news.json"), JsonNode.class);
             List<JsonNode> tradersNamesList = node.findValue("traders").findValue("traders_names").findValues("text");
             name = tradersNamesList.get(getRndIntInRange(0, tradersNamesList.size() - 1)).asText();
-            if (name.equals("Сахаров") || name.equals("Герман")) {
-                faction = "Профессор " + Resources.getTradersFactionsMap().get(name);
-            }
-            else {
-                faction = Resources.getTradersFactionsMap().get(name);
-            }
+            faction = Resources.getTradersFactionsMap().get(name);
             nameBuilder.append(name).append(" (").append(faction).append(") ");
 
         } catch (IOException e) {
