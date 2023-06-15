@@ -1,7 +1,6 @@
-package Music;
+package music;
 
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
 public class MusicQueriesHandler {
 

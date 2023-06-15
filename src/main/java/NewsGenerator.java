@@ -1,5 +1,6 @@
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import java.io.*;
 import java.util.Date;
@@ -908,7 +909,7 @@ public class NewsGenerator {
     //  2 - реакция на анекдот
     //  3 - реакция на врага рядом
     //  4 - реакция на некролог
-    public String generateResponse(double responseType, MessageReceivedEvent event) {
+    public String generateResponse(double responseType, SlashCommandInteractionEvent event) {
         StringBuilder responseBuilder = new StringBuilder();
         StringBuilder nameBuilder = genName();
         if (faction.equals("Зомбированные")) {

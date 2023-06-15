@@ -152,6 +152,7 @@ public class Resources {
         return calendar.getTime();
     }
 
+    public static final String BOT_TOKEN_FILE_PATH = "./input/bot_token";
     private static final String botInfo = "Zone News Bot (Новости Зоны) v0.5 by beatHunteR";
     private static final String noMemePhrase = "Пока что без мемов. Сталкеры в процессе устранения проблемы...";
     private static int currentDayNumber = 0;

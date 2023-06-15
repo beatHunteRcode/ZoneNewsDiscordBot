@@ -1,15 +1,14 @@
-package Music;
+package music;
 
 import com.sedmelluq.discord.lavaplayer.player.AudioLoadResultHandler;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager;
-import com.sedmelluq.discord.lavaplayer.source.AudioSourceManager;
 import com.sedmelluq.discord.lavaplayer.source.AudioSourceManagers;
 import com.sedmelluq.discord.lavaplayer.tools.FriendlyException;
 import com.sedmelluq.discord.lavaplayer.track.AudioPlaylist;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 
 import java.util.HashMap;
 import java.util.List;
@@ -52,11 +51,7 @@ public class MusicPlayerManager {
             public void trackLoaded(AudioTrack track) {
                 guildMusicManager.trackScheduler.queue(track);
 
-                textChannel.sendMessage("Добавлено в очередь: **`")
-                        .append(track.getInfo().title)
-                        .append(" - ")
-                        .append(track.getInfo().author)
-                        .append("`**")
+                textChannel.sendMessage("Добавлено в очередь: **`" + track.getInfo().title + " - " + track.getInfo().author + "`**")
                 .queue();
 
                 guildMusicManager.trackScheduler.onTrackStart(audioPlayerManager.createPlayer(), track);
@@ -69,12 +64,11 @@ public class MusicPlayerManager {
                     for (AudioTrack track : trackList) {
                         guildMusicManager.trackScheduler.queue(track);
                     }
-                    textChannel.sendMessage("Добавлено в очередь **")
-                            .append(Integer.toString(trackList.size()))
-                            .append(" треков** из плейлиста **")
-                            .append(playlist.getName())
-                            .append("**")
-                            .queue();
+                    textChannel.sendMessage(
+                                    "Добавлено в очередь **" +
+                                        Integer.toString(trackList.size()) +
+                                        " треков** из плейлиста **" + playlist.getName() + "**")
+                                .queue();
                 }
             }
 

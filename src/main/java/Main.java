@@ -1,6 +1,6 @@
-import Music.GuildMusicManager;
-import Music.MusicPlayerManager;
-import Music.MusicQueriesHandler;
+import music.GuildMusicManager;
+import music.MusicPlayerManager;
+import music.MusicQueriesHandler;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.instagram4j.instagram4j.IGClient;
@@ -13,14 +13,23 @@ import com.github.instagram4j.instagram4j.responses.users.UsersSearchResponse;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackEndReason;
 import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.entities.TextChannel;
-import net.dv8tion.jda.api.entities.VoiceChannel;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
+import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.session.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
+import net.dv8tion.jda.api.interactions.commands.build.Commands;
+import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.managers.AudioManager;
 
 import javax.security.auth.login.LoginException;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
@@ -38,10 +47,12 @@ public class Main extends ListenerAdapter {
 
     private boolean enableMemes = false;
 
+    NewsGenerator newsGenerator = new NewsGenerator();
+
     private static Thread downloadMemesThread = new Thread();
 
     public static void main(String[] args) throws LoginException {
-        String botToken = "NjM2OTg1337youdontgetmydiscordbottoken1337oo792d0";
+        String botToken = readTokenFile(Resources.BOT_TOKEN_FILE_PATH);
         JDABuilder builder = JDABuilder.createDefault(botToken);
         builder.addEventListeners(new Main());
         builder.build();
@@ -74,23 +85,14 @@ public class Main extends ListenerAdapter {
     }
 
     @Override
-    public void onMessageReceived(MessageReceivedEvent event) {
-        NewsGenerator newsGenerator = new NewsGenerator();
-
-        System.out.println( "Message from " + event.getAuthor().getName() + " in " + event.getChannel().getName() +
-                            " from " + event.getGuild().getName() +
-                            " (" + new Date().toString() + ")" + ":\n"
-                            + "[--- " + event.getMessage().getContentDisplay() + " ---]");
-
-        String message = event.getMessage().getContentRaw();
-        if (message.equalsIgnoreCase(prefix + "новость")) { //новость
+    public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
+        String command = event.getName();
+        if (command.equals("новость")) {
             String news = newsGenerator.generateNews();
-            event.getChannel().sendMessage(news).queue();
+            event.reply(news).queue();
             addNewsToList(news);
             genResponse(news, newsGenerator, event);
-        }
-        if (message.equalsIgnoreCase(prefix + "анекдот")) {
-
+        } else if (command.equals("анекдот")) {
             try {
                 ObjectMapper mapper = new ObjectMapper();
                 JsonNode node = mapper.readValue(new File("./input/dynamic_news.json"), JsonNode.class);
@@ -105,16 +107,12 @@ public class Main extends ListenerAdapter {
                 newsBuilder.append(name).append(":\n");
 
                 newsBuilder.append(newsGenerator.genJokeNews(node));
-                event.getChannel().sendMessage(newsBuilder.toString()).queue();
+                event.reply(newsBuilder.toString()).queue();
             } catch (IOException e) {
                 e.printStackTrace();
             }
             genResponseToJoke(newsGenerator, event);
-        }
-        if (message.equalsIgnoreCase(prefix + "помощь")) {
-            showCommandList(event);
-        }
-        if (message.equalsIgnoreCase(prefix + "startNews")) {
+        } else if (command.equals("start-news")) {
             if (!mapOfGenerators.containsKey(event.getChannel().getName())) {
                 Thread thread = new Thread(() -> {
                     while (true) {
@@ -138,100 +136,89 @@ public class Main extends ListenerAdapter {
                 thread.start();
                 mapOfGenerators.put(event.getChannel().getName(), true);
                 mapOfThreads.put(event.getChannel().getName(), thread);
-            }
-            else {
+                event.reply("Лента новостей запущена").queue();
+            } else {
                 if (mapOfGenerators.get(event.getChannel().getName())) {
-                    event.getChannel().sendMessage("Error: Лента новостей уже запущена!").queue();
+                    event.reply("Error: Лента новостей уже запущена!").queue();
                 }
             }
-        }
-        if (message.equalsIgnoreCase(prefix + "stopNews")) {
+        } else if (command.equals("stop-news")) {
             mapOfThreads.get(event.getChannel().getName()).interrupt();
             mapOfThreads.remove(event.getChannel().getName());
             mapOfGenerators.remove(event.getChannel().getName());
-        }
-        if (message.equalsIgnoreCase(prefix + "недавнее")) {
+            event.reply("Лента новостей остановлена").queue();
+        } else if (command.equals("недавнее")) {
+            event.reply("Последние 5 новостей:").queue();
             for (String news : lastNewsList) {
                 event.getChannel().sendMessage(news).queue();
             }
-        }
-        if (message.equalsIgnoreCase(prefix + "chList")) {
+        } else if (command.equals("ch-list")) {
             getChannelsWithGensList(event);
-        }
-        if (message.equalsIgnoreCase(prefix + "stopAll")) {
+        } else if (command.equals("stop-all")) {
             deleteGenInAllServerChannels(event);
-        }
-        if (message.equalsIgnoreCase(prefix + "botInfo")) {
-            event.getChannel().sendMessage(Resources.getBotInfo()).queue();
-        }
-        if (!event.getAuthor().getName().equalsIgnoreCase("новости зоны")) {
-            if (   (message.toLowerCase().contains("анек") ||
-                    message.toLowerCase().contains("шут") ||
-                    message.toLowerCase().contains("рофл") ||
-                    message.toLowerCase().contains("юмор")) &&
-                    !message.toLowerCase().contains("-")
-            ) {
-                genResponseToJoke(newsGenerator, event);
-            }
-        }
-        if (message.equalsIgnoreCase(prefix + "мем")) {
+        } else if (command.equals("bot-info")) {
+            event.reply(Resources.getBotInfo()).queue();
+        } else if (command.equals("мем")) {
             StringBuilder builder = new StringBuilder();
             builder.append(newsGenerator.genName());
             builder.append(":\n");
             builder.append(newsGenerator.genMemeNews());
-            event.getChannel().sendMessage(builder.toString()).queue();
+            event.reply(builder.toString()).queue();
             if (!builder.toString().contains(Resources.getNoMemePhrase())) genResponseToJoke(newsGenerator, event);
-        }
-        if (message.equalsIgnoreCase(prefix + "enablememes")) {
+        } else if (command.equals("enable-memes")) {
             if (!enableMemes) {
                 enableMemes = true;
-                event.getChannel().sendMessage("Мемы **включены**").queue();
+                event.reply("Мемы **включены**").queue();
             }
             else {
                 enableMemes = false;
-                event.getChannel().sendMessage("Мемы **выключены**").queue();
+                event.reply("Мемы **выключены**").queue();
             }
-        }
-
-        //---------------MUSIC SECTION---------------
-        if (message.split(" ")[0].equalsIgnoreCase(prefix + "play") && message.split(" ").length > 1) {
-            if (!event.getMember().getVoiceState().inAudioChannel()) {
-                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
-            }
-            else {
-                //bot joining in channel process
-                if (!event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
-                    final AudioManager audioManager = event.getGuild().getAudioManager();
-                    final VoiceChannel memberChannel = (VoiceChannel) event.getMember().getVoiceState().getChannel();
-                    audioManager.openAudioConnection(memberChannel);
+        } else if (command.equals("play")) {
+            OptionMapping messageOption = event.getOption("youtube-url");
+            if (messageOption != null) {
+                String message = messageOption.getAsString();
+                if (!event.getMember().getVoiceState().inAudioChannel()) {
+                    event.reply(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
                 }
-
-                String link = message.split(" ")[1];
-                if (!MusicQueriesHandler.isURL(link)) {
-                    link = "ytsearch:" + link + " audio";
+                else {
+                    //bot joining in channel process
+                    if (!event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
+                        final AudioManager audioManager = event.getGuild().getAudioManager();
+                        final VoiceChannel memberChannel = (VoiceChannel) event.getMember().getVoiceState().getChannel();
+                        audioManager.openAudioConnection(memberChannel);
+                    }
+                    String URL = message;
+                    if (!MusicQueriesHandler.isURL(URL)) {
+                        URL = "ytsearch:" + URL + " audio";
+                    }
+                    MusicPlayerManager.getINSTANCE().loadAndPlay(event.getGuildChannel().asTextChannel(), URL);
+                    event.reply(URL).queue();
                 }
-
-                MusicPlayerManager.getINSTANCE().loadAndPlay(event.getTextChannel(), link);
             }
-        }
-        if (message.equalsIgnoreCase(prefix + "pause")) {
+        } else if (command.equals("pause")) {
             if (!event.getMember().getVoiceState().inAudioChannel()) {
-                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+                event.reply(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
             }
             else {
                 //bot leaving current channel process
                 if (event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
                     GuildMusicManager musicManager = MusicPlayerManager.getINSTANCE().getMusicManager(event.getGuild());
                     if (!musicManager.audioPlayer.isPaused()) {
-                        musicManager.trackScheduler.onPlayerResume(musicManager.audioPlayer);
-                        event.getChannel().sendMessage("Музыка на паузе").queue();
+                        musicManager.trackScheduler.onPlayerPause(musicManager.audioPlayer);
+                        event.reply("Музыка на паузе").queue();
+                    }
+                    else {
+                        event.reply("Музыка уже на паузе!").queue();
                     }
                 }
+                else {
+                    event.reply("Бот не находится в голосовом канале!").queue();
+                }
             }
-        }
-        if (message.equalsIgnoreCase(prefix + "resume")) {
+        } else if (command.equals("resume")) {
             if (!event.getMember().getVoiceState().inAudioChannel()) {
-                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+                event.reply(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
             }
             else {
                 //bot leaving current channel process
@@ -239,14 +226,19 @@ public class Main extends ListenerAdapter {
                     GuildMusicManager musicManager = MusicPlayerManager.getINSTANCE().getMusicManager(event.getGuild());
                     if (musicManager.audioPlayer.isPaused()) {
                         musicManager.trackScheduler.onPlayerResume(musicManager.audioPlayer);
-                        event.getChannel().sendMessage("Музыка возобновлена").queue();
+                        event.reply("Музыка возобновлена").queue();
+                    }
+                    else {
+                        event.reply("Музыка уже запущена!").queue();
                     }
                 }
+                else {
+                    event.reply("Бот не находится в голосовом канале!").queue();
+                }
             }
-        }
-        if (message.equalsIgnoreCase(prefix + "leave")) {
+        } else if (command.equals("leave")) {
             if (!event.getMember().getVoiceState().inAudioChannel()) {
-                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+                event.reply(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
             }
             else {
                 //bot leaving current channel process
@@ -255,31 +247,36 @@ public class Main extends ListenerAdapter {
                     GuildMusicManager musicManager = MusicPlayerManager.getINSTANCE().getMusicManager(event.getGuild());
                     musicManager.trackScheduler.tracksQueue.clear();
                     audioManager.closeAudioConnection();
-                    event.getChannel().sendMessage("Покинул `" + audioManager.getConnectedChannel().getName() + "`").queue();
+                    musicManager.audioPlayer.destroy();
+                    event.reply("Покинул `" + audioManager.getConnectedChannel().getName() + "`").queue();
+                }
+                else {
+                    event.reply("Бот не находится в голосовом канале!").queue();
                 }
             }
-        }
-        if (message.equalsIgnoreCase(prefix + "loop")) {
+        } else if (command.equals("loop")) {
             if (!event.getMember().getVoiceState().inAudioChannel()) {
-                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+                event.reply(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
             }
             else {
                 if (event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
                     GuildMusicManager musicManager = MusicPlayerManager.getINSTANCE().getMusicManager(event.getGuild());
                     if (!musicManager.trackScheduler.isLoop()) {
                         musicManager.trackScheduler.setLoop(true);
-                        event.getChannel().sendMessage("Повтор очереди **включен**").queue();
+                        event.reply("Повтор очереди **включен**").queue();
                     }
                     else {
                         musicManager.trackScheduler.setLoop(false);
-                        event.getChannel().sendMessage("Повтор очереди **выключен**").queue();
+                        event.reply("Повтор очереди **выключен**").queue();
                     }
                 }
+                else {
+                    event.reply("Бот не находится в голосовом канале!").queue();
+                }
             }
-        }
-        if (message.equalsIgnoreCase(prefix + "queue")) {
+        } else if (command.equals("queue")) {
             if (!event.getMember().getVoiceState().inAudioChannel()) {
-                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+                event.reply(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
             }
             else {
                 if (event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
@@ -305,14 +302,16 @@ public class Main extends ListenerAdapter {
                                 append(musicManager.trackScheduler.tracksQueue.size() - musicManager.trackScheduler.trackPageSize).
                                 append("** треков");
                     }
-                    if (!sb.toString().isEmpty()) event.getChannel().sendMessage(sb.toString()).queue();
-                    else event.getChannel().sendMessage("Нет треков в очереди").queue();
+                    if (!sb.toString().isEmpty()) event.reply(sb.toString()).queue();
+                    else event.reply("Нет треков в очереди").queue();
+                }
+                else {
+                    event.reply("Бот не находится в голосовом канале!").queue();
                 }
             }
-        }
-        if (message.equalsIgnoreCase(prefix + "np")) {
+        } else if (command.equals("np")) {
             if (!event.getMember().getVoiceState().inAudioChannel()) {
-                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+                event.reply(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
             }
             else {
                 if (event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
@@ -324,13 +323,15 @@ public class Main extends ListenerAdapter {
                             append(" - ").
                             append(musicManager.trackScheduler.audioPlayer.getPlayingTrack().getInfo().author).
                             append("`");
-                    event.getChannel().sendMessage(sb.toString()).queue();
+                    event.reply(sb.toString()).queue();
+                }
+                else {
+                    event.reply("Бот не находится в голосовом канале!").queue();
                 }
             }
-        }
-        if (message.equalsIgnoreCase(prefix + "skip")) {
+        } else if (command.equals("skip")) {
             if (!event.getMember().getVoiceState().inAudioChannel()) {
-                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+                event.reply(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
             }
             else {
                 if (event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
@@ -342,17 +343,19 @@ public class Main extends ListenerAdapter {
                                 append(" - ").
                                 append(musicManager.trackScheduler.audioPlayer.getPlayingTrack().getInfo().author).
                                 append("`");
-                        event.getChannel().sendMessage(sb.toString()).queue();
+                        event.reply(sb.toString()).queue();
 
                         musicManager.trackScheduler.onTrackEnd(musicManager.audioPlayer, musicManager.audioPlayer.getPlayingTrack(), AudioTrackEndReason.FINISHED);
                     }
-                    else event.getChannel().sendMessage("В данный момент музыка не играет").queue();
+                    else event.reply("В данный момент музыка не играет").queue();
+                }
+                else {
+                    event.reply("Бот не находится в голосовом канале!").queue();
                 }
             }
-        }
-        if (message.equalsIgnoreCase(prefix + "shuffle")) {
+        } else if (command.equals("shuffle")) {
             if (!event.getMember().getVoiceState().inAudioChannel()) {
-                event.getChannel().sendMessage(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
+                event.reply(MusicQueriesHandler.YOU_MUST_BE_IN_VOICE_CHANNEL_MESSAGE).queue();
             }
             else {
                 if (event.getGuild().getSelfMember().getVoiceState().inAudioChannel()) {
@@ -362,35 +365,66 @@ public class Main extends ListenerAdapter {
                         Collections.shuffle(tracksList);
                         musicManager.trackScheduler.tracksQueue.clear();
                         musicManager.trackScheduler.tracksQueue.addAll(tracksList);
-                        event.getChannel().sendMessage("Очередь перемешана").queue();
+                        event.reply("Очередь перемешана").queue();
                     }
-                    else event.getChannel().sendMessage("В данный момент очередь пуста").queue();
+                    else event.reply("В данный момент очередь пуста").queue();
+                }
+                else {
+                    event.reply("Бот не находится в голосовом канале!").queue();
                 }
             }
         }
-        //-------------------------------------------
+
+        if (!event.getUser().getName().equalsIgnoreCase("новости зоны")) {
+            if (   (command.toLowerCase().contains("анек") ||
+                    command.toLowerCase().contains("шут") ||
+                    command.toLowerCase().contains("рофл") ||
+                    command.toLowerCase().contains("юмор")) &&
+                    !command.toLowerCase().contains("-")
+            ) {
+                genResponseToJoke(newsGenerator, event);
+            }
+        }
 
         if (enableMemes) dateCheck();
     }
 
+    @Override
+    public void onReady(ReadyEvent event) {
+        List<CommandData> commandData = new ArrayList<>();
+        commandData.add(Commands.slash("новость", "Вывести новость с просторов Зоны"));
+        commandData.add(Commands.slash("анекдот", "Вывести анекдот от сталкера"));
+        commandData.add(Commands.slash("мем", "Показать мем от сталкера"));
+        commandData.add(Commands.slash("start-news", "Включить ленту новостей в текущем канале"));
+        commandData.add(Commands.slash("stop-news", "Выключить ленту новостей в текущем канале"));
+        commandData.add(Commands.slash("недавнее", "Вывести 5 последних новостей"));
+        commandData.add(Commands.slash("ch-list", "Вывести список всех каналов на сервере, на которых запущена лента новостей"));
+        commandData.add(Commands.slash("bot-info", "Вывести информацию о боте"));
 
+        //---------------MUSIC SECTION---------------
+        OptionData option1 = new OptionData(OptionType.STRING, "youtube-url", "Ссылка на видео на YouTube", true);
+        commandData.add(Commands.slash("play", "Проигрывает видео с YouTube").addOptions(option1));
 
-    public void showCommandList(MessageReceivedEvent event) {
-        event.getChannel().sendMessage(
-                        "Список команд: \n" +
-                                "`" + prefix + "новость` : новость\n" +
-                                "`" + prefix + "анекдот` : анекдот\n" +
-                                "`" + prefix + "мем` : мем\n" +
-                                "`" + prefix + "недавнее` : список последних 5 новостей\n" +
-                                "`" + prefix + "startnews` : включить ленту новостей в текущем канале\n" +
-                                "`" + prefix + "stopnews` : выключить ленту новостей в текущем канале\n" +
-                                "`" + prefix + "stopall` : выключить ленту новостей во всех каналах на сервере\n" +
-                                "`" + prefix + "chlist` : список всех каналов на сервере, на которых запущена лента новостей\n" +
-                                "`" + prefix + "botinfo` : информация о боте"
-        ).queue();
+        commandData.add(Commands.slash("pause", "Приостановить проигрывание музыки"));
+        commandData.add(Commands.slash("resume", "Возобновить проигрывание музыки"));
+        commandData.add(Commands.slash("leave", "Покинуть текущий голосовой канал"));
+        commandData.add(Commands.slash("loop", "Включить/Выключить повтор очереди"));
+        commandData.add(Commands.slash("queue", "Вывести текщую очередь"));
+        commandData.add(Commands.slash("np", "Вывести текущий проигрываемый трек"));
+        commandData.add(Commands.slash("skip", "Пропустить текущий проигрываемый трек"));
+        commandData.add(Commands.slash("shuffle", "Перемешать очередь"));
+        event.getJDA().updateCommands().addCommands(commandData).queue();
     }
 
-    public static void genResponse(String news, NewsGenerator newsGenerator, MessageReceivedEvent event) {
+    @Override
+    public void onMessageReceived(MessageReceivedEvent event) {
+        System.out.println( "Message from " + event.getAuthor().getName() + " in " + event.getChannel().getName() +
+                            " from " + event.getGuild().getName() +
+                            " (" + new Date().toString() + ")" + ":\n"
+                            + "[--- " + event.getMessage().getContentDisplay() + " ---]");
+    }
+
+    public static void genResponse(String news, NewsGenerator newsGenerator, SlashCommandInteractionEvent event) {
         if (news.contains("(Зомбированные):")) {
             String response = newsGenerator.generateResponse(1, event);
             event.getChannel().sendMessage(response).queue();
@@ -408,7 +442,7 @@ public class Main extends ListenerAdapter {
         }
     }
 
-    private static void genResponseToJoke(NewsGenerator newsGenerator, MessageReceivedEvent event) {
+    private static void genResponseToJoke(NewsGenerator newsGenerator, SlashCommandInteractionEvent event) {
         String response = null;
         switch (getRndIntInRange(1, 3)) {
             case 1:
@@ -435,7 +469,7 @@ public class Main extends ListenerAdapter {
         return (int) (Math.random()*((max-min)+1))+min;
     }
 
-    private void deleteGenInAllServerChannels(MessageReceivedEvent event) {
+    private void deleteGenInAllServerChannels(SlashCommandInteractionEvent event) {
         List<String> channelsNamesList = new LinkedList<>();
         for (TextChannel ch : event.getGuild().getTextChannels()) {
             channelsNamesList.add(ch.getName());
@@ -461,17 +495,17 @@ public class Main extends ListenerAdapter {
         return date.toString();
     }
 
-    private void getChannelsWithGensList(MessageReceivedEvent event) {
+    private void getChannelsWithGensList(SlashCommandInteractionEvent event) {
         List<String> channelsNamesList = new LinkedList<>();
         for (TextChannel ch : event.getGuild().getTextChannels()) {
             channelsNamesList.add(ch.getName());
         }
 
         if (mapOfGenerators.isEmpty()) {
-            event.getChannel().sendMessage("Нигде ещё не запущена лента новостей.").queue();
+            event.reply("Нигде ещё не запущена лента новостей.").queue();
         }
         for (String key : mapOfGenerators.keySet()) {
-            if (channelsNamesList.contains(key)) event.getChannel().sendMessage(key).queue();
+            if (channelsNamesList.contains(key)) event.reply(key).queue();
         }
     }
 
@@ -525,6 +559,19 @@ public class Main extends ListenerAdapter {
         Collections.shuffle(urlsList);
         System.out.println( "[----- " + new Date().toString() + ": SUCCESSFULLY DOWNLOADED ALL " + urlsList.size() +
                             " MEMES from " + usersSearchResponse.getUsers().get(0).getFull_name() + " -----]");
+    }
+
+    private static String readTokenFile(String fileName) {
+        String token = "";
+        try {
+            BufferedReader reader = null;
+            reader = new BufferedReader(new FileReader(fileName));
+            token = reader.readLine();
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return token;
     }
 
     private void dateCheck() {
